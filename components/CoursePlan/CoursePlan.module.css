@@ -1,0 +1,79 @@
+.tableContainer{
+    overflow-x:auto; 
+}
+
+
+.mobileCoursePlanContainer{
+   display: none;
+}
+ 
+ .courseTable {
+   width:auto; 
+   border-collapse: border-collapse; 
+    
+ }
+ 
+ .dayHeader,
+ .dayCell {
+    padding:.5rem;
+    text-align:left; 
+    border: 1px solid var(--foreground);
+    width: 12%;
+    
+ }
+
+   .timeHeader,
+   .timeCell {
+      width: 5%;
+      border: 1px solid var(--foreground);
+   }
+
+   .timeCell{
+      text-align: center;
+   }
+
+
+
+
+ 
+ .courseItem{
+    margin-bottom:.25rem; 
+    background-color:#f9f9f9; 
+    padding:.25rem 5px;
+    border-radius:.25rem; 
+    height: 150px;
+    overflow: scroll;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+ }
+
+
+ .time{
+   border: 2px solid green;
+ }
+
+
+ .courseItem:hover{
+    transform: scale(1.04);
+    box-shadow: 0px 5px 5px grey;
+ }
+
+ .courseTitle{
+    font-size: 0.9rem;
+ }
+
+ .courseInfos{
+    font-size: 0.8rem;
+ }
+
+
+ @media screen and (max-width: 1000px){
+   .tableContainer{
+      display: none;
+   }
+
+   .mobileCoursePlanContainer{
+      display: flex;
+      height: 65vh;
+   }
+ }

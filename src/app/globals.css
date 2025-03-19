@@ -14,13 +14,44 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #EBCFC6;
+    --foreground: #EAE6DB;
+    --secondaryForeground: #E8A7A3;
+    --navigation: #F7AC84;
+    --navigationHover: #CA2732;
+    --title: #CA2732;
+    --subTitle: ;
+    --paragraph: ;
+    --buttonBg: ;
+
+
+    --secondaryForGroundDark:hsl(356, 68%, 47%);
+    
+    --POLE: #E09E99;
+    --FLEXIBILITY: #8B706E;
+    --DANCE: #B89D9B;
+    --PLAYGROUND: #FA9A85;
+    
+    
+
+    --primaryFontDarkk: #EDD0A8;
+    --secondaryFontDark: #E5734F;
+    --secondaryFontDarkk: #CA2732;
+
+    --backgroundLight: #EAE6DB;
+    --primaryForegroundLight: #EBCFC6;
+    
+    --primaryFontLight: ;
+    --secondaryFontLight: #463A48;
+
+
+
     --foreground: #ededed;
   }
+
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

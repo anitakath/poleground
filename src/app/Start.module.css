@@ -1,0 +1,20 @@
+
+.slider_div {
+    height: 100%;
+    position: relative;
+    transition: width 0.4s ease;
+    width: 50%; 
+}
+
+
+.slider_div:hover {
+    width: 90%; 
+}
+
+.flex-container:hover .slider_div:not(:hover) {
+    width: 10%; 
+}
+
+.flex-container:not(:hover) .slider_div {
+    width: 50%; 
+}

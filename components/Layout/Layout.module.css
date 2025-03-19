@@ -1,0 +1,17 @@
+
+.container{
+    background-color: var(--background);
+    
+}
+
+
+.link{
+    font-size: 1rem;
+    color: var(--navigation);
+    transition: 0.2s ease;
+    
+}
+
+.link:hover{
+    color: var(--navigationHover);
+}

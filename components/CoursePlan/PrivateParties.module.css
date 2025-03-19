@@ -1,0 +1,57 @@
+
+
+.paragraph{
+   color: var(--title);
+   font-size: 1rem;
+   margin: 0px 20px;
+   line-height: 25px;
+}
+
+.contactLink{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    font-size: 1.2rem;
+}
+
+.contactLink:hover{
+    color:var(--title);
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.privateInfo{
+    background-color: var(--secondaryForeground);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.infoParagraph{
+    font-size: 1rem;
+    margin: 5px 0px;
+    padding: 0px 10px;
+    
+}
+
+.button{
+    background-color: var(--background);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.button:hover{
+    color:var(--title);
+}
