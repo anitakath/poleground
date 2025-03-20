@@ -14,7 +14,7 @@
 }
 
 .button:hover {
-    background-color: var(--title);
+    background-color: var(--navigationHover);
     color: var(--foreground);
     box-shadow: 2px 0px 10px grey;
 }

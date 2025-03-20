@@ -18,7 +18,7 @@ const useTimesAndDates = () => {
         if (duration >= 120) {
           const hours = Math.floor(duration / 60); 
           const remainingMinutes = duration % 60; 
-          return `${hours} Stunden ${remainingMinutes} min`; 
+          return `${hours}h ${remainingMinutes}min`; 
         } else {
           return `${duration} min`;
         }

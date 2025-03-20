@@ -1,10 +1,12 @@
 "use client"
+import Image from 'next/image';
 import styles from './Poledance.module.css';
 //COMPONENTS
 import CoursePlan from '../../../components/CoursePlan/CoursePlan';
 import MobileCoursePlan from '../../../components/CoursePlan/Mobile/MobileCoursePlan';
 import CourseDescription from '../../../components/CourseDescription/CourseDescription';
 import PrivateParties from '../../../components/CoursePlan/PrivateParties';
+import Retreat from '../../../components/Events/Retreat';
 
 export default function PoleDance() {
   const scrollToSection = (id) => {
@@ -16,31 +18,66 @@ export default function PoleDance() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.headerContainer}>
+        <div className='flex my-2 justify-between items-center'>
+          <h1 className={styles.title}>POLEGROUND</h1>
 
-      <div className='flex justify-between items-center'>
-        <h1 className={styles.title}>POLEGROUND</h1>
+          <div className='flex justify-center'> 
+            <button className={styles.socialButton}> 
+              <Image alt="button to connect with us via instagram" src="/iconpng/icons8-instagram-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
 
-        <div className=''> 
-          <button className={styles.socialButton}> IG </button>
-          <button className={styles.socialButton}> tiktok </button>
+            <button className={styles.socialButton}> 
+              <Image  alt="button to connect with us via tiktok" src="/iconpng/icons8-tick-tack-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+
+            <button className={styles.socialButton}> 
+              <Image   alt="button to connect with us via telephone" src="/iconpng/icons8-telefon-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+
+            <button className={styles.socialButton}> 
+              <Image  alt="button to connect with us via email" src="/iconpng/icons8-mail-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+          </div>
         </div>
-      </div>
+
+        <div className={styles.buttonsContainer}>
+          <div className={styles.buttonDiv}>
+            <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan + Buchung </button>
+          </div>
+          <div className={styles.buttonDiv}>
+            <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen + Preise </button>
+          </div>
+          <div className={styles.buttonDiv}>
+            <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>
+          </div>
+          <div className={styles.buttonDiv}>
+            <button className={styles.button} onClick={() => scrollToSection('workshops')}> Workshops + Events + Retreats</button>
+          </div>
+        </div>
+
+        <div className={styles.headerImageContainer}> 
+          <Image 
+              src="/Start/poledance.jpg" 
+              width={800} 
+              height={800}
+              className={styles.headerImage}
+          />
+        </div>
       
 
-      <div className={styles.buttonsContainer}>
-        <div className={styles.buttonDiv}>
-          <button className={styles.button} onClick={() => scrollToSection('table')}>Kursplan</button>
-        </div>
-        <div className={styles.buttonDiv}>
-          <button className={styles.button} onClick={() => scrollToSection('descriptions')}>Kursbeschreibungen + Preise</button>
-        </div>
-        <div className={styles.buttonDiv}>
-          <button className={styles.button} onClick={() => scrollToSection('privateParties')}>Private Parties</button>
-        </div>
-        <div className={styles.buttonDiv}>
-          <button className={styles.button} onClick={() => scrollToSection('workshops')}>Workshops</button>
-        </div>
       </div>
+
+      
+
+      
+     
+
+         
+
+       
+
+      
       <div className={styles.subContainer} id="table">
         <div className={styles.subContainerDiv}> 
             <CoursePlan/> 
@@ -62,7 +99,10 @@ export default function PoleDance() {
         </div>
       </div>
       <div className={styles.subContainer} id="workshops">
-      <div className={styles.subContainerDiv}> WORKSHOPS & UPCOMING EVENTS </div>
+        <h1 className='mb-2 ml-2 text-xl'> WORKSHOPS, EVENTS & RETREATS</h1>
+        <div className={styles.subContainerDiv}> 
+          <Retreat/>
+        </div>
       </div>
     </div>
   );

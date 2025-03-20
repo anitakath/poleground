@@ -1,0 +1,97 @@
+
+
+.container{
+    padding: 10px;
+}
+
+.container h2{
+    font-size: 1.2rem;
+}
+
+.container h3{
+    font-size: 1.2rem;
+    margin: 5px 0px;
+    font-weight: bolder;
+}
+
+
+/* PriceTable.module.css */
+.container{
+    padding: 10px;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.container h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bolder;
+}
+
+.container h4{
+    font-size: 1.1rem;
+  
+    display: flex;
+    align-items: center;
+}
+
+
+.container ul {
+    display: flex;
+    flex-wrap: wrap; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 10px 0px;
+}
+
+.container ul li {
+    border: 2px solid var(--secondaryForeground);
+    width: 200px; 
+    min-height:200px;
+    margin: 10px; 
+    padding: 10px; 
+    text-align: center; 
+    border-radius: 8px;
+    transition: transform 0.2s; 
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.container ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 5px grey;
+    border: 2px solid grey;
+}
+
+
+.itemTitle{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+.itemPrice{
+    font-size: 0.9rem;
+    margin: 6px 0px;
+   
+}
+
+.itemInfo{
+    font-size: 0.8rem;
+    margin-top:5px;
+}
+.button{
+    background-color: var(--secondaryForeground);
+    color: white; 
+    border: none; 
+    padding: 10px;
+    cursor: pointer; 
+    transition: 0.2s ease-in-out;
+}
