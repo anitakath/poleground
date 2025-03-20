@@ -22,23 +22,6 @@ export default function PoleDance() {
         <div className='flex my-2 justify-between items-center'>
           <h1 className={styles.title}>POLEGROUND</h1>
 
-          <div className='flex justify-center'> 
-            <button className={styles.socialButton}> 
-              <Image alt="button to connect with us via instagram" src="/iconpng/icons8-instagram-50.png" width={40} height={40} className={styles.socialIcon}/> 
-            </button>
-
-            <button className={styles.socialButton}> 
-              <Image  alt="button to connect with us via tiktok" src="/iconpng/icons8-tick-tack-50.png" width={40} height={40} className={styles.socialIcon}/> 
-            </button>
-
-            <button className={styles.socialButton}> 
-              <Image   alt="button to connect with us via telephone" src="/iconpng/icons8-telefon-50.png" width={40} height={40} className={styles.socialIcon}/> 
-            </button>
-
-            <button className={styles.socialButton}> 
-              <Image  alt="button to connect with us via email" src="/iconpng/icons8-mail-50.png" width={40} height={40} className={styles.socialIcon}/> 
-            </button>
-          </div>
         </div>
 
         <div className={styles.buttonsContainer}>
@@ -104,6 +87,24 @@ export default function PoleDance() {
           <Retreat/>
         </div>
       </div>
+
+      <div className='flex justify-center h-20'> 
+            <button className={styles.socialButton}> 
+              <Image alt="button to connect with us via instagram" src="/iconpng/icons8-instagram-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+
+            <button className={styles.socialButton}> 
+              <Image  alt="button to connect with us via tiktok" src="/iconpng/icons8-tick-tack-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+
+            <button className={styles.socialButton}> 
+              <Image   alt="button to connect with us via telephone" src="/iconpng/icons8-telefon-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+
+            <button className={styles.socialButton}> 
+              <Image  alt="button to connect with us via email" src="/iconpng/icons8-mail-50.png" width={40} height={40} className={styles.socialIcon}/> 
+            </button>
+          </div>
     </div>
   );
 }

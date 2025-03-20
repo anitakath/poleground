@@ -16,3 +16,36 @@
 .link:hover{
     color: var(--navigationHover);
 }
+
+.socialContainer{
+    display: flex;
+    position: absolute;
+    right: 10px;
+}
+
+.socialButton{
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    background-color: rgba(255,255,255, 0.3);
+}
+
+.socialButton:hover{
+    background-color: var(--secondaryForeground);
+}
+
+.socialButton:hover{
+    box-shadow: 0px 0px 5px grey;
+}
+
+.socialIcon{
+    width: 25px;
+    height: 25px;
+}

@@ -8,7 +8,7 @@ export default function Home() {
     return ( 
 
       
-        <div className="h-screen bg-red-300 overflow-scroll gap-16 font-[family-name:var(--font-geist-sans)]"> 
+        <div className="h-screen bg-red-300 relative  overflow-scroll gap-16 font-[family-name:var(--font-geist-sans)]"> 
             <div className={`flex w-full h-full justify-center ${styles.flexContainer}`}> 
                 <div className={`w-6/12 flex justify-center ${styles.slider_div}`}> 
                 <Link href="/poledance">
@@ -22,6 +22,7 @@ export default function Home() {
                 </Link>
                     
                 </div> 
+                
             </div> 
         </div> 
     ); 
