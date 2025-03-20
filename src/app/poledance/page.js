@@ -7,14 +7,14 @@ import MobileCoursePlan from '../../../components/CoursePlan/Mobile/MobileCourse
 import CourseDescription from '../../../components/CourseDescription/CourseDescription';
 import PrivateParties from '../../../components/CoursePlan/PrivateParties';
 import Retreat from '../../../components/Events/Retreat';
+import PriceTable from '../../../components/CourseDescription/PriceTable';
+//CUSTOM COMPONENTS
+import useScrollToSection from '../../../custom hooks/useScrollToSection';
 
 export default function PoleDance() {
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
+  
+  const {scrollToSection} = useScrollToSection();
 
   return (
     <div className={styles.container}>
@@ -58,6 +58,7 @@ export default function PoleDance() {
 
         <div className={styles.headerImageContainer}> 
           <Image 
+            alt=" picture of polegrounds studio "
               src="/Start/poledance.jpg" 
               width={800} 
               height={800}
@@ -85,11 +86,10 @@ export default function PoleDance() {
         </div>
       </div>
       <div className={styles.subContainer} id="descriptions">
+        <CourseDescription/>
         <div className={styles.subContainerDiv}>
-          <CourseDescription/>
-          {/*  ---------- MODAL ---------- */}
-          {/*  ---------- MODAL ---------- */}
-          {/*  ---------- MODAL ---------- */}
+        <PriceTable />
+         
         </div>
       </div>
       <div className={styles.subContainer} id="privateParties">

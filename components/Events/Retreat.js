@@ -15,7 +15,7 @@ const Retreat = () =>{
         <div>
             {EVENTS_DUMMY.map((event) => (
                 <div key={event.id} className={styles.eventsContainer}>
-                    <Image src={event.imagePath} width={1000} height={1000} className={styles.image}/>
+                    <Image alt="retreats image" src={event.imagePath} width={1000} height={1000} className={styles.image}/>
                     <div className={styles.linkContainer}>
                         <Link className={styles.link} href="/poledance/retreat">{event.title}</Link>
 

@@ -7,23 +7,25 @@ const Header = () => {
             
             <nav className="flex w-full my-2  justify-center items-center space-x-4">
                 <Link href="/about" className={styles.link}>
-                  About
+                  FAQ
                 </Link>
-                <Link href="/kursplaene" className={styles.link}>
-                   Kurspläne
+                <Link href="/about" className={styles.link}>
+                  ÜBER UNS
                 </Link>
+               
                 <div className="text-lg px-4 relative font-bold">
                     <Link href="/">
                         POLEGROUND
                     </Link>
-                    
                 </div>
                 <Link href="/events" className={styles.link}>
-                    Events
+                    EVENTS
                 </Link>
-                <Link href="/shop" className={styles.link}>
-                    Preise
+               
+                <Link href="/kooperationen" className={styles.link}>
+                    KOOPERATIONEN
                 </Link>
+                
             </nav>
         </div>
     );

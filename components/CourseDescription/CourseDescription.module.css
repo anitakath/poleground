@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px; 
-    padding: 10px; 
+    margin-bottom: 10px;
 }
 
 .button {
@@ -14,9 +14,11 @@
 }
 
 .button:hover {
-    background-color: var(--navigationHover);
+    background-color: var(--PLAYGROUND);
     color: var(--foreground);
     box-shadow: 2px 0px 10px grey;
+    transform: scale(1.04);
+    letter-spacing: 1px;
 }
 
 .pricesContainer{
