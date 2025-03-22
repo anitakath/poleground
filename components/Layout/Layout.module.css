@@ -1,20 +1,34 @@
 
 .container{
     background-color: var(--background);
-    
 }
 
+.titleContainer{
+    font-size: 1.2rem;
+    width: 300px;
+    padding: 0px 4px;
+    position: relative;
+    font-weight: bolder;
+}
+
+.navigation{
+    display: flex;
+    width: 100%;
+    margin: 0px 10px;
+    align-items: center;
+}
 
 .link{
     font-size: 1rem;
-    color: var(--navigation);
+    color: var(--navigationHover);
     transition: 0.2s ease;
     cursor: pointer;
+    margin: 0px 10px;
     
 }
 
 .link:hover{
-    color: var(--navigationHover);
+    color: var(--title);
 }
 
 .socialContainer{
@@ -48,4 +62,163 @@
 .socialIcon{
     width: 25px;
     height: 25px;
+}
+
+
+
+.mobileMenu{
+    height: 25px;
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .menuButton{
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      transition: 0.2s ease-in-out;
+  }
+  
+  .menuButton:hover{
+      background-color: rgba(255,255,255, 0.3);
+  }
+  
+  .menuButton Image{
+      cursor: pointer;
+  }
+  .mobileLinksContainer {
+      display: none;
+  }
+  
+
+  .mobileMenu{
+    display: none;
+  }
+@media screen and (max-width: 1100px){
+
+    .link{
+      
+        margin: 20px 20px 0px 0px;
+   
+    }
+    .navigation{
+
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .titleContainer{
+        margin: 10px 0px;
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    .socialContainer{
+        margin: 0;
+        top: 10px;
+    }
+
+    .socialButton{
+        width: 35px;
+        height: 35px;
+        margin: 0px 8px;
+    
+    }
+}
+
+
+@media screen and (max-width: 600px){
+
+    .titleContainer{
+        top: -10px;
+    }
+    .container{
+        height: 100px;
+    }
+    .link{
+       display: none;
+    }
+
+
+.mobileMenu{
+    height: 25px;
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .menuButton{
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      transition: 0.2s ease-in-out;
+  }
+  
+  .menuButton:hover{
+      background-color: rgba(255,255,255, 0.3);
+  }
+  
+  .menuButton Image{
+      cursor: pointer;
+  }
+  .mobileLinksContainer {
+     display: inline-block;
+      position: fixed; 
+      top: 0;
+      left: -400px; 
+      width: 50%; 
+      height: 100%; 
+      background-color: var(--background);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); 
+      transition: left 0.3s ease; 
+      z-index: 1000;
+  }
+  
+  .mobileLinksContainer.open {
+      left: 0; 
+  }
+  
+  .mobileLink {
+      display: block; 
+      padding: 15px; 
+      text-decoration: none; 
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+  }
+  
+  .mobileLink:hover{
+      color:var(--title);
+      background-color: rgba(255,255,255, 0.3);
+      box-shadow: 2px 0px 2px grey;
+  }
+  
+  .closeMobileMenuButton{
+      width: 100%;
+      height: 40px;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+  
+  .closeMobileMenuButton:hover{
+    color: var(--title);
+    cursor: pointer;
+  }
+
+  .closeMobileMenuButton Button{
+    cursor: pointer;
+    width: 100%;
+  }
 }
