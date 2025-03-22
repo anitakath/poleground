@@ -22,11 +22,21 @@
     height: 50vh;
     transition: 0.2s ease-in-out;
     position: relative;
-
+    overflow: scroll;
 }
 
 .title{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+}
+
+.description{
+    margin: 10px 0px;
+    font-size: 1.1rem
+}
+
+.info{
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 .button{
