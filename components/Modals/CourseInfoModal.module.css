@@ -51,3 +51,23 @@
     color:var(--title)
 
 }
+
+
+.coursePlanButton{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    background: var(--secondaryForeground);
+    color: var(--title);
+
+}
+
+.coursePlanButton:hover{
+    color: var(--foreground);
+    background: var(--title);
+}
