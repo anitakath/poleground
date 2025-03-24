@@ -40,7 +40,6 @@ const Header = () => {
                             alt="menu button" 
                             width={30} 
                             height={30}
-                            
                         />    
                     </button>
                    
@@ -52,6 +51,11 @@ const Header = () => {
                             {/*<Image src="/iconpng/icons8-löschen-50.png" alt="close button image" width={50} height={50} />*/}
                         </button> 
                     </div>
+                    <Link href="/" className={styles.mobileLink}> STARTSEITE </Link>
+                    <Link href="/poledance" className={styles.mobileLink}> POLEGROUND </Link>
+                    <Link href="/figureskating" className={styles.mobileLink}> SKATEGROUND </Link>
+                    <br/>
+                    <br/>
                     <Link href="/about" className={styles.mobileLink}>FAQ</Link>
                     <Link href="/about" className={styles.mobileLink}>ÜBER UNS</Link>
                     <Link href="/events" className={styles.mobileLink}>EVENTS</Link>

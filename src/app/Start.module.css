@@ -1,5 +1,5 @@
 
-.slider_div {
+.slider_div{
     height: 100%;
     position: relative;
     transition: width 0.4s ease;
@@ -17,4 +17,22 @@
 
 .flex-container:not(:hover) .slider_div {
     width: 50%; 
+}
+
+@media screen and (max-width: 1000px){
+    .flexContainer{
+       flex-direction: column;
+      
+    }
+
+    .slider_div{
+        width: 100%;
+        transition: 0.2s ease-in-out;
+        border:2px solid var(--background);
+    }
+
+    .slider_div:hover{
+        width: 100%;
+        transform:scale(1.05);
+    }
 }

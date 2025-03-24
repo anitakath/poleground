@@ -19,10 +19,7 @@ export default function PoleDance() {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
-        <div className='flex my-2 justify-between items-center'>
-          <h1 className={styles.title}>POLEGROUND</h1>
-
-        </div>
+       
 
         <div className={styles.buttonsContainer}>
           <div className={styles.buttonDiv}>
