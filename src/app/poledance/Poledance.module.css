@@ -93,3 +93,19 @@
     min-height: 65vh;
     padding: 10px;
 }
+
+
+@media screen and (max-width: 950px){
+    .buttonsContainer{
+        flex-direction: column;
+    }
+
+    .buttonDiv{
+        margin: 1px 0px;
+    }
+
+    .button{
+        padding: 0;
+        height: 40px;
+    }
+}

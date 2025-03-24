@@ -17,15 +17,31 @@ const CourseInfoModal = ({ course, onClose }) => {
 
     }
     return (
-        <div className={styles.modalOverlay}>
+        <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.modalContent}>
-                <h2 className={styles.title}>{course.title}</h2>
+                <div className={styles.headerContainer}>
+                    <h2 className={styles.title}>{course.title}</h2>
+
+                    <div className={styles.buttonContainer}>
+                        <button className={styles.coursePrices} onClick={() => coursePlanNavigator('table')}> Preise </button>
+                
+                        <button className={styles.coursePlanButton} onClick={() => coursePlanNavigator('table')}> Kursplan</button>
+
+                    </div>
+
+                    
+                </div>
+               
+
+
+
                 <p className={styles.description}> {course.description}</p>
                 <p className={styles.info}>{course.info}</p>
 
-                <button className={styles.coursePlanButton} onClick={() => coursePlanNavigator('table')}> gehe zum Kursplan</button>
                 {/* Schließen-Button */}
-                <button onClick={onClose} className={styles.button}>Schließen</button>
+                <div className=" flex justify-end h-10">
+                    <button onClick={onClose} className={styles.button}>Schließen</button>
+                </div>
             </div>
         </div>
     );

@@ -1,5 +1,26 @@
 
 
+.headerContainer{
+    display: flex;
+}
+
+.titleContainer{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    /*border: 2px solid blue;*/
+    text-align: center;
+}
+
+.descriptionContainer{
+    padding: 10px;
+    width: 60%;
+}
+
 .paragraph{
    color: var(--title);
    font-size: 1rem;
@@ -14,13 +35,17 @@
     justify-content: center;
     align-items: center;
     transition: 0.2s ease-in-out;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .contactLink:hover{
     color:var(--title);
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+}
+
+.privateInfoContainer{
+    display: flex;
 }
 
 .privateInfo{
@@ -54,4 +79,32 @@
 
 .button:hover{
     color:var(--title);
+}
+
+
+@media screen and (max-width: 800px){
+    .headerContainer{
+        flex-direction: column;
+    }
+
+    .titleContainer{
+        width: 100%;
+        height: 70px;
+    }
+
+    .descriptionContainer{
+        width: 100%;
+    }
+
+    .privateInfoContainer{
+        flex-direction: column;
+    }
+
+    .privateInfo{
+        width: 100%;
+        height: 50%;
+        padding: 0;
+        margin: 10px 0px;
+        box-shadow: 2px 0px 5px grey;
+    }
 }

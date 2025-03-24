@@ -118,7 +118,18 @@
         border-radius: 50%;
         background-color: var(--background);
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:0.2s ease-in-out;
     }
+
+    .button:hover{
+        box-shadow: 0px 0px 5px grey;
+    }
+
+
+
     
     .exampleImagesContainer{
         position: relative;

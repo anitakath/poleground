@@ -115,3 +115,18 @@
 .button:hover{
     background-color: var(--title);
 }
+
+@media screen and (max-width: 800px){
+    .container ul {
+        display: flex;
+        justify-content: center;
+
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    .container ul li{
+        width: 100%;
+    }
+}

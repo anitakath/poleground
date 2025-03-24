@@ -1,11 +1,10 @@
-
-.eventsContainer{
+.eventsContainer {
     height: 500px;
     overflow: hidden;
     position: relative;
 }
 
-.linkContainer{
+.linkContainer {
     position: absolute;
     top: 0;
     height: 100%;
@@ -14,27 +13,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-
-
-.image{
-    object-fit: cover;
+.image {
+    object-fit: cover; 
     width: 100%;
-    position: relative;
-    top: -350px;
-    opacity: 0.8;
-
+    height: 100%; 
 }
 
-.link{
+.link {
     font-size: 1.5rem;
     padding: 10px;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     transition: 0.2s ease-in-out;
 }
 
-.link:hover{
-    background-color: rgba(255,255,255,0.4);
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
+

@@ -23,7 +23,7 @@ export default function PoleDance() {
 
         <div className={styles.buttonsContainer}>
           <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan + Buchung </button>
+            <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan </button>
           </div>
           <div className={styles.buttonDiv}>
             <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen + Preise </button>
@@ -32,7 +32,7 @@ export default function PoleDance() {
             <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>
           </div>
           <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('workshops')}> Workshops + Events + Retreats</button>
+            <button className={styles.button} onClick={() => scrollToSection('workshops')}> Events </button>
           </div>
         </div>
 

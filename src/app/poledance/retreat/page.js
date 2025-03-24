@@ -48,7 +48,9 @@ const RetreatInfos = () => {
                                 onClick={() => scrollToSection("exampleImages")}
                                 className={styles.button}
                             
-                            > fotos </button>
+                            >
+                                <Image src="/iconpng/icons8-kamera-50.png" width={30} height={30} alt="camera button to check example photos" className={styles.photoButton} />
+                            </button>
                         </div>
 
                         <div className={styles.exampleImagesContainer} id="exampleImages"> 
