@@ -76,7 +76,15 @@
 }
 
 
+.courseDescriptionButton{
+   transition: 0.2s ease-in-out;
+   padding: 5px;
+   cursor: pointer;
+}
 
+.courseDescriptionButton:hover{
+  color: var(--title)
+}
 /* FILTER  ENDE */
 
 

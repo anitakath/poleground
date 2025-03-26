@@ -3,11 +3,13 @@ import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
 import { useState } from 'react';
 import Image from 'next/image';
+import useScrollToSection from '../../custom hooks/useScrollToSection';
+import Link from 'next/link';
+
 
 const CoursePlan = () =>{
-
-
     const {getHour, getMinutes} = useTimesAndDates();
+    const {scrollToSection} = useScrollToSection()
 
     const courses = {
         DANCE: [
@@ -158,7 +160,14 @@ const CoursePlan = () =>{
                                 </div>
                             )}
                         </div>
+                   
                     ))}
+                    <div className='ml-6'> 
+                      <button 
+                        className={styles.courseDescriptionButton}
+                        onClick={() => scrollToSection("descriptions")}
+                      > zu den Kursbeschreibungen </button>
+                    </div>
             </div>
           </div>
 

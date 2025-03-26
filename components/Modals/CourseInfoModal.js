@@ -23,7 +23,7 @@ const CourseInfoModal = ({ course, onClose }) => {
                     <h2 className={styles.title}>{course.title}</h2>
 
                     <div className={styles.buttonContainer}>
-                        <button className={styles.coursePrices} onClick={() => coursePlanNavigator('table')}> Preise </button>
+                        <button className={styles.coursePrices} onClick={() => coursePlanNavigator('priceTable')}> Preise </button>
                 
                         <button className={styles.coursePlanButton} onClick={() => coursePlanNavigator('table')}> Kursplan</button>
 
