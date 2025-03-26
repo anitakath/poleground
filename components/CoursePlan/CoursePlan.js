@@ -1,7 +1,7 @@
 
 import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
-
+import { useState } from 'react';
 
 const CoursePlan = () =>{
 
@@ -67,10 +67,90 @@ const CoursePlan = () =>{
     
       };
 
+      const [selectedGroup, setSelectedGroup] = useState('ALL');
+      const [hoveredGroup, setHoveredGroup] = useState(null);
+      const [selectedLevel, setSelectedLevel] = useState(null);
 
+
+      const handleFilterChange = (group) => {
+        setSelectedGroup(group);
+        setHoveredGroup(group)
+        setSelectedLevel(null);
+      }
+
+
+      const filteredCourses = () => {
+        let coursesToFilter;
+    
+        if (selectedGroup === 'ALL') {
+            coursesToFilter = Object.values(courses).flat();
+        } else {
+            coursesToFilter = Object.values(courses[selectedGroup]) || [];
+        }
+    
+        // Filtere zusätzlich nach dem ausgewählten Level
+        if (selectedLevel) {
+            return coursesToFilter.filter(course => course.level === selectedLevel);
+        }
+    
+        return coursesToFilter;
+    };
+
+    const handleLevelChange = (level) => {
+      setSelectedLevel(level);
+    };
+
+      // Funktion zum Extrahieren der einzigartigen Level
+      const getUniqueLevels = (group) => {
+        const levels = new Set();
+        courses[group].forEach(course => levels.add(course.level));
+        return Array.from(levels);
+      };
 
       return (
         <div className={styles.tableContainer}>
+          <div className='p-2 flex '>
+
+            <div className='mx-2 w-40'>
+              zurück / vor
+            </div>
+
+            <div className='mx-2 w-full flex items-center relative'>
+                <button 
+                    onClick={() => handleFilterChange('ALL')} 
+                    className={`${styles.filterButton} ${selectedGroup === 'ALL' ? styles.filterButtonActive : ''}`}
+                >
+                    ALLE KURSE
+                </button>
+                  {Object.keys(courses).map(group => (
+                        <div key={group} >
+                            <button 
+                                onClick={() => handleFilterChange(group)} 
+                                onMouseEnter={() => setHoveredGroup(group)} 
+                                
+                                className={`${styles.filterButton} ${selectedGroup === group ? styles.filterButtonActive : ''}`}
+                            >
+                                {group}
+                            </button>
+                            {/* Hover-Div für die Level-Buttons */}
+                            {hoveredGroup === group && (
+                                <div className={styles.filterButtonsUniqueLevelButtons}>
+                                    {getUniqueLevels(group).map(level => (
+                                        <button 
+                                          key={level} 
+                                          className={styles.levelButton}
+                                          onClick={() => handleLevelChange(level)} 
+                                        >
+                                            {level} 
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+            </div>
+          </div>
+
           <table className={styles.courseTable}>
             <thead>
               <tr>
@@ -94,12 +174,12 @@ const CoursePlan = () =>{
 
                 
                     {[...Array(7)].map((_, dayIndex) => {
-                      const day = new Date(2025, 2, dayIndex + 17); // März ist der Monat mit Index 2
-                      const dayCourses = Object.values(courses).flat().filter(course => {
-                        const courseDate = new Date(course.scheduled_at);
-                        return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
-                      });
-    
+                 
+                      const day = new Date(2025, 2, dayIndex + 17);
+                       const dayCourses = filteredCourses().filter(course => { // Hier rufen wir die Funktion auf
+                            const courseDate = new Date(course.scheduled_at);
+                            return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
+                        });
                       return (
                         <td 
                             key={dayIndex} 
@@ -142,7 +222,7 @@ const CoursePlan = () =>{
                                 <div className={` px-1 ${styles.courseInfos}`}>
                                     <p>{course.level}</p>
                                     <p>{course.room}</p>
-                                    <p>{course.spots}</p>
+                                    <p>{course.spots} free spots</p>
                                     <p>{course.instructor}</p>
                                 </div>
 

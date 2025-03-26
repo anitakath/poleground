@@ -54,7 +54,6 @@
 .coursePlanButton:hover, .coursePrices:hover{
      color: var(--foreground);
      background: var(--title);
-     border: 2px solid var(--title);
 }
  
 

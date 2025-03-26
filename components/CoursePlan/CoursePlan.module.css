@@ -1,6 +1,60 @@
 .tableContainer{
     overflow-x:auto; 
+
 }
+
+
+/* FILTER */
+
+.filterButton{
+   background-color: rgba(255,255,255, 0.3);
+   padding: 5px;
+   margin: 0px 2px; 
+   width: 150px;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+}
+
+.filterButton:hover{
+   background-color: var(--secondaryForeground);
+}
+
+.filterButtonActive{
+   background-color: rgba(255,255,255, 0.6);
+   color: var(--title)
+}
+
+.filterButtonsUniqueLevelButtons{
+   position: absolute;
+   z-index: 1000;
+   background-color: rgba(255,255,255, 0.2);
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   width: 150px;
+   margin: 0px 2px; 
+   background-color: rgba(255,255,255 0.5);
+   top: 40px;
+}
+
+.levelButton{
+   height: 30px;
+   margin: 2px 0px;
+   padding: 2px;
+   width: 100%;
+   background-color: rgba(255,255,255, 0.3);
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+
+}
+
+.levelButton:hover{
+   background-color: var(--secondaryForeground)
+}
+
+
+
+/* FILTER  ENDE */
 
 
 .mobileCoursePlanContainer{
@@ -8,7 +62,7 @@
 }
  
  .courseTable {
-   width:auto; 
+   width:100%;
    border-collapse: border-collapse; 
     
  }
