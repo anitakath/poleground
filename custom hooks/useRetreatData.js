@@ -15,7 +15,26 @@ const useRetreatData = () => {
             ],
             level: "mixed",
             price: "ab 1500 Euro",
-            imagePath: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg"
+            imagePath: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg",
+            websitespath: "/poledance/events/retreat"
+        },
+        {
+            id: 2,
+            group: "PHOTOSHOOT",
+            title: "SPRING BREAK! PHOTOSHOOT",
+            descriptionsTitle: "Sommer, Sonne, heiße Poolparties und Wir!",
+            subDescription: "Wir wollen die bevorstehend blühende Frühlingszeit und die bis zuletzt eingelümmelt wunderschönen Körper zelebrieren!! Die Sonnenstunden werden länger, die Röcke kürzer! Die Welt wird farbenfroher. Zeig dich, feier dich!",
+            descriptionsTable: [
+                { title: "1h Photoshooting" },
+                { title: "3-alle Fotos" },
+                { title: " Snacks und Drinks " },
+                { title: " wundervolle Menschen " },
+                { title: " 10%-Gutscheine für den Onlineshop Polesports.de" },
+            ],
+            level: "mixed",
+            price: "ab 100 Euro",
+            imagePath: "/Events/pexels-pixabay-163497.jpg",
+            websitespath: "/poledance/events/photoshoot"
         },
     ];
 

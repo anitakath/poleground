@@ -2,6 +2,7 @@
 import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const CoursePlan = () =>{
 
@@ -20,6 +21,7 @@ const CoursePlan = () =>{
       
         POLE:[
           { group:"POLE" , title:"Pole Beginner" , duration :75 , scheduled_at :"2025-03-17T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-03-17T10:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE", title:"Pole Intermediate",duration:75,scheduled_at:"2025-03-17T11:15:00",description:"Learn intermediate spins on the pole.",instructor:"Anne",id:"2",level:"intermediate",room:"studio 1",spots:"6/12", },
           { group:"POLE", title:"Pole Advanced", duration:75, scheduled_at:"2025-03-18T12:30:00",description:"Master advanced tricks and transitions.",instructor:"Natalia ",id:"3 ",level:"advanced",room:"studio 2 ",spots:"2/8",},
           { group:'POLE', title:'Pole Flow', duration:75, scheduled_at:'2025-03-21T12:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
@@ -40,7 +42,7 @@ const CoursePlan = () =>{
             { group:'FLEXIBILITY',title:'Flexi Full Body',duration:75,scheduled_at:'2025-03-22T10:00:00',description:'Wind down with an evening stretching routine.',instructor:'Anne',id:'9',level:'intermediate',room:'studio 3',spots:'5/10'},
             { group:'FLEXIBILITY' , title:'Yoga meets Flexi' , duration :75 , scheduled_at :'2025-03-23T12:30:00' , description :'Increase your range of motion with dynamic stretches.' , instructor :'Anne' , id :'6' , level :'advanced' , room :'studio 3' , spots :'4 /8'},
         ],
-        OPENTRAINING: [
+        PLAYGROUND: [
           { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-03-17T15:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-03-17T18:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-03-17T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
@@ -111,8 +113,17 @@ const CoursePlan = () =>{
         <div className={styles.tableContainer}>
           <div className='p-2 flex '>
 
-            <div className='mx-2 w-40'>
-              zurück / vor
+            <div className='mx-2 w-40 flex items-center'>
+              <p className={styles.weekInfo}> 17.03.- 23.03.2025 </p>
+              <div className='flex '>
+                <button className={styles.backForwardButton}>
+                  <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" width={30} height={30} />
+                </button>
+                <button className={styles.backForwardButton}>
+                  <Image src="/iconpng/icons8-vorwärts-30.png" alt="go back button" width={30} height={30} />
+                </button>
+              </div>
+
             </div>
 
             <div className='mx-2 w-full flex items-center relative'>

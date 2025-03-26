@@ -1,12 +1,13 @@
 "use client"
 import styles from './RetreatInfos.module.css';
 import Image from 'next/image';
-import useRetreatData from '../../../../custom hooks/useRetreatData';
+import useRetreatData from '../../../../../custom hooks/useRetreatData';
 import Link from 'next/link';
-
+import useScrollToSection from '../../../../../custom hooks/useScrollToSection';
 const RetreatInfos = () => {
     const { EVENTS_DUMMY } = useRetreatData();
     console.log(EVENTS_DUMMY);
+
 
 
     const scrollToSection = (id) => {
@@ -15,10 +16,9 @@ const RetreatInfos = () => {
           section.scrollIntoView({ behavior: 'smooth' });
         }
       };
-
     return (
         <div className={styles.container}>
-            {EVENTS_DUMMY.map((event) => (
+            {EVENTS_DUMMY.filter(event => event.group === "RETREAT").map((event) => (
                 <div key={event.id} className={styles.eventContainer}>
                     <div className={styles.imageContainer}>
                         <Image 
