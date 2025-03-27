@@ -31,7 +31,7 @@ const CheckOutModal = ({checkoutData, onClose }) =>{
                     <p>Keine Checkout-Daten verfügbar.</p>
                 )}
 
-                <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst automatisch zur Zahlungsabwicklung weitergeleitet. </p>
+                <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst **zukünftig** automatisch zur Zahlungsabwicklung weitergeleitet. </p>
                 <div className='flex justify-end my-2 '>
                     <button className={styles.buyButton} onClick={() => buyProductHandler(checkoutData)}> Kaufen </button>
                     <button className={styles.closeButton} onClick={onClose}>Schließen</button>

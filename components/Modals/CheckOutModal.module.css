@@ -20,7 +20,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 50%;
-    height: 50vh;
+    height: 60vh;
     transition: 0.2s ease-in-out;
     position: relative;
     overflow: scroll;
@@ -29,7 +29,6 @@
 
 .modalTitle{
     margin: 3px 0px;
-
     font-weight:lighter;
 }
 .buyButton, .closeButton{

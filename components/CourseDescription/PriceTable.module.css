@@ -4,6 +4,7 @@
     background-color: var(--background);
     min-height: 65vh;
     position: relative;
+    padding: 10px;
     
 }
 
@@ -26,9 +27,7 @@
 
 
 /* PriceTable.module.css */
-.container{
-    padding: 10px;
-}
+
 
 .container h2 {
     font-size: 1.5rem;
@@ -47,9 +46,16 @@
     align-items: center;
 }
 
-.subCategoryTitle{
+.subCategoryButton{
     font-size: 1.2rem;
-    margin: 15px 5px;
+    margin: 5px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 5px 10px 0px 10px;
+}
+
+.subCategoryButton:hover{
+    color: var(--title)
 }
 
 .itemContainer{
@@ -127,17 +133,34 @@
     background-color: var(--title);
 }
 
-@media screen and (max-width: 800px){
-    .container ul {
-        display: flex;
-        justify-content: center;
+@media screen and (max-width: 750px){
 
+    .subCategoryTitle{
+        padding: 0px 40px;
+
+    }
+
+    .itemContainer{
+        justify-content: center;
+    }
+ 
+    .item{
+        margin: 20px;
     }
 
 }
 
+@media screen and (max-width: 600px){
+   
+    .item{
+        width: 80%;
+    }
+}
+
+
 @media screen and (max-width: 500px){
-    .container ul li{
+   
+    .item{
         width: 100%;
     }
 }
