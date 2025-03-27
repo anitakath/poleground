@@ -1,10 +1,13 @@
 import useScrollToSection from '../../custom hooks/useScrollToSection';
-
+import usePricetableData from '../../custom hooks/usePriceTableData';
+import { useState } from 'react';
 import styles from './PriceTable.module.css'
+import CheckOutModal from '../Modals/CheckOutModal';
+
 const PriceTable = () => {
 
-
     const {scrollToSection} = useScrollToSection();
+    const {priceTable} = usePricetableData();
 
 
     const handlePurchase = (item) => {
@@ -14,230 +17,57 @@ const PriceTable = () => {
         // um den Artikel in den Warenkorb zu legen oder zur Kaufseite weiterzuleiten.
     };
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [checkoutData, setCheckoutData] = useState(null)
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
+    const handleButtonClick = (item) => {
+        //const selectedCourse = courses.find(course => course.title === title);
+       // setCourseInfo(selectedCourse);
+        setCheckoutData(item)
+        setIsModalOpen(true);
+    };
     return (
         <div className={styles.container} id="priceTable">
-            <h2 onClick={() => scrollToSection('priceTable')}> PREISE </h2>
+            <h2>PREISE</h2>
 
-            <h3> Für Neukund:innen:</h3>
+            {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
 
-            <ul>
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Probetraining für Neukundinnen</h4>
-                        <p className={styles.itemPrice}> 10 Euro </p>
-                    
-                   </div>
-                  
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-
-                <li>
-                    <div className=' mb-2'>
-                        <h4 className={styles.itemTitle}> Starterpaket 5er Karte: </h4>
-                        <p className={styles.itemPrice}> ... Euro </p>
-                        <p className={styles.itemInfo}> (nach Kauf 2 Monate gültig)</p>
-                    </div>
-
-                    <button className={styles.button} onClick={() => handlePurchase('Starterpaket')}>Kaufen</button>
-                </li>
-            </ul>
-
-
-            <h4>Pole & Arial Silk:</h4>
-
-            <ul>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Einzelstunde </h4>
-                        <p className={styles.itemPrice}> 25 Euro </p>
-                   </div>
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 5er Karte </h4>
-                        <p className={styles.itemPrice}> 100 Euro  </p>
-                        <p className={styles.itemInfo}> (nach Kauf 4 Monate gültig) </p>
-                    </div>
-                   
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 10er Karte </h4>
-                        <p className={styles.itemPrice}> 150 Euro  </p>
-                        <p className={styles.itemInfo}> (nach Kauf 6 Monate gültig) </p>
-                    </div>
-        
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Unlimited Monthly Pass: </h4>
-                        <p className={styles.itemPrice}> 150 Euro  </p>
-                        <p className={styles.itemInfo}> (besuche innerhalb eines Monats so viele Pole & Arial Silk Classes wie du möchtest und Platz im Kurs ist) </p>
-                    </div>
-                 
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-            </ul>
-
-            <h4> Dance / Yoga / Flexibility / Workout: </h4>
-            
-            <ul>
-
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Einzelstunde: </h4>
-                        <p className={styles.itemPrice}> 15 Euro  </p>
-                    </div>
-                 
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 5er Karte: </h4>
-                        <p className={styles.itemPrice}> 60 Euro  </p>
-                        <p className={styles.itemInfo}> (nach Kauf 4 Monate gültig) </p>
-                    </div>
-                 
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-
-
-                
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 10er Karte: </h4>
-                        <p className={styles.itemPrice}> 100 Euro  </p>
-                        <p className={styles.itemInfo}> (nach Kauf 6 Monate gültig) </p>
-                    </div>
-                 
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-                   <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Unlimited Monthly Pass: </h4>
-                        <p className={styles.itemPrice}> 100 Euro  </p>
-                        <p className={styles.itemInfo}> (besuche innerhalb eines Monats so viele Dance, Yoga und Flexibility Kurse wie du möchtest und Platz im Kurs ist) </p>
-                    </div>
-                 
-                    <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-    
-            </ul>
-            <br/>
-
-
-            <h3> Kids & Teens (bis 15. Lj.): </h3>
-
-            <h4> Pole & Arial: </h4>
-
-            <ul>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Probestunde:  </h4>
-                        <p className={styles.itemPrice}> 5 Euro  </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> für Neukund:innen:  </h4>
-                        <p className={styles.itemPrice}> 30 Euro  </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-    
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> Einzelstunde:  </h4>
-                        <p className={styles.itemPrice}> 15 Euro  </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 5er  </h4>
-                        <p className={styles.itemPrice}> 60 Euro  </p>
-                        <p className={styles.itemInfo}> (nach Kauf 4 Monate gültig) </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 10er Karte:  </h4>
-                        <p className={styles.itemPrice}> 110 Euro </p>
-                        <p className={styles.itemInfo}> (nach Kauf 6 Monate gültig) </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                </li>
-            </ul>   
-
-          
-            <h4> Dance / Yoga / Flexibility / Workout: </h4>
-
-            <ul>
-                <ul>
-                    <li>
-                        <div className='mb-2'>
-                            <h4 className={styles.itemTitle}> Einzelstunde: </h4>
-                            <p className={styles.itemPrice}> 12 Euro </p>
-                            
-                        </div>
-                        
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                    </li>
-                    <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 5er Karte:  </h4>
-                        <p className={styles.itemPrice}> 50 Euro </p>
-                        <p className={styles.itemInfo}> (nach Kauf 4 Monate gültig) </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                    </li>
-                    <li>
-                    <div className='mb-2'>
-                        <h4 className={styles.itemTitle}> 10er Karte:  </h4>
-                        <p className={styles.itemPrice}> 80 Euro </p>
-                        <p className={styles.itemInfo}> (nach Kauf 6 Monate gültig) </p>
-                    </div>
-                    
-                        <button className={styles.button} onClick={() => handlePurchase('Probetraining')}>Kaufen</button>
-                    </li>
-                   
-                </ul>
-            </ul>
-
-            <h4>Sonderkonditionen Schüler:innen, Auszubildende und Student:innen:</h4>
-
-            <ul>
-                <li>
-                    <div className='mb-2'>
-                        <h4 className={`${styles.itemTitle} relative top-4`}> 15% </h4>
-                        <h4 className={`${styles.itemTitle} relative top-4`}> Rabatt auf die regulären Preise </h4>
-                        <p className={`{styles.itemInfo} relative top-4 my-2 `}> schicke uns deinen Nachweis per E-Mail </p>
-                
-                    </div>
-                    
-                </li>
-
-            </ul>
-           
-
+            {Object.entries(priceTable).map(([category, items]) => (
+                <div key={category} className='flex-col'>
+                    <h3>{category}:</h3>
+                    {items.map((item, index) => (
+                        <ul key={index}>
+                            {Object.entries(item).map(([subCategory, subItems]) => (
+                                <li key={subCategory} className='flex-col'>
+                                    <h4 className={styles.subCategoryTitle}>{subCategory}</h4>
+                                    {subItems.length > 0 ? (
+                                        <ul className="flex">
+                                            {subItems.map((subItem, idx) => (
+                                                <li key={idx} className={styles.item}>
+                                                    <div className='mb-2'>
+                                                        <h4 className={styles.itemTitle}>{subItem.title}</h4>
+                                                        <p className={styles.itemPrice}>{subItem.price}</p>
+                                                        {subItem.info && <p className={styles.itemInfo}>{subItem.info}</p>}
+                                                    </div>
+                                                    <button className={styles.button} onClick={() => handleButtonClick(subItem)}>Kaufen</button>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        <p> Keine Angebote verfügbar.</p>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+            ))}
         </div>
     );
-}
+};
 
 export default PriceTable;

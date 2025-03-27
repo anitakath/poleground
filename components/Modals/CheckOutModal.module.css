@@ -1,0 +1,61 @@
+/* CourseInfoModal.module.css */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.modalContent {
+    background-color: var(--background);
+    box-shadow: 2px 0px 5px var(--navigationHover);
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    height: 50vh;
+    transition: 0.2s ease-in-out;
+    position: relative;
+    overflow: scroll;
+    z-index: 10000;
+}
+
+.modalTitle{
+    margin: 3px 0px;
+
+    font-weight:lighter;
+}
+.buyButton, .closeButton{
+    margin: 0px 5px;
+    width: 100px;
+    height: 40px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.buyButton{
+    background-color: var(  --secondaryForeground);
+    
+}
+
+.closeButton{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.buyButton:hover{
+    color: var(--background);
+    background-color: var(--title);
+}
+
+.closeButton:hover{
+    color: var(--background);
+    background-color: rgba(0, 0, 0, 0.8);
+}

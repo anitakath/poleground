@@ -128,7 +128,7 @@ const CoursePlan = () =>{
 
             </div>
 
-            <div className='mx-2 w-full flex items-center relative'>
+            <div className='mx-2 w-full flex items-center justify-evenly relative'>
                 <button 
                     onClick={() => handleFilterChange('ALL')} 
                     className={`${styles.filterButton} ${selectedGroup === 'ALL' ? styles.filterButtonActive : ''}`}
@@ -162,11 +162,15 @@ const CoursePlan = () =>{
                         </div>
                    
                     ))}
-                    <div className='ml-6'> 
+                    <div className={styles.descriptionsLinkContainer}> 
                       <button 
                         className={styles.courseDescriptionButton}
                         onClick={() => scrollToSection("descriptions")}
                       > zu den Kursbeschreibungen </button>
+                       <button 
+                        className={styles.courseDescriptionButton}
+                        onClick={() => scrollToSection("priceTable")}
+                      > zu den Preisen </button>
                     </div>
             </div>
           </div>
