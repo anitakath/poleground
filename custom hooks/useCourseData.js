@@ -20,6 +20,21 @@ const useCourseData = () =>{
           { group: "DANCE", title: "Heels Essentials", duration: 75, scheduled_at: "2025-03-17T20:15:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "beginner", room: "studio 2", spots: "5/15",},
           { group: "DANCE", title: "Heels Essentials", duration: 75, scheduled_at: "2025-03-22T11:18:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "beginner", room: "studio 1", spots: "5/15",},
           
+
+
+          { group: "DANCE", title: "Sensual Floorwork", duration: 75, scheduled_at: "2025-03-25T18:00:00", description: "In diesem Kurs wollen wir fließende Bewegungsabläufe erschaffen und eine sinnlich-verführerische Choreografie am Boden einstudieren. Bitte bring Knieschoner mit und trage Kleidung, in der du dich wohlfühlst und auf der du am Boden sliden kannst. High Heels sind herzlich willkommen, aber kein Muss. Der Kurs ist beginnerfreundlich.", instructor: "Anne", id: "DANCE-1", level: "mixed", room: "studio 1", spots: "3/13",  },
+          { group: "DANCE", title: "Sexy Floorwork", duration: 75, scheduled_at: "2025-03-24T18:00:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "mixed", room: "studio 1", spots: "5/15",},
+          
+          { group: "DANCE", title: "Floorwork Plastique", duration: 75, scheduled_at: "2025-03-29T12:00:00", description: "Explore various contemporary styles.", instructor: "Natalia", id: "4", level: "intermediate-advanced", room: "studio 1", spots: "6/15",},
+         
+          { group:"DANCE" , title: "Sensual Floorwork" , duration :75 , scheduled_at :"2025-03-28T16:30:00" , description :"Sensual Floorwork." , instructor :"Natalia" , id :"5" , level :"mixed" , room :"studio 3" , spots :"8 /10",  },
+          { group: "DANCE", title: "Sexy Floorwork", duration: 75, scheduled_at: "2025-03-26T18:00:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "mixed", room: "studio 1", spots: "5/15",},
+          
+          { group: "DANCE", title: "Heels Flow", duration: 75, scheduled_at: "2025-03-26T16:30:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "intermediate - advanced", room: "studio 1", spots: "5/15",},
+   
+          { group: "DANCE", title: "Heels Essentials", duration: 75, scheduled_at: "2025-03-24T20:15:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "beginner", room: "studio 2", spots: "5/15",},
+          { group: "DANCE", title: "Heels Essentials", duration: 75, scheduled_at: "2025-03-29T11:18:00", description: "Sexy-Sexier-You! In diesem kurs wollen wir deine freche, verspielte, wilde und extrem verführerische Seite hervorholen. Geimeinsam studieren wir hierfür eine fließende und kraftvolle Choreografie. Bitte bring Knieschoner mit und trage spicy Kleidung, ind er du dich wohl und sexy fühlst. High Heels sind herzlich willkommen, aber kein Muss und geben der Choreo ein gewisses Etwas ;-). Der Kurs ist beginnerfreundlich. ", instructor: "Anne", id: "2", level: "beginner", room: "studio 1", spots: "5/15",},
+          
         ],
       
         POLE:[
@@ -45,6 +60,32 @@ const useCourseData = () =>{
          
           { group:'POLE', title:'Pole Choreo 4', duration:75, scheduled_at:'2025-03-19T16:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
           { group:'POLE', title:'Pole Choreo 5', duration:75, scheduled_at:'2025-03-19T19:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
+         
+
+
+
+          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-03-24T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-03-24T16:30:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-03-29T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-03-24T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-03-25T19:15:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-03-26T16:30:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"beginner" ,room:"studio 3 ",spots:"4 /10", },
+
+          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-03-26T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"early intermediate" ,room:"studio 3 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-03-27T20:30:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"early intermediate" ,room:"studio 3 ",spots:"4 /10", },
+  
+          { group:"POLE" , title:"Pole 4" , duration :75 , scheduled_at :"2025-03-28T19:15:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"intermediate" ,room:"studio 3 ",spots:"4 /10", },
+         
+          { group:"POLE" , title:"Pole 5" , duration :75 , scheduled_at :"2025-03-27T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Petra" , id :"1" , level :"advanced" ,room:"studio 3 ",spots:"4 /10", },
+         
+          { group:'POLE', title:'Pole Choreo 1-2', duration:75, scheduled_at:'2025-03-28T16:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
+          
+          { group:'POLE', title:'Pole Choreo 3', duration:75, scheduled_at:'2025-03-29T11:15:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
+          { group:'POLE', title:'Pole Choreo 3', duration:75, scheduled_at:'2025-03-26T16:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
+         
+          { group:'POLE', title:'Pole Choreo 4', duration:75, scheduled_at:'2025-03-26T16:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
+          { group:'POLE', title:'Pole Choreo 5', duration:75, scheduled_at:'2025-03-26T19:30:00', description:'Create a choreography using pole techniques.', instructor:'Petra', id:'7', level:'advanced', room:'studio 3', spots:'2/6', },
          
         ],
 
@@ -83,6 +124,7 @@ const useCourseData = () =>{
         ],
         SPECIALS: [
             { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-03-18T18:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Exotic Heels with Daria Che" , duration :180 , scheduled_at :"2025-03-30T14:00:00" , description :"die legendäre Daria Che kommt zu uns!" , instructor :"Daria Che" , id :"1" , level :"intermediate-advanced" ,room:"studio 2 ",spots:"0 /10", },
          
 
         ]

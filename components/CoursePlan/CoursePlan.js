@@ -9,19 +9,48 @@ import useCourseData from '../../custom hooks/useCourseData';
 import CourseRequestModal from '../Modals/CourseRequestModal';
 
 const CoursePlan = () =>{
-    const {getHour, getMinutes} = useTimesAndDates();
+    const {getHour, getMinutes, convertDate} = useTimesAndDates();
     const {scrollToSection} = useScrollToSection()
     const {courses} = useCourseData();
-
    
-      const [selectedGroup, setSelectedGroup] = useState('ALL');
-      const [hoveredGroup, setHoveredGroup] = useState(null);
-      const [selectedLevel, setSelectedLevel] = useState(null);
-      const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentWeekStart, setCurrentWeekStart] = useState(getStartOfWeek(new Date()));
+    const [weeksForward, setWeeksForward] = useState(0);
+    const [selectedGroup, setSelectedGroup] = useState('ALL');
+    const [hoveredGroup, setHoveredGroup] = useState(null);
+    const [selectedLevel, setSelectedLevel] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
+    function getStartOfWeek(date) {
+      const startOfWeek = new Date(date);
+      startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay()); // Sonntag
+      return startOfWeek;
+  }
+  const goBackOneWeek = () => {
 
-      const handleSubmit = (e) => {
+    if(weeksForward < 0){
+      return
+    }
+    // Nur eine Woche zurückgehen
+    setCurrentWeekStart(prev => {
+        const newDate = new Date(prev);
+        newDate.setDate(newDate.getDate() - 7);
+        return newDate;
+    });
+    setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
+  };
+
+  const goForwardOneWeek = () => {
+    if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
+        setCurrentWeekStart(prev => {
+            const newDate = new Date(prev);
+            newDate.setDate(newDate.getDate() + 7);
+            return newDate;
+        });
+      setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
+    }
+};
+    const handleSubmit = (e) => {
         e.preventDefault();
         // Hier kannst du die Logik zum Senden der Anfrage hinzufügen
         console.log({ courseType, date, email });
@@ -36,23 +65,34 @@ const CoursePlan = () =>{
         setSelectedLevel(null);
       }
 
-
       const filteredCourses = () => {
         let coursesToFilter;
-    
+
         if (selectedGroup === 'ALL') {
             coursesToFilter = Object.values(courses).flat();
         } else {
             coursesToFilter = Object.values(courses[selectedGroup]) || [];
         }
-    
-        // Filtere zusätzlich nach dem ausgewählten Level
+
+        // Filtere nach dem ausgewählten Level
         if (selectedLevel) {
-            return coursesToFilter.filter(course => course.level === selectedLevel);
+            coursesToFilter = coursesToFilter.filter(course => course.level === selectedLevel);
         }
-    
-        return coursesToFilter;
+
+        // Bestimme das Ende der aktuellen Woche
+        const endOfWeek = new Date(currentWeekStart);
+        endOfWeek.setDate(endOfWeek.getDate() + 7); // Sonntag
+
+        // Filtere nach der aktuellen Woche
+        const filteredByWeek = coursesToFilter.filter(course => {
+            const scheduledDate = new Date(course.scheduled_at);
+            return scheduledDate >= currentWeekStart && scheduledDate <= endOfWeek;
+        });
+
+        return filteredByWeek;
     };
+
+      
 
     const handleLevelChange = (level) => {
       setSelectedLevel(level);
@@ -65,18 +105,21 @@ const CoursePlan = () =>{
         return Array.from(levels);
       };
 
+      console.log(currentWeekStart)
+
+
       return (
         <div className={styles.tableContainer}>
-          <div className='p-2 flex '>
+          <div className='p-2 flex'>
 
             <div className='mx-2 w-40 flex items-center'>
-              <p className={styles.weekInfo}> 17.03.- 23.03.2025 </p>
+              <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
               <div className='flex '>
                 <button className={styles.backForwardButton}>
-                  <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" width={30} height={30} />
+                  <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={30} height={30} />
                 </button>
                 <button className={styles.backForwardButton}>
-                  <Image src="/iconpng/icons8-vorwärts-30.png" alt="go back button" width={30} height={30} />
+                  <Image src="/iconpng/icons8-vorwärts-30.png" alt="go forward button"  onClick={goForwardOneWeek} width={30} height={30} />
                 </button>
               </div>
 
@@ -154,8 +197,26 @@ const CoursePlan = () =>{
               {[...Array(13)].map((_, index) => {
                 const hour = (index + 10).toString().padStart(2, '0') + ':00';
   
+
+                 // Generiere die Kurse für den aktuellen Tag und die aktuelle Stunde
+                    const dayCourses = [...Array(7)].map((_, dayIndex) => {
+                      const day = new Date(2025, 2, dayIndex + 17);
+                      return filteredCourses().filter(course => {
+                          const courseDate = new Date(course.scheduled_at);
+                          return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
+                      });
+                  });
+
+                  // Überprüfe, ob es Kurse für diese Stunde gibt
+                  const hasCourses = dayCourses.some(courses => courses.length > 0);
+
+                  // Rendere die Zeile nur, wenn es Kurse gibt
+                  if (!hasCourses) {
+                      return null; // Überspringe das Rendern dieser Zeile
+                  }
+  
                 return (
-                  <tr key={hour}>
+                  <tr key={hour} n>
                      {/*<td className={styles.timeCell}>{hour}</td>*/}
 
                 
@@ -190,10 +251,12 @@ const CoursePlan = () =>{
                                 break;
                                 case 'SPECIALS':
                                   backgroundColor = 'var(--SPECIALS)';
+                                  break;
                               default:
                                 backgroundColor = 'transparent'; // Fallback-Farbe
                             }
-    
+
+
                             return (
                               <div 
                                 key={course.title} 

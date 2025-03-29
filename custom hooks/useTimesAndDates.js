@@ -2,6 +2,25 @@
 
 const useTimesAndDates = () => {
 
+  const convertDate = (date) => {
+    // Erstelle ein neues Date-Objekt
+    const startDate = new Date(date);
+
+    // Berechne das Enddatum (eine Woche später)
+    const endDate = new Date(startDate);
+    endDate.setDate(startDate.getDate() + 7); // 7 Tage hinzufügen
+
+    // Definiere die Optionen für die Datumsformatierung
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+
+    // Formatiere die Daten
+    const formattedStartDate = startDate.toLocaleDateString('de-DE', options).replace(',', '');
+    const formattedEndDate = endDate.toLocaleDateString('de-DE', options).replace(',', '');
+
+    // Gib das gewünschte Format zurück
+    return `${formattedStartDate.split(' ')[0]} - ${formattedEndDate.split(' ')[0]} ${formattedEndDate.split(' ')[1]} ${formattedEndDate.split(' ')[2]}`;
+};
+
 
     const getHour = (scheduledAt) => {
       
@@ -25,7 +44,7 @@ const useTimesAndDates = () => {
       };
     
   
-    return { getHour, getMinutes };
+    return { getHour, getMinutes, convertDate};
   };
   
   export default useTimesAndDates;
