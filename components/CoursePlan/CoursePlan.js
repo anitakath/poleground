@@ -131,6 +131,7 @@ const CoursePlan = () =>{
           <div className='my-2 p-2'>
             <h1>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
             <p>Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
+            
           
             <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>
@@ -152,7 +153,7 @@ const CoursePlan = () =>{
               {/* Hier werden die Zeilen für jede Uhrzeit generiert */}
               {[...Array(13)].map((_, index) => {
                 const hour = (index + 10).toString().padStart(2, '0') + ':00';
-                console.log(hour)
+  
                 return (
                   <tr key={hour}>
                      {/*<td className={styles.timeCell}>{hour}</td>*/}

@@ -13,8 +13,6 @@ const PriceTable = () => {
     const [openSubCategories, setOpenSubCategories] = useState({});
 
 
-    console.log(openSubCategories)
-
 
     const handlePurchase = (item) => {
         // Hier kannst du die Logik zum Kauf des Artikels implementieren
