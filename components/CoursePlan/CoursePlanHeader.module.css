@@ -1,0 +1,119 @@
+
+
+
+
+.weekInfo{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.backForwardButton{
+    position: relative;
+    left: 5px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.backForwardButton:hover{
+ 
+    background-color: rgba(255,255,255, 0.3);
+}
+
+.filterButton{
+    background-color: rgba(255,255,255, 0.3);
+    padding: 5px;
+    margin: 0px 2px; 
+    width: 150px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+ }
+ 
+ .filterButton:hover{
+    background-color: var(--secondaryForeground);
+ }
+ 
+ .filterButtonActive{
+    background-color: rgba(255,255,255, 0.8);
+    color: var(--title)
+ }
+ 
+ .filterButtonsUniqueLevelButtons{
+    position: absolute;
+    z-index: 1000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 0px 2px; 
+    background-color: rgba(255,255,255, 0.3);
+    top: 40px;
+ }
+
+
+
+.levelButton{
+    height: 30px;
+    margin: 2px 0px;
+    padding: 2px;
+    width: 100%;
+    background-color: var(--foreground);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+ }
+ 
+ .levelButton:hover{
+    background-color: var(--secondaryForeground)
+ }
+ 
+ 
+
+ 
+ .courseDescriptionButton{
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    bottom: -37px;
+    left: 30px;
+  
+ }
+
+.courseDescriptionButton:hover{
+    color: var(--title)
+    
+}
+
+
+  
+.courseRequestButton{
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 1.2rem;
+    margin: 0px 2px;
+    color:var(--title)
+ }
+ 
+
+
+ @media screen and (max-width: 1150px){
+    .filterButtonsUniqueLevelButtons{
+
+        top: 45px;
+        
+    }
+ }
+
+
+
+ @media screen and (max-width: 1130px){
+    .filterButtonsUniqueLevelButtons{
+        top: 55px;
+        
+    }
+ }

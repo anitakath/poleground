@@ -8,7 +8,7 @@ const useTimesAndDates = () => {
 
     // Berechne das Enddatum (eine Woche später)
     const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + 7); // 7 Tage hinzufügen
+    endDate.setDate(startDate.getDate() + 6); // 7 Tage hinzufügen
 
     // Definiere die Optionen für die Datumsformatierung
     const options = { day: 'numeric', month: 'long', year: 'numeric' };

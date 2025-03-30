@@ -7,49 +7,66 @@ import useScrollToSection from '../../custom hooks/useScrollToSection';
 import Link from 'next/link';
 import useCourseData from '../../custom hooks/useCourseData';
 import CourseRequestModal from '../Modals/CourseRequestModal';
+import CoursePlanHeader from './CoursePlanHeader';
 
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
-    const {scrollToSection} = useScrollToSection()
     const {courses} = useCourseData();
-   
+    const [hoveredGroup, setHoveredGroup] = useState(null);
     const [currentWeekStart, setCurrentWeekStart] = useState(getStartOfWeek(new Date()));
     const [weeksForward, setWeeksForward] = useState(0);
     const [selectedGroup, setSelectedGroup] = useState('ALL');
-    const [hoveredGroup, setHoveredGroup] = useState(null);
     const [selectedLevel, setSelectedLevel] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+ 
 
 
     function getStartOfWeek(date) {
       const startOfWeek = new Date(date);
-      startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay()); // Sonntag
+      // Berechne den Unterschied zum Montag
+      const day = startOfWeek.getDay();
+      const diff = (day === 0 ? -6 : 1 - day); // Wenn Sonntag (0), gehe zurück zu -6 Tagen
+  
+      startOfWeek.setDate(startOfWeek.getDate() + diff);
+  
       return startOfWeek;
   }
-  const goBackOneWeek = () => {
 
-    if(weeksForward < 0){
-      return
-    }
-    // Nur eine Woche zurückgehen
-    setCurrentWeekStart(prev => {
-        const newDate = new Date(prev);
-        newDate.setDate(newDate.getDate() - 7);
-        return newDate;
-    });
-    setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
-  };
+    /*
 
-  const goForwardOneWeek = () => {
-    if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
-        setCurrentWeekStart(prev => {
-            const newDate = new Date(prev);
-            newDate.setDate(newDate.getDate() + 7);
-            return newDate;
-        });
-      setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
-    }
-};
+    function getStartOfWeek(date) {
+      const startOfWeek = new Date(date);
+      startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay() ); // Sonntag
+      console.log(startOfWeek)
+      return startOfWeek;
+    }*/
+
+
+    const goBackOneWeek = () => {
+      if(weeksForward < 0){
+        return
+      }
+      // Nur eine Woche zurückgehen
+      setCurrentWeekStart(prev => {
+          const newDate = new Date(prev);
+          newDate.setDate(newDate.getDate() - 7);
+
+          console.log(newDate)
+          return newDate;
+      });
+      setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
+    };
+
+    const goForwardOneWeek = () => {
+      if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
+          setCurrentWeekStart(prev => {
+              const newDate = new Date(prev);
+              newDate.setDate(newDate.getDate() + 7);
+              return newDate;
+          });
+        setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
+      }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // Hier kannst du die Logik zum Senden der Anfrage hinzufügen
@@ -98,86 +115,26 @@ const CoursePlan = () =>{
       setSelectedLevel(level);
     };
 
-      // Funktion zum Extrahieren der einzigartigen Level
-      const getUniqueLevels = (group) => {
-        const levels = new Set();
-        courses[group].forEach(course => levels.add(course.level));
-        return Array.from(levels);
-      };
-
-      console.log(currentWeekStart)
+     
 
 
-      return (
+
+    return (
         <div className={styles.tableContainer}>
-          <div className='p-2 flex'>
+         
+         <CoursePlanHeader 
+          currentWeekStart={currentWeekStart}
+          setCurrentWeekStart={setCurrentWeekStart}
+          goBackOneWeek={goBackOneWeek}
+          goForwardOneWeek={goForwardOneWeek}
+          selectedGroup={selectedGroup}
+          handleFilterChange={handleFilterChange}
+          hoveredGroup={hoveredGroup}
+          setHoveredGroup={setHoveredGroup}
+          handleLevelChange={handleLevelChange}
+        />
 
-            <div className='mx-2 w-40 flex items-center'>
-              <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
-              <div className='flex '>
-                <button className={styles.backForwardButton}>
-                  <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={30} height={30} />
-                </button>
-                <button className={styles.backForwardButton}>
-                  <Image src="/iconpng/icons8-vorwärts-30.png" alt="go forward button"  onClick={goForwardOneWeek} width={30} height={30} />
-                </button>
-              </div>
 
-            </div>
-
-            <div className='mx-2 w-full flex items-center justify-evenly relative'>
-                <button 
-                    onClick={() => handleFilterChange('ALL')} 
-                    className={`${styles.filterButton} ${selectedGroup === 'ALL' ? styles.filterButtonActive : ''}`}
-                >
-                    ALLE KURSE
-                </button>
-                  {Object.keys(courses).map(group => (
-                        <div key={group} >
-                            <button 
-                                onClick={() => handleFilterChange(group)} 
-                                onMouseEnter={() => setHoveredGroup(group)} 
-                                
-                                className={`${styles.filterButton} ${selectedGroup === group ? styles.filterButtonActive : ''}`}
-                            >
-                                {group}
-                            </button>
-                            {/* Hover-Div für die Level-Buttons */}
-                            {hoveredGroup === group && (
-                                <div className={styles.filterButtonsUniqueLevelButtons}>
-                                    {getUniqueLevels(group).map(level => (
-                                        <button 
-                                          key={level} 
-                                          className={styles.levelButton}
-                                          onClick={() => handleLevelChange(level)} 
-                                        >
-                                            {level} 
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                   
-                    ))}
-                    <div className={styles.descriptionsLinkContainer}> 
-                      <button 
-                        className={styles.courseDescriptionButton}
-                        onClick={() => scrollToSection("descriptions")}
-                      > zu den Kursbeschreibungen </button>
-                       <button 
-                        className={styles.courseDescriptionButton}
-                        onClick={() => scrollToSection("priceTable")}
-                      > zu den Preisen </button>
-                    </div>
-            </div>
-          </div>
-          <div className='my-2 p-2'>
-            <h1>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
-            <p>Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
-            
-          
-            <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-          </div>
         
           <table className={styles.courseTable}>
             <thead>
@@ -216,7 +173,7 @@ const CoursePlan = () =>{
                   }
   
                 return (
-                  <tr key={hour} n>
+                  <tr key={hour} >
                      {/*<td className={styles.timeCell}>{hour}</td>*/}
 
                 
