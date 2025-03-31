@@ -10,10 +10,9 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
     const [success,setSuccess] = useState({});
     const [isAgreed, setIsAgreed] = useState(false);
     const [errors, setErrors] = useState({});
+    const [inputError, setInputError] = useState(null)
 
-
-
-     // Dummy-Daten für bereits gesendete Anfragen (hier solltest du deine Logik zur Überprüfung implementieren)
+    // Dummy-Daten für bereits gesendete Anfragen (hier solltest du deine Logik zur Überprüfung implementieren)
      const sentRequests = [
         { email: 'user@example.com', date: new Date('2023-10-01') },
         // Weitere Anfragen...
@@ -116,7 +115,7 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
             if (!request.date) {
                 errors[`date${index}`] = "Bitte wähle ein Datum aus.";
             }else if (!isDateWithinRange(request.date)) {
-                errors[`date${index}`] = "Das Datum muss mindestens einen Monat und höchstens fünf Monate in der Zukunft liegen.";
+                errors[`date${index}`] = "Bitte überprüfe deine Eingaben nochmal. Das Datum eines Kurswunsches muss mindestens einen Monat und höchstens fünf Monate in der Zukunft liegen.";
             }
             if (!request.time) {
                 errors[`time${index}`] = "Bitte gib eine Uhrzeit ein.";
@@ -144,7 +143,7 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
         <div className={styles.container}>
             <div className={styles.modalContent}>
               
-            <div className='my-2 w-10/12'>
+            <div className='my-2 w-11/12'>
                 <h2 style={{color: "var(--title)"}}><strong>Wichtige Informationen: Bitte lesen und am Ende das Kästchen anklicken, um deine Wünsche eingeben zu können.</strong></h2>
 
                 <p>- Wir nehmen lediglich Wünsche von bereits bestehenden Kunden an, die unsere Kurse regelmäßig und länger als 6 Monate besuchen. (Bitte die E-Mail Adresse verwenden, mit der du dich bei uns registriert hast!) </p>
@@ -174,11 +173,11 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                 <form onSubmit={handleSubmit} className={styles.form}>
 
                     {requests.map((request, index) => (
-                            <div key={index} className='w-full flex  items-center'>
+                            <div key={index} className={styles.inputContainer}>
                                 <div className={styles.inputDiv}>
                                     <label>Kursart:</label>
                                     <select 
-                                        className={styles.formInput} 
+                                        className={`${styles.formInput} ${errors[`date${index}`] ? styles.inputError : ""} `}
                                         value={request.courseType} 
                                         onChange={(e) => handleInputChange(index, 'courseType', e.target.value)} 
                                         required
@@ -203,17 +202,23 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                                 <div className={styles.inputDiv}>
                                     <label>Datum:</label>
                                     <input 
-                                        className={styles.formInput} 
+                                        className={`${styles.formInput} ${errors[`date${index}`] ? styles.inputError : ""} `}
                                         type="date" 
                                         value={request.date} 
                                         onChange={(e) => handleInputChange(index, 'date', e.target.value)} 
                                         required 
                                     />
+
+                            
+
+                            
+
+                               
                                 </div>
                                 <div className={styles.inputDiv}>
                                     <label>Uhrzeit:</label>
                                     <input 
-                                        className={styles.formInput} 
+                                       className={`${styles.formInput} ${errors[`date${index}`] ? styles.inputError : ""} `} 
                                         type="time" 
                                         value={request.time} 
                                         onChange={(e) => handleInputChange(index, 'time', e.target.value)} 
@@ -224,7 +229,7 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                                 <div className={styles.inputDiv}>
                                     <label>E-Mail:</label>
                                     <input 
-                                        className={styles.formInput} 
+                                        className={`${styles.formInput} ${errors[`date${index}`] ? styles.inputError : ""} `}
                                         type="email" 
                                         value={request.email} 
                                         placeholder="deineEmail@beispiel.de" 
@@ -239,10 +244,7 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                                 )}
                             </div>
                         ))}
-
-
-
-                    
+ 
     
                         <div className='w-full'>
                             <button type="button" className={styles.addRequestsButton} onClick={addRequestField}>+ füge weitere Wünsche hinzu</button>
@@ -254,25 +256,19 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                             <button className={styles.closeButton} onClick={onClose}>schließen</button>
 
                         </div>
-                    
-                   
-
-  
-
                  
                     </form>
                 )}
 
                 <div className={styles.errorContainer}>
-                    {Object.keys(errors).length > 0 && (
-                        <div className={styles.errorsDiv} >
-                            {Object.values(errors).map((error, index) => (
-                                <p key={index} className={styles.error}>- {error}</p>
-                            ))}
-                        </div>
-                    )}
-
+                {Object.keys(errors).length > 0 && (
+                    <div className={styles.errorsDiv}>
+                    {Array.from(new Set(Object.values(errors))).map((error, index) => (
+                        <p key={index} className={styles.error}>- {error}</p>
+                    ))}
                     </div>
+                )}
+                </div>
             </div>
 
            

@@ -1,14 +1,14 @@
 
-
-import styles from '../CoursePlan.module.css'
-
+import CoursePlanHeader from '../CoursePlanHeader'
+import style from '../CoursePlan.module.css'
+import styles from './MobileCoursePlan.module.css'
 
 const MobileCoursePlan = () =>{
 
 
     return(
-        <div className={styles.mobileCoursePlanContainer}>
-            mobile course plan...
+        <div className={style.mobileCoursePlanContainer}>
+
         </div>
     )
 }

@@ -35,8 +35,8 @@
 }
 
 .buttonDiv:hover{
-    background-color: var(--navigationHover);
-    color: var(--background);
+    background-color: var(--buttonHover);
+    color: beige;
 }
 
 .button{

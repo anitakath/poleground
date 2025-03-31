@@ -1,15 +1,10 @@
 .tableContainer{
-    overflow-x:auto; 
+    /*overflow-x:auto; */
 
 }
 
 
 
-
-
-.mobileCoursePlanContainer{
-   display: none;
-}
  
  .courseTable {
    width:100%;
@@ -71,14 +66,10 @@
  }
 
 
-
+/*
  @media screen and (max-width: 1000px){
    .tableContainer{
       display: none;
    }
 
-   .mobileCoursePlanContainer{
-      display: flex;
-      height: 65vh;
-   }
- }
+ }*/

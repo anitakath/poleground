@@ -3,6 +3,11 @@ import styles from './CheckOutModal.module.css'
 import { useState } from 'react'
 const CheckOutModal = ({checkoutData, onClose }) =>{
 
+    console.log(checkoutData)
+    //RENDERE ZWEI UNTERSCHIEDLICHE INHALTE, 
+    // JE NACHDEM, OB CHECKOUTDATA.ISCHECKEDOUT == TICKETS  || COURSE
+    // DA DER USER ENTWEDER EIN TICKET, ODER EINEN KURS DIREKT BUCHEN MÖCHTE. 
+
 
     const buyProductHandler = (checkoutData) =>{
 

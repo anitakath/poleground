@@ -1,5 +1,8 @@
 
-
+.container{
+   display: flex;
+   padding: 5px;
+}
 
 
 .weekInfo{
@@ -21,15 +24,25 @@
 }
  
 .backForwardButton:hover{
- 
     background-color: rgba(255,255,255, 0.3);
+}
+
+.filterButtonsContainer{
+   margin: 2px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   position: relative;
+
+   
 }
 
 .filterButton{
     background-color: rgba(255,255,255, 0.3);
     padding: 5px;
-    margin: 0px 2px; 
-    width: 150px;
+    margin: 0px 5px; 
+    width: 180px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
  }
@@ -49,10 +62,10 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    width: 150px;
-    margin: 0px 2px; 
-    background-color: rgba(255,255,255, 0.3);
-    top: 40px;
+    width: 180px;
+    margin: 0px 5px; 
+    top: 60px;
+   
  }
 
 
@@ -78,14 +91,11 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     padding: 5px;
-    position: absolute;
-    bottom: -37px;
-    left: 30px;
-  
+    margin: 0px 10px;
  }
 
 .courseDescriptionButton:hover{
-    color: var(--title)
+    color: var(--title);
     
 }
 
@@ -96,24 +106,93 @@
     transition: 0.2s ease-in-out;
     font-size: 1.2rem;
     margin: 0px 2px;
-    color:var(--title)
+    color:var(--title);
+ }
+
+ .courseRequestModalContainer{
+   margin: 5px 0px;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
  }
  
 
 
+ @media screen and (max-width: 1300px){
+   .container{
+      flex-direction: column;
+   }
+
+   .weekInfo{
+      margin: 0px 10px;
+      text-align: start;
+   }
+
+   .filterButton{
+      width: 170px;
+   }
+
+   .filterButtonsUniqueLevelButtons{
+      width: 170px;
+      top: 37px;
+   }
+ }
+
  @media screen and (max-width: 1150px){
-    .filterButtonsUniqueLevelButtons{
 
-        top: 45px;
-        
-    }
+   .filterButtonsContainer{
+      flex-direction: column;
+   }
+
+   .filterButtonsSubContainer{
+      width: 100%;
+      margin: 2px 0px;
+   }
+
+   .filterButton{
+      width: 100%;
+      margin: 0;
+   }
+
+   .filterButtonsUniqueLevelButtons{
+       position: relative;
+       top: 0;
+       flex-direction: row;
+       margin: 5px 0px;
+       width: 100%;
+       transition: 0.2s ease;
+       
+   }
+
+   .levelButton{
+      margin: 0px 5px;
+      height: 35px;
+   
+   }
+  
  }
 
 
+ @media screen and (max-width: 900px){
+   .filterButtonsUniqueLevelButtons{
+      position: relative;
+      top: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 5px 0px;
+      width: 100%;
+      transition: 0.2s ease;
 
- @media screen and (max-width: 1130px){
-    .filterButtonsUniqueLevelButtons{
-        top: 55px;
-        
-    }
+      flex-wrap: wrap;
+  }
+
+  .levelButton{
+     margin: 2px 2px;
+     height: 35px;
+     width: 95%;
+  }
  }
+

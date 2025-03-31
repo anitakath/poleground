@@ -27,12 +27,22 @@ const PriceTable = () => {
     };
 
     const handleButtonClick = (item) => {
-        //const selectedCourse = courses.find(course => course.title === title);
-       // setCourseInfo(selectedCourse);
-        setCheckoutData(item)
+        // Erstelle eine Kopie des item-Objekts und füge die neue Eigenschaft hinzu
+        const updatedItem = {
+            ...item,
+            isCheckedOut: "tickets"
+        };
+    
+        // setze die aktualisierten Daten
+        setCheckoutData(updatedItem);
+    
+        // Optional: Wenn du auch den selectedCourse setzen möchtest
+        // const selectedCourse = courses.find(course => course.title === title);
+        // setCourseInfo(selectedCourse);
+    
+        console.log(updatedItem); // Zeigt das aktualisierte Objekt an
         setIsModalOpen(true);
     };
-
     const toggleSubCategory = (category, subCategory) => {
         setOpenSubCategories((prev) => ({
             ...prev,

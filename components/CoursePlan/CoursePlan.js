@@ -2,12 +2,9 @@
 import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
 import { useState } from 'react';
-import Image from 'next/image';
-import useScrollToSection from '../../custom hooks/useScrollToSection';
-import Link from 'next/link';
 import useCourseData from '../../custom hooks/useCourseData';
-import CourseRequestModal from '../Modals/CourseRequestModal';
 import CoursePlanHeader from './CoursePlanHeader';
+import CheckOutModal from '../Modals/CheckOutModal';
 
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
@@ -31,15 +28,7 @@ const CoursePlan = () =>{
       return startOfWeek;
   }
 
-    /*
-
-    function getStartOfWeek(date) {
-      const startOfWeek = new Date(date);
-      startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay() ); // Sonntag
-      console.log(startOfWeek)
-      return startOfWeek;
-    }*/
-
+  /* ----- FILTER START ----  */
 
     const goBackOneWeek = () => {
       if(weeksForward < 0){
@@ -67,20 +56,11 @@ const CoursePlan = () =>{
       }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Hier kannst du die Logik zum Senden der Anfrage hinzufügen
-        console.log({ courseType, date, email });
-        setIsModalOpen(false); // Schließe das Modal nach dem Absenden
-    };
-
-
-
-      const handleFilterChange = (group) => {
+    const handleFilterChange = (group) => {
         setSelectedGroup(group);
         setHoveredGroup(group)
         setSelectedLevel(null);
-      }
+    }
 
       const filteredCourses = () => {
         let coursesToFilter;
@@ -108,19 +88,39 @@ const CoursePlan = () =>{
 
         return filteredByWeek;
     };
-
       
-
     const handleLevelChange = (level) => {
       setSelectedLevel(level);
     };
 
-     
+      /* ----- FILTER ENDE ----  */
 
+
+      const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false)
+      const [checkoutData, setCheckoutData] = useState(null)
+
+
+
+      const openCheckoutModal = (course) =>{
+
+        setIsCheckedOutModalOpen(true)
+
+        setCheckoutData(course);
+
+        console.log(course)
+
+      }
+
+       
+    const closeModal = () => {
+      setIsCheckedOutModalOpen(false);
+    };
 
 
     return (
         <div className={styles.tableContainer}>
+
+          {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
          
          <CoursePlanHeader 
           currentWeekStart={currentWeekStart}
@@ -139,7 +139,6 @@ const CoursePlan = () =>{
           <table className={styles.courseTable}>
             <thead>
               <tr>
-                {/*<th className={styles.timeHeader}>Uhrzeit</th>*/}
                 <th className={styles.dayHeader}>Montag</th>
                 <th className={styles.dayHeader}>Dienstag</th>
                 <th className={styles.dayHeader}>Mittwoch</th>
@@ -173,10 +172,8 @@ const CoursePlan = () =>{
                   }
   
                 return (
-                  <tr key={hour} >
-                     {/*<td className={styles.timeCell}>{hour}</td>*/}
-
-                
+                  <tr key={hour}>
+                    
                     {[...Array(7)].map((_, dayIndex) => {
                  
                       const day = new Date(2025, 2, dayIndex + 17);
@@ -214,11 +211,18 @@ const CoursePlan = () =>{
                             }
 
 
+                            const updatedCourse = {
+                              ...course,
+                              isCheckedOut: "course"
+                          };
+
+
                             return (
                               <div 
                                 key={course.title} 
                                 className={styles.courseItem} 
                                 style={{ backgroundColor }} // Setze die Hintergrundfarbe hier
+                                onClick={()=> openCheckoutModal(updatedCourse)}
                               >
                                 <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
                                 
