@@ -6,7 +6,7 @@
 
 
 .weekInfo{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
 }
 
@@ -45,6 +45,7 @@
     width: 180px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+ 
  }
  
  .filterButton:hover{
@@ -91,7 +92,7 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     padding: 5px;
-    margin: 0px 10px;
+    margin: 0px 10px 15px 10px;
  }
 
 .courseDescriptionButton:hover{
@@ -100,24 +101,7 @@
 }
 
 
-  
-.courseRequestButton{
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    font-size: 1.2rem;
-    margin: 0px 2px;
-    color:var(--title);
- }
 
- .courseRequestModalContainer{
-   margin: 5px 0px;
-   padding: 5px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
- }
- 
 
 
  @media screen and (max-width: 1300px){
@@ -130,12 +114,10 @@
       text-align: start;
    }
 
-   .filterButton{
-      width: 170px;
-   }
+ 
 
    .filterButtonsUniqueLevelButtons{
-      width: 170px;
+ 
       top: 37px;
    }
  }

@@ -43,23 +43,23 @@ const Retreat = () => {
 
     
     return ( 
-        <div className={styles.container}> 
-            <div className={styles.eventsContainer}>
-                <Image alt="retreats image" src={EVENTS_DUMMY[currentIndex].imagePath} width={1000} height={500} className={styles.image} /> 
-                <div className={styles.linkContainer}> 
-                    <button onClick={handlePrev} className={styles.arrowButton}>←</button>
-                    <Link className={styles.link} href={EVENTS_DUMMY[currentIndex].websitespath}> 
-                        {EVENTS_DUMMY[currentIndex].title} 
-                    </Link> 
-                    <button onClick={handleNext} className={styles.arrowButton}>→</button>
+        <div>
+             <h1 className={styles.title}> WORKSHOPS, EVENTS & RETREATS </h1>
+             <div className={styles.container}> 
+        
+                <div className={styles.eventsContainer}>
+                    <Image alt="retreats image" src={EVENTS_DUMMY[currentIndex].imagePath} width={1000} height={500} className={styles.image} /> 
+                    <div className={styles.linkContainer}> 
+                        <button onClick={handlePrev} className={styles.arrowButton}>←</button>
+                        <Link className={styles.link} href={EVENTS_DUMMY[currentIndex].websitespath}> 
+                            {EVENTS_DUMMY[currentIndex].title} 
+                        </Link> 
+                        <button onClick={handleNext} className={styles.arrowButton}>→</button>
+                    </div>
                 </div>
-            </div>
-           
-
-
-         
-          
-        </div> 
+            </div> 
+        </div>
+       
     ); 
 };
 

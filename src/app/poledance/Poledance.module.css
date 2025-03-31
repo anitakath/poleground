@@ -6,10 +6,12 @@
     background-color: var(--foreground);
     padding: 10px;
     position: relative;
+
 }
 
 .headerContainer{
     /* border: 2px solid gold; */
+
 }
 
 .title{
@@ -87,6 +89,7 @@
     min-height:  65vh;
     padding: 10px 5px;
     margin: 30px 0px;
+
 }
 
 .subContainerDiv{
@@ -111,8 +114,21 @@
     }
 }
 
-@media screen and (max-width: 400px){
-    .headerImageContainer{
-        height: 400px;
+@media screen and (max-width: 600px){
+    .container{
+        padding: 0px;
+    
     }
+
+
+    .headerImageContainer{
+        height: 450px;
+        overflow:hidden;
+    }
+
+    .subContainer{
+        padding: 0;
+    }
+    
 }
+

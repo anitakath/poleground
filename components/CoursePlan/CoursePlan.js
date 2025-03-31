@@ -5,6 +5,9 @@ import { useState } from 'react';
 import useCourseData from '../../custom hooks/useCourseData';
 import CoursePlanHeader from './CoursePlanHeader';
 import CheckOutModal from '../Modals/CheckOutModal';
+import MobileCoursePlan from './Mobile/MobileCoursePlan';
+import CourseRequestModal from '../Modals/CourseRequestModal';
+
 
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
@@ -14,7 +17,7 @@ const CoursePlan = () =>{
     const [weeksForward, setWeeksForward] = useState(0);
     const [selectedGroup, setSelectedGroup] = useState('ALL');
     const [selectedLevel, setSelectedLevel] = useState(null);
- 
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
     function getStartOfWeek(date) {
@@ -38,8 +41,6 @@ const CoursePlan = () =>{
       setCurrentWeekStart(prev => {
           const newDate = new Date(prev);
           newDate.setDate(newDate.getDate() - 7);
-
-          console.log(newDate)
           return newDate;
       });
       setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
@@ -117,11 +118,28 @@ const CoursePlan = () =>{
     };
 
 
+    console.log(currentWeekStart)
+
+
+ 
+
+
+     const getCoursesForCurrentWeek = (currentWeekStart, dayIndex) => {
+      const startOfWeek = new Date(currentWeekStart);
+      const targetDate = new Date(startOfWeek);
+      targetDate.setDate(startOfWeek.getDate() + dayIndex); // dayIndex: 0 = Montag, 1 = Dienstag, etc.
+  
+      return courseArray.filter(course => {
+        const courseDate = new Date(course.scheduled_at);
+        return courseDate.toDateString() === targetDate.toDateString(); // Vergleiche das Datum
+      });
+    };
+
+
     return (
         <div className={styles.tableContainer}>
-
           {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
-         
+         <h1 className=' text-xl mb-2'> KURSPLAN</h1>
          <CoursePlanHeader 
           currentWeekStart={currentWeekStart}
           setCurrentWeekStart={setCurrentWeekStart}
@@ -132,6 +150,12 @@ const CoursePlan = () =>{
           hoveredGroup={hoveredGroup}
           setHoveredGroup={setHoveredGroup}
           handleLevelChange={handleLevelChange}
+        />
+
+        <MobileCoursePlan
+        courses={courses}
+          /*courses={courseData}*/
+          currentWeekStart={currentWeekStart}
         />
 
 
@@ -227,7 +251,6 @@ const CoursePlan = () =>{
                                 <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
                                 
                                 <div className={`flex px-1 ${styles.courseInfos}`}>
-                                    <p> {getHour(course.scheduled_at)} </p>
                                     <p className='mx-2'> - </p>
                                     <p> {getMinutes(course.duration)}</p>
                                 </div>
@@ -251,6 +274,20 @@ const CoursePlan = () =>{
               })}
             </tbody>
           </table>
+
+
+
+
+          <div className={styles.courseRequestModalContainer}>
+            <h1 className=' w-full my-2'>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
+            <p >Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
+            
+          
+            <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          </div>
+
+
+        
         </div>
     );
     };

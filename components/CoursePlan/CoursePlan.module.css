@@ -9,7 +9,7 @@
  .courseTable {
    width:100%;
    border-collapse: border-collapse; 
-    
+
  }
  
  .dayHeader,
@@ -21,11 +21,7 @@
     
  }
 
-   .timeHeader,
-   .timeCell {
-      width: 5%;
-      border: 1px solid var(--foreground);
-   }
+
 
    .timeCell{
       text-align: center;
@@ -47,9 +43,7 @@
  }
 
 
- .time{
-   border: 2px solid green;
- }
+
 
 
  .courseItem:hover{
@@ -66,10 +60,29 @@
  }
 
 
-/*
+   
+.courseRequestButton{
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+   font-size: 1.2rem;
+   margin: 0px 2px;
+   color:var(--title);
+}
+
+.courseRequestModalContainer{
+  margin: 10px 0px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
  @media screen and (max-width: 1000px){
-   .tableContainer{
+  
+   .courseTable{
       display: none;
    }
 
- }*/
+ }

@@ -83,7 +83,9 @@ const CourseDescription = () => {
 
     return (
         <div>
+            <h1 className=' text-xl  mb-2'> KURSBESCHREIBUNGEN </h1>
             <div className={styles.courseDescriptionDiv}>
+            
                 {courses.map(course => (
                     <button 
                         key={course.title} 

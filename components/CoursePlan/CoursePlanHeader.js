@@ -11,8 +11,6 @@ import CourseRequestModal from '../Modals/CourseRequestModal';
 const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekStart, setCurrentWeekStart, goBackOneWeek, goForwardOneWeek, selectedGroup, hoveredGroup, setHoveredGroup}) =>{
 
 
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const { convertDate} = useTimesAndDates();
     const {courses} = useCourseData();
 
@@ -108,16 +106,6 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
             > 
                 zu den Kursbeschreibungen und Preisen
         </button>
-            
-
-        <div className={styles.courseRequestModalContainer}>
-            <h1>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
-            <p>Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
-            
-          
-            <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-          </div>
-
 
         </div>
 

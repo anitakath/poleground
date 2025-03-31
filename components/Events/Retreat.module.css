@@ -16,6 +16,12 @@
 }*/
 
 
+.title {
+    font-size: 1.25rem; 
+    margin-bottom: 0.5rem; 
+    z-index: 10000; 
+    
+}
 .arrowLeftButton, .arrowButton{
     background-color: rgba(255,255,255, 0.3);
     margin: 0px 5px;
@@ -34,7 +40,7 @@
 .eventsContainer {
     height: 500px;
     overflow: hidden;
-    position: relative;
+    
 }
 
 .linkContainer {

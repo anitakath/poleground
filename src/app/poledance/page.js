@@ -55,7 +55,6 @@ export default function PoleDance() {
       <div className={styles.subContainer} id="table">
         <div className={styles.subContainerDiv}> 
             <CoursePlan/> 
-            <MobileCoursePlan/>
         </div>
       </div>
       <div className={styles.subContainer} id="descriptions">
@@ -72,7 +71,6 @@ export default function PoleDance() {
         </div>
       </div>
       <div className={styles.subContainer} id="workshops">
-        <h1 className='mb-2 ml-2 text-xl'> WORKSHOPS, EVENTS & RETREATS</h1>
         <div className={styles.subContainerDiv}> 
           <Retreat/>
         </div>
