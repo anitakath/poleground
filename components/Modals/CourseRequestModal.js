@@ -146,15 +146,16 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
             <div className='my-2 w-11/12'>
                 <h2 style={{color: "var(--title)"}}><strong>Wichtige Informationen: Bitte lesen und am Ende das Kästchen anklicken, um deine Wünsche eingeben zu können.</strong></h2>
 
-                <p>- Wir nehmen lediglich Wünsche von bereits bestehenden Kunden an, die unsere Kurse regelmäßig und länger als 6 Monate besuchen. (Bitte die E-Mail Adresse verwenden, mit der du dich bei uns registriert hast!) </p>
-                <p>- Es sind pro Kunde maximal 5 Wünsche möglich, welche mindestens einen Monat, maximal 4 im Voraus angegeben werden können.  </p>
-                <p>- Nach dem erfolgreichen Absenden deiner Wünsche solltest du eine automatisch generierte E-Mail erhalten, die den Eingang deiner Anfrage bestätigt.</p>
-                <p>- Es kann vorkommen, dass nicht jeder Wunsch erfüllt werden kann.</p>
-                <p>- die Bearbeitung deiner Wünsche kann einige Zeit in Anspruch nehmen. Wir bemühen uns, dir jedoch so schnell wie möglich (i.d.R innerhalb von 14 Werktagen) zu antworten.</p>
-                <p>- Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
-                <p>- Falls du deine Wünsche nach dem Absenden ändern oder stornieren möchtest, kontaktiere uns bitte zeitnah und direkt.</p>
-
-               {/* Checkbox zur Bestätigung */}
+                <ul>
+                    <li>- Wir nehmen lediglich Wünsche <strong>von bereits bestehenden Kunden</strong> entgegen, die unsere Kurse regelmäßig und länger als 6 Monate besuchen. (Bitte verwende die E-Mail-Adresse, mit der du dich registriert hast!)</li>
+                    <li>- Pro Kunde sind <strong>maximal 5 Wünsche</strong> möglich. Diese können <strong>mindestens einen und maximal 4 Monate</strong> im Voraus angegeben werden.</li>
+                    <li>- Nach dem erfolgreichen Absenden deiner Wünsche solltest du eine automatisch generierte <strong>Bestätigungs-E-Mail</strong> erhalten, die den Eingang deiner Anfrage bestätigt.</li>
+                    <li>- Es kann vorkommen, dass nicht jeder Wunsch erfüllt werden kann.</li>
+                    <li>- <strong>Die Bearbeitung deiner Wünsche kann einige Zeit in Anspruch nehmen.</strong> Wir bemühen uns jedoch, dir so schnell wie möglich (in der Regel innerhalb von 14 Werktagen) zu antworten.</li>
+                    <li><strong>Deine Daten</strong> werden vertraulich behandelt und <strong>nicht an Dritte</strong> weitergegeben.</li>
+                    <li>Falls du deine <strong>Wünsche</strong> nach dem Absenden <strong>ändern</strong> oder <strong>stornieren</strong> möchtest, kontaktiere uns bitte <strong>zeitnah</strong> und <strong>direkt</strong>.</li>
+                </ul>
+                {/* Checkbox zur Bestätigung */}
                 <div className={styles.checkboxContainer}>
                     <input 
                         type="checkbox" 

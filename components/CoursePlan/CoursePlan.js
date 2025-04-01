@@ -137,7 +137,7 @@ const CoursePlan = () =>{
 
 
     return (
-        <div className={styles.tableContainer}>
+        <div className={styles.tableContainer} >
           {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
          <h1 className=' text-xl mb-2'> KURSPLAN</h1>
          <CoursePlanHeader 
@@ -199,12 +199,15 @@ const CoursePlan = () =>{
                   <tr key={hour}>
                     
                     {[...Array(7)].map((_, dayIndex) => {
+
+                    
                  
                       const day = new Date(2025, 2, dayIndex + 17);
                        const dayCourses = filteredCourses().filter(course => { // Hier rufen wir die Funktion auf
                             const courseDate = new Date(course.scheduled_at);
                             return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
                         });
+
                       return (
                         <td 
                             key={dayIndex} 
@@ -234,6 +237,10 @@ const CoursePlan = () =>{
                                 backgroundColor = 'transparent'; // Fallback-Farbe
                             }
 
+               
+                            const time = getHour(course.scheduled_at)
+
+                            console.log(time)
 
                             const updatedCourse = {
                               ...course,
@@ -251,6 +258,7 @@ const CoursePlan = () =>{
                                 <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
                                 
                                 <div className={`flex px-1 ${styles.courseInfos}`}>
+                                   <p> {time}</p>
                                     <p className='mx-2'> - </p>
                                     <p> {getMinutes(course.duration)}</p>
                                 </div>

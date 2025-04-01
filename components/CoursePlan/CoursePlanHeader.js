@@ -26,31 +26,11 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
         courses[group].forEach(course => levels.add(course.level));
         return Array.from(levels);
       };
-
-      console.log(currentWeekStart)
     return(
 
 
-    <div>
-        <div className={styles.container}>
-            <div className='flex flex-col'>
-                <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
-        
-                <div className='flex my-2'>
-                    <button className={styles.backForwardButton}>
-                    <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={25} height={30} />
-                    </button>
-                    <button className={styles.backForwardButton}>
-                    <Image src="/iconpng/icons8-vorwärts-30.png" alt="go forward button"  onClick={goForwardOneWeek} width={25} height={25} />
-                    </button>
-                </div>
-
-            </div>
-           
-
-      
-
-            <div className={styles.filterButtonsContainer}>
+    <div >       
+        <div className={styles.filterButtonsContainer}>
                 <div className={styles.filterButtonsSubContainer}>
                     <button 
                         onClick={() => handleFilterChange('ALL')} 
@@ -96,9 +76,9 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
       
            
          
-            </div>
-            
         </div>
+            
+        
 
         <button 
                 className={styles.courseDescriptionButton}
@@ -106,6 +86,16 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
             > 
                 zu den Kursbeschreibungen und Preisen
         </button>
+
+        <div className='flex mb-2  justify-start items-center'>
+            <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
+            <button className={styles.backForwardButton}>
+            <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={25} height={30} />
+            </button>
+            <button className={styles.backForwardButton}>
+            <Image src="/iconpng/icons8-vorwärts-30.png" alt="go forward button"  onClick={goForwardOneWeek} width={25} height={25} />
+            </button>
+        </div>
 
         </div>
 

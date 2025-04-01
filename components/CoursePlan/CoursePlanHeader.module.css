@@ -1,8 +1,4 @@
 
-.container{
-   display: flex;
-   padding: 5px;
-}
 
 
 .weekInfo{
@@ -34,15 +30,14 @@
    align-items: center;
    justify-content: space-evenly;
    position: relative;
-
    
 }
 
 .filterButton{
     background-color: rgba(255,255,255, 0.3);
     padding: 5px;
-    margin: 0px 5px; 
-    width: 180px;
+    margin: 0px; 
+    width: 200px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
  
@@ -63,9 +58,10 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    width: 180px;
-    margin: 0px 5px; 
-    top: 60px;
+    width: 200px;
+    margin: 0px; 
+    top: 37px;
+    z-index: 1000;
    
  }
 
@@ -92,11 +88,14 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     padding: 5px;
-    margin: 0px 10px 15px 10px;
+    margin: 20px 10px 10px 5px ;
+   width: 50%;
+   background-color: rgba(255,255,255, 0.2);
  }
 
 .courseDescriptionButton:hover{
-    color: var(--title);
+    background-color: var(--buttonHover);
+    transform: scale(1.01)
     
 }
 
@@ -115,9 +114,13 @@
    }
 
  
+   .filterButton{
+      width: 180px;
+   }
 
    .filterButtonsUniqueLevelButtons{
- 
+      transition: 0.2s ease-in-out;
+      width: 180px;
       top: 37px;
    }
  }

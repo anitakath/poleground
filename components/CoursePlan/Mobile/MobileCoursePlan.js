@@ -4,6 +4,9 @@ import CoursePlanHeader from '../CoursePlanHeader';
 import style from '../CoursePlan.module.css';
 import styles from './MobileCoursePlan.module.css';
 import useTimesAndDates from '../../../custom hooks/useTimesAndDates';
+import useScrollToSection from '../../../custom hooks/useScrollToSection';
+
+
 const MobileCoursePlan = ({ courses, currentWeekStart }) => {
     const courseArray = Object.values(courses).flat(); // Flacht das Array der Arrays ab
     const { getHour, getMinutes, convertDate } = useTimesAndDates();
@@ -20,6 +23,8 @@ const MobileCoursePlan = ({ courses, currentWeekStart }) => {
         return courseDate.toDateString() === targetDate.toDateString(); // Vergleiche das Datum
       });
     };
+
+    const {scrollToSection} = useScrollToSection();
   
     return (
       <div className={styles.mobileCoursePlanContainer}>
@@ -93,6 +98,10 @@ const MobileCoursePlan = ({ courses, currentWeekStart }) => {
             );
           })}
         </div>
+        <button 
+          onClick={() => scrollToSection("courseplanHeader")}
+          className={styles.button}
+        > zurück zum Anfang des Kursplans </button>
       </div>
     );
   };

@@ -53,7 +53,7 @@ export default function PoleDance() {
 
 
       <div className={styles.subContainer} id="table">
-        <div className={styles.subContainerDiv}> 
+        <div className={styles.subContainerDiv} id="courseplanHeader"> 
             <CoursePlan/> 
         </div>
       </div>
@@ -96,3 +96,8 @@ export default function PoleDance() {
     </div>
   );
 }
+
+/*
+export const getStaticProps =()=>{
+
+}*/
