@@ -108,7 +108,6 @@ const CoursePlan = () =>{
 
         setCheckoutData(course);
 
-        console.log(course)
 
       }
 
@@ -118,7 +117,7 @@ const CoursePlan = () =>{
     };
 
 
-    console.log(currentWeekStart)
+
 
 
  
@@ -239,8 +238,6 @@ const CoursePlan = () =>{
 
                
                             const time = getHour(course.scheduled_at)
-
-                            console.log(time)
 
                             const updatedCourse = {
                               ...course,
