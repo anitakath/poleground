@@ -17,7 +17,7 @@ export default function PoleDance() {
   const {scrollToSection} = useScrollToSection();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="topContainer">
       <div className={styles.headerContainer}>
        
 
@@ -26,7 +26,10 @@ export default function PoleDance() {
             <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan </button>
           </div>
           <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen + Preise </button>
+            <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen  </button>
+          </div>
+          <div className={styles.buttonDiv}>
+            <button className={styles.button} onClick={() => scrollToSection('priceTable')}> Preise </button>
           </div>
           <div className={styles.buttonDiv}>
             <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>

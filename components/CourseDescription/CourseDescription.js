@@ -20,6 +20,8 @@ const CourseDescription = () => {
       }
 
     const courses = [
+
+        //POLEDANCE
         {
             title: "Poledance Beginner",
             path: "poledance-beginner",
@@ -29,6 +31,7 @@ const CourseDescription = () => {
             isActive: true,
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         }, 
+        
         {
             title: "Poledance Early Intermediate",
             path: "poledance-early-intermediate",
@@ -37,6 +40,7 @@ const CourseDescription = () => {
             info: "Bitte bringe eine kurze Trainingshose mit, da diese das Halten an der Pole erheblich verbessert. Verzichte außerdem auf Schmuck wie Ringe und Halsketten, da diese nicht nur dich verletzen können, sondern auch die Pole beschädigen. Gripmittel sind im Studio erhältlich.",
             isActive: true,
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
+            
         }, 
         {
             title: "Pole Intermediate",
@@ -55,13 +59,13 @@ const CourseDescription = () => {
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         },
         {
-            title: "Pole Choreo Beginner",
-            path: "poledance-choreo-beginner",
+            title: "Pole Choreo",
+            path: "poledance-choreo",
             subTitle: "Pole Choreo 1-2",
             description: "In diesem Kurs kombinieren wir die Grundlagen des Poledance mit kreativen Choreografien zu ausgewählter Musik. Du wirst lernen, wie du einfache Spins, Tricks und Figuren in fließende Bewegungsabläufe integrierst. Der Fokus liegt darauf, deinen persönlichen Ausdruck zu entwickeln und deine Musikalität zu verbessern. Dieser Kurs ist ideal für alle, die ihre Technik vertiefen und gleichzeitig Spaß an der Choreografie haben möchten. **Voraussetzung:** Du solltest mit den Inhalten aus dem Beginner-Kurs vertraut sein und sicher einfache Spins beherrschen.",
             info: "Bitte bringe eine kurze Trainingshose mit, da diese das Halten an der Pole erheblich verbessert. Verzichte außerdem auf Schmuck wie Ringe und Halsketten, da diese nicht nur dich verletzen können, sondern auch die Pole beschädigen. Gripmittel sind im Studio erhältlich.",
             isActive: true,
-            imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
+            imagePath: "/coursedescription/pexels-frendsmans-6100299 (1).jpg"
         },
         {
             title: "Pole Choreo Intermediate-Advanced",
@@ -70,7 +74,7 @@ const CourseDescription = () => {
             description: "In diesem Kurs erweitern wir deine Fähigkeiten, indem wir komplexere Spins und Tricks in kreative Choreografien zu ausgewählter Musik integrieren. Du wirst lernen, wie du Übergänge zwischen verschiedenen Bewegungen fließend gestaltest und deinen persönlichen Stil weiterentwickelst. Der Fokus liegt auf der Verbesserung deiner Technik sowie deiner Musikalität. **Voraussetzung:** Du solltest mit den Inhalten aus den Beginner- und Intermediate-Kursen vertraut sein und sicher inverts beherrschen.",
             info: "Bitte bringe eine kurze Trainingshose mit, da diese das Halten an der Pole erheblich verbessert. Verzichte außerdem auf Schmuck wie Ringe und Halsketten, da diese nicht nur dich verletzen können, sondern auch die Pole beschädigen. Gripmittel sind im Studio erhältlich.",
             isActive: false,
-            imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
+            imagePath: "/coursedescription/pexels-frendsmans-6100299 (1).jpg"
         },
        
         {
@@ -80,8 +84,13 @@ const CourseDescription = () => {
             description: "In diesem Kurs liegt der Schwerpunkt auf dem Aufbau von Kraft und Ausdauer speziell für Poledance. Durch gezielte Übungen wirst du deine Muskulatur stärken und Verletzungen vorbeugen. Ideal für alle, die ihre Leistung im Poledance und ihre Fitness verbessern möchten.",
             info: "Bitte bringe eine kurze Trainingshose und ein kleines Handtuch mit, da diese das Halten an der Pole erheblich verbessert. Verzichte außerdem auf Schmuck wie Ringe und Halsketten, da diese nicht nur dich verletzen können, sondern auch die Pole beschädigen. Gripmittel sind im Studio erhältlich.",
             isActive: false,
-             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
+             imagePath: "/coursedescription/pexels-frendsmans-6100295 (1).jpg"
         },
+     
+
+        //DANCE
+
+        
         {
             title: "Heels Essentials",
             path: "heels-essentials",
@@ -89,8 +98,9 @@ const CourseDescription = () => {
             description: "Entdecke die verführerische Diva in dir! In diesem Kurs erlernen wir auf spielerische und humorvolle Art Grundlegende Techniken, anmutige Bewegungen und fließende Übergänge mit unseren High Heels an der Pole. Am Ende bauen wir das Erlernte zu einer kleinen feinen Choreo zusammen. Du brauchst keinerlei Vorkenntnisse für diesen Kurs.",
             info: "Bringe gern ein paar High Heels mit und trage Kleidung, in denen du dich wohlfühlst. Sexy Outfits sind 💜-lich willkommen",
             isActive: false,
-             imagePath: "/coursedescription/pexels-elly-fairytale-3823039.jpg"
+            imagePath: "/coursedescription/timur-garifov-e8ZpvJV2rEs-unsplash.jpg"
         },
+        
         {
             title: "Heels Flow",
             path: "heels-flow",
@@ -98,8 +108,9 @@ const CourseDescription = () => {
             description: "In diesem Kurs kombinieren wir dynamische sowie sinnlich-verführerische Bewegungen und Übergänge mit unseren high Heels an der Pole. Am Ende studieren wir eine kleine feine Choreo. Für diesen Kurs werden Vorerfahrungen empfohlen, da wir anspruchsvollere Bewegungen und schnellere Übergänge ausführen. ",
             info: "Bringe gern ein paar High Heels mit und trage Kleidung, in denen du dich wohlfühlst. Sexy Outfits sind 💜-lich willkommen.",
             isActive: false,
-             imagePath: "/coursedescription/pexels-elly-fairytale-3823039.jpg"
+            imagePath: "/coursedescription/timur-garifov-e8ZpvJV2rEs-unsplash.jpg"
         },
+        
         {
             title: "Floorwork",
             path: "floorwork",
@@ -117,7 +128,7 @@ const CourseDescription = () => {
             description: "Lerne die Kunst des Lapdance in einem sicheren und unterstützenden Umfeld! In diesem Kurs erfährst du, wie du Selbstbewusstsein ausstrahlst und sinnliche Bewegungen einsetzt. Ideal für alle, die ihren Ausdruck im Tanz erweitern möchten.",
             info: "Bitte trage Kleidung in der du dich wohlfühlst und bring Knee Pads mit. High Heels sind vollkommen in Ordnung, aber kein Muss.",
             isActive: false,
-             imagePath: "/coursedescription/pexels-elly-fairytale-3823039.jpg"
+            imagePath: "/coursedescription/pexels-lazarus-ziridis-351891426-30496741.jpg"
         },
         {
             title: "Yoga & Flexibility",
@@ -154,7 +165,7 @@ const CourseDescription = () => {
             description: "Der Playground ist dein ganz eigener kreativer Raum für freies Training und Experimentieren. Hier kannst du dich ohne Druck entfalten, neue Ideen ausprobieren und deinen eigenen Stil entwickeln. Nutze die Zeit, um an deinen individuellen Fähigkeiten zu arbeiten und deine Kreativität auszuleben!",
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
             isActive: false,
-            imagePath: "/coursedescription/pexels-cristian-rojas-8895446.jpg",
+            imagePath: "/coursedescription/pexels-taylor-monahan-3440481-6197551.jpg",
             
 
         },
@@ -183,7 +194,16 @@ const CourseDescription = () => {
     //@Button:
     /**onClick={() => handleButtonClick(course.title)}*/
 
- 
+ /*
+
+   <Link href={`/poledance/kursbeschreibung/${course.path}`}>
+                                {course.title} <br/>
+                                {!course.isActive ? '**in Planung**' : ' '}
+                                {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}
+                      
+                            </Link>
+
+*/
     
 
     return (
@@ -196,15 +216,12 @@ const CourseDescription = () => {
                         <button 
                             key={course.title} 
                             className={`${styles.button} ${!course.isActive ? styles.inactive : ' '} beVietnamProFont`} 
-                           
-                            
+                            onClick={() => handleButtonClick(course.title)}
                         >
-                         <Link href={`/poledance/kursbeschreibung/${course.path}`}>
-                                {course.title} <br/>
-                                {!course.isActive ? '**in Planung**' : ' '}
-                                {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}
-                      
-                            </Link>
+                
+                            {course.title} <br/>
+                            {!course.isActive ? '**in Planung**' : ' '}
+                            {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}  
                       
                             </button>
 

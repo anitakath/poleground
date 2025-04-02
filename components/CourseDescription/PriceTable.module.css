@@ -9,6 +9,13 @@
 }
 
 
+.upButton{
+    border: 2px solid gold;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
 .container h2{
     font-size: 1.2rem;
     cursor: pointer;

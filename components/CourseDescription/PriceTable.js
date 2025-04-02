@@ -53,6 +53,30 @@ const PriceTable = () => {
         }));
     };
 
+
+    useEffect(() => {
+        const initialOpenStates = {};
+    
+        Object.entries(priceTable).forEach(([category, items]) => {
+          if (items.length > 0) {
+            // Initialisiere ein Objekt für jede Kategorie
+            initialOpenStates[category] = {};
+    
+            // Gehe durch alle Subkategorien und setze sie auf true
+            items.forEach(item => {
+              const subCategoryKeys = Object.keys(item);
+              subCategoryKeys.forEach(subCategory => {
+                initialOpenStates[category][subCategory] = true; // Setze jede Subkategorie auf true
+              });
+            });
+          }
+        });
+    
+        setOpenSubCategories(initialOpenStates); // Setze den initialen Zustand
+      }, []); // Abhängigkeit hinzufügen
+    
+
+    /*
     useEffect(() => {
         const initialOpenStates = {};
         Object.entries(priceTable).forEach(([category, items]) => {
@@ -64,12 +88,12 @@ const PriceTable = () => {
             }
         });
         setOpenSubCategories(initialOpenStates); // Setze den initialen Zustand
-    }, []);
+    }, []);*/
 
 
     return (
         <div className={styles.container} id="priceTable">
-             <h1 className=' text-xl '> PREISE </h1>
+             <h1 className='text-xl '> PREISE </h1>
 
             {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
 
