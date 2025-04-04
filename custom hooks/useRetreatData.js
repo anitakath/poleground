@@ -48,8 +48,8 @@ const useRetreatData = () => {
             ],
             level: "mixed",
             price: "ab 150 Euro",
-            imagePath: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg",
-            websitespath: "/poledance/events/retreat"
+            imagePath: "/Events/shangyou-shi-U6mlid4nor8-unsplash.jpg",
+            websitespath: "/poledance/events/shownight"
         },
     ];
 

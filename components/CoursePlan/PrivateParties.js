@@ -66,7 +66,7 @@ const PrivateParties = () =>{
                                     <br/>
                                     <br/>
                                     <strong>Die maximale Teilnehmeranzahl für Poledance beträgt 6, Arial Silk 6, Yoga, Dance und Flexibility 10.</strong><br/><br/>
-                                    Schreibe uns gern per <strong>E-Mail</strong> wann und mit wem du gegebenenfalls vorbeikommen möchtest. Nenne uns deine Ideen und Wünsche sowie potentielle Trainerwünsche und wir arbeiten ein individuelles Trainingsprogramm für dich aus. 
+                                    Schreibe uns gern per  <a href="mailto:wagner.annekathirn@gmx.de" className={styles.email}>E-Mail </a> wann und mit wem du gegebenenfalls vorbeikommen möchtest. Nenne uns deine Ideen und Wünsche sowie potentielle Trainerwünsche und wir arbeiten ein individuelles Trainingsprogramm für dich aus. 
                           
                         
                                 </p> 

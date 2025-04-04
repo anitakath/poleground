@@ -16,7 +16,7 @@
  .dayCell {
     padding:.5rem;
     text-align:left; 
-    border: 1px solid var(--foreground);
+    border: 1px solid var(--secondaryBackground);
     width: 12%;
     
  }
@@ -64,9 +64,10 @@
 .courseRequestButton{
    cursor: pointer;
    transition: 0.2s ease-in-out;
-   font-size: 1.2rem;
+   font-size: 1.3rem;
    margin: 0px 2px;
-   color:var(--title);
+   color:var(--secondaryBackground);
+   font-weight: bolder;
 }
 
 .courseRequestModalContainer{

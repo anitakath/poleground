@@ -75,7 +75,7 @@
 }
 
 .item{
-    border: 2px solid var(--secondaryForeground);
+    border: 1px solid var(--secondaryBackground);
     width: 200px; 
     min-height:250px;
     margin: 10px; 
@@ -93,7 +93,7 @@
 
 .item:hover{
     transform: scale(1.05);
-    box-shadow: 0px 0px 5px var(--navigationHover);
+    box-shadow: 0px 0px 5px var(--secondaryBackground);
     border: 2px solid rgba(255,255,255, 0.5);
     background-color: rgba(255,255,255, 0.4);
 }
@@ -128,7 +128,7 @@
     margin-top:5px;
 }
 .button{
-    background-color: var(--secondaryForeground);
+    background-color: var(--secondaryBackground);
     color: white; 
     border: none; 
     padding: 10px;
@@ -137,7 +137,7 @@
 }
 
 .button:hover{
-    background-color: var(--title);
+    background-color: var(--buttonHover);
 }
 
 @media screen and (max-width: 750px){

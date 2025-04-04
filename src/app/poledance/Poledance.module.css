@@ -3,7 +3,7 @@
 .container{
     height:100vh;
     overflow: scroll;
-    background-color: var(--foreground);
+    background-color: var(--background);
     padding: 10px;
     position: relative;
 
@@ -28,7 +28,7 @@
 }
 
 .buttonDiv{
-    background-color: var(--secondaryForeground);
+    background-color: var(--secondaryBackground);
     width: 100%;
     margin: 2px;
     padding: 0px 2px;
@@ -37,8 +37,8 @@
 }
 
 .buttonDiv:hover{
-    background-color: var(--buttonHover);
-    color: beige;
+    background-color: var(--tertiaryBackground);
+    color: var(--background)
 }
 
 .button{

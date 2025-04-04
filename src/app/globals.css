@@ -16,6 +16,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #EBCFC6;
+    --tertiaryBackground:  #255f40;
+    --secondaryBackground: #599073;
+    --secondaryBackgroundOpaque: rgba(89, 144, 115, 0.4);
+    --background: #FFFAED;
     --foreground: #EAE6DB;
     --secondaryForeground: #E8A7A3;
     --navigation: #F7AC84;

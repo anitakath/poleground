@@ -3,20 +3,25 @@
 
 
 .title{
-    margin: 0px 20px;
+    margin:  40px 20px 20px 20px;
     font-size: 1.2rem;
 }
 
 .teamContainer{
     background: var(--buttonHover);
-    margin: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     height: 70vh;
+    width: 90%;
+    
+
 }
 
 .gridContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
+    
+    width: 90%;
 
 }
 
@@ -24,7 +29,7 @@
     border: 2px solid var(--buttonHover);
     background-color: var(--buttonHover);
     height: 400px;
-    margin: 20px;
+    margin: 2px;
     padding: 10px;
 }
 

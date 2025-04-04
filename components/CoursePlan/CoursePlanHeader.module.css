@@ -44,12 +44,12 @@
  }
  
  .filterButton:hover{
-    background-color: var(--secondaryForeground);
+    background-color: var(--buttonHover);
  }
  
  .filterButtonActive{
-    background-color: rgba(255,255,255, 0.8);
-    color: var(--title)
+    background-color: var(--secondaryBackground);
+    color: var(--background)
  }
  
  .filterButtonsUniqueLevelButtons{
@@ -78,7 +78,7 @@
  }
  
  .levelButton:hover{
-    background-color: var(--secondaryForeground)
+    background-color: var(--buttonHover)
  }
  
  
