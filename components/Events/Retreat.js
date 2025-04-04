@@ -43,7 +43,7 @@ const Retreat = () => {
 
     
     return ( 
-        <div>
+        <div >
              <h1 className={styles.title}> WORKSHOPS, EVENTS & RETREATS </h1>
              <div className={styles.container}> 
         

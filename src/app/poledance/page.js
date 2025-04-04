@@ -1,4 +1,6 @@
 "use client"
+import { useState, useEffect } from 'react';
+import { supabase } from '../../../services/supabaseClient';
 import Image from 'next/image';
 import styles from './Poledance.module.css';
 //COMPONENTS
@@ -13,8 +15,53 @@ import useScrollToSection from '../../../custom hooks/useScrollToSection';
 
 export default function PoleDance() {
 
+  const [courses, setCourses] = useState([]);
+  const [loadingCourses, setLoadingCourses] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data: fetchedData, error } = await supabase
+        .from('poleground_courses') // Ersetze 'deine_tabelle' durch den Namen deiner Tabelle
+        .select('*');
+
+      if (error) {
+        console.error('Fehler beim Abrufen der Daten:', error);
+      } else {
+        setCourses(fetchedData);
+      }
+      setLoadingCourses(false);
+    };
+
+    fetchData();
+  }, []);
+
+
+  const transformCourses = (courses) => {
+    // Initialisiere das Ergebnisobjekt mit leeren Arrays für jede Gruppe
+    const coursesObject = {
+      DANCE: [],
+      POLE: [],
+      FLEXIBILITY: [],
+      PLAYGROUND: [],
+      SPECIALS: []
+    };
+  
+    // Durchlaufe das Array der Kurse
+    courses.forEach(course => {
+      // Überprüfe die Gruppe des Kurses und füge ihn dem entsprechenden Array hinzu
+      if (coursesObject[course.group]) {
+        coursesObject[course.group].push(course);
+      }
+    });
+  
+    return coursesObject;
+  };
+  
+  const coursesObject = transformCourses(courses);
+
   
   const {scrollToSection} = useScrollToSection();
+
 
   return (
     <div className={styles.container} id="topContainer">
@@ -57,7 +104,9 @@ export default function PoleDance() {
 
       <div className={styles.subContainer} id="table">
         <div className={styles.subContainerDiv} id="courseplanHeader"> 
-            <CoursePlan/> 
+           {!loadingCourses &&  <CoursePlan courses={coursesObject}/> }
+
+            {loadingCourses && <p> lädt Kursplan ...</p>}
         </div>
       </div>
       <div className={styles.subContainer} id="descriptions">

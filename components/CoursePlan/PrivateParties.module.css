@@ -7,22 +7,30 @@
 .titleContainer{
     width: 40%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.titleContainer h1{
+    text-align: center;
+
 }
 
 .title{
     /*border: 2px solid blue;*/
     text-align: center;
+    margin-top: 10px;
 }
 
 .descriptionContainer{
     padding: 10px;
     width: 60%;
+    display: flex;
+    justify-content: center;
 }
 
+
 .paragraph{
-   color: var(--title);
    font-size: 1rem;
    margin: 0px 20px;
    line-height: 25px;
@@ -81,6 +89,19 @@
     color:var(--title);
 }
 
+.email{
+    color: var(--title);
+    font-size: 1.3rem;
+    margin: 0px 10px 0px 5px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.email:hover{
+    color: var(--buttonHover);
+}
+
+
 
 @media screen and (max-width: 800px){
     .headerContainer{
@@ -94,6 +115,7 @@
 
     .descriptionContainer{
         width: 100%;
+        margin-top:30px;
     }
 
     .privateInfoContainer{
@@ -105,6 +127,7 @@
         height: 50%;
         padding: 0;
         margin: 10px 0px;
-        box-shadow: 2px 0px 5px grey;
+        box-shadow: 1px 0px 3px grey;
+
     }
 }

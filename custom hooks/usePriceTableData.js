@@ -23,17 +23,17 @@ const usePricetableData = () =>{
                 ],
                 "Mitgliedschaften": [
                     
-                    { title: "Silber", duration: "6 Monate", price: "70 Euro/Monat", detailedInfo: "beinhaltet 8x Pole, 4x Flexi, 4x Dance, 2x Playground pro Monat - also insgesamt ...", info:"Für alle, die ihre Reise im Poledance beginnen möchten.", },
-                    { title: "Silber", duration: "12 Monate", price: "65 Euro/Monat", detailedInfo: "beinhaltet 8x Pole, 4x Flexi, 4x Dance, 2x Playground pro Monat - also insgesamt ...", info:"Für alle, die ihre Reise im Poledance beginnen möchten.", },
+                    { title: " Silber", termofcontract: "6 Monate", price: "70 Euro/Monat", detailedInfo: "beinhaltet 4x Pole/Arial/Dance, 2x Flexi, 2x Playground pro Monat", info:"Für alle, die ihre Reise im Poledance beginnen möchten.", },
+                    { title: "Silber",termofcontract: "12 Monate", price: "65 Euro/Monat", detailedInfo: "beinhaltet 4x Pole/Arial/Dance, 2x Flexi, 2x Playground pro Monat", info:"Für alle, die ihre Reise im Poledance beginnen möchten.", },
                    
-                    { title: "Gold", duration: "6 Monate", price: "115 Euro/Monat", info:"Für alle, die ihre Reise im Poledance festigen möchten.", detailedInfo:"beinhaltet 8x Pole, 8x Flexi, 2x Dance, 2x Playground pro Monat", },
-                    { title: "Gold", duration: "12 Monate", price: "100 Euro/Monat", info:"Für alle, die ihre Reise im Poledance festigen möchten.", detailedInfo:"beinhaltet 8x Pole, 8x Flexi, 2x Dance, 2x Playground pro Monat" },
+                    { title: "Gold", termofcontract: "6 Monate", price: "115 Euro/Monat", info:"Für alle, die ihre Reise im Poledance festigen möchten.", detailedInfo:"beinhaltet 6x Pole/Arial/Dance, 3x Flexi, 2x Playground pro Monat", },
+                    { title: "Gold", termofcontract: "12 Monate", price: "100 Euro/Monat", info:"Für alle, die ihre Reise im Poledance festigen möchten.", detailedInfo:"beinhaltet 6x Pole/Arial/Dance, 3x Flexi, 2x Playground pro Monat" },
                    
-                    { title: "Platin", duration: "6 Monate", price: "140Euro/Monat", info:"Für alle, die ihrer Reise im Poledance den Feinschliff geben möchten.", detailedInfo:"beinhaltet 12x Pole, 8x Flexi, 4x Dance, 4x Playground pro Monat" },
-                    { title: "Platin", duration: "12 Monate", price: "120 Euro/Monat", info:"Für alle, die ihrer Reise im Poledance den Feinschliff geben möchten.", detailedInfo:"beinhaltet 12x Pole, 8x Flexi, 4x Dance, 4x Playground pro Monat" },
+                    { title: "Platin", termofcontract: "6 Monate", price: "140 Euro/Monat", info:"Für alle, die ihrer Reise im Poledance den Feinschliff geben möchten.", detailedInfo:"beinhaltet 8x Pole/Arial/Dance, 4x Flexi, 4x Playground pro Monat" },
+                    { title: "Platin", termofcontract: "12 Monate", price: "120 Euro/Monat", info:"Für alle, die ihrer Reise im Poledance den Feinschliff geben möchten.", detailedInfo:"beinhaltet 8x Pole/Arial/Dance, 4x Flexi, 4x Playground pro Monat" },
                    
-                    { title: "Diamant", duration: "6 Monate", price: "160 Euro/Monat", info:"Für alle Verrückten, die das Poleground zu ihrem 2. Zuhause machen wollen.", detailedInfo:"beinhaltet 12x Pole, 8x Flexi, 8x Dance, unbegrenzt Playground pro Monat" },
-                    { title: "Diamant", duration: "12 Monate", price: "150 Euro/Monat", info:"Für alle Verrückten, die das Poleground zu ihrem 2. Zuhause machen wollen.", detailedInfo:"beinhaltet 12x Pole, 8x Flexi, 8x Dance, unbegrenzt Playground pro Monat" },
+                    { title: "Diamant", termofcontract: "6 Monate", price: "200 Euro/Monat", info:"Für alle Verrückten, die das Poleground zu ihrem 2. Zuhause machen wollen.", detailedInfo:"beinhaltet 10x Pole/Arial/Dance, 6x Yoga/Flexi, unbegrenztes Austoben im Playground pro Monat" },
+                    { title: "Diamant", termofcontract: "12 Monate", price: "190 Euro/Monat", info:"Für alle Verrückten, die das Poleground zu ihrem 2. Zuhause machen wollen.", detailedInfo:"beinhaltet 10x Pole/Arial/Dance, 6x Yoga/Flexi, unbegrenztes Austauben im Playground pro Monat" },
                    
                  ]
             }

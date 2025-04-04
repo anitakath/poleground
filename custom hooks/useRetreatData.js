@@ -36,6 +36,21 @@ const useRetreatData = () => {
             imagePath: "/Events/pexels-pixabay-163497.jpg",
             websitespath: "/poledance/events/photoshoot"
         },
+        {
+            id: 1,
+            group: "SHOWNIGHT",
+            title: "SHOWNIGHT @ POLEGROUND",
+            descriptionsTitle: "das Poleground feiert! - einfach so",
+            subDescription: "Das Poleground lädt dich herzlich ein, mit uns zu feiern! Am 26. April 2025 ab 16 Uhr verwandelt sich unser Studio in einen Ort voller Kreativität und Gemeinschaft. Hier haben unsere talentierten Teilnehmer:innen die Möglichkeit, ihre Choreografien in Pole, Aerial und Dance vor einem begeisterten Publikum zu präsentieren – ganz gleich, ob allein, im Duo oder in Gruppen. Bereits ab 14 Uhr dürfen die Aufführenden ins Studio kommen, um sich vorzubereiten und letzte Proben durchzuführen. Das Publikum kann ab 15:30 Uhr eintreten (Eintritt: 10 Euro pro Person, Kinder bis 16 Jahre haben freien Eintritt). Im Ticketpreis ist ein Freigetränk enthalten, und für das leibliche Wohl sorgt ein kleines Buffet mit einer Auswahl an köstlichen Snacks. Die erste Aufführung findet von 16 bis 17 Uhr statt, gefolgt von Teil 2 der Shownight von 17:15 bis 18 Uhr. Zwischen den Aufführungen und danach gibt es reichlich Gelegenheit zum Austausch und Networking – also bring deine Freunde mit und lass uns gemeinsam einen unvergesslichen Abend erleben! Melde dich rechtzeitig an, um dir einen der begehrten Slots zu sichern. Andernfalls setzen wir dich auf die Warteliste.   ",
+            descriptionsTable: [
+                { title: "...." },
+                
+            ],
+            level: "mixed",
+            price: "ab 150 Euro",
+            imagePath: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg",
+            websitespath: "/poledance/events/retreat"
+        },
     ];
 
     return { EVENTS_DUMMY };

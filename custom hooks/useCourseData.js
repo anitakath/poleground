@@ -312,7 +312,14 @@ const useCourseData = () =>{
       // ------- 7. WEEK
       // ------- 8. WEEK
         
-        ]
+        ],
+
+
+        /*
+        OFFICE:[
+          { group:"OFFICE" , title:"Off Ice Training" , duration :75 , scheduled_at :"2025-03-31T19:30:00" , description: "Unser Off-Ice Training bietet dir die perfekte Gelegenheit, deine Fähigkeiten außerhalb des Eises zu verbessern! In dieser 75-minütigen Einheit wirst du an deiner Kraft, Flexibilität und Ausdauer arbeiten, um deine Leistung auf dem Eis zu steigern. Unter der Anleitung von unserer erfahrenen Trainerin Anne wirst du gezielte Übungen durchführen, die speziell für Eiskunstläufer:innen entwickelt wurden. Egal, ob du ein Anfänger bist oder bereits Erfahrung hast, diese Trainingseinheit ist ideal für alle Levels. Nutze die Chance, deine Technik zu verfeinern und dich optimal auf die nächste Saison vorzubereiten. Melde dich jetzt an und sichere dir einen Platz in Studio 1 – wir freuen uns auf dich!" , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"5 /10", },
+          
+        ]*/
       };
 
 

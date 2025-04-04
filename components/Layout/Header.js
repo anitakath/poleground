@@ -30,7 +30,8 @@ const Header = () => {
 
                <div>
                    <Link href="/about" className={styles.link}> FAQ </Link>
-                   <Link href="/about" className={styles.link}> ÜBER UNS </Link>
+                   <Link href="/poledance/ueber-uns" className={styles.link}> ÜBER UNS </Link>
+                   <Link href="/jobs" className={styles.link}> JOBS </Link>
                    <Link href="/events" className={styles.link}> EVENTS </Link>
                    <Link href="/kooperationen" className={styles.link}> KOOPERATIONEN </Link>
                </div>

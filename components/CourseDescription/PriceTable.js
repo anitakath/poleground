@@ -93,7 +93,7 @@ const PriceTable = () => {
 
     return (
         <div className={styles.container} id="priceTable">
-             <h1 className='text-xl '> PREISE </h1>
+             <h1 className='text-xl '> PREISE (vorerst nur beispielhaft) </h1>
 
             {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
 

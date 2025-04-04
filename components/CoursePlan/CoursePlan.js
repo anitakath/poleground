@@ -1,13 +1,13 @@
 
 import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useCourseData from '../../custom hooks/useCourseData';
 import CoursePlanHeader from './CoursePlanHeader';
 import CheckOutModal from '../Modals/CheckOutModal';
 import MobileCoursePlan from './Mobile/MobileCoursePlan';
 import CourseRequestModal from '../Modals/CourseRequestModal';
-
+import { supabase } from '../../services/supabaseClient';
 
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
@@ -19,6 +19,10 @@ const CoursePlan = () =>{
     const [selectedLevel, setSelectedLevel] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+
+
+ 
 
     function getStartOfWeek(date) {
       const startOfWeek = new Date(date);
@@ -134,10 +138,41 @@ const CoursePlan = () =>{
       });
     };
 
+    const addCoursesToSupabase = async (courses) => {
+      for (const category in courses) {
+        const courseArray = courses[category];
+    
+        for (const course of courseArray) {
+          const { data, error } = await supabase
+            .from('poleground_courses') // Ersetze 'poleground_courses' durch den Namen deiner Tabelle
+            .insert([
+              {
+                group: course.group,
+                title: course.title,
+                duration: course.duration,
+                scheduled_at: course.scheduled_at,
+                description: course.description,
+                instructor: course.instructor,
+                level: course.level,
+                room: course.room,
+                spots: course.spots,
+                
+              },
+            ]);
+    
+          if (error) {
+            console.error(`Fehler beim Hinzufügen des Kurses ${course.title}:`, error);
+          } else {
+            console.log(`Kurs ${course.title} erfolgreich hinzugefügt!`);
+          }
+        }
+      }
+    };
 
     return (
         <div className={styles.tableContainer} >
-          {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
+
+        {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
          <h1 className=' text-xl mb-2'> KURSPLAN</h1>
          <CoursePlanHeader 
           currentWeekStart={currentWeekStart}
@@ -285,7 +320,7 @@ const CoursePlan = () =>{
 
           <div className={styles.courseRequestModalContainer}>
             <h1 className=' w-full my-2'>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
-            <p >Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
+            <p className=' w-full'>Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
             
           
             <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

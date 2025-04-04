@@ -20,7 +20,8 @@
     padding: 20px;
     border-radius: 8px;
     width: 50%;
-    height: 60vh;
+    min-height: 50vh;
+    max-height: 70vh;
     transition: 0.2s ease-in-out;
     position: relative;
     overflow: scroll;
@@ -57,4 +58,9 @@
 .closeButton:hover{
     color: var(--background);
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.subTitle{
+    font-size: 1.2rem;
+    font-weight: bolder;
 }

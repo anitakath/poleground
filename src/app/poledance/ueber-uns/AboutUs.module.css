@@ -1,0 +1,39 @@
+
+
+
+
+.title{
+    margin: 0px 20px;
+    font-size: 1.2rem;
+}
+
+.teamContainer{
+    background: var(--buttonHover);
+    margin: 20px;
+    padding: 10px;
+    height: 70vh;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+
+}
+
+.gridItem{
+    border: 2px solid var(--buttonHover);
+    background-color: var(--buttonHover);
+    height: 400px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.itemImage{
+    border: 2px solid var(--title);
+}
+
+@media screen and (max-width: 900px){
+    .gridContainer{
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
