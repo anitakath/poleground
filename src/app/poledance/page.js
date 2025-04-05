@@ -10,6 +10,7 @@ import CourseDescription from '../../../components/CourseDescription/CourseDescr
 import PrivateParties from '../../../components/CoursePlan/PrivateParties';
 import Retreat from '../../../components/Events/Retreat';
 import PriceTable from '../../../components/CourseDescription/PriceTable';
+
 //CUSTOM COMPONENTS
 import useScrollToSection from '../../../custom hooks/useScrollToSection';
 

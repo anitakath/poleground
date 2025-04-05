@@ -21,15 +21,15 @@ const useRetreatData = () => {
         {
             id: 2,
             group: "PHOTOSHOOT",
-            title: "SPRING BREAK! PHOTOSHOOT",
-            descriptionsTitle: "Sommer, Sonne, heiße Poolparties und Wir!",
-            subDescription: "Wir wollen die bevorstehend blühende Frühlingszeit und die bis zuletzt eingelümmelt wunderschönen Körper zelebrieren!! Die Sonnenstunden werden länger, die Röcke kürzer! Die Welt wird farbenfroher. Zeig dich, feier dich!",
+            title: "PHOTOSHOOT",
+            descriptionsTitle: " Lasse dich, deinen Körper und Fortschritt auf wunderschönste Art fotografisch festhalten",
+            subDescription: " Wir bieten diverse Hintergründe für dein persönliches Fotoshoot an. [....] Zeig dich, feier dich!",
             descriptionsTable: [
-                { title: "1h Photoshooting" },
-                { title: "3-alle Fotos" },
+                { title: " 1h Photoshooting " },
+                { title: " 3 bis alle Fotos " },
                 { title: " Snacks und Drinks " },
                 { title: " wundervolle Menschen " },
-                { title: " 10%-Gutscheine für den Onlineshop Polesports.de" },
+                { title: " 10%-Gutscheine für den Onlineshop fiktiverPoleShop.de " },
             ],
             level: "mixed",
             price: "ab 100 Euro",
@@ -51,6 +51,23 @@ const useRetreatData = () => {
             imagePath: "/Events/shangyou-shi-U6mlid4nor8-unsplash.jpg",
             websitespath: "/poledance/events/shownight"
         },
+        /*
+        {
+            id: 1,
+            group: "PICKNICK X POLE IM PARK ",
+            title: "PICKNICK X POLE  IM PARK",
+            descriptionsTitle: "Gemeinsames Picknick im Park / Alternativ: Brunch im Poleground",
+            subDescription: "Das Poleground lädt Kund:innen und Freunde zu einem Picknick im Park ein -  es wird neben ein paar Snacks eine freistehende Pole und ein Arial Tuch mitgebracht. Es wird zwar ein paar Snacks geben, aber bitte bring gern dein eigenes Essen und Trinken mit.",
+            descriptionsTable: [
+                { title: "Bei schlechtem Wetter (Regen, oder <17°C) verlegen wir das Picknick in unser Studio" },
+                { title: "Ggf WhatsAppGruppe für Organisation" },
+                
+            ],
+            level: "mixed",
+            price: "0 Euro",
+            imagePath: "/Events/pexels-anna-guerrero-788383-1957011.jpg",
+            websitespath: "/poledance/events/shownight"
+        },*/
     ];
 
     return { EVENTS_DUMMY };

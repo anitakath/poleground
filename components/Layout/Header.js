@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTitle } from "../../context/TitleContext";
 import { useState } from "react";
 import Sponsorings from "./Sponsoring";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
 
@@ -28,14 +29,28 @@ const Header = () => {
                    <Link href="/"> {title} </Link>
                </div>
 
-               <div>
-                   <Link href="/about" className={styles.link}> FAQ </Link>
-                   <Link href="/poledance/ueber-uns" className={styles.link}> ÜBER UNS </Link>
-                   <Link href="/jobs" className={styles.link}> JOBS </Link>
-                   <Link href="/events" className={styles.link}> EVENTS </Link>
-                   <Link href="/kooperationen" className={styles.link}> KOOPERATIONEN </Link>
-               </div>
+               <div className={styles.linksContainer}>
+                   <Link href="/" className={styles.link}> FAQ  </Link>
+                  
+                  <div className={styles.dropdownContent}>
+                    <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poledance </Link>
+                    <Link href="/figureskating/ueber-uns" className={styles.dropdownLink}> Figure Skating </Link>
+       
+                  </div>
 
+                  <div className={styles.linkAboutUs}>
+                        <div  href="/poledance/ueber-uns" className={styles.link}> ÜBER UNS </div>
+                        <div className={styles.dropdownContent}>
+                        <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poleground </Link>
+                        <Link href="/figureskating/ueber-uns" className={styles.dropdownLink}> Figure Skating Club **in Bearbeitung** </Link>
+                        </div>
+                    </div>
+               
+                   <Link href="/jobs" className={styles.link}> JOBS </Link>
+                   <Link href="/" className={styles.link}> EVENTS </Link>
+                   <Link href="/" className={styles.link}> KOOPERATIONEN </Link>
+               </div>
+               {/*}
                <div className={styles.mobileMenu}>
                    <button onClick={toggleMenu} className={styles.menuButton}> 
                        <Image 
@@ -47,23 +62,8 @@ const Header = () => {
                    </button>
                   
                </div>
-               <div className={`${styles.mobileLinksContainer} ${isOpen ? styles.open : ''}`}>
-                   <div className={styles.closeMobileMenuButton}> 
-                       <button onClick={toggleMenu}>
-                           schließen
-                           {/*<Image src="/iconpng/icons8-löschen-50.png" alt="close button image" width={50} height={50} />*/}
-                       </button> 
-                   </div>
-                   <Link href="/" className={styles.mobileLink}> STARTSEITE </Link>
-                   <Link href="/poledance" className={styles.mobileLink}> POLEGROUND </Link>
-                   <Link href="/figureskating" className={styles.mobileLink}> SKATEGROUND </Link>
-                   <br/>
-                   <br/>
-                   <Link href="/about" className={styles.mobileLink}>FAQ</Link>
-                   <Link href="/about" className={styles.mobileLink}>ÜBER UNS</Link>
-                   <Link href="/events" className={styles.mobileLink}>EVENTS</Link>
-                   <Link href="/kooperationen" className={styles.mobileLink}>KOOPERATIONEN</Link>
-               </div>
+               */} 
+              <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu}/>
 
            </nav>
 
@@ -80,6 +80,16 @@ const Header = () => {
                <button className={styles.socialButton}>
                    <Image alt="button to connect with us via email" src="/iconpng/icons8-mail-50.png" width={40} height={40} className={styles.socialIcon}/>
                </button>
+
+               <button onClick={toggleMenu} className={styles.socialButton}> 
+                       <Image 
+                           src="/iconpng/icons8-menü-50.png" 
+                           alt="menu button" 
+                           width={30} 
+                           height={30}
+                           className={styles.socialIcon}
+                       />    
+                   </button>
            </div>
        
         </div>
