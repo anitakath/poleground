@@ -8,23 +8,25 @@ export default function Home() {
 
   const {setTitle} = useTitle();
 
-
-    return ( 
-      <div className="h-screen bg-red-300 relative  overflow-scroll gap-16 font-[family-name:var(--font-geist-sans)]"> 
-            <div className={`flex w-full h-full justify-center ${styles.flexContainer}`}> 
-                <div className={`w-6/12 flex justify-center ${styles.slider_div}`}> 
-                <Link href="/poledance" >
-                  <Image src="/Start/poledance.jpg" alt="Poledance" layout="fill" objectFit="cover" /> 
-                </Link>
-                    
-                </div> 
-                <div className={`w-6/12 flex justify-center ${styles.slider_div}`}> 
+  /*  <div className={`w-6/12 flex justify-center ${styles.slider_div}`}> 
                   <Link href="/figureskating">
                    <Image src="/Start/figureskating.jpg" alt="Figure Skating" layout="fill" objectFit="cover" /> 
                   </Link>
                     
-                </div> 
+      </div> 
                 
+
+  */
+
+
+    return ( 
+      <div className="h-screen  relative  overflow-scroll gap-16 font-[family-name:var(--font-geist-sans)]"> 
+            <div className={`flex w-full h-full justify-center ${styles.flexContainer}`}> 
+               
+            <Link href="/poledance" className={styles.link}>
+                  <Image src="/Start/poledance.jpg" alt="Poledance" layout="fill" objectFit="cover" className={styles.image}/> 
+            </Link>
+              
             </div> 
         </div> 
     ); 

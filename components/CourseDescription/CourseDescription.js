@@ -50,6 +50,7 @@ const CourseDescription = () => {
             isActive: true,
             imagePath: "/coursedescription/pexels-pixabay-270777 (1).jpg"
         },
+        /*
         {
             title: "Pole Advanced",
             path: "poledance-advanced",
@@ -57,7 +58,7 @@ const CourseDescription = () => {
             description: "Im Advanced-Kurs wirst du herausfordernde Tricks und Kombinationen erlernen, die sowohl Kraft als auch Geschicklichkeit erfordern. Dieser Kurs ist ideal für erfahrene Tänzerinnen, die ihre Fähigkeiten weiterentwickeln und Technik verbessern möchten.",
             isActive: false,
             imagePath: "/coursedescription/pexels-frendsmans-6100299 (1).jpg"
-        },
+        },*/
         {
             title: "Pole Choreo",
             path: "poledance-choreo",
@@ -68,6 +69,7 @@ const CourseDescription = () => {
             imagePath: "/coursedescription/adrian-maximiliano-arellano-k68XX_2DO4o-unsplash.jpg"
             
         },
+        /*
         {
             title: "Pole Choreo Intermediate-Advanced",
             path: "poledance-choreo-intermediate-advanced",
@@ -87,11 +89,11 @@ const CourseDescription = () => {
             isActive: false,
              imagePath: "/coursedescription/pexels-frendsmans-6100295 (1).jpg"
         },
-     
+        */
 
         //DANCE
 
-        
+        /*
         {
             title: "Heels Essentials",
             path: "heels-essentials",
@@ -130,7 +132,7 @@ const CourseDescription = () => {
             info: "Bitte trage Kleidung in der du dich wohlfühlst und bring Knee Pads mit. High Heels sind vollkommen in Ordnung, aber kein Muss.",
             isActive: false,
             imagePath: "/coursedescription/pexels-lazarus-ziridis-351891426-30496741.jpg"
-        },
+        },*/
         {
             title: "Yoga & Flexibility",
             path: "yoga-flexibility",
@@ -149,6 +151,7 @@ const CourseDescription = () => {
             isActive: true,
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         },
+        /*
         {
             title: "Arial Silk",
             path: "arial-silk",
@@ -178,7 +181,7 @@ const CourseDescription = () => {
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
             isActive: false,
              imagePath: "/coursedescription/pexels-elly-fairytale-3823039.jpg"
-        },
+        },*/
         
     ];
 

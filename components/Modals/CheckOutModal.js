@@ -18,7 +18,7 @@ const CheckOutModal = ({checkoutData, onClose }) =>{
     return(
         <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.modalContent}>
-            <h2 className='mb-2'> Übersicht deiner Produktauswahl:</h2>
+            <h3 className={styles.checkoutTitle}> Übersicht deiner Produktauswahl:</h3>
                 {checkoutData ? (
                     <div className=' flex-col items-center justify-center mt-4 mb-8'>
                         <h3 className={styles.modalTitle}>{checkoutData.termofcontract && "Mitgliedschaft"} {checkoutData.title}</h3>

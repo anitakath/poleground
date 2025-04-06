@@ -1,9 +1,26 @@
+.container{
+    height: 80vh;
+}
 
+.image{
+    opacity: 0.7;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.image:hover{
+    opacity: 1;
+    transform: scale(1.1)
+
+}
+
+/*
 .slider_div{
     height: 100%;
     position: relative;
     transition: width 0.4s ease;
     width: 50%; 
+
 }
 
 
@@ -36,3 +53,5 @@
         transform:scale(1.05);
     }
 }
+
+*/

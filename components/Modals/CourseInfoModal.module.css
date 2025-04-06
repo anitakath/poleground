@@ -65,17 +65,18 @@
     border-radius: 5px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    color: var(--title);
+    
     height: 40px;
-    background-color: rgba(255,255,255, 0.1);
+    background-color: var(--softGreen);
     margin:0px 2px;
+
 }
  
 
  
 .coursePlanButton:hover, .coursePrices:hover{
     color: var(--foreground);
-    background: var(--title);
+    background: var(--tertiaryBackground);
 }
  
 
@@ -105,15 +106,23 @@
 .button{
     cursor: pointer;
     transition: 0.2s ease-in-out;
-
+    padding: 10px;
     position: absolute;
     bottom: 15px;
-    right: 25px;
+    right: 30px;
+    padding: 0px 5px;
+    width: 20%;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    height: 40px;
+    margin:0px 2px;
 
 }
 
 .button:hover{
-    color:var(--title)
+    color:var(--title);
+    background-color: var(--softGreen);
 }
 
 

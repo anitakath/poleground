@@ -28,7 +28,7 @@
     --subTitle: ;
     --paragraph: ;
     --buttonBg: ;
-    --buttonHover: rgb(255, 127, 80, 0.8);
+    --buttonHover:#FFB3AB;
 
 
     --secondaryForGroundDark:hsl(356, 68%, 47%);
@@ -39,8 +39,23 @@
     --PLAYGROUND: #FA9A85;
     --SPECIALS: rgba(243, 18,  42, 0.9);
     
-    
-
+    --lightMint: #A8D5BA;
+    --softGreen: #A3C6A8;
+    --softAquaGreen: #B7E4D9;
+    --softCoral: #FFB3AB;
+    --pastelCoral:#FFB3AB ;
+    --creamyApricot: #FFE5B4;
+    --lightBeige:#F6E0B5 ;
+    --warmWood: #D9B68C;
+    --softTerrakotta: #E1B7A1;
+ 
+    --instenseCoral: #C76A5B;
+    --strongCoral: #FF6F61;
+    --strongMint: #3B7A57;
+    --deepTeal: #5C8A7E;
+    --strongPeach: #EAB8A1;
+    --strongTerrakotta: #BF4F3B;
+   
     --primaryFontDarkk: #EDD0A8;
     --secondaryFontDark: #E5734F;
     --secondaryFontDarkk: #CA2732;

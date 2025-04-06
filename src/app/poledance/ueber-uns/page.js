@@ -1,6 +1,4 @@
-
-
-
+import Image from 'next/image'
 import styles from './AboutUs.module.css'
 import PolegroundInfo from '../../../../components/PolegroundInfo'
 
@@ -11,7 +9,7 @@ const AboutUs= () =>{
         <div className='flex flex-col items-center justify-center'>
             <PolegroundInfo/>
 
-            <h1 className={styles.title}> UNSER STUDIO </h1>
+            <h1 className={styles.title} id="studio"> UNSER STUDIO </h1>
 
             <div className={styles.gridContainer}>
                 <div className={styles.gridItem}> Eingangstür </div>
@@ -34,16 +32,28 @@ const AboutUs= () =>{
 
             <h1 className={styles.title}> UNSER TEAM </h1>
 
+            {/*}
             <div className={styles.teamContainer}>
                 TEAM
-            </div>
+            </div>*/}
             <div className={styles.gridContainer}>
-                <div className={styles.gridItem}> Anne </div>
-                <div className={styles.gridItem}> Natalia</div>
-                <div className={styles.gridItem}> Loona </div>
-                <div className={styles.gridItem}> Marlin </div>
+                <div className={styles.gridItem}> 
+                    <p className='absolute top-2 left-4 text-xl text-red-600'> Anne </p>
+                    <Image src="/Start/damian-barczak-nISmT9XXL98-unsplash.jpg" width={600} height={600} alt="Anne"  className={styles.image}/>
+                </div>
+                <div className={styles.gridItem}>     
+                <p className='absolute top-2 left-4 text-xl text-red-600'> Natalia </p>
+                    <Image src="/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg" width={600} height={600} alt="Natalia"  className={styles.image}/>
+                </div>
+                <div className={styles.gridItem}> 
+                <p className='absolute top-2 left-4 text-xl text-red-600'> Marlin </p>
+                    <Image src="/Start/pexels-steshkawillems-1390361.jpg" width={600} height={600}  className={styles.image}/>
+                </div>
+                <div className={styles.gridItem}> 
 
-                <div className={styles.gridItem}> vielleicht ja bald du? </div>
+                    <p className='absolute top-2 left-4 text-xl text-red-600'> vielleicht ja bald du? 💜</p>
+                    <Image src="/Start/pexels-mart-production-7319717.jpg"width={600} height={600}  className={styles.image}/>
+                </div>
             </div>
         </div>
     )

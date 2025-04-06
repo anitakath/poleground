@@ -1,65 +1,83 @@
-
-.mainTitlePole, .mainTitleSkate{
-    font-size: 1.3rem;
-    margin: 20px 0px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
     width: 90%;
-    border-bottom: 1px solid var(--buttonHover)
-}
-
-.mainTitleSkate{
-    border-bottom: 1px solid var(--iceBlue);
+     margin: 0 auto;
+     padding: 20px;
+     border-radius: 8px;
+ }
    
-}
-.container{
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.subContainerPole, .subContainerSkate{
-    background-color: var(--buttonHover);
+ 
+ .title{
+     font-size: 2rem; 
+     color: #333; 
+     margin-bottom: 10px; 
+ }
+
+ .subTitle{
+    font-size: 1.4rem;
+    color: var(--foreground);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+ }
+
+ .subTitle:hover{
+    color: var(--strongCoral)
+ }
+
+ .subTitleInactive{
+    position: absolute;
+    left: -10000px;
+
+ }
+
+
+.subContainerPole{
+    background-color: var(--secondaryBackground);
     margin: 15px 0px;
     min-height: 100px;
     padding: 15px;
     display: flex;
-    border-radius: 8px; /* Abgerundete Ecken */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-}
-
-.title{
-    width: 30%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    overflow: hidden;
+    position: relative;
 }
 
+
+
 .email{
-    
     color: var(--buttonHover);
     font-size: 1.3rem;
     margin: 0px 10px 0px 5px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
+   
 }
 
 .email:hover{
-    color: var(--title);
+    color: var(--secondaryBackground);
 }
 
 .description{
     margin: 0px 20px;
     width: 70%;
+    color: var(--background);
+    padding: 10px;
+
 }
 .subContainerSkate{
     background-color:  var(--iceBlue);
 
+}
+
+
+
+@media screen and (max-width: 1100px){
+
+    .container {
+        width: 100%;
+    }
 }
 
 

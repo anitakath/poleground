@@ -30,7 +30,7 @@ const Header = () => {
                </div>
 
                <div className={styles.linksContainer}>
-                   <Link href="/" className={styles.link}> FAQ  </Link>
+                   <Link href="/helpdesk" className={styles.link}> FAQ  </Link>
                   
                   <div className={styles.dropdownContent}>
                     <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poledance </Link>
@@ -39,16 +39,16 @@ const Header = () => {
                   </div>
 
                   <div className={styles.linkAboutUs}>
-                        <div  href="/poledance/ueber-uns" className={styles.link}> ÜBER UNS </div>
-                        <div className={styles.dropdownContent}>
+                        <Link  href="/poledance/ueber-uns" className={styles.link}> ÜBER POLEGROUND </Link>
+                        {/*<div className={styles.dropdownContent}>
                         <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poleground </Link>
                         <Link href="/figureskating/ueber-uns" className={styles.dropdownLink}> Figure Skating Club **in Bearbeitung** </Link>
-                        </div>
+                        </div>*/}
                     </div>
                
                    <Link href="/jobs" className={styles.link}> JOBS </Link>
-                   <Link href="/" className={styles.link}> EVENTS </Link>
-                   <Link href="/" className={styles.link}> KOOPERATIONEN </Link>
+                   <Link href="/poledance/events" className={styles.link}> EVENTS </Link>
+                   <Link href="/poledance/cooperations" className={styles.link}> KOOPERATIONEN </Link>
                </div>
                {/*}
                <div className={styles.mobileMenu}>
