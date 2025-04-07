@@ -26,6 +26,7 @@
     position: relative;
     overflow: scroll;
     z-index: 10000;
+    
 }
 
 
@@ -35,6 +36,12 @@
 .modalTitle{
     margin: 3px 0px;
     font-weight:lighter;
+}
+
+.buttonsContainer{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
 }
 .buyButton, .closeButton{
     margin: 0px 5px;
@@ -79,7 +86,7 @@
 @media screen and (max-width: 1000px){
     .modalContent{
         width: 90%;
-        padding: 5px 10px;
+    
     }
 
 

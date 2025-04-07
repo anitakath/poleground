@@ -92,11 +92,14 @@ const CoursePlan = () =>{
         });
 
         return filteredByWeek;
-    };
-      
+      };
+
+   
     const handleLevelChange = (level) => {
       setSelectedLevel(level);
     };
+
+
 
       /* ----- FILTER ENDE ----  */
 
@@ -121,12 +124,6 @@ const CoursePlan = () =>{
     };
 
 
-
-
-
- 
-
-
      const getCoursesForCurrentWeek = (currentWeekStart, dayIndex) => {
       const startOfWeek = new Date(currentWeekStart);
       const targetDate = new Date(startOfWeek);
@@ -136,37 +133,6 @@ const CoursePlan = () =>{
         const courseDate = new Date(course.scheduled_at);
         return courseDate.toDateString() === targetDate.toDateString(); // Vergleiche das Datum
       });
-    };
-
-    const addCoursesToSupabase = async (courses) => {
-      for (const category in courses) {
-        const courseArray = courses[category];
-    
-        for (const course of courseArray) {
-          const { data, error } = await supabase
-            .from('poleground_courses') // Ersetze 'poleground_courses' durch den Namen deiner Tabelle
-            .insert([
-              {
-                group: course.group,
-                title: course.title,
-                duration: course.duration,
-                scheduled_at: course.scheduled_at,
-                description: course.description,
-                instructor: course.instructor,
-                level: course.level,
-                room: course.room,
-                spots: course.spots,
-                
-              },
-            ]);
-    
-          if (error) {
-            console.error(`Fehler beim Hinzufügen des Kurses ${course.title}:`, error);
-          } else {
-            console.log(`Kurs ${course.title} erfolgreich hinzugefügt!`);
-          }
-        }
-      }
     };
 
     return (
@@ -187,9 +153,13 @@ const CoursePlan = () =>{
         />
 
         <MobileCoursePlan
-        courses={courses}
+          courses={courses}
+          selectedGroup={selectedGroup}
+          selectedLevel={selectedLevel}
           /*courses={courseData}*/
           currentWeekStart={currentWeekStart}
+          filteredCourses={filteredCourses}
+          openCheckoutModal={openCheckoutModal}
         />
 
 
@@ -290,7 +260,7 @@ const CoursePlan = () =>{
                                 <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
                                 
                                 <div className={`flex px-1 ${styles.courseInfos}`}>
-                                   <p> {time}</p>
+                                   <p> {time} </p>
                                     <p className='mx-2'> - </p>
                                     <p> {getMinutes(course.duration)}</p>
                                 </div>

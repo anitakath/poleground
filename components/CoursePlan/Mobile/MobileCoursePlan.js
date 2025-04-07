@@ -5,18 +5,16 @@ import style from '../CoursePlan.module.css';
 import styles from './MobileCoursePlan.module.css';
 import useTimesAndDates from '../../../custom hooks/useTimesAndDates';
 import useScrollToSection from '../../../custom hooks/useScrollToSection';
+import CheckOutModal from '../../Modals/CheckOutModal';
 
-
-const MobileCoursePlan = ({ courses, currentWeekStart }) => {
+const MobileCoursePlan = ({ courses, currentWeekStart,  selectedLevel,  selectedGroup}) => {
     const courseArray = Object.values(courses).flat(); // Flacht das Array der Arrays ab
-    const { getHour, getMinutes, convertDate } = useTimesAndDates();
-  
+    const { getHour, getMinutes, convertDate, formatDate} = useTimesAndDates();
     const currentWeek = convertDate(currentWeekStart);
-  
     const getCoursesForCurrentWeek = (currentWeekStart, dayIndex) => {
-      const startOfWeek = new Date(currentWeekStart);
-      const targetDate = new Date(startOfWeek);
-      targetDate.setDate(startOfWeek.getDate() + dayIndex); // dayIndex: 0 = Montag, 1 = Dienstag, etc.
+    const startOfWeek = new Date(currentWeekStart);
+    const targetDate = new Date(startOfWeek);
+    targetDate.setDate(startOfWeek.getDate() + dayIndex); // dayIndex: 0 = Montag, 1 = Dienstag, etc.
   
       return courseArray.filter(course => {
         const courseDate = new Date(course.scheduled_at);
@@ -25,9 +23,52 @@ const MobileCoursePlan = ({ courses, currentWeekStart }) => {
     };
 
     const {scrollToSection} = useScrollToSection();
+
+
+    const filteredCourses = (hourCourses) => {
+      let coursesToFilter;
+  
+  
+      // Wenn selectedGroup 'ALL' ist, behalten wir alle Kurse
+      if (selectedGroup === 'ALL') {
+          coursesToFilter = hourCourses; 
+      } else {
+          // Wenn selectedGroup != 'ALL', dann filtere nach der ausgewählten Gruppe (selectedGroup)
+          coursesToFilter = hourCourses.filter(course => course.group === selectedGroup);
+      }
+  
+      // Filtere nach dem ausgewählten Level, wenn selectedLevel nicht null ist
+      if (selectedLevel) {
+          coursesToFilter = coursesToFilter.filter(course => course.level === selectedLevel);
+      }
+  
+      return coursesToFilter; 
+  };
+
+
+  const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false)
+  const [checkoutData, setCheckoutData] = useState(null)
+
+
+
+
+  const openCheckoutModal = (course) =>{
+    setIsCheckedOutModalOpen(true)
+    setCheckoutData(course);
+
+  }
+
+       
+  const closeModal = () => {
+    setIsCheckedOutModalOpen(false);
+  };
+
   
     return (
       <div className={styles.mobileCoursePlanContainer}>
+
+
+      {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
         <div className={styles.courseList}>
           {['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'].map((day, dayIndex) => {
             const dayCourses = getCoursesForCurrentWeek(currentWeekStart, dayIndex);
@@ -44,16 +85,23 @@ const MobileCoursePlan = ({ courses, currentWeekStart }) => {
                     {/* Stunden von 10 bis 22 */}
                     {[...Array(13)].map((_, hourIndex) => {
                       const hour = hourIndex + 10; 
+
+                      
+
+                  
                       const hourCourses = dayCourses.filter(course => {
                         const courseHour = new Date(course.scheduled_at).getHours();
                         return courseHour === hour;
                       });
   
-                      if (hourCourses.length === 0) return null;
+                      if (hourCourses.length === 0) return null; 
+
+
+                      const filteredHourCourses = filteredCourses(hourCourses)
   
                       return (
                         <div key={hour} className={styles.hourRow}>
-                          {hourCourses.map(course => {
+                          {filteredHourCourses.map(course => {
                             let backgroundColor;
                             switch (course.group) {
                               case 'POLE':
@@ -82,7 +130,9 @@ const MobileCoursePlan = ({ courses, currentWeekStart }) => {
                                 style={{ backgroundColor }} 
                                 onClick={() => openCheckoutModal(course)}
                               >
-                                <h1>{course.scheduled_at}</h1>
+                                <h1>{formatDate(course.scheduled_at)}</h1>
+                                <h1> {convertDate(course.scheduled_at)}</h1>
+                          
                                 <h3>{course.title}</h3>
                                 <p>{getHour(course.scheduled_at)} - {getMinutes(course.duration)}</p>
                                 <p>{course.level}, {course.room}, {course.spots} freie Plätze</p>

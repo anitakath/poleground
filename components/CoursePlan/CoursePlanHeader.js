@@ -8,7 +8,7 @@ import useCourseData from '../../custom hooks/useCourseData';
 import useScrollToSection from '../../custom hooks/useScrollToSection';
 import CourseRequestModal from '../Modals/CourseRequestModal';
 
-const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekStart, setCurrentWeekStart, goBackOneWeek, goForwardOneWeek, selectedGroup, hoveredGroup, setHoveredGroup}) =>{
+const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekStart, openCheckoutModal, goBackOneWeek, goForwardOneWeek, selectedGroup, hoveredGroup, setHoveredGroup}) =>{
 
 
     const { convertDate} = useTimesAndDates();
@@ -26,10 +26,11 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
         courses[group].forEach(course => levels.add(course.level));
         return Array.from(levels);
       };
+      
     return(
 
 
-    <div >       
+    <div>       
         <div className={styles.filterButtonsContainer}>
                 <div className={styles.filterButtonsSubContainer}>
                     <button 
@@ -95,8 +96,9 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
         </button>
     </div>
 
-        <div className='flex mb-2  justify-start items-center'>
+        <div className='flex mb-2 justify-start items-center'>
             <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
+
             <button className={styles.backForwardButton}>
             <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={25} height={30} />
             </button>

@@ -1,9 +1,12 @@
 
 import styles from './CheckOutModal.module.css'
-import { useState } from 'react'
+
 const CheckOutModal = ({checkoutData, onClose }) =>{
 
+
     console.log(checkoutData)
+
+
     //RENDERE ZWEI UNTERSCHIEDLICHE INHALTE, 
     // JE NACHDEM, OB CHECKOUTDATA.ISCHECKEDOUT == TICKETS  || COURSE
     // DA DER USER ENTWEDER EIN TICKET, ODER EINEN KURS DIREKT BUCHEN MÖCHTE. 
@@ -107,7 +110,7 @@ const CheckOutModal = ({checkoutData, onClose }) =>{
                 )}
 
                 <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst **zukünftig** automatisch zur Zahlungsabwicklung weitergeleitet. </p>
-                <div className='flex justify-end my-2 '>
+                <div className={styles.buttonsContainer}>
                     <button className={styles.buyButton} onClick={() => buyProductHandler(checkoutData)}> Kaufen </button>
                     <button className={styles.closeButton} onClick={onClose}>Schließen</button>
                 </div>
