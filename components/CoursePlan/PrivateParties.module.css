@@ -2,43 +2,46 @@
 
 .headerContainer{
     display: flex;
+    flex-direction: column;
 }
 
 .titleContainer{
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    justify-content: start;
 }
 
-.titleContainer h1{
-    text-align: center;
 
-}
 
-.title{
-    /*border: 2px solid blue;*/
-    text-align: center;
-    margin-top: 10px;
-}
+
 
 .descriptionContainer{
-    padding: 10px;
-    width: 60%;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    padding: 0px 5px;
+    justify-content: space-between;
+
+   
+}
+
+.contactLinksContainer{
+    width: 30%;
+    
 }
 
 
 .paragraph{
    font-size: 1rem;
-   margin: 0px 20px;
+   width: 70%;
    line-height: 25px;
+   margin-right: 20px;
 }
 
 .contactLink{
-    width: 100%;
-    height: 60px;
+    background-color: var(--softGreen);
+    height: 50px;
+    margin: 4px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,9 +50,10 @@
 }
 
 .contactLink:hover{
-    color:var(--title);
-    cursor: pointer;
-    font-size: 1.1rem;
+   background-color: var(--tertiaryBackground);
+   color: var(--foreground);
+   cursor: pointer;
+   box-shadow: 0px 0px 4px grey;
 }
 
 .privateInfoContainer{
@@ -57,28 +61,39 @@
 }
 
 .privateInfo{
-    background-color: var(--secondaryBackgroundOpaque);
+    background-color: rgba(255,255,255, 0.1);
     padding: 10px;
+    margin-top:30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid var(--softCoral);
+    border-top: 2px solid var(--softCoral);
+    transition: 0.2s ease-in-out;
+    height: 520px;
 }
+
+
 
 .title{
     font-size: 1.4rem;
-    border-bottom: 1px solid var(--buttonHover);
     width: 100%;
 }
 
+.itemTitle{
+    font-size: 1.4rem;
+}
+
 .infoParagraph{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 20px 0px;
     padding: 0px 10px;
     
 }
 
 .button{
-    background-color: var(--background);
+    border-top: 1px solid var(--secondaryBackground);
+    border-bottom: 1px solid var(--secondaryBackground);
     margin-top: 10px;
     margin-bottom: 5px;
     width: 200px;
@@ -88,9 +103,9 @@
 }
 
 .button:hover{
-    color:var(--background);
-    background-color: var(--buttonHover);
+    transform: scale(1.01);
 }
+
 
 .email{
     color: var(--title);
@@ -104,33 +119,75 @@
     color: var(--buttonHover);
 }
 
-
-
-@media screen and (max-width: 800px){
-    .headerContainer{
-        flex-direction: column;
+@media screen and (max-width: 1200px){
+    .privateInfo{
+        height: 600px;
+       
     }
+}
 
-    .titleContainer{
-        width: 100%;
-        height: 70px;
-    }
 
+@media screen and (max-width: 1000px){
     .descriptionContainer{
-        width: 100%;
-        margin-top:30px;
+        flex-direction: column;
+        margin-top: 10px;
     }
+
+    .paragraph{
+        width: 100%;
+        margin: 5px 0px;
+    }
+
+    .contactLinksContainer{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .contactLink{
+        width: 40%;
+        height: 40px;
+    }
+
 
     .privateInfoContainer{
         flex-direction: column;
     }
 
-    .privateInfo{
-        width: 100%;
-        height: 50%;
-        padding: 0;
-        margin: 10px 0px;
-        box-shadow: 1px 0px 3px grey;
 
+
+ 
+
+}
+
+
+@media screen and (max-width: 800px){
+    .headerContainer{
+        flex-direction: column;
+
+    }
+
+    .privateInfoContainer{
+        padding: 10px;
+    }
+
+    .titleContainer{
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .descriptionContainer{
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 500px){
+    .privateInfo{
+       height: 450px;
     }
 }

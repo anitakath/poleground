@@ -70,21 +70,25 @@ export default function PoleDance() {
        
 
         <div className={styles.buttonsContainer}>
-          <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan </button>
-          </div>
-          <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen  </button>
-          </div>
-          <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('priceTable')}> Preise </button>
-          </div>
-          <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>
-          </div>
-          <div className={styles.buttonDiv}>
-            <button className={styles.button} onClick={() => scrollToSection('workshops')}> Events </button>
-          </div>
+   
+            <div className={styles.buttonDiv}>
+              <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan </button>
+            </div>
+            <div className={styles.buttonDiv}>
+              <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen  </button>
+            </div>
+            <div className={styles.buttonDiv}>
+              <button className={styles.button} onClick={() => scrollToSection('priceTable')}> Preise </button>
+            </div>
+            <div className={styles.buttonDiv}>
+              <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>
+            </div>
+            <div className={styles.buttonDiv}>
+              <button className={styles.button} onClick={() => scrollToSection('workshops')}> Events </button>
+            </div>
+
+          
+         
         </div>
 
         <div className={styles.headerImageContainer}> 
@@ -111,7 +115,10 @@ export default function PoleDance() {
         </div>
       </div>
       <div className={styles.subContainer} id="descriptions">
+        <div className={styles.subContainerDiv}>
         <CourseDescription/>
+        </div>
+
         <div className={styles.subContainerDiv}>
         <PriceTable />
          

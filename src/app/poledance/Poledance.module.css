@@ -6,7 +6,6 @@
     background-color: var(--background);
     padding: 10px;
     position: relative;
-
 }
 
 .headerContainer{
@@ -114,12 +113,16 @@
 }
 
 @media screen and (max-width: 600px){
+
+
     .container{
         padding: 0px;
-    
     }
 
-
+    .buttonsContainer{
+        margin: 0px;
+        margin-bottom: 5px;
+    }
     .headerImageContainer{
         height: 450px;
         overflow:hidden;

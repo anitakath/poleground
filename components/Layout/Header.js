@@ -21,7 +21,7 @@ const Header = () => {
   
   
     return (
-        <div>
+        <div >
             <div className={`min-h-20 flex relative items-center justify-center px-4 ${styles.container}`}>
            
             <nav className={styles.navigation}>
