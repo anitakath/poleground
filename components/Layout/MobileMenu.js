@@ -18,8 +18,8 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
                            {/*<Image src="/iconpng/icons8-löschen-50.png" alt="close button image" width={50} height={50} />*/}
                        </button> 
                    </div>
-                   <Link href="/" className={styles.mobileLink}> STARTSEITE </Link>
-                   <Link href="/poledance" className={styles.mobileLink}> POLEGROUND </Link>
+                   <Link href="/" className={styles.mobileLink}> Startseite</Link>
+                   <Link href="/poledance" className={styles.mobileLink}> ✨ POLEGROUND </Link>
                  
                    <br/>
             

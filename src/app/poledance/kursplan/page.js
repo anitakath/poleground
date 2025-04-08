@@ -8,7 +8,7 @@ const CoursePlanPage = () =>{
         <div className={styles.container}>
 
             <CoursePlan/>
-            moin
+           
         </div>
     )
 }

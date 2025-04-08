@@ -47,12 +47,12 @@ const AboutUs= () =>{
                 </div>
                 <div className={styles.gridItem}> 
                 <p className='absolute top-2 left-4 text-xl text-red-600'> Marlin </p>
-                    <Image src="/Start/pexels-steshkawillems-1390361.jpg" width={600} height={600}  className={styles.image}/>
+                    <Image src="/Start/pexels-steshkawillems-1390361.jpg" width={600} height={600}  className={styles.image} alt="Marlin, das liebe Hündchen des Studios!"/>
                 </div>
                 <div className={styles.gridItem}> 
 
                     <p className='absolute top-2 left-4 text-xl text-red-600'> vielleicht ja bald du? 💜</p>
-                    <Image src="/Start/pexels-mart-production-7319717.jpg"width={600} height={600}  className={styles.image}/>
+                    <Image src="/Start/pexels-mart-production-7319717.jpg"width={600} height={600}  className={styles.image} alt="call to action feld! bewirb dich bei uns!"/>
                 </div>
             </div>
         </div>

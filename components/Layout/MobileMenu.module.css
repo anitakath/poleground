@@ -12,6 +12,8 @@
      transition: left 1s ease; 
      z-index: 100000;
      background-color: var(--secondaryBackground);
+     border: 2px solid red;
+     overflow: scroll;
  }
  
 .mobileLinksContainer.open {

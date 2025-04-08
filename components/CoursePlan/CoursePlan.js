@@ -270,8 +270,6 @@ const CoursePlan = () =>{
                                     <p>{course.spots} free spots</p>
                                     <p>{course.instructor}</p>
                                 </div>
-
-                                
                                
                               </div>
                             );
@@ -295,8 +293,6 @@ const CoursePlan = () =>{
           
             <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>
-
-
         
         </div>
     );
