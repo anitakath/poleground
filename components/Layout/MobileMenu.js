@@ -1,9 +1,13 @@
 
 import Link from "next/link"
 import styles from './MobileMenu.module.css'
+import useScrollToSection from "../../custom hooks/useScrollToSection"
+import { useRouter } from "next/navigation"
 
+const MobileMenu = ({isOpen,  toggleMenu}) =>{
 
-const MobileMenu = ({isOpen, setIsOpen, toggleMenu}) =>{
+    const {scrollToSection} = useScrollToSection()
+
 
 
     return(
@@ -16,14 +20,21 @@ const MobileMenu = ({isOpen, setIsOpen, toggleMenu}) =>{
                    </div>
                    <Link href="/" className={styles.mobileLink}> STARTSEITE </Link>
                    <Link href="/poledance" className={styles.mobileLink}> POLEGROUND </Link>
-                   <Link href="/figureskating" className={styles.mobileLink}> SKATEGROUND **in Bearbeitung**</Link>
+                 
                    <br/>
+            
+                   <Link href="/poledance/kursplan" className={styles.mobileLink}>Kursplan </Link>
+                   <Link href="/poledance/kursbeschreibungen" className={styles.mobileLink}>Kursbeschreibungen </Link>
+                   <Link href="/poledance/preise" className={styles.mobileLink}>Preise </Link>
+                   <Link href="/poledance/private-parties" className={styles.mobileLink}>Private Parties </Link>
+                   
                    <br/>
-                   <Link href="/" className={styles.mobileLink}>FAQ **in Bearbeitung**</Link>
+
+                   <Link href="/helpdesk" className={styles.mobileLink}>FAQ </Link>
                    <Link href="/poledance/ueber-uns" className={styles.mobileLink}>ÜBER UNS</Link>
                    <Link href="/jobs" className={styles.mobileLink}> JOBS </Link>
-                   <Link href="/events" className={styles.mobileLink}>EVENTS **in Bearbeitung**</Link>
-                   <Link href="/" className={styles.mobileLink}>KOOPERATIONEN **in Bearbeitung**</Link>
+                   <Link href="/poledance/events" className={styles.mobileLink}>EVENTS</Link>
+                   <Link href="/poledance/cooperations" className={styles.mobileLink}>KOOPERATIONEN </Link>
                </div>
     )
 }

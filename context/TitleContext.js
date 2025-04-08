@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 const TitleContext = createContext();
 
 export const TitleProvider = ({ children }) => {
-    const [title, setTitle] = useState("ARTISTIC MOVEMENTS");
+    const [title, setTitle] = useState("POLEGROUND");
 
 
     const pathname = usePathname();
@@ -12,11 +12,12 @@ export const TitleProvider = ({ children }) => {
 
     useEffect(() => {
         if (pathname === "/") {
-            setTitle("ARTISTIC MOVEMENTS");
+            //setTitle("ARTISTIC MOVEMENTS");
+            setTitle("POLEGROUND");
         } else if (pathname.startsWith("/poledance")) { 
             setTitle("POLEGROUND");
         } else {
-            setTitle("FIGURE SKATING CLUB");
+            //setTitle("FIGURE SKATING CLUB");
         }
     }, [pathname]);
 
