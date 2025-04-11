@@ -81,22 +81,8 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
             
         
 
-    <div className='w-full flex'>
-        <button 
-                className={styles.courseDescriptionButton}
-                onClick={() => scrollToSection("descriptions")}
-            > 
-                zu den Kursbeschreibungen und Preisen
-        </button>
-        <button 
-                className={styles.courseDescriptionButton}
-                onClick={() => scrollToSection("descriptions")}
-            > 
-                zu den Workshops, Events & Retreats
-        </button>
-    </div>
 
-        <div className='flex mb-2 justify-start items-center'>
+        <div className='flex  my-4 justify-start items-center'>
             <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
 
             <button className={styles.backForwardButton}>

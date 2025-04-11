@@ -67,27 +67,28 @@ export default function PoleDance() {
   return (
     <div className={styles.container} id="topContainer">
       <div className={styles.headerContainer}>
-       
 
         <div className={styles.buttonsContainer}>
-   
+
+          <div className={styles.fixed}>
             <div className={styles.buttonDiv}>
-              <button className={styles.button} onClick={() => scrollToSection('table')}> Kursplan </button>
+                <button className={styles.button} onClick={() => scrollToSection('table')}> KURSPLAN </button>
             </div>
             <div className={styles.buttonDiv}>
-              <button className={styles.button} onClick={() => scrollToSection('descriptions')}> Kursbeschreibungen  </button>
+              <button className={styles.button} onClick={() => scrollToSection('descriptions')}> KURSBESCHREIBUNGEN  </button>
             </div>
             <div className={styles.buttonDiv}>
-              <button className={styles.button} onClick={() => scrollToSection('priceTable')}> Preise </button>
+              <button className={styles.button} onClick={() => scrollToSection('priceTable')}> PREISE </button>
             </div>
             <div className={styles.buttonDiv}>
-              <button className={styles.button} onClick={() => scrollToSection('privateParties')}> Private Parties </button>
+              <button className={styles.button} onClick={() => scrollToSection('privateParties')}> PRIVATE PARTIES </button>
             </div>
             <div className={styles.buttonDiv}>
-              <button className={styles.button} onClick={() => scrollToSection('workshops')}> Events </button>
+              <button className={styles.button} onClick={() => scrollToSection('workshops')}> EVENTS </button>
             </div>
 
-          
+
+          </div>
          
         </div>
 
@@ -157,7 +158,3 @@ export default function PoleDance() {
   );
 }
 
-/*
-export const getStaticProps =()=>{
-
-}*/

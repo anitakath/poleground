@@ -1,6 +1,4 @@
 
-
-
 .weekInfo{
     font-size: 0.9rem;
     text-align: center;
@@ -18,7 +16,7 @@
     justify-content: center;
     align-items: center;
 }
- 
+   
 .backForwardButton:hover{
     background-color: rgba(255,255,255, 0.3);
 }
@@ -30,21 +28,23 @@
    align-items: center;
    justify-content: space-evenly;
    position: relative;
-   
+
 }
 
 .filterButton{
-    background-color: var(--softGreen);
+    /*background-color: var(--softGreen);*/
     padding: 5px;
     margin: 0px; 
     width: 200px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    color: var(--softGreen)
  
  }
  
  .filterButton:hover{
-    background-color: var(--buttonHover);
+    background-color: var(--softGreen);
+    color: var(--background)
  }
  
  .filterButtonActive{
@@ -61,8 +61,7 @@
     width: 200px;
     margin: 0px; 
     top: 37px;
-    z-index: 1000;
-   
+    z-index: 1000; 
  }
 
 
@@ -72,13 +71,14 @@
     margin: 2px 0px;
     padding: 2px;
     width: 100%;
-    background-color: var(--softCoral);
+    /*background-color: var(--softCoral);*/
     cursor: pointer;
     transition: 0.2s ease-in-out;
  }
  
  .levelButton:hover{
-    background-color: var(--strongCoral)
+    background-color: var(--softCoral);
+    color: var(--background)
  }
  
  
@@ -123,7 +123,13 @@
       width: 180px;
       top: 37px;
    }
- }
+}
+
+@media screen and (max-width: 1200px){
+   .filterButtonsContainer{
+      margin-top: 10px;
+   }
+}
 
  @media screen and (max-width: 1150px){
 

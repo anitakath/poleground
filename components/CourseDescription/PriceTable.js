@@ -93,7 +93,16 @@ const PriceTable = () => {
 
     return (
         <div className={styles.container} id="priceTable">
-             <h1 className='text-xl '> PREISE (vorerst nur beispielhaft) </h1>
+
+            {/*} <div className={styles.titleContainer}>
+                <h1 className='text-xl'> PREISE </h1>
+                <div className={styles.buttonsContainers}>
+                    <button onClick={() => scrollToSection('table')} className={styles.buttons}> KURSPLAN</button>
+                    <button onClick={() => scrollToSection('descriptions')}  className={styles.buttons}> KURSBESCHREIBUNGEN </button>
+                    <button onClick={() => scrollToSection('privateParties')}  className={styles.buttons}> PRIVATE PARTIES </button>
+                    <button onClick={() => scrollToSection('workshops')}  className={styles.buttons}> EVENTS </button>
+                </div>
+            </div>*/}
 
             {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
 

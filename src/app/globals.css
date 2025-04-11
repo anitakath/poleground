@@ -16,8 +16,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #EBCFC6;
-    --tertiaryBackground:  #255f40;
-    --secondaryBackground: #599073;
+    --tertiaryBackground:  hsl(148, 44%, 20%);
+    --secondaryBackground: hsl(148, 24%, 52%);
     --secondaryBackgroundOpaque: rgba(89, 144, 115, 0.4);
     --background: #FFFAED;
     --foreground: #EAE6DB;
@@ -34,7 +34,7 @@
     --secondaryForGroundDark:hsl(356, 68%, 47%);
     
     --POLE: #E09E99;
-    --FLEXIBILITY: #8B706E;
+    --FLEXIBILITY: #A3C6A8;;
     --DANCE: #B89D9B;
     --PLAYGROUND: #FA9A85;
     --SPECIALS: rgba(243, 18,  42, 0.9);

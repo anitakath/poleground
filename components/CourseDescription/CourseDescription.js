@@ -4,11 +4,12 @@ import styles from './CourseDescription.module.css';
 import CourseInfoModal from '../Modals/CourseInfoModal';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import useScrollToSection from '../../custom hooks/useScrollToSection';
 
 const CourseDescription = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [courseInfo, setCourseInfo] = useState(null);
+    const {scrollToSection} = useScrollToSection();
 
     function slugify(title) {
         return title
@@ -198,21 +199,27 @@ const CourseDescription = () => {
     //@Button:
     /**onClick={() => handleButtonClick(course.title)}*/
 
- /*
-
-   <Link href={`/poledance/kursbeschreibung/${course.path}`}>
-                                {course.title} <br/>
-                                {!course.isActive ? '**in Planung**' : ' '}
-                                {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}
-                      
-                            </Link>
-
-*/
+    /*
+        <Link href={`/poledance/kursbeschreibung/${course.path}`}>
+                {course.title} <br/>
+                {!course.isActive ? '**in Planung**' : ' '}
+                {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}        
+        </Link>
+    */
     
 
     return (
         <div className={styles.container}>
-            <h1 className=' text-xl  mb-2'> KURSBESCHREIBUNGEN </h1>
+           {/*} <div className={styles.titleContainer}>
+                <h1 className='text-xl'> KURSBESCHREIBUNGEN</h1>
+                <div className='flex w-full justify-evenly'>
+                    <button onClick={() => scrollToSection('table')} className={styles.buttons}> KURSPLAN</button>
+                    <button onClick={() => scrollToSection('priceTable')}  className={styles.buttons}> PREISE </button>
+                    <button onClick={() => scrollToSection('privateParties')}  className={styles.buttons}> PRIVATE PARTIES </button>
+                    <button onClick={() => scrollToSection('workshops')}  className={styles.buttons}> EVENTS </button>
+                </div>
+            </div>*/}
+            
             <div className={styles.courseDescriptionDiv}>
             
                 {courses.map(course => (

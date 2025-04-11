@@ -4,12 +4,13 @@
     height:100vh;
     overflow: scroll;
     background-color: var(--background);
-    padding: 10px;
     position: relative;
+
 }
 
 .headerContainer{
     /* border: 2px solid gold; */
+
 
 }
 
@@ -23,29 +24,38 @@
 .buttonsContainer{
     display: flex;
     padding: 1px;
-    margin: 10px 0px;
+    margin-top: 5px;
+
+}
+
+.fixed{
+    /*position: fixed;*/
 }
 
 .buttonDiv{
-    background-color: var(--secondaryBackground);
     width: 100%;
     margin: 2px;
     padding: 0px 2px;
     text-align: center;
-    transition: 0.2s ease-in-out;
+   
 }
 
-.buttonDiv:hover{
-    background-color: var(--tertiaryBackground);
-    color: var(--background)
-}
+
 
 .button{
-    color: var(--foregroundDark);
+    color: var(--secondaryBackground);
+    font-size: 1.2rem;
     width: 100%;
     height: 50px;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
+
+.button:hover{
+    color: var(--tertiaryBackground);
+}
+
+
 
 .socialButton{
     width: 45px;

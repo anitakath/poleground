@@ -8,7 +8,7 @@ import CheckOutModal from '../Modals/CheckOutModal';
 import MobileCoursePlan from './Mobile/MobileCoursePlan';
 import CourseRequestModal from '../Modals/CourseRequestModal';
 import { supabase } from '../../services/supabaseClient';
-
+import useScrollToSection from '../../custom hooks/useScrollToSection';
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
     const {courses} = useCourseData();
@@ -18,7 +18,7 @@ const CoursePlan = () =>{
     const [selectedGroup, setSelectedGroup] = useState('ALL');
     const [selectedLevel, setSelectedLevel] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const {scrollToSection} = useScrollToSection();
 
 
 
@@ -135,11 +135,22 @@ const CoursePlan = () =>{
       });
     };
 
+    
+
     return (
         <div className={styles.tableContainer} >
 
         {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
-         <h1 className=' text-xl mb-2'> KURSPLAN</h1>
+       {/*} <div className={styles.titleContainer}>
+          <h1 className='text-xl'> KURSPLAN</h1>
+          <div className='flex w-full justify-evenly'>
+            <button onClick={() => scrollToSection('descriptions')} className={styles.buttons}> KURSBESCHREIBUNGEN</button>
+            <button onClick={() => scrollToSection('priceTable')}  className={styles.buttons}> PREISE </button>
+            <button onClick={() => scrollToSection('privateParties')}  className={styles.buttons}> PRIVATE PARTIES </button>
+            <button onClick={() => scrollToSection('workshops')}  className={styles.buttons}> EVENTS </button>
+          </div>
+        </div>*/}
+         
          <CoursePlanHeader 
           currentWeekStart={currentWeekStart}
           setCurrentWeekStart={setCurrentWeekStart}
