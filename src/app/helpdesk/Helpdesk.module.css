@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
+
 }
   
 
@@ -61,4 +62,48 @@
         width: 100%;
     }
     
+}
+
+
+@media screen and (max-width: 800px){
+    .container{
+   
+        padding: 0;
+    }
+
+    .title{
+        padding: 5px 10px 0px 10px;
+    }
+
+    .questionItem{
+        margin: 0;
+        height: auto;
+    }
+
+    .questionButton{
+        border-bottom: 1px solid transparent;
+        margin: 0px;
+    }
+
+    .questionParagraph{
+        text-align: justify;
+        margin: 5px 0px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .questionButton{
+        border-bottom: 1px solid transparent;
+        font-size: 1rem;
+    }
+
+    .questionButton:hover{
+        border-bottom: 1px solid transparent;
+    }
+
+    .info{
+
+        padding: 10px;
+        text-align: center;
+    }
 }

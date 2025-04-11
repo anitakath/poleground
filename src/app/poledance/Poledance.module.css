@@ -8,6 +8,17 @@
 
 }
 
+
+.chevronUp{
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    background-color: rgba(255,255,255, 0.3);
+    position: fixed;
+    z-index: 10000;
+    left: 4.5px;
+    top: 95px;
+}
 .headerContainer{
     /* border: 2px solid gold; */
 
@@ -90,8 +101,6 @@
     height: 100%;
     object-fit: cover;
     position: relative;
-
-    
 }
 
 .subContainer{
@@ -104,6 +113,16 @@
     background-color: var(--background);
     min-height: 65vh;
     padding: 10px;
+}
+
+@media screen and (max-width: 1000px){
+    .buttonDiv{
+        display: none;
+    }
+
+    .chevronUp{
+        top: 92px;
+    }
 }
 
 
@@ -141,6 +160,11 @@
     .subContainer{
         padding: 0;
     }
+
+    .chevronUp{
+        top: 56px;
+    }
     
+  
 }
 

@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTitle } from "../../context/TitleContext";
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { supabase } from "../../services/supabaseClient";
-
 import styles from './poledance/Poledance.module.css'
 //COMPONENTS
 
 import CoursePlan from "../../components/CoursePlan/CoursePlan";
-import MobileCoursePlan from "../../components/CoursePlan/Mobile/MobileCoursePlan";
 import CourseDescription from "../../components/CourseDescription/CourseDescription";
 import PrivateParties from "../../components/CoursePlan/PrivateParties";
 import Retreat from "../../components/Events/Retreat";
@@ -74,13 +74,16 @@ export default function Home() {
 
 
   return (
-    <div className={styles.container} id="topContainer">
+    <div className={styles.container}>
+      <button className={styles.chevronUp} onClick={()=> scrollToSection("top")}> 
+        <FontAwesomeIcon icon={faChevronUp} />
+      </button>
       <div className={styles.headerContainer}>
        
 
         <div className={styles.buttonsContainer}>
    
-            <div className={styles.buttonDiv}>
+            <div className={styles.buttonDiv} id="top">
               <button className={styles.button} onClick={() => scrollToSection('table')}> KURSPLAN </button>
             </div>
             <div className={styles.buttonDiv}>

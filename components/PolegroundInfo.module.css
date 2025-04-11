@@ -3,6 +3,7 @@
     padding: 20px; 
     transition: 0.2s ease-in-out;
     border-bottom: 2px solid var(--buttonHover);
+
   }
   
   .title {
@@ -32,6 +33,7 @@
     font-size: 1.75rem; 
     margin-top: 20px; 
     margin-left: 10px;
+   
   }
   
   .description {
@@ -77,4 +79,30 @@
     .container {
         width: 100%;
     }
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    padding: 5px;
+  }
+
+  .description{
+    text-align: justify;
+  }
+
+  .description li{
+    margin: 10px 0px;
+  }
+
+  .description li strong{
+    color: var(--strongCoral)
+  }
+
+ 
+}
+
+@media screen and (max-width: 600px){
+  .title {
+    text-align: center;
+  }
 }

@@ -85,10 +85,10 @@ const HelpDesk = () => {
                        </div>
 
                 ))}
-                    <p> deine Frage ist nicht mit dabei? Kontaktiere uns gern per
+                    <p className={styles.info}> deine Frage ist nicht mit dabei? Kontaktiere uns gern per
                         <a href="mailto:wagner.annekathirn@gmx.de" className={styles.link}> E-Mail </a> 
                         oder WhatsApp: <span className={styles.telephone}> 0176-123456789</span></p>
-                    <p></p>
+            
             </div>
 
         </div>

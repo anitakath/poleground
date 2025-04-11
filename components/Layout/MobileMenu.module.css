@@ -7,16 +7,16 @@
      left: -1000px; 
      width: 30%; 
      height: 100%; 
+     background-color: rgba(255,255,255, 1);
      background-color: var(--background);
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); 
+     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
      transition: left 1s ease; 
      z-index: 100000;
-     background-color: var(--secondaryBackground);
-     border: 2px solid red;
      overflow: scroll;
+
  }
  
-.mobileLinksContainer.open {
+.mobileLinksContainer.open{
     left: 0; 
 }
 
@@ -24,19 +24,15 @@
 
 .mobileLink {
     display: block; 
-    padding: 15px; 
+    padding: 15px 15px 5px 15px; 
     text-decoration: none; 
     cursor: pointer;
     transition: 0.2s ease-in-out;
     margin: 5px 0px;
-
-    
 }
 
 .mobileLink:hover{
-    color:var(--background);
-    background-color: var(--tertiaryBackground);
-    box-shadow: 2px 0px 2px grey;
+    color: var(--secondaryBackground);
 }
 
 
@@ -45,31 +41,24 @@
     width: 100%;
     padding: 15px 0px;
     font-size: 0.9rem;
-    cursor: pointer;
     transition: 0.2s ease-in-out;
     display: flex;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
     z-index: 1000;
-    background-color: var(--secondaryBackgroundOpaque);
-    
     height: 50px;
 }
-
-
-.closeMobileMenuButton:hover{
-    color:var(--background);
-    background-color: var(--tertiaryBackground);
-    cursor: pointer;
-    }
 
     
 
 .closeMobileMenuButton Button{
     cursor: pointer;
-    width: 100%;
+    margin-right: 15px;
+    transition: 0.2s ease-in-out;
+}
 
-        
+.closeMobileMenuButton Button:hover{
+    color: var(--secondaryBackground)
 }
 
 
@@ -88,7 +77,7 @@
 @media screen and (max-width: 600px){
 
     .mobileLinksContainer{
-        width: 70%;
+        width: 65%;
     }
 
 
@@ -97,7 +86,7 @@
 @media screen and (max-width: 400px){
 
     .mobileLinksContainer{
-        width: 80%;
+        width: 100%;
     }
 
 

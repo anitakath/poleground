@@ -3,6 +3,8 @@ import Link from "next/link"
 import styles from './MobileMenu.module.css'
 import useScrollToSection from "../../custom hooks/useScrollToSection"
 import { useRouter } from "next/navigation"
+import { faX } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const MobileMenu = ({isOpen,  toggleMenu}) =>{
 
@@ -14,19 +16,18 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
         <div className={`${styles.mobileLinksContainer} ${isOpen ? styles.open : ''}`}>
                    <div className={styles.closeMobileMenuButton}> 
                        <button onClick={toggleMenu}>
-                           schließen
+                        <FontAwesomeIcon icon={faX} />
                            {/*<Image src="/iconpng/icons8-löschen-50.png" alt="close button image" width={50} height={50} />*/}
                        </button> 
                    </div>
-                   <Link href="/" className={styles.mobileLink}> Startseite</Link>
-                   <Link href="/poledance" className={styles.mobileLink}> ✨ POLEGROUND </Link>
+                   <Link href="/" className={styles.mobileLink}> ✨ POLEGROUND </Link>
                  
                    <br/>
             
-                   <Link href="/poledance/kursplan" className={styles.mobileLink}>Kursplan </Link>
-                   <Link href="/poledance/kursbeschreibungen" className={styles.mobileLink}>Kursbeschreibungen </Link>
-                   <Link href="/poledance/preise" className={styles.mobileLink}>Preise </Link>
-                   <Link href="/poledance/private-parties" className={styles.mobileLink}>Private Parties </Link>
+                   <Link href="/poledance/kursplan" className={styles.mobileLink}>KURSPLAN </Link>
+                   <Link href="/poledance/kursbeschreibungen" className={styles.mobileLink}>KURSBESCHREIBUNGEN </Link>
+                   <Link href="/poledance/preise" className={styles.mobileLink}>PREISE </Link>
+                   <Link href="/poledance/private-parties" className={styles.mobileLink}>PRIVATE PARTIES </Link>
                    
                    <br/>
 
