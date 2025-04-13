@@ -19,6 +19,7 @@
    width:100%;
    border-collapse: border-collapse; 
 
+
 }
  
  .dayHeader,
@@ -32,9 +33,9 @@
 
 
 
-   .timeCell{
-      text-align: center;
-   }
+.timeCell{
+   text-align: center;
+}
 
 
 
@@ -106,6 +107,7 @@
    .buttons{
        margin: 10px 0px;
        height: 30px;
+       border:2px solid red;
    }
 
 }

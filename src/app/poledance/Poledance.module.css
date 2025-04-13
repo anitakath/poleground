@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cabin+Sketch:wght@400;700&family=Carrois+Gothic&family=Codystar:wght@300;400&family=Cormorant:ital,wght@0,300;1,300&family=Fredoka:wght@300..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gowun+Dodum&family=Gruppo&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Kumbh+Sans:wght@100..900&family=Lexend+Peta:wght@100..900&family=Manjari:wght@100;400;700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Pangolin&family=Poiret+One&family=Pompiere&family=Pontano+Sans:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&family=Wix+Madefor+Display:wght@400..800&display=swap');
 
 .container{
     height:100vh;
@@ -13,7 +14,6 @@
     font-size: 1.5rem;
     cursor: pointer;
     width: 40px;
-    background-color: rgba(255,255,255, 0.3);
     position: fixed;
     z-index: 10000;
     left: 4.5px;
@@ -122,6 +122,7 @@
 
     .chevronUp{
         top: 92px;
+        background-color: rgba(255,255,255, 0.3);
     }
 }
 
@@ -162,9 +163,112 @@
     }
 
     .chevronUp{
-        top: 56px;
+        top: 54px;
+        background-color: transparent;
     }
     
   
 }
 
+
+/* Fonts.module.css */
+
+.AnekDevanagari {
+    font-family: 'Anek Devanagari', sans-serif;
+}
+
+.BaiJamjuree {
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.BarlowCondensed {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.BeVietnamPro {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.CabinSketch {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.CarroisGothic {
+    font-family: 'Carrois Gothic', sans-serif;
+}
+
+.Codystar {
+    font-family: 'Codystar', sans-serif;
+}
+
+.Cormorant {
+    font-family: 'Cormorant', serif;
+}
+
+.Fredoka {
+    font-family: 'Fredoka', cursive;
+}
+
+.FunnelDisplay {
+    font-family: 'Funnel Display', sans-serif;
+}
+
+.FunnelSans {
+    font-family: 'Funnel Sans', sans-serif;
+}
+
+.GowunDodum {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.Gruppo {
+    font-family: 'Gruppo', sans-serif;
+}
+
+.KulimPark {
+    font-family: 'Kulim Park', sans-serif;
+}
+
+.KumbhSans {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.LexendPeta {
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+.Manjari {
+    font-family: 'Manjari', sans-serif;
+}
+
+.MerriweatherSans {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.Pangolin {
+    font-family: 'Pangolin', cursive;
+}
+
+.PoiretOne {
+    font-family: 'Poiret One', cursive;
+}
+
+.Pompiere {
+    font-family: 'Pompiere', cursive;
+}
+
+.PontanoSans {
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+.Rubik {
+    font-family: 'Rubik', sans-serif;
+}
+
+.Thasadith {
+    font-family: 'Thasadith', sans-serif;
+}
+
+.WixMadeforDisplay {
+    font-family: 'Wix Madefor Display', sans-serif;
+}

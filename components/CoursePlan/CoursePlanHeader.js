@@ -83,7 +83,7 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
 
 
         <div className='flex  my-4 justify-start items-center'>
-            <p className={styles.weekInfo}> {convertDate(currentWeekStart)} </p>
+            <p className={styles.weekInfo}> {convertDate(currentWeekStart)}</p>
 
             <button className={styles.backForwardButton}>
             <Image src="/iconpng/icons8-zurück-30.png" alt="go back button" onClick={goBackOneWeek} width={25} height={30} />
