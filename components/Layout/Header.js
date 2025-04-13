@@ -26,17 +26,13 @@ const Header = () => {
            
             <nav className={styles.navigation}>
                <div className={styles.titleContainer}>
-                   <Link href="/"> {title} </Link>
+                   <Link href="/" className="primaryFontFamily"> {title} </Link>
                </div>
 
                <div className={styles.linksContainer}>
                    <Link href="/helpdesk" className={styles.link}> FAQ  </Link>
                   
-                  <div className={styles.dropdownContent}>
-                    <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poledance </Link>
-                    <Link href="/figureskating/ueber-uns" className={styles.dropdownLink}> Figure Skating </Link>
-       
-                  </div>
+
 
                   <div className={styles.linkAboutUs}>
                         <Link  href="/poledance/ueber-uns" className={styles.link}> ÜBER POLEGROUND </Link>

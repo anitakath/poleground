@@ -12,6 +12,7 @@
 .buttons{
    cursor: pointer;
    font-size: 0.9rem;
+   font-family: 'Kumbh Sans', sans-serif;
 }
 
 
@@ -28,6 +29,7 @@
     text-align:left; 
     border: 1px solid var(--secondaryBackground);
     width: 12%;
+    font-family: 'Kumbh Sans', sans-serif;
     
  }
 
@@ -78,6 +80,7 @@
    margin: 0px 2px;
    color:var(--secondaryBackground);
    font-weight: bolder;
+   font-family: 'Kumbh Sans', sans-serif;
 }
 
 .courseRequestModalContainer{
@@ -86,7 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 
@@ -117,6 +120,13 @@
   
    .courseTable{
       display: none;
+   }
+
+   .courseRequestModalContainer{
+      padding:5px;
+      margin: 0px;
+      width: 100%;
+      text-align: justify;
    }
 
  }

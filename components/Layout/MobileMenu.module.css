@@ -29,6 +29,7 @@
     cursor: pointer;
     transition: 0.2s ease-in-out;
     margin: 5px 0px;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 .mobileLink:hover{

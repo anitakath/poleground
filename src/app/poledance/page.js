@@ -18,6 +18,7 @@ const fontFamilies = [
 
   'Wix Madefor Display',
   'Codystar',
+  'Amiri',
 ];
 
   return (
@@ -35,9 +36,6 @@ const fontFamilies = [
               );
           })}
       
-
-
-  
    
     </div>
   );

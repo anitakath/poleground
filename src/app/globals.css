@@ -71,6 +71,7 @@
     --foreground: #ededed;
 
     --iceBlue: rgba(214, 234, 240);
+
   }
 
 }
@@ -86,4 +87,8 @@ body {
   font-optical-sizing: auto;
   font-size: 1.3rem;
 
+}
+
+.primaryFontFamily{ 
+  font-family: 'Kumbh Sans', sans-serif;
 }

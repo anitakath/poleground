@@ -16,6 +16,7 @@
 .buttons{
     cursor: pointer;
     font-size: 0.9rem;
+
 }
 
 .courseDescriptionDiv{
@@ -35,6 +36,7 @@
     font-size: 1.3rem; 
     cursor: pointer;
     color: var(--softCoral);
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 .button:hover{
