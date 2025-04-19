@@ -15,27 +15,44 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #EBCFC6;
+    /*--background: #EBCFC6;*/
+   /*--background: #F3E0D1;*/
     --tertiaryBackground:  hsl(148, 44%, 20%);
     --secondaryBackground: hsl(148, 24%, 52%);
     --secondaryBackgroundOpaque: rgba(89, 144, 115, 0.4);
+
     --background: #FFFAED;
-    --foreground: #EAE6DB;
+    --foreground: #E8B19D;
+
     --secondaryForeground: #E8A7A3;
+    --secondaryForeground: #BE6674;
     --navigation: #F7AC84;
     --navigationHover: #8B706E;
-    --title: #CA2732;
+    --title: #444141;
     --subTitle: ;
     --paragraph: ;
     --buttonBg: ;
     --buttonHover:#FFB3AB;
 
 
+    
+
+    --primaryFont: #BE6674;
+    --primaryFontHover: #741C28;
+    --secondaryFont: #BB8C94;
+    --secondaryFontHover: #741C28;
+
+    --tertiaryFont: #A3C6A8;
+    --tertiaryFontHover: hsl(148, 44%, 20%);
+
+  
+
+
     --secondaryForGroundDark:hsl(356, 68%, 47%);
     
     --POLE: #E09E99;
     --FLEXIBILITY: #A3C6A8;;
-    --DANCE: #B89D9B;
+    --DANCE: #FFE5B4;
     --PLAYGROUND: #FA9A85;
     --SPECIALS: rgba(243, 18,  42, 0.9);
     
@@ -68,7 +85,7 @@
 
 
 
-    --foreground: #ededed;
+    /*--foreground: #ededed;*/
 
     --iceBlue: rgba(214, 234, 240);
 

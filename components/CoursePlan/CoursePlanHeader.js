@@ -18,6 +18,8 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
 
 
     
+
+    console.log(courses)
     
 
      // Funktion zum Extrahieren der einzigartigen Level
@@ -49,7 +51,8 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
                             
                             className={`${styles.filterButton} ${selectedGroup === group ? styles.filterButtonActive : ''}`}
                         >
-                            {group}
+                            {group} 
+                    
                         </button>
                         {/* Hover-Div für die Level-Buttons */}
                         {hoveredGroup === group && (

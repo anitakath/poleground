@@ -8,46 +8,47 @@
  
  .title{
      font-size: 2rem; 
-     color: #333; 
+     color: var(--primaryFontHover);
      margin-bottom: 10px; 
+
  }
 
  .subTitle{
     font-size: 1.4rem;
-    color: var(--foreground);
+    color: var(--primaryFont);
     transition: 0.2s ease-in-out;
     cursor: pointer;
+    margin: 10px 0px;
+
  }
 
  .subTitle:hover{
-    color: var(--strongCoral)
+    color: var(--primaryFontHover)
  }
 
  .subTitleInactive{
     position: absolute;
-    left: -10000px;
-
+   color: var(--primaryFontHover)
  }
 
 
-.subContainerPole{
-    background-color: var(--secondaryBackground);
-    margin: 15px 0px;
-    min-height: 100px;
-    padding: 15px;
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+ .subContainerPole{
     position: relative;
+    display: flex;
+ }
+
+ 
+
+.description{
+    width: 50%;
+    margin: 50px 0px;
+    transition: 0.2s ease-in-out;
+    text-align: justify;
 }
 
 
-
 .email{
-    color: var(--buttonHover);
+    color: var(--primaryFont);
     font-size: 1.3rem;
     margin: 0px 10px 0px 5px;
     transition: 0.2s ease-in-out;
@@ -56,26 +57,20 @@
 }
 
 .email:hover{
-    color: var(--secondaryBackground);
+    color: var(--primaryFontHover);
 }
 
-.description{
-    margin: 0px 20px;
-    width: 70%;
-    color: var(--background);
-    padding: 10px;
-
-}
-.subContainerSkate{
-    background-color:  var(--iceBlue);
-
-}
 
 
 
 @media screen and (max-width: 1100px){
 
     .container {
+        width: 100%;
+    }
+
+
+    .description{
         width: 100%;
     }
 }

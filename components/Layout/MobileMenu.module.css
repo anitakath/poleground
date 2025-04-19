@@ -30,10 +30,11 @@
     transition: 0.2s ease-in-out;
     margin: 5px 0px;
     font-family: 'Kumbh Sans', sans-serif;
+    color: var(--primaryFont)
 }
 
 .mobileLink:hover{
-    color: var(--secondaryBackground);
+    color: var(--primaryFontHover);
 }
 
 

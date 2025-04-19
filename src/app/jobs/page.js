@@ -1,6 +1,9 @@
 "use client"
 import { useState } from 'react';
 import styles from './Jobs.module.css'
+import { motion } from 'framer-motion';
+
+
 const Jobs = () => {
 
     const [activeJobIndex, setActiveJobIndex] = useState(null);
@@ -52,21 +55,36 @@ const Jobs = () => {
         <div className='flex justify-center'> 
             <div className={styles.container}> 
                 <h1 className={styles.title}> Poleground sucht ...</h1>
-                <h3 className="mt-2">Schicke uns deine Bewerbung gern per
+                <h3 className="my-4">Schicke uns deine Bewerbung gern per
                     <a href="mailto:wagner.annekathirn@gmx.de" className={styles.email}>E-Mail </a>
                 </h3>
 
                 {jobOffers.map((jobOffer, index) => (
                     <div className={`${styles.subContainerPole} ${activeJobIndex === index ? styles.subContainerPoleInactive : ''}`} key={jobOffer.title}>
-                        <button  onClick={() => handleTitleClick(index)} className={`${styles.subTitle} ${activeJobIndex === index ? styles.subTitleInactive : ''}`}>{jobOffer.title}</button>
+                        <button  
+                            onClick={() => handleTitleClick(index)} 
+                            className={`${styles.subTitle} 
+                            ${activeJobIndex === index ? styles.subTitleInactive : ''}`}>
+                            {jobOffer.title}
+                        </button>
 
-                        {activeJobIndex === index && (
+
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }} // Startposition (unsichtbar und leicht nach oben)
+                        animate={{ opacity: 1, y: 0 }} // Endposition (sichtbar und an der ursprünglichen Position)
+                        exit={{ opacity: 0, y: 20 }} // Ausgangsposition (unsichtbar und leicht nach unten)
+                        transition={{ duration: 0.5 }} // Dauer der Animation
+                        className={styles.item_imageDiv}
                         
-
-                        <div className={styles.description}>
-                            <p>{jobOffer.description}</p>
-                        </div>
+                    >
+                        {activeJobIndex === index && (
+                            <div className={styles.description}>
+                                <p>{jobOffer.description}</p>
+                            </div>
                         )}
+                    </motion.div>
+
+                       
 
                     
                        

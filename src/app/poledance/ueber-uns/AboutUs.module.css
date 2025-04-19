@@ -16,8 +16,8 @@
 }
 
 .gridItem{
-    border: 1px solid var(--buttonHover);
-    background-color: var(--buttonHover);
+    border: 1px solid var(--foreground);
+    background-color: var(--foreground);
     height: 400px;
     margin: 2px;
     position: relative;
@@ -26,8 +26,18 @@
     align-items: center;
 }
 
-.itemImage{
-    border: 2px solid var(--title);
+.gridItem p{
+    color: var(--secondaryFont);
+    transition: 0.2s ease-in-out;
+    padding: 2px 10px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+
+.gridItem p:hover{
+    color: var(--secondaryFontHover);
+
 }
 
 .image{

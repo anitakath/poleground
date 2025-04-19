@@ -11,9 +11,11 @@ const PolegroundInfo = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title} onClick={() => scrollToSection("studio")}>Das Poleground Studio</h1>
-      <p className={styles.opening}>Eröffnung 2026</p>
-      <h2 className={styles.subtitle}>Unser Leitbild</h2>
+      <h1 className={styles.title} onClick={() => scrollToSection("studio")}>
+        Das Poleground Studio <span className={styles.opening}> -  Eröffnung 2026 </span>
+      </h1>
+
+      <h2 className={styles.subtitle}> Unser Leitbild</h2>
       <div className='flex'>
 
 

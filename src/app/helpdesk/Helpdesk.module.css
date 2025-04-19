@@ -9,7 +9,7 @@
 
 .title{
     font-size: 2rem; 
-    color: #333; 
+    color: var(--primaryFontHover);
     margin-bottom: 10px; 
 
 }
@@ -27,19 +27,19 @@
 .link, .telephone{
     font-size: 1.1rem;
     margin: 0px 2px;
-    color: var(--secondaryBackground);
+    color: var(--primaryFont);
     transition: 0.2s ease-in-out;
     font-weight: bolder;
 
 }
 
 .link:hover{
-    color:var(--softCoral);
+    color:var(--primaryFontHover);
 }
 
 .questionButton{
     border-bottom: 1px solid var(--softGreen);
-    color: var(--strongCoral);
+    color: var(--primaryFont);
     transition: 0.2s ease-in-out;
     font-size: 1.1rem;
     margin: 4px 0px;
@@ -48,8 +48,7 @@
 }
 
 .questionButton:hover{
-    color: var(--title);
-    border-bottom: 1px solid var(--tertiaryBackground);
+    color: var(--primaryFontHover);
 }
   
 

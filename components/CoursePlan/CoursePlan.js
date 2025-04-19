@@ -126,7 +126,12 @@ const CoursePlan = () =>{
 
      const getCoursesForCurrentWeek = (currentWeekStart, dayIndex) => {
       const startOfWeek = new Date(currentWeekStart);
+
+      console.log(currentWeekStart)
+      console.log(dayIndex)
+      console.log(startOfWeek)
       const targetDate = new Date(startOfWeek);
+      console.log(targetDate)
       targetDate.setDate(startOfWeek.getDate() + dayIndex); // dayIndex: 0 = Montag, 1 = Dienstag, etc.
   
       return courseArray.filter(course => {
@@ -196,11 +201,14 @@ const CoursePlan = () =>{
                  // Generiere die Kurse für den aktuellen Tag und die aktuelle Stunde
                     const dayCourses = [...Array(7)].map((_, dayIndex) => {
                       const day = new Date(2025, 2, dayIndex + 17);
+                   
                       return filteredCourses().filter(course => {
                           const courseDate = new Date(course.scheduled_at);
                           return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
                       });
                   });
+
+                  console.log(dayCourses)
 
                   // Überprüfe, ob es Kurse für diese Stunde gibt
                   const hasCourses = dayCourses.some(courses => courses.length > 0);
@@ -215,13 +223,15 @@ const CoursePlan = () =>{
                     
                     {[...Array(7)].map((_, dayIndex) => {
 
-                    
+                      console.log(dayIndex)
                  
                       const day = new Date(2025, 2, dayIndex + 17);
                        const dayCourses = filteredCourses().filter(course => { // Hier rufen wir die Funktion auf
                             const courseDate = new Date(course.scheduled_at);
                             return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
                         });
+
+            
 
                       return (
                         <td 
@@ -276,6 +286,7 @@ const CoursePlan = () =>{
                                     <p> {getMinutes(course.duration)}</p>
                                 </div>
                                 <div className={` px-1 ${styles.courseInfos}`}>
+                                    <p>{course.scheduled_at}</p>
                                     <p>{course.level}</p>
                                     <p>{course.room}</p>
                                     <p>{course.spots} free spots</p>

@@ -8,31 +8,32 @@
   
   .title {
     font-size: 2rem; 
-    color: #333; 
+    color: var(--primaryFontHover); 
     margin-bottom: 10px; 
     transition: 0.2s ease-in-out;
     cursor: pointer;
+    width: 100%;
   }
 
-  .title:hover{
-    color: var(--tertiaryBackground);
 
-  }
-  
   .opening {
     font-size: 1.5rem; 
-    color: var(--title); 
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--tertiaryFont); 
     transition: 0.2s ease-in-out;
+    margin-left:5px;
+    transition: 0.2s ease-in-out
+  }
+
+  .opening:hover{
+    color: var(--tertiaryFontHover)
+
   }
   
   .subtitle {
     font-size: 1.75rem; 
     margin-top: 20px; 
     margin-left: 10px;
+    color: var(--primaryFontHover);
    
   }
   
@@ -44,11 +45,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: var(--primaryFont);
    
+  }
+
+  .description li strong{
+    color: var(--primaryFontHover);
   }
 
   .description li{
     margin: 5px 0px;
+    color: var(--primaryFont);
 
   }
 
@@ -64,14 +71,14 @@
   .link, .telephone{
     font-size: 1.1rem;
     margin: 0px 2px;
-    color: var(--secondaryBackground);
+    color: var(--tertiaryFont);
     transition: 0.2s ease-in-out;
     font-weight: bolder;
 
 }
 
 .link:hover{
-    color:var(--softCoral);
+    color: var(--tertiaryFontHover);
 }
 
   @media screen and (max-width: 1100px){

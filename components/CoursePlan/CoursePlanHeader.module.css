@@ -37,14 +37,28 @@
     width: 200px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    color: var(--softGreen)
+    color: var(--primaryFont);
+    position: relative;
+    display:flex;
+
+    justify-content: center;
+    align-items: center;
  
  }
  
  .filterButton:hover{
-    background-color: var(--softGreen);
-    color: var(--background)
+    background-color: var(--primaryFont);
+    color: var(--primaryFontHover);
  }
+
+ .circle{
+   margin: 0px 5px;
+   height: 30px;
+   width: 30px;
+   border-radius: 50%;
+
+ }
+ 
  
  .filterButtonActive{
     background-color: var(--secondaryBackground);
@@ -76,7 +90,7 @@
  }
  
  .levelButton:hover{
-    background-color: var(--strongCoral);
+    background-color:  var(--primaryFont);
     color: var(--background)
  }
  
