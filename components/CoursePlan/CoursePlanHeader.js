@@ -8,26 +8,47 @@ import useCourseData from '../../custom hooks/useCourseData';
 import useScrollToSection from '../../custom hooks/useScrollToSection';
 import CourseRequestModal from '../Modals/CourseRequestModal';
 
-const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekStart, openCheckoutModal, goBackOneWeek, goForwardOneWeek, selectedGroup, hoveredGroup, setHoveredGroup}) =>{
+const CoursePlanHeader = ({
+    handleFilterChange, 
+    handleLevelChange, 
+    currentWeekStart, 
+    goBackOneWeek, 
+    goForwardOneWeek, 
+    selectedGroup, 
+    hoveredGroup, 
+    trainerFilterHandler,
+    selectedTrainer,
+    setSelectedTrainer
+}) =>{
 
 
     const { convertDate} = useTimesAndDates();
     const {courses} = useCourseData();
+    const trainer =["ANNE", "STELLA", "NATALIA", "MALAK"]
 
     const {scrollToSection} = useScrollToSection()
 
-
-    
-
-    console.log(courses)
-    
 
      // Funktion zum Extrahieren der einzigartigen Level
      const getUniqueLevels = (group) => {
         const levels = new Set();
         courses[group].forEach(course => levels.add(course.level));
         return Array.from(levels);
+    };
+
+    const capitalizeFirstLetter = (string) => {
+        if (!string) return '';
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
       };
+      
+      const setTrainerHandler = (trainer) => {
+
+        const updatedTrainer = capitalizeFirstLetter(trainer); 
+        setSelectedTrainer(updatedTrainer);
+      };
+
+
+    
       
     return(
 
@@ -47,9 +68,9 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
                     <div key={group} className={styles.filterButtonsSubContainer}>
                         <button 
                             onClick={() => handleFilterChange(group)} 
-                            onMouseEnter={() => setHoveredGroup(group)} 
+                           
                             
-                            className={`${styles.filterButton} ${selectedGroup === group ? styles.filterButtonActive : ''}`}
+                            className={`${styles.filterButton} ${selectedTrainer === group ? styles.filterButtonActive : ''}`}
                         >
                             {group} 
                     
@@ -80,6 +101,28 @@ const CoursePlanHeader = ({handleFilterChange, handleLevelChange, currentWeekSta
       
            
          
+        </div>
+        <div className={styles.filterTrainersContainer}> 
+            <div className={styles.filterTrainersSubContainer}>
+                    <button 
+                        onClick={() => trainerFilterHandler('ALL')} 
+                        className={`${styles.filterButton} ${selectedGroup === 'ALL' ? styles.filterTrainerActive : ''}`}
+                    >
+                        ALLE TRAINER
+                    </button>
+
+                 
+                    {trainer && trainer.map((trainer) => (
+                        <button 
+                            key={trainer}
+                            className={styles.trainersButton}
+                            onClick={()=> setTrainerHandler(trainer)}
+                        >{trainer}</button>
+                    ))}
+                    
+
+                   
+                </div>
         </div>
             
         

@@ -13,7 +13,7 @@ const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
     const {courses} = useCourseData();
     const [hoveredGroup, setHoveredGroup] = useState(null);
-    const [currentWeekStart, setCurrentWeekStart] = useState(getStartOfWeek(new Date()));
+   // const [currentWeekStart, setCurrentWeekStart] = useState(getStartOfWeek(new Date()));
     const [weeksForward, setWeeksForward] = useState(0);
     const [selectedGroup, setSelectedGroup] = useState('ALL');
     const [selectedLevel, setSelectedLevel] = useState(null);
@@ -21,19 +21,19 @@ const CoursePlan = () =>{
     const {scrollToSection} = useScrollToSection();
 
 
-
- 
-
     function getStartOfWeek(date) {
+      const day = date.getDay(); // Sonntag = 0, Montag = 1, ...
+      const diff = (day === 0 ? -6 : 1) - day; // Für Wochenbeginn Montag
       const startOfWeek = new Date(date);
-      // Berechne den Unterschied zum Montag
-      const day = startOfWeek.getDay();
-      const diff = (day === 0 ? -6 : 1 - day); // Wenn Sonntag (0), gehe zurück zu -6 Tagen
-  
-      startOfWeek.setDate(startOfWeek.getDate() + diff);
-  
+      startOfWeek.setDate(date.getDate() + diff);
+      startOfWeek.setHours(0, 0, 0, 0); // Setze auf Mitternacht
       return startOfWeek;
-  }
+    }
+
+    const [currentWeekStart, setCurrentWeekStart] = useState(() => getStartOfWeek(new Date()));
+
+
+
 
   /* ----- FILTER START ----  */
 
@@ -45,8 +45,10 @@ const CoursePlan = () =>{
       setCurrentWeekStart(prev => {
           const newDate = new Date(prev);
           newDate.setDate(newDate.getDate() - 7);
+          newDate.setHours(0, 0, 0, 0);
           return newDate;
       });
+
       setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
     };
 
@@ -55,6 +57,7 @@ const CoursePlan = () =>{
           setCurrentWeekStart(prev => {
               const newDate = new Date(prev);
               newDate.setDate(newDate.getDate() + 7);
+              newDate.setHours(0, 0, 0, 0);
               return newDate;
           });
         setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
@@ -67,14 +70,30 @@ const CoursePlan = () =>{
         setSelectedLevel(null);
     }
 
-      const filteredCourses = () => {
+    const [selectedTrainer, setSelectedTrainer] = useState("ALL")
+
+
+    const trainerFilterHandler = (who) =>{
+
+      setSelectedTrainer(who)
+    }
+
+    const filteredCourses = () => {
         let coursesToFilter;
 
         if (selectedGroup === 'ALL') {
             coursesToFilter = Object.values(courses).flat();
-        } else {
+
+        } else if(selectedGroup !="ALL") {
             coursesToFilter = Object.values(courses[selectedGroup]) || [];
+
         }
+
+        if (selectedTrainer !== "ALL") {
+
+          coursesToFilter = coursesToFilter.filter(course => course.instructor === selectedTrainer);
+        }
+      
 
         // Filtere nach dem ausgewählten Level
         if (selectedLevel) {
@@ -83,6 +102,9 @@ const CoursePlan = () =>{
 
         // Bestimme das Ende der aktuellen Woche
         const endOfWeek = new Date(currentWeekStart);
+
+
+
         endOfWeek.setDate(endOfWeek.getDate() + 7); // Sonntag
 
         // Filtere nach der aktuellen Woche
@@ -123,23 +145,6 @@ const CoursePlan = () =>{
       setIsCheckedOutModalOpen(false);
     };
 
-
-     const getCoursesForCurrentWeek = (currentWeekStart, dayIndex) => {
-      const startOfWeek = new Date(currentWeekStart);
-
-      console.log(currentWeekStart)
-      console.log(dayIndex)
-      console.log(startOfWeek)
-      const targetDate = new Date(startOfWeek);
-      console.log(targetDate)
-      targetDate.setDate(startOfWeek.getDate() + dayIndex); // dayIndex: 0 = Montag, 1 = Dienstag, etc.
-  
-      return courseArray.filter(course => {
-        const courseDate = new Date(course.scheduled_at);
-        return courseDate.toDateString() === targetDate.toDateString(); // Vergleiche das Datum
-      });
-    };
-
     
 
     return (
@@ -166,6 +171,10 @@ const CoursePlan = () =>{
           hoveredGroup={hoveredGroup}
           setHoveredGroup={setHoveredGroup}
           handleLevelChange={handleLevelChange}
+          trainerFilterHandler={trainerFilterHandler}
+          selectedTrainer={selectedTrainer}
+          setSelectedTrainer={setSelectedTrainer}
+      
         />
 
         <MobileCoursePlan
@@ -198,17 +207,19 @@ const CoursePlan = () =>{
                 const hour = (index + 10).toString().padStart(2, '0') + ':00';
   
 
+                //console.log(hour)
                  // Generiere die Kurse für den aktuellen Tag und die aktuelle Stunde
                     const dayCourses = [...Array(7)].map((_, dayIndex) => {
                       const day = new Date(2025, 2, dayIndex + 17);
                    
                       return filteredCourses().filter(course => {
                           const courseDate = new Date(course.scheduled_at);
+                          //console.log(courseDate)
                           return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
                       });
                   });
 
-                  console.log(dayCourses)
+  
 
                   // Überprüfe, ob es Kurse für diese Stunde gibt
                   const hasCourses = dayCourses.some(courses => courses.length > 0);
@@ -223,7 +234,6 @@ const CoursePlan = () =>{
                     
                     {[...Array(7)].map((_, dayIndex) => {
 
-                      console.log(dayIndex)
                  
                       const day = new Date(2025, 2, dayIndex + 17);
                        const dayCourses = filteredCourses().filter(course => { // Hier rufen wir die Funktion auf
@@ -258,6 +268,12 @@ const CoursePlan = () =>{
                                 case 'SPECIALS':
                                   backgroundColor = 'var(--SPECIALS)';
                                   break;
+                                case 'ARIALSILK':
+                                  backgroundColor = 'var(--ARIALSILK)';
+                                break;
+                                case 'KIDS':
+                                  backgroundColor = 'var(--KIDS)';
+                                break;
                               default:
                                 backgroundColor = 'transparent'; // Fallback-Farbe
                             }
@@ -265,6 +281,7 @@ const CoursePlan = () =>{
                
                             const time = getHour(course.scheduled_at)
 
+                   
                             const updatedCourse = {
                               ...course,
                               isCheckedOut: "course"

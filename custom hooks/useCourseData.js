@@ -67,8 +67,8 @@ const useCourseData = () =>{
 
      
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-15T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-16T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-17T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+          /*{ group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-16T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+          */{ group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-17T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-18T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-19T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-20T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
@@ -76,22 +76,22 @@ const useCourseData = () =>{
 
          
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-22T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-23T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-24T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+          /*{ group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-23T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+          */{ group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-24T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-25T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-26T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-27T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
         
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-29T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-30T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-01T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+         /* { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-04-30T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+         */ { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-01T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-02T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-03T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-04T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-06T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-07T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-08T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+         /* { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-07T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
+         */ { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-08T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-09T18:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-10T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 0-1" , duration :75 , scheduled_at :"2025-05-11T10:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 1 ",spots:"4 /10", },
@@ -124,17 +124,17 @@ const useCourseData = () =>{
 
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-14T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
 
-          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-16T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-16T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-18T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-20T11:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
 
-          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-21T1:30:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-23T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-21T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-23T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-25T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-27T11:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-28T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-30T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-04-30T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-05-02T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           { group:"POLE" , title:"Pole 1-2" , duration :75 , scheduled_at :"2025-05-04T11:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
           
@@ -187,11 +187,11 @@ const useCourseData = () =>{
 
 
           { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-15T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-17T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-17T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
   
 
           { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-22T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Natalia" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
-          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-24T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
+          { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-24T19:30:00" , description :"Introduction to pole dance techniques." , instructor :"Malak" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
   
 
           { group:"POLE" , title:"Pole 3" , duration :75 , scheduled_at :"2025-04-29T19:00:00" , description :"Introduction to pole dance techniques." , instructor :"Anne" , id :"1" , level :"early intermediate" ,room:"studio 1 ",spots:"4 /10", },
@@ -248,6 +248,26 @@ const useCourseData = () =>{
        
         ],
 
+        SILK: [
+          { group: 'ARIALSILK', title: 'Arial Silk', duration: 75, scheduled_at: '2025-04-16T18:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'beginner', room: 'studio 1', spots: '6/12' },
+         
+          { group: 'ARIALSILK', title: 'Arial Silk ', duration: 75, scheduled_at: '2025-04-23T18:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'beginner', room: 'studio 1', spots: '6/12' },
+         
+          { group: 'ARIALSILK', title: 'Arial Silk', duration: 75, scheduled_at: '2025-04-30T18:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'beginner', room: 'studio 1', spots: '6/12' },
+         
+
+        ],
+
+        KIDS:[
+          { group: 'KIDS', title: 'Luftakrobatik (8-12)', duration: 60, scheduled_at: '2025-04-16T15:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'KIDS', title: 'Luftakrobatik (8-12)', duration: 60, scheduled_at: '2025-04-23T15:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+        
+          { group: 'KIDS', title: 'Luftakrobatik (13-16)', duration: 60, scheduled_at: '2025-04-16T16:15:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'KIDS', title: 'Luftakrobatik (13-16)', duration: 60, scheduled_at: '2025-04-23T16:15:00', description: 'Improve your flexibility for better performance.', instructor: 'Anne', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+       
+        
+        ],
+
         FLEXIBILITY: [
 
           
@@ -280,6 +300,12 @@ const useCourseData = () =>{
           { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-07-19T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-07-26T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-04-14T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-04-21T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-04-28T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-05-05T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          
+          
           /*
             { group: 'FLEXIBILITY', title: 'Flexi Hips & Middle Splits', duration: 75, scheduled_at: '2025-03-31T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
 
@@ -302,17 +328,17 @@ const useCourseData = () =>{
           ],
         PLAYGROUND: [
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-15T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          /*{ group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-15T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },*/
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-14T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
          
 
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-16T19:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-16T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          
+          /*{ group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-16T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          */
 
 
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-17T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-17T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          
+         
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-18T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-18T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           
@@ -321,10 +347,10 @@ const useCourseData = () =>{
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-20T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-22T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-         /* { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-22T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          */
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-23T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-23T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-21T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          
+         /*{ group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-23T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+         */{ group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-23T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-24T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-24T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },

@@ -26,21 +26,21 @@
    width: 100%;
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
    position: relative;
 
+  
+   
 }
 
 .filterButton{
     padding: 5px;
     margin: 0px; 
-    width: 200px;
+    width: 145px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
     color: var(--primaryFont);
     position: relative;
     display:flex;
-
     justify-content: center;
     align-items: center;
  
@@ -71,10 +71,10 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 145px;
     margin: 0px; 
     top: 33px;
-    z-index: 1000; 
+    z-index: 100000; 
  }
 
 
@@ -114,12 +114,26 @@
 
 
 
+.filterTrainersSubContainer{
+   display: flex;
+   align-items: center;
+}
+
+.trainersButton{
+   margin: 0px 10px;
+   padding: 5px;
+   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.trainersButton:hover{
+   color: var(--primaryFont);
+}
+
 
 
  @media screen and (max-width: 1300px){
-   .container{
-      border: 2px solid orange;
-   }
+
 
    .weekInfo{
       margin: 0px 10px;
@@ -128,13 +142,10 @@
    }
 
  
-   .filterButton{
-      width: 180px;
-   }
+
 
    .filterButtonsUniqueLevelButtons{
       transition: 0.2s ease-in-out;
-      width: 180px;
       top: 33px;
    
    }
@@ -149,26 +160,22 @@
  @media screen and (max-width: 1150px){
 
 
-   .filterButtonsSubContainer{
-      width: 100%;
-      margin: 2px 0px;
+
+   .filterButtonsContainer{
+      flex-direction: column;
    }
 
    .filterButton{
       width: 100%;
-      margin: 0;
+   }
+   .filterButtonsSubContainer{
+      width: 100%;
+      margin: 2px 0px;
+
    }
 
-   
-   .filterButtonsUniqueLevelButtons{
-      left: 0;
-       flex-direction: row;
-       margin: 5px 0px;
-       width: 100%;
-       transition: 0.2s ease;
+ 
 
-       
-   }
 
    
    .levelButton{
@@ -178,15 +185,10 @@
    
    }
 
-   .levelButton:hover{
-      background-color: var(--strongCoral);
-   }
-  
- }
+ 
 
-
- @media screen and (max-width: 900px){
    .filterButtonsUniqueLevelButtons{
+      left: 0;
       position: relative;
       top: 0;
       flex-direction: row;
@@ -195,18 +197,17 @@
       margin: 5px 0px;
       width: 100%;
       transition: 0.2s ease;
-
       flex-wrap: wrap;
   }
 
-  .filterButtonsContainer{
-      flex-direction: column;
-  }
 
   .levelButton{
      margin: 2px 2px;
      height: 35px;
      width: 95%;
   }
+
+
+  
  }
 
