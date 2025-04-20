@@ -31,7 +31,7 @@
   
    
 }
-
+/*
 .filterButton{
     padding: 5px;
     margin: 0px; 
@@ -43,14 +43,14 @@
     display:flex;
     justify-content: center;
     align-items: center;
- 
+    border: 2px solid red;
  }
  
  .filterButton:hover{
     background-color: var(--primaryFont);
     color: var(--primaryFontHover);
  }
-
+*/
  .circle{
    margin: 0px 5px;
    height: 30px;
@@ -58,12 +58,22 @@
    border-radius: 50%;
 
  }
- 
- 
- .filterButtonActive{
-    background-color: var(--secondaryBackground);
-    color: var(--background)
+
+
+ .filterTrainersSubContainer{
+   position: relative;
+
+
  }
+
+ .filterButton{
+   min-width: 70px;
+ }
+ .filterButtonActive, .filterTrainerActive{
+    color: var(--softCoral)
+ }
+
+
  
  .filterButtonsUniqueLevelButtons{
     position: absolute;
@@ -71,8 +81,9 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    width: 145px;
+    width: 150px;
     margin: 0px; 
+    left: 0px;
     top: 33px;
     z-index: 100000; 
  }
@@ -119,14 +130,14 @@
    align-items: center;
 }
 
-.trainersButton{
+.trainersButton, .filterButton{
    margin: 0px 10px;
    padding: 5px;
    cursor: pointer;
   transition: 0.2s ease-in-out;
 }
 
-.trainersButton:hover{
+.trainersButton:hover, .filterButton:hover{
    color: var(--primaryFont);
 }
 
@@ -165,9 +176,10 @@
       flex-direction: column;
    }
 
+   /*
    .filterButton{
       width: 100%;
-   }
+   }*/
    .filterButtonsSubContainer{
       width: 100%;
       margin: 2px 0px;

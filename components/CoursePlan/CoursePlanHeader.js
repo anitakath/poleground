@@ -49,6 +49,7 @@ const CoursePlanHeader = ({
 
 
     
+      /*${styles.filterButton}*/
       
     return(
 
@@ -65,12 +66,12 @@ const CoursePlanHeader = ({
                 </div>
               
                 {Object.keys(courses).map(group => (
-                    <div key={group} className={styles.filterButtonsSubContainer}>
+                    <div key={group} className={styles.filterTrainersSubContainer}>
                         <button 
                             onClick={() => handleFilterChange(group)} 
                            
                             
-                            className={`${styles.filterButton} ${selectedTrainer === group ? styles.filterButtonActive : ''}`}
+                            className={` ${styles.filterButton} ${selectedGroup=== group ? styles.filterButtonActive : ''}`}
                         >
                             {group} 
                     
@@ -106,7 +107,7 @@ const CoursePlanHeader = ({
             <div className={styles.filterTrainersSubContainer}>
                     <button 
                         onClick={() => trainerFilterHandler('ALL')} 
-                        className={`${styles.filterButton} ${selectedGroup === 'ALL' ? styles.filterTrainerActive : ''}`}
+                        className={`${styles.filterButton} ${selectedTrainer === 'ALL' ? styles.filterTrainerActive : ''}`}
                     >
                         ALLE TRAINER
                     </button>
@@ -115,7 +116,8 @@ const CoursePlanHeader = ({
                     {trainer && trainer.map((trainer) => (
                         <button 
                             key={trainer}
-                            className={styles.trainersButton}
+                            className={`${styles.trainersButton} ${selectedTrainer === trainer ? styles.filterTrainerActive : ''}`}
+              
                             onClick={()=> setTrainerHandler(trainer)}
                         >{trainer}</button>
                     ))}

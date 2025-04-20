@@ -117,10 +117,19 @@ const CoursePlan = () =>{
       };
 
    
-    const handleLevelChange = (level) => {
-      setSelectedLevel(level);
-    };
+      let hoverTimeoutId = null;
 
+      const handleLevelChange = (level) => {
+        setSelectedLevel(level);
+      
+        if (hoverTimeoutId) {
+          clearTimeout(hoverTimeoutId);
+        }
+      
+        hoverTimeoutId = setTimeout(() => {
+          setHoveredGroup(null);
+        }, 1000);
+      };
 
 
       /* ----- FILTER ENDE ----  */
