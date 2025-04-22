@@ -1,16 +1,60 @@
 
 .container{
     background-color: var(--background);
+
 }
 
-.titleContainer{
+
+.titles_container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .titleWrapper {
+    height: 100%;
+    position: relative;
+  }
+  
+
+  .titleContainer {
     font-size: 1.2rem;
     width: 300px;
     padding: 0px 4px;
-    position: relative;
     font-weight: bolder;
+    transition: transform 0.5s ease;
+  }
+  
 
-}
+  .title_hover{
+    position: absolute; 
+    top: 40px;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .title_hover span:hover{
+    color: var(--pastelCoral)
+  }
+  
+
+  .titles_container:hover .titleContainer {
+    transform: translateY(-40px); 
+  }
+  
+  .titles_container:hover .title_hover {
+    transform: translateY(-40px); 
+  }
+
+
+
+
+
+
+
+
+
+
 
 .navigation{
     display: flex;
@@ -18,13 +62,14 @@
     margin: 0px 10px;
     align-items: center;
     position: relative;
+
+
 }
 
 .linksContainer{
     position: relative;
     left: -60px;
     top: 1px;  
-
 }
 
 .link{
@@ -103,12 +148,10 @@
 }
 
 .socialButton:hover{
-    background-color:  var(--primaryFont);
+    background-color: rgba(255,255,255, 0.9)
 }
 
-.socialButton:hover{
-    box-shadow: 0px 0px 5px grey;
-}
+
 
 .socialIcon{
     width: 25px;
@@ -154,6 +197,10 @@
 
 @media screen and (max-width: 1200px){
 
+   
+    .titles_container{
+        height: 40px;
+    }
     .linksContainer{
         left: 0px;
     }
@@ -175,6 +222,13 @@
     .socialContainer{
         margin: 0;
         top: 10px;
+        right: 5px;
+    }
+
+    .socialButton{
+        width: 35px;
+        height: 35px;
+   
     }
 
  
@@ -185,13 +239,30 @@
     .sponsoringContainer{
         height: 4vh;
     }
+
+      .navigation{
+        left: -10px;
+        top: -10px;
+        margin: 0;
+    }
+
+    .socialContainer{
+        margin: 0;
+        top: 2px;
+        right: 5px;
+    }
     
 
+    .navigation{
+        margin: 0;
+    }
 
     .link{
         margin: 20px 10px 0px 0px;
 
     }
+
+ 
 
     .mobileLinksContainer{
         width: 40%;
@@ -212,11 +283,15 @@
 
 @media screen and (max-width: 600px){
 
-    .titleContainer{
-        top: -10px;
+    .navigation{
+        left: -10px;
+        top: -20px;
+        margin: 0;
     }
+
+
     .container{
-        height: 100px;
+        padding-top: 20px;
     }
     .link{
        display: none;
@@ -241,17 +316,39 @@
       cursor: pointer;
   }
  
-
-
   .socialContainer{
-    top: 50px;
-    right: 20px;
+    top: 4px;
+    right: 10px;
     
   }
-
   .socialButton{
     margin: 0px 5px;
   }
+}
+
+@media screen and (max-width: 500px){
+
+    .titles_container{
+        display: flex;
+        width: 100%;
+        margin: 0;
+    }
+
+    .titleContainer{
+        width: 100%;
+        position: relative;
+        left: 10px;
+        letter-spacing: 5px;
+    }
+
+    .socialContainer{
+        top: 40px;
+    }
+
+    .socialButton{
+
+       
+    }
 }
 
 

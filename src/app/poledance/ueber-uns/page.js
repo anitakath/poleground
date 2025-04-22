@@ -1,17 +1,82 @@
+"use client"
 import Image from 'next/image'
 import styles from './AboutUs.module.css'
 import PolegroundInfo from '../../../../components/PolegroundInfo'
-
+import useScrollToSection from '../../../../custom hooks/useScrollToSection'
+import { useRef, useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 const AboutUs= () =>{
 
+    const [scrollY, setScrollY] = useState(0);
+    const {scrollToSection} = useScrollToSection();
+    const [activeButton,setActiveButton] = useState(null)
+
+    const elementRef = useRef(null);
+
+
+      useEffect(()=>{
+
+        if (elementRef.current) {
+            const rect = elementRef.current.getBoundingClientRect();
+            console.log('Element Top:', rect.top); // Abstand vom Viewport oben
+            console.log('Element Bottom:', rect.bottom);
+        }
+
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        // Cleanup beim Unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+      }, [])
+
+      console.log(scrollY)
+
+    const handleButtonClick = () => {
+      if (elementRef.current) {
+        const rect = elementRef.current.getBoundingClientRect();
+        console.log('Element Top:', rect.top); // Abstand vom Viewport oben
+        console.log('Element Bottom:', rect.bottom);
+      }
+    };
 
     return(
-        <div className='flex flex-col items-center justify-center'>
-            <PolegroundInfo/>
+        <div className='flex flex-col items-center justify-center' id="ueberuns">
 
-            <h1 className={styles.title} id="studio"> UNSER STUDIO </h1>
+            <div className=' w-full min-h-13 relative flex justify-center'>
+                <div className={`${styles.navButtonsContainer} ${scrollY >= 20 ? styles.moveNavBar : ''}`} ref={elementRef}>
+                    <button 
+                        className={` ${scrollY >= 20 ? styles.chevronUpButton : styles.noChevronUpButton}`}
+                        onClick={()=> scrollToSection("ueberuns")}
+                    
+                    >
+                        <FontAwesomeIcon icon={faChevronUp} />
+                    </button>
+                    <button 
+                        className={`${styles.navButton} primaryFontFamily ${scrollY >= 20 ? styles.buttonFontMini : ''}`}
+                        onClick={() => scrollToSection("studio")}
+                    > UNSER STUDIO </button>
+                    <button 
+                        className={`${styles.navButton} primaryFontFamily ${scrollY >= 20 ? styles.buttonFontMini : ''}`}
+                        onClick={() => scrollToSection("team")}
+                    > MEET THE TEAM </button>
+                    <button  
+                        className={`${styles.navButton} primaryFontFamily ${scrollY >= 20 ? styles.buttonFontMini : ''}`}
+                        onClick={() => scrollToSection("leitbild")}
+                    > UNSER LEITBILD 
+                    </button>
 
-            <div className={styles.gridContainer}>
+                </div>
+               
+            </div>
+
+            <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="studio">
                 <div className={styles.gridItem}> Eingangstür </div>
                 <div className={styles.gridItem}> Empfang / Rezeption </div>
                 <div className={styles.gridItem}> Studio 1 </div>
@@ -30,13 +95,8 @@ const AboutUs= () =>{
             </div>
            
 
-            <h1 className={styles.title}> UNSER TEAM </h1>
-
-            {/*}
-            <div className={styles.teamContainer}>
-                TEAM
-            </div>*/}
-            <div className={styles.gridContainer}>
+         
+            <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="team">
                 <div className={styles.gridItem}> 
                     <p className='absolute top-2 text-xl'> Anne </p>
                     <Image src="/Start/damian-barczak-nISmT9XXL98-unsplash.jpg" width={600} height={600} alt="Anne"  className={styles.image}/>
@@ -55,6 +115,7 @@ const AboutUs= () =>{
                     <Image src="/Start/pexels-mart-production-7319717.jpg"width={600} height={600}  className={styles.image} alt="call to action feld! bewirb dich bei uns!"/>
                 </div>
             </div>
+            <PolegroundInfo/>
         </div>
     )
 }

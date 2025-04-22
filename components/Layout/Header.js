@@ -25,9 +25,19 @@ const Header = () => {
             <div className={`min-h-20 flex relative items-center justify-center px-4 ${styles.container}`}>
            
             <nav className={styles.navigation}>
-               <div className={styles.titleContainer}>
-                   <Link href="/" className="primaryFontFamily"> {title} </Link>
-               </div>
+             
+                <div className={styles.titles_container}>
+                    <div className={styles.titleWrapper}>
+                        <div className={styles.titleContainer}>
+                        <Link href="/" className="primaryFontFamily">{title}</Link>
+                        </div>
+                        <div className={styles.title_hover}>
+                        <span className="primaryFontFamily">
+                            <Link href="/poledance/ueber-uns"> you deserve it. </Link>
+                        </span>
+                        </div>
+                    </div>
+                </div>
 
                <div className={styles.linksContainer}>
                    <Link href="/helpdesk" className={styles.link}> FAQ  </Link>

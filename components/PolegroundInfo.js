@@ -10,7 +10,7 @@ const PolegroundInfo = () => {
   const {scrollToSection} = useScrollToSection();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="leitbild">
       <h1 className={styles.title} onClick={() => scrollToSection("studio")}>
         Das Poleground Studio <span className={styles.opening}> -  Eröffnung 2026 </span>
       </h1>

@@ -1,6 +1,6 @@
 .container {
     width: 90%; 
-    padding: 20px; 
+    padding: 40px 20px; 
     transition: 0.2s ease-in-out;
     border-bottom: 2px solid var(--buttonHover);
 
@@ -111,5 +111,12 @@
 @media screen and (max-width: 600px){
   .title {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px){
+
+  .container{
+    padding-top: 60px;
   }
 }
