@@ -66,11 +66,10 @@ const CoursePlanHeader = ({
                 </div>
               
                 {Object.keys(courses).map(group => (
+                    
                     <div key={group} className={styles.filterTrainersSubContainer}>
                         <button 
                             onClick={() => handleFilterChange(group)} 
-                           
-                            
                             className={` ${styles.filterButton} ${selectedGroup=== group ? styles.filterButtonActive : ''}`}
                         >
                             {group} 

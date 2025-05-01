@@ -1,0 +1,122 @@
+
+
+.container{
+    height: 90vh;
+    overflow: scroll;
+
+}
+
+.weekSchedule {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dayColumn {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .courseItem {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Erste Spalte für Woche +7 Tage */
+    gap: 4px;
+  }
+  
+  .headerRow {
+    display: contents; /* Damit Header-Zeile wie Grid funktioniert */
+  }
+  
+  .dataRow {
+    display: contents; /* Für Zeilen im Grid */
+  }
+  
+  .headerCell {
+    font-weight: bold;
+    background-color: #ddd;
+    padding: 8px;
+  }
+  
+  .cell {
+    border: 1px solid #ccc;
+    min-height:100px;
+    padding:4px;
+  }
+
+
+  /* Wackel-Effekt */
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .wobble {
+    animation: wobble 0.5s infinite;
+  }
+  
+  .selected {
+    border: 2px solid red;
+  }
+  /*
+  .courseItem {
+    opacity: 1;
+    transition: opacity 0.3s, border-color 0.3s;
+  }
+  
+  /* Opacity bei Nicht-Auswahl im Multi-Select *//*
+  .courseItem:not(.selected):not(.wobble) {
+    opacity: 0.3;
+  }*/
+  
+  /* Buttons */
+
+  .actionContainer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 5px 0px;
+  }
+  .greenButton {
+     color: green;
+     border-radius:50%;
+     width:30px; 
+     height:30px;
+     font-size:2rem;
+     cursor:pointer;
+     margin: 0px 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: 0.2s ease-in-out;
+  }
+  
+  .redButton {
+    position: relative;
+    top: -2.5px;
+     color:red;
+     border-radius:50%;
+     width:30px; 
+     height:30px;
+     font-size:2rem;
+     cursor:pointer;
+     margin: 0px 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: 0.2s ease-in-out;
+  }
+
+  .greenButton:hover,   .redButton:hover{
+    font-size: 2.4rem;
+  }
+

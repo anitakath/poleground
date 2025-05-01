@@ -1,0 +1,86 @@
+.modalOverlay {
+    position: fixed; top:0; left:0; right:0; bottom:0;
+    background-color: rgba(0,0,0,0.5);
+    display:flex; justify-content:center; align-items:center;
+}
+.modalContent {
+    background:var(--secondaryBackground);
+    padding:20px; 
+    border-radius:8px; 
+    width: 90%;
+    height: 80%;
+    overflow: scroll;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.groupInput, .titleInput, .descriptionInput{
+    margin: 5px 0px;
+    font-size: 1.2rem;
+    padding: 4px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.titleInput, .descriptionInput{
+    width: 100%;
+}
+
+.groupInput, .titleInput, .descriptionInput{
+    outline: none;
+    background-color: rgba(255,255,255, 0.2);
+}
+.groupInput:hover, .titleInput:hover, .descriptionInput:hover{
+  
+    color: var(--primaryFont);
+}
+
+.subcontainer, .schedulesContainer{
+    padding: 5px 0px;
+    border-top: 1px solid beige;
+    border-bottom: 1px solid beige;
+    display: flex;
+    margin: 5px 0px;
+}
+
+.schedulesContainer{
+    flex-direction: column;
+}
+
+.selectContainer{
+    width: 150px;
+    background-color: rgba(255,255,255, 0.3);
+    padding: 10px;
+    margin: 5px;
+    transition: 0.2s ease;
+}
+
+.selectContainer select{
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+}
+
+.selectContainer:hover{
+    background-color: var(--secondaryForeground);
+}
+
+.addButton, .cancelButton{
+    margin: 5px 0px;
+    width: 200px;
+    padding: 5px;
+}
+
+.addButton, .cancelButton{
+    background-color: rgba(255,255,255, 0.5);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.cancelButton:hover, .addButton:hover{
+    background-color: var(--secondaryForeground);
+}

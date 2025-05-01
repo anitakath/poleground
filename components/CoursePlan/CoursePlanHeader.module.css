@@ -27,8 +27,6 @@
    display: flex;
    align-items: center;
    position: relative;
-
-  
    
 }
 /*
@@ -59,12 +57,12 @@
 
  }
 
-
+/*
  .filterTrainersSubContainer{
    position: relative;
+   border: 2px solid orange
 
-
- }
+ }*/
 
  .filterButton{
    min-width: 70px;
@@ -81,28 +79,29 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 400px;
     margin: 0px; 
-    left: 0px;
-    top: 33px;
+    right: 50px;
+    top: -5px;
     z-index: 100000; 
  }
 
 
 
 .levelButton{
-    height: 30px;
-    margin: 2px 0px;
+    height: 35px;
+    margin: 5px 0px;
     padding: 2px;
     width: 100%;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    background-color: var(--softCoral)
+    background-color: var(--foreground);
  }
  
  .levelButton:hover{
-    background-color:  var(--primaryFont);
-    color: var(--background)
+   transform: scale(1.03);
+   color: var(--background);
+   background-color: var(--primaryFont);
  }
  
  
@@ -119,8 +118,7 @@
 
 .courseDescriptionButton:hover{
     background-color: var(--buttonHover);
-    transform: scale(1.01)
-    
+    transform: scale(1.01);
 }
 
 

@@ -19,7 +19,8 @@ import PriceTable from "../../components/CourseDescription/PriceTable";
 
 //CUSTOM COMPONENTS
 import useScrollToSection from "../../custom hooks/useScrollToSection";
-
+import React, { useContext } from 'react';
+import { AuthContext } from "../../context/authContext";
 
 
 
@@ -28,6 +29,8 @@ export default function Home() {
   const [courses, setCourses] = useState([]);
   const [loadingCourses, setLoadingCourses] = useState(true);
 
+  
+  
   useEffect(() => {
     const fetchData = async () => {
       const { data: fetchedData, error } = await supabase

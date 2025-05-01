@@ -18,10 +18,11 @@
     /*--background: #EBCFC6;*/
    /*--background: #F3E0D1;*/
     --tertiaryBackground:  hsl(148, 44%, 20%);
-    --secondaryBackground: hsl(148, 24%, 52%);
+   /* --secondaryBackground: hsl(148, 24%, 52%);*/
     --secondaryBackgroundOpaque: rgba(89, 144, 115, 0.4);
 
     --background: #FFFAED;
+    --secondaryBackground:  #f9ddd3;
     --foreground: #E8B19D;
 
     --secondaryForeground: #E8A7A3;

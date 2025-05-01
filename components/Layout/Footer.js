@@ -1,12 +1,10 @@
 import styles from './Layout.module.css'
 import Link from 'next/link'
 
+
 const Footer = () =>{
 
-    const username = process.env.REGISTRATION_USERNAME;
-    const password = process.env.REGISTRATION_PASSWORD;
 
-    console.log(username)
 
     return(
         <div className={`${styles.container} min-h-20 p-2 flex justify-between`}>

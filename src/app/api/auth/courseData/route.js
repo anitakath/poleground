@@ -1,6 +1,3 @@
-
-// DATA NEEDS TO BE @BACKEND WHEN OFFICIALLY ONLINE!!!!
-
 const useCourseData = () =>{
 
     const courses = {

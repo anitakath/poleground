@@ -7,8 +7,8 @@ import CoursePlanHeader from './CoursePlanHeader';
 import CheckOutModal from '../Modals/CheckOutModal';
 import MobileCoursePlan from './Mobile/MobileCoursePlan';
 import CourseRequestModal from '../Modals/CourseRequestModal';
-import { supabase } from '../../services/supabaseClient';
 import useScrollToSection from '../../custom hooks/useScrollToSection';
+
 const CoursePlan = () =>{
     const {getHour, getMinutes, convertDate} = useTimesAndDates();
     const {courses} = useCourseData();
@@ -126,9 +126,10 @@ const CoursePlan = () =>{
           clearTimeout(hoverTimeoutId);
         }
       
+        /*
         hoverTimeoutId = setTimeout(() => {
           setHoveredGroup(null);
-        }, 1000);
+        }, 1000);*/
       };
 
 

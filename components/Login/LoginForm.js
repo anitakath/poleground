@@ -1,12 +1,17 @@
 "use client"
 import { useState } from 'react';
 import styles from './Login.module.css';
+import React, { useContext } from 'react';
+import { AuthContext } from "../../context/authContext";
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
+  const { isLoggedIn, login, logout } = useContext(AuthContext);
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,6 +28,13 @@ const LoginForm = () => {
 
     if (response.ok) {
       setMessage('Erfolgreich eingeloggt!');
+  
+      login()
+
+      setTimeout(() => {
+        router.push('/poledance/dashboard');
+      }, 1000);
+
     } else {
       setMessage('Fehler: ' + data.message);
     }
