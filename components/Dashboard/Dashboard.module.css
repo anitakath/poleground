@@ -16,11 +16,17 @@
     margin: 0 10px;
   }
   
-  .courseItem {
+  .courseItem{
     background-color: #f0f0f0;
     padding: 8px;
     margin-bottom: 8px;
     border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  .courseItem:hover{
+    transform: scale(1.1);
   }
 
 
@@ -48,6 +54,14 @@
     border: 1px solid #ccc;
     min-height:100px;
     padding:4px;
+
+    position: relative;
+  }
+
+  .cell_paragraph {
+    position: sticky;
+    top: 10px;
+    margin: 0px 4px; 
   }
 
 
@@ -114,6 +128,19 @@
      justify-content: center;
      align-items: center;
      transition: 0.2s ease-in-out;
+  }
+
+  .deleteButton{
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: var(--primaryFont);
+    margin: 0px 4px;
+    padding: 2px;
+    width: 100px;
+  }
+
+  .deleteButton:hover{
+    color: var(--primaryFontHover);
   }
 
   .greenButton:hover,   .redButton:hover{

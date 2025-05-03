@@ -10,6 +10,7 @@
     width: 90%;
     height: 80%;
     overflow: scroll;
+    position: relative;
 }
 
 .form{
@@ -32,10 +33,11 @@
 
 .groupInput, .titleInput, .descriptionInput{
     outline: none;
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(255,255,255, 0.4);
+    padding: 10px;
 }
 .groupInput:hover, .titleInput:hover, .descriptionInput:hover{
-  
+  background-color: #f9ddd3;
     color: var(--primaryFont);
 }
 
@@ -47,17 +49,29 @@
     margin: 5px 0px;
 }
 
+
 .schedulesContainer{
     flex-direction: column;
+
 }
 
 .selectContainer{
     width: 150px;
-    background-color: rgba(255,255,255, 0.3);
+    background-color: rgba(255,255,255, 0.5);
     padding: 10px;
     margin: 5px;
     transition: 0.2s ease;
+    margin-bottom: 10px;
 }
+
+.selectContainer input, .selectContainer select{
+    cursor: pointer;
+    border-top: 1px solid white;
+    width:100%;
+}
+
+
+
 
 .selectContainer select{
     cursor: pointer;
@@ -66,11 +80,14 @@
 }
 
 .selectContainer:hover{
-    background-color: var(--secondaryForeground);
+    background-color: #f9ddd3;
 }
 
+
+
+
 .addButton, .cancelButton{
-    margin: 5px 0px;
+    margin: 5px;
     width: 200px;
     padding: 5px;
 }
@@ -82,5 +99,21 @@
 }
 
 .cancelButton:hover, .addButton:hover{
-    background-color: var(--secondaryForeground);
+    background-color: #f9ddd3;
+}
+
+
+.error_message{
+    color: var(--primaryFont)
+}
+
+.success_message{
+    color: var(--softGreen)
+}
+
+@media screen and (max-width: 600px){
+    .buttonsContainer{
+        display: flex;
+        flex-direction: column;
+    }
 }

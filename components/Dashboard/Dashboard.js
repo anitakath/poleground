@@ -1,8 +1,10 @@
 import styles from './Dashboard.module.css'
+import { v4 as uuidv4 } from 'uuid';
 import useCourseData from '../../custom hooks/useCourseData'
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { supabase } from '../../services/supabaseClient';
 import AddCourseModal from './AddCourseModal'; // Stelle sicher, dass du diese Datei hast
+import useFetchCourseData from '../../custom-hooks/useFetchCourseData';
 
 // Beispiel: Funktion, um den Start der Woche (Montag) zu bestimmen
 const getStartOfWeek = (dateString) => {
@@ -18,16 +20,14 @@ const DashboardComponent = () => {
   const [showModal, setShowModal] = useState(false);
   const [isMultiSelectMode, setIsMultiSelectMode] = useState(false);
   const [selectedCourses, setSelectedCourses] = useState([]);
-
-  // Beispiel: Kurse aus useCourseData
-  const { courses } = useCourseData();
-
-  console.log(courses)
+  const [courseData, setCourseData] = useState([]);
+  const [coursesObject, setCoursesObject] = useState({})
+  const [isLoadingData, setIsLoadingData] = useState(true)
 
   // Gruppiere Kurse nach Wochen
   const weeklyGroups = (() => {
     const weeks = {};
-    Object.values(courses).flat().forEach((course) => {
+    Object.values(coursesObject).flat().forEach((course) => {
       const startOfWeek = getStartOfWeek(course.scheduled_at);
       const weekKey = startOfWeek.toISOString().slice(0,10); // z.B. "2025-04-28"
       if (!weeks[weekKey]) {
@@ -38,7 +38,7 @@ const DashboardComponent = () => {
     // Sortiere die Wochen chronologisch
     return Object.keys(weeks).sort().map((key) => ({
       weekStart: key,
-      courses: weeks[key],
+      coursesObject: weeks[key],
     }));
   })();
 
@@ -66,49 +66,121 @@ const DashboardComponent = () => {
 
     console.log(course)
 
-    const courseSheduledAt = course.scheduled_at
+    const courseUuid = course.uuid
     
-    if (selectedCourses.includes(course.scheduled_at)) {
-      setSelectedCourses(selectedCourses.filter(id => id !== courseSheduledAt));
+    if (selectedCourses.includes(course.uuid)) {
+      setSelectedCourses(selectedCourses.filter(id => id !== courseUuid ));
     } else {
-      setSelectedCourses([...selectedCourses, courseSheduledAt]);
+      setSelectedCourses([...selectedCourses, courseUuid ]);
     }
   };
 
-  console.log(isMultiSelectMode)
-  console.log(selectedCourses)
+
+ 
+
+ 
+
+  function formatDateRange(startDate, endDate) {
+    const startDay = startDate.getDate().toString().padStart(2, '0');
+    const startMonth = (startDate.getMonth() + 1).toString().padStart(2, '0');
+    const endDay = endDate.getDate().toString().padStart(2, '0');
+    const endMonth = (endDate.getMonth() + 1).toString().padStart(2, '0');
+    const year = endDate.getFullYear(); // Annahme: beide Daten im selben Jahr
+  
+    return `${startDay}.${startMonth}.-${endDay}.${endMonth}.${year}`;
+  }
 
 
-  const addIsCancelledProperty = () => {
-    const updatedCourses = {};
 
-    Object.keys(courses).forEach(group => {
-      updatedCourses[group] = courses[group].map(course => ({
-        ...course,
-        isCancelled: false,
-      }));
+
+  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
+
+  /* ---------------- fetchCourseData in getStaticProps!+ api nutzen ------------------- */
+
+  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
+
+  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
+
+
+  const fetchCourseData = async () => {
+    setIsLoadingData(true)
+    try {
+      const { data, error } = await supabase
+        .from('poleground_courses')
+        .select('*'); // Alle Spalten auswählen
+
+      if (error) {
+        console.error('Fehler beim Laden der Kurse:', error);
+        setIsLoadingData(false)
+      } else {
+        setCoursesObject(transformCourses(data))
+        setCourseData(data);
+        setIsLoadingData(false)
+      }
+    } catch (err) {
+      console.error('Unbekannter Fehler beim Fetch:', err);
+      setIsLoadingData(false)
+    }
+  };
+
+
+  const transformCourses = (courses) => {
+    const coursesObj = {
+      DANCE: [],
+      POLE: [],
+      FLEXIBILITY: [],
+      PLAYGROUND: [],
+      SPECIALS: [],
+      ARIALSILK: [],
+      KIDS: []
+    };
+
+    courses.forEach((course) => {
+      if (coursesObj[course.group]) {
+        coursesObj[course.group].push(course);
+      }
     });
 
-    setCourses(updatedCourses);
+    return coursesObj;
   };
 
-  const fetchCourses = async () => {
-    const rawData = await fetchYourData();
-    const processedData = rawData.map(course => ({
-      ...course,
-      isCancelled: false,
-    }));
-    // dann in deinem Zustand speichern oder zurückgeben
+  
+  // Optional: Daten beim Komponenten-Laden automatisch holen
+  useEffect(() => {
+    fetchCourseData();
+  }, []);
+  
+
+
+  const deleteSelectedObjects = async () => {
+    console.log('Lösche ausgewählte Objekte...');
+  
+    try {
+      const { data, error } = await supabase
+        .from('poleground_courses')
+        .delete()
+        .in('uuid', selectedCourses); // Hier wird das Array verwendet
+  
+      if (error) {
+        console.error('Fehler beim Löschen:', error);
+      } else {
+        console.log('Erfolgreich gelöscht:', data);
+  
+        setSelectedCourses([])
+        // Optional: Nach dem Löschen die Daten neu laden oder den UI-Status aktualisieren
+        fetchCourseData();
+      }
+    } catch (err) {
+      console.error('Unbekannter Fehler beim Löschen:', err);
+    }
   };
+
 
 
   return (
     <div className={styles.container}>
-      <h1>Wochenplan</h1>
 
-      <button onClick={addIsCancelledProperty}>Alle Kurse auf "nicht storniert" setzen</button>
-
-      {/* Action Buttons */}
+    {/* Action Buttons */}
       <div className={styles.actionContainer}>
 
         <button className={styles.greenButton} onClick={handleOpenModal}>+</button>
@@ -119,13 +191,23 @@ const DashboardComponent = () => {
         >
           -
         </button>
+
+        {selectedCourses && selectedCourses.length > 0 && (
+          <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> löschen </button>
+        )}
       </div>
+
+      <div>
+        { isLoadingData && <p className='text-xl my-6'>  Kursplan lädt... </p>}
+      </div>
+
 
       {/* Wochenplan-Gitter */}
       <div className={styles.gridContainer}>
         {/* Kopfzeile mit Tagen */}
         <div className={styles.headerRow}>
           <div className={styles.headerCell}>Woche</div>
+          
           {daysOfWeek.map(day => (
             <div key={day} className={styles.headerCell}>{day}</div>
           ))}
@@ -141,7 +223,9 @@ const DashboardComponent = () => {
             <div key={index} className={styles.dataRow}>
               {/* Erste Zelle: Wochenangabe */}
               <div className={styles.cell}>
-                {week.weekStart} - {weekEndDate.toISOString().slice(0,10)}
+                <p className={styles.cell_paragraph}> 
+                {formatDateRange(new Date(week.weekStart), new Date(weekEndDate))}
+                </p>
               </div>
               {/* Für jeden Tag in der Woche */}
               {daysOfWeek.map((day, i) => {
@@ -149,7 +233,7 @@ const DashboardComponent = () => {
                 currentDayDate.setDate(weekStartDate.getDate() + i);
 
                 // Filtere Kurse für diesen Tag
-                const coursesForDay = week.courses.filter(course => {
+                const coursesForDay = week.coursesObject.filter(course => {
                   const courseDateStr = new Date(course.scheduled_at).toISOString().slice(0,10);
                   return courseDateStr === currentDayDate.toISOString().slice(0,10);
                 });
@@ -157,20 +241,53 @@ const DashboardComponent = () => {
                 // Sortiere Kurse nach Uhrzeit
                 const sortedCourses = coursesForDay.slice().sort((a,b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
 
+              
                 return (
                   <div key={day} className={styles.cell}>
                     {sortedCourses.length >0 ? (
-                      sortedCourses.map((course) => (
-                        <div
-                          key={course.id}
-                          className={`${styles.courseItem} ${isMultiSelectMode && selectedCourses.includes(course.id) ? styles.selected : ''} ${isMultiSelectMode && !selectedCourses.includes(course.id) ? styles.wobble : ''}`}
-                          onClick={() => isMultiSelectMode && toggleCourseSelection(course)}
-                        >
-                          <strong>{course.title}</strong><br />
-                          {new Date(course.scheduled_at).toLocaleString('de-DE')}<br />
-                          Dauer: {course.duration} Minuten<br />
-                        </div>
-                      ))
+                      sortedCourses.map((course) => {
+
+                        let backgroundColor;
+
+                         switch (course.group) {
+                              case 'POLE':
+                                backgroundColor = 'var(--POLE)';
+                                break;
+                              case 'FLEXIBILITY':
+                                backgroundColor = 'var(--FLEXIBILITY)';
+                                break;
+                              case 'DANCE':
+                                backgroundColor = 'var(--DANCE)';
+                                break;
+                                case 'PLAYGROUND':
+                                  backgroundColor = 'var(--PLAYGROUND)';
+                                break;
+                                case 'SPECIALS':
+                                  backgroundColor = 'var(--SPECIALS)';
+                                  break;
+                                case 'ARIALSILK':
+                                  backgroundColor = 'var(--ARIALSILK)';
+                                break;
+                                case 'KIDS':
+                                  backgroundColor = 'var(--KIDS)';
+                                break;
+                              default:
+                                backgroundColor = 'transparent'; // Fallback-Farbe
+                            }
+
+                                return( 
+                                <div
+                                  key={course.id}
+                                  style={{ backgroundColor }} 
+                                  className={`${styles.courseItem} ${isMultiSelectMode && selectedCourses.includes(course.uuid) ? styles.selected : ''} ${isMultiSelectMode && !selectedCourses.includes(course.uuid) ? styles.wobble : ''}`}
+                                  onClick={() => isMultiSelectMode && toggleCourseSelection(course)}
+                                >
+                                  <strong>{course.title}</strong><br />
+                                  {new Date(course.scheduled_at).toLocaleString('de-DE')}<br />
+                                  Dauer: {course.duration} Minuten<br />
+                                </div>
+                          )
+                        })
                     ) : (
                       <span>-</span>
                     )}

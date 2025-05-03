@@ -21,7 +21,7 @@ import PriceTable from "../../components/CourseDescription/PriceTable";
 import useScrollToSection from "../../custom hooks/useScrollToSection";
 import React, { useContext } from 'react';
 import { AuthContext } from "../../context/authContext";
-
+import useFetchCourseData from "../../custom-hooks/useFetchCourseData";
 
 
 export default function Home() {
@@ -29,8 +29,6 @@ export default function Home() {
   const [courses, setCourses] = useState([]);
   const [loadingCourses, setLoadingCourses] = useState(true);
 
-  
-  
   useEffect(() => {
     const fetchData = async () => {
       const { data: fetchedData, error } = await supabase
@@ -48,6 +46,8 @@ export default function Home() {
     fetchData();
   }, []);
 
+
+  console.log(courses)
 
   const transformCourses = (courses) => {
     // Initialisiere das Ergebnisobjekt mit leeren Arrays für jede Gruppe
@@ -72,12 +72,15 @@ export default function Home() {
   
   const coursesObject = transformCourses(courses);
 
+  console.log(coursesObject)
+
   
   const {scrollToSection} = useScrollToSection();
 
 
   return (
     <div className={styles.container}>
+    
       <button className={styles.chevronUp} onClick={()=> scrollToSection("top")}> 
         <FontAwesomeIcon icon={faChevronUp} />
       </button>
