@@ -79,7 +79,8 @@
   }
   
   .selected {
-    border: 2px solid red;
+    border: 2px solid var(--primaryFont);
+    opacity: 0.5;
   }
   /*
   .courseItem {
@@ -136,11 +137,13 @@
     color: var(--primaryFont);
     margin: 0px 4px;
     padding: 2px;
-    width: 100px;
+    width: 50px;
+  
   }
 
   .deleteButton:hover{
     color: var(--primaryFontHover);
+    transform: scale(1.01);
   }
 
   .greenButton:hover,   .redButton:hover{

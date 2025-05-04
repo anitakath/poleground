@@ -4,11 +4,12 @@ import { useState } from 'react';
 import styles from './AddCourseModal.module.css'
 import { v4 as uuidv4 } from 'uuid';
 import { supabase } from '../../services/supabaseClient';
+import useCoursePlanFormValidation from '../../custom hooks/useCourseplanFormValidation';
 
-
-const AddCourseModal = ({ onClose }) => {
-
+const AddCourseModal = ({ onClose, courseData}) => {
+  const {validateForm} = useCoursePlanFormValidation()
   const [submitting, setSubmitting] = useState(false)
+  const [fieldErrors, setFieldErrors] = useState({});
   const [messages, setMessages] = useState({error: null, success: null})
   const [formData, setFormData] = useState({
     group: "",
@@ -25,6 +26,7 @@ const AddCourseModal = ({ onClose }) => {
     isCancelled: false,
     uuid: ""
   })
+
 
 
   /*
@@ -53,6 +55,7 @@ const AddCourseModal = ({ onClose }) => {
   };
 
 
+  /*
   const validateForm = () => {
     const errors = {};
   
@@ -94,7 +97,7 @@ const AddCourseModal = ({ onClose }) => {
     // Weitere Validierungen nach Bedarf...
   
     return errors;
-  };
+  };*/
 
 
 
@@ -104,18 +107,28 @@ const AddCourseModal = ({ onClose }) => {
 
 
       //VALIDIERUNG!
-      const validationErrors = validateForm();
+      const validationErrors = validateForm(formData, courseData);
 
       if (Object.keys(validationErrors).length > 0) {
+        setFieldErrors(validationErrors); // Fehler pro Feld speichern
+        setSubmitting(false);
+        return;
+      }
+  
+      /*
+      if (Object.keys(validationErrors).length > 0) {
 
-        setMessages({ error: "Bitte korrigiere deine Eingaben im Formular. Jedes Feld muss ausgeüllt werden.", success: null });
+        console.log(Object.keys(validationErrors))
 
+        setMessages({
+         
+        });
         // Optional: Fehler pro Feld speichern, um sie direkt an den Eingabefeldern anzuzeigen
         // setFieldErrors(validationErrors);
 
         setSubmitting(false);
         return; // Abbruch, wenn Fehler vorhanden sind
-      }
+      }*/
 
       setSubmitting(true);
 
@@ -140,10 +153,8 @@ const AddCourseModal = ({ onClose }) => {
           scheduled_at: formData.scheduled_at + ":00"
         };
       })();
-    
-      console.log('Daten zum Hochladen:', dataToInsert);
-    
-      // Daten in die Supabase Tabelle hochladen
+
+
       
       try {
         const { data, error } = await supabase
@@ -155,7 +166,7 @@ const AddCourseModal = ({ onClose }) => {
           setMessages({ error: 'Beim Hochladen ist ein Fehler aufgetreten.', success: null });
           setSubmitting(false)
         } else {
-          console.log('Erfolgreich hochgeladen:', data);
+    
           setMessages({ error: null, success: 'Der Kurs wurde erfolgreich gespeichert!' });
           setSubmitting(false)
     
@@ -354,7 +365,11 @@ const AddCourseModal = ({ onClose }) => {
         {messages.error && <div className={styles.error_message}>{messages.error}</div>}
         {messages.success && <div className={styles.success_message}>{messages.success}</div>}
 
-
+        {Object.keys(fieldErrors).map((field) => (
+          <div key={field} style={{ color: 'red' }}>
+            {fieldErrors[field]}
+          </div>
+        ))}
 
       </div>
 

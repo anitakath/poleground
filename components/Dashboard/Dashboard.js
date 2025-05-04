@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../../services/supabaseClient';
 import AddCourseModal from './AddCourseModal'; // Stelle sicher, dass du diese Datei hast
 import useFetchCourseData from '../../custom-hooks/useFetchCourseData';
+import useCourses from '../../custom hooks/useCourses';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 // Beispiel: Funktion, um den Start der Woche (Montag) zu bestimmen
 const getStartOfWeek = (dateString) => {
@@ -17,6 +20,7 @@ const getStartOfWeek = (dateString) => {
 };
 
 const DashboardComponent = () => {
+  const {transformCourses} = useCourses();
   const [showModal, setShowModal] = useState(false);
   const [isMultiSelectMode, setIsMultiSelectMode] = useState(false);
   const [selectedCourses, setSelectedCourses] = useState([]);
@@ -24,7 +28,28 @@ const DashboardComponent = () => {
   const [coursesObject, setCoursesObject] = useState({})
   const [isLoadingData, setIsLoadingData] = useState(true)
 
+  
   // Gruppiere Kurse nach Wochen
+  const weeklyGroups = (() => {
+    if (!coursesObject || typeof coursesObject !== 'object') {
+      return [];
+    }
+    const weeks = {};
+    Object.values(coursesObject).flat().forEach((course) => {
+      const startOfWeek = getStartOfWeek(course.scheduled_at);
+      const weekKey = startOfWeek.toISOString().slice(0,10);
+      if (!weeks[weekKey]) {
+        weeks[weekKey] = [];
+      }
+      weeks[weekKey].push(course);
+    });
+    return Object.keys(weeks).sort().map((key) => ({
+      weekStart: key,
+      coursesObject: weeks[key],
+    }));
+  })();
+
+  /*
   const weeklyGroups = (() => {
     const weeks = {};
     Object.values(coursesObject).flat().forEach((course) => {
@@ -41,6 +66,7 @@ const DashboardComponent = () => {
       coursesObject: weeks[key],
     }));
   })();
+  */
 
   const daysOfWeek = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 
@@ -76,7 +102,6 @@ const DashboardComponent = () => {
   };
 
 
- 
 
  
 
@@ -91,15 +116,6 @@ const DashboardComponent = () => {
   }
 
 
-
-
-  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
-
-  /* ---------------- fetchCourseData in getStaticProps!+ api nutzen ------------------- */
-
-  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
-
-  /* ---------------- fetchCourseData in getStaticProps! + api nutzen ------------------- */
 
 
   const fetchCourseData = async () => {
@@ -124,31 +140,11 @@ const DashboardComponent = () => {
   };
 
 
-  const transformCourses = (courses) => {
-    const coursesObj = {
-      DANCE: [],
-      POLE: [],
-      FLEXIBILITY: [],
-      PLAYGROUND: [],
-      SPECIALS: [],
-      ARIALSILK: [],
-      KIDS: []
-    };
-
-    courses.forEach((course) => {
-      if (coursesObj[course.group]) {
-        coursesObj[course.group].push(course);
-      }
-    });
-
-    return coursesObj;
-  };
-
   
   // Optional: Daten beim Komponenten-Laden automatisch holen
   useEffect(() => {
     fetchCourseData();
-  }, []);
+  }, [showModal]);
   
 
 
@@ -176,7 +172,6 @@ const DashboardComponent = () => {
   };
 
 
-
   return (
     <div className={styles.container}>
 
@@ -193,8 +188,13 @@ const DashboardComponent = () => {
         </button>
 
         {selectedCourses && selectedCourses.length > 0 && (
-          <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> löschen </button>
+          <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> 
+           <FontAwesomeIcon icon={faTrash} />
+          </button>
         )}
+
+        <button className='mx-4 cursor-pointer'> Eintrag editieren </button>
+        <button className='mx-4 cursor-pointer' > Einträge / Wochen kopieren </button>
       </div>
 
       <div>
@@ -284,6 +284,8 @@ const DashboardComponent = () => {
                                 >
                                   <strong>{course.title}</strong><br />
                                   {new Date(course.scheduled_at).toLocaleString('de-DE')}<br />
+                                  {course.room} 
+                                  <br/>
                                   Dauer: {course.duration} Minuten<br />
                                 </div>
                           )
@@ -301,7 +303,7 @@ const DashboardComponent = () => {
 
       {/* Modal zum Hinzufügen */}
       {showModal && (
-        <AddCourseModal onClose={handleCloseModal} />
+        <AddCourseModal onClose={handleCloseModal} courseData={courseData} />
       )}
     </div>
   );
