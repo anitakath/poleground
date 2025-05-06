@@ -65,8 +65,16 @@
 
   .select{
     outline: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin: 0px 10px;
+    text-align: end;
+
   }
 
+  .select:hover{
+    color: var(--primaryFont);
+  }
 
   /* Wackel-Effekt */
 @keyframes wobble {
@@ -135,6 +143,13 @@
      align-items: center;
      transition: 0.2s ease-in-out;
   }
+
+  .button{
+    margin: 0px 10px;
+    opacity: 0.2;
+  }
+
+
 
   .xButton{
     position: relative;

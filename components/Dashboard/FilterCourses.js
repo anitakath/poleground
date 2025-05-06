@@ -4,98 +4,74 @@ import styles from './Filtercourses.module.css'
 import { useState } from 'react'
 
 
-const FilterCourses = ({coursesObject,setCoursesObject, setCourseData,  courseData,  }) =>{
-
-    const [isFilterActive, setIsFilterActive] = useState(false)
-    const [selectedTrainer, setSelectedTrainer] = useState("ALL")
-    const [selectedSport, setSelectedSport] = useState("ALL")
-  
-    
-
-    /*
-    console.log(courseData)
-    console.log(coursesObject)
-
-    console.log(setCoursesObject)
-    console.log(setCourseData)*/
+const FilterCourses = ({selectedWeek, handleChange, handleFilterChange, selectedInstructor, selectedSport, weeklyGroups}) =>{
 
 
-    const trainerFilterHandler = (who) =>{
-      setSelectedTrainer(who)
-    }
+  function formatDate(dateString) {
+    const [year, month, day] = dateString.split('-');
+    return `${day}.${month}.${year}`;
+  }
 
-
-    const filterCourses = () =>{
-
-        if(selectedTrainer != "ALL"){
-            // filtere die Kurse nach selectedTrainer === courseData.instructor
-            // und zeige dann dementsprechend nur diese Kurse an
-        } 
-
-        if(selectedSport != "ALL"){
-            // filtere die Kurse nach selectedSport === courseData.group
-            // und zeige dann dementsprechend nur diese Kurse an
-        }
-
-
-
-    }
-
-    //console.log(selectedTrainer)
-    //console.log(selectedSport)
 
 
     return(
         <div className={styles.container}>
-           <button 
-           className={styles.filterButton}
-            onClick={() => setIsFilterActive(!isFilterActive)}
-            > 
-            Kurse filtern
-            <FontAwesomeIcon icon={faFilter} className={styles.icon} />
-           </button>
+            <select 
+            value={selectedWeek} 
+            onChange={handleChange}
+            id="select_week"
+            name="select_week"
+            required
+            className={styles.select}
+          >
+            <option value="">Wähle eine Woche</option>
+            {weeklyGroups.map((week, index) => {
+              const weekStart = week.weekStart
 
-           {isFilterActive &&  (
-            <div className={styles.filter_modal}>
-                <div className='w-full  mb-6 relative flex jusitfy-end px-2'>
-                    <button 
-                        onClick={() => setIsFilterActive(!isFilterActive)}
-                        className={styles.closeButton}
-                    
-                    > schließen </button>
-                </div>
+              return(
+              <option 
+                key={index} 
+                value={weekStart} 
+              >
+                {formatDate(week.weekStart)}
+              </option>
+            )})}
+          </select>
+          <select 
+            value={selectedInstructor} 
+            onChange={handleFilterChange}
+            id="select_trainer"
+            name="select_trainer"
+            required
+            className={styles.select}
+          >
+            <option value="">Wähle einen Instructor </option>
+            <option key="Malak" value="Malak">Malak</option>
+            <option key="Natalia" value="Natalia">Natalia</option>
+            <option key="Stella" value="Stella">Stella</option>
+            <option key="Anne" value="Anne">Anne</option>
+       
+          </select>
 
-                <div className={styles.filterButton_container}>
-                    <p> Filter nach Trainer:innen:</p>
-                    <ul>
-                        <li> <button onClick={() => trainerFilterHandler("Anne")}>Anne </button> </li>
-                        <li> <button onClick={() => trainerFilterHandler("Malak")}>Malak </button> </li>
-                        <li> <button onClick={() => trainerFilterHandler("Natalia")}>Natalia </button> </li>
-                        <li> <button onClick={() => trainerFilterHandler("Stella")}>Stella </button> </li>
-
-                    </ul>
-                </div>
-                <div className={styles.filterButton_container}>
-                    <p> Filter nach Sportarten: </p>
-                    <ul>
-                    <li> <button onClick={() => setSelectedSport("POLE")}> Pole </button> </li>
-                    <li> <button onClick={() => setSelectedSport("ARIALSILK")}> Arial Silk </button> </li>
-                    <li> <button onClick={() => setSelectedSport("HOOP")}> Hoop </button> </li>
-                    <li> <button onClick={() => setSelectedSport("DANCE")}> Dance </button> </li>
-                    <li> <button onClick={() => setSelectedSport("FLEXIBILITY")}> Yoga & Stretching </button> </li>
-                    <li> <button onClick={() => setSelectedSport("SPECIALS")}> Specials  </button> </li>
-                    <li> <button onClick={() => setSelectedSport("PLAYGROUND")}> Playground </button> </li>
-                    <li> <button onClick={() => setSelectedSport("KIDS")}> Kids & Teens </button> </li>
-                    </ul>
-                </div>
-                <div>
-                </div>
-                <div className='w-full flex justify-center'>
-
-                    <button className={styles.submit_button}> Filter anwenden </button>
-                </div>
-            </div>
-           )}
+          <select 
+            value={selectedSport} 
+            onChange={handleFilterChange}
+            id="select_sport"
+            name="select_sport"
+            required
+            className={styles.select}
+          >
+            <option value="">Wähle einen Sport </option>
+            <option key="POLE" value="POLE">Pole </option>
+            {/*<option key="HOOP" value="HOOP">Hoop</option>*/}
+            <option key="ARIALSILK" value="ARIALSILK">Arial Silk</option>
+            <option key="DANCE" value="DANCE">Dance</option>
+            <option key="FLEXIBILITY" value="FLEXIBILITY">Flexibility</option>
+            <option key="SPECIALS" value="SPECIALS">Specials</option>
+            <option key="PLAYGROUND" value="PLAYGROUND">Playground</option>
+            <option key="KIDS" value="KIDS">Kids</option>
+       
+          </select>
 
         </div>
     )

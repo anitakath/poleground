@@ -7,10 +7,9 @@ import AddCourseModal from './AddCourseModal'; // Stelle sicher, dass du diese D
 import useFetchCourseData from '../../custom-hooks/useFetchCourseData';
 import useCourses from '../../custom hooks/useCourses';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
-//COMPONENTS
+import { faTrash, faCopy, faPen } from '@fortawesome/free-solid-svg-icons';
 import FilterCourses from './FilterCourses';
+
 
 // Beispiel: Funktion, um den Start der Woche (Montag) zu bestimmen
 const getStartOfWeek = (dateString) => {
@@ -23,6 +22,7 @@ const getStartOfWeek = (dateString) => {
 };
 
 const DashboardComponent = () => {
+
   const {transformCourses} = useCourses();
   const [showModal, setShowModal] = useState(false);
   const [isMultiSelectMode, setIsMultiSelectMode] = useState(false);
@@ -30,14 +30,34 @@ const DashboardComponent = () => {
   const [courseData, setCourseData] = useState([]);
   const [coursesObject, setCoursesObject] = useState({})
   const [isLoadingData, setIsLoadingData] = useState(true)
- const [selectedWeek, setSelectedWeek] = useState("")
-  // Gruppiere Kurse nach Wochen
-  const weeklyGroups = (() => {
+  const [selectedWeek, setSelectedWeek] = useState("")
+  const [selectedInstructor, setSelectedInstructor] = useState("")
+  const [selectedSport, setSelectedSport] = useState("")
+  const [weeklyGroups, setWeeklyGroups] = useState([])
+
+  useEffect(() => {
+    
     if (!coursesObject || typeof coursesObject !== 'object') {
-      return [];
+      setWeeklyGroups([]);
+      return;
     }
+
+    // Alle Kurse zusammenfassen
+    let allCourses = Object.values(coursesObject).flat();
+
+    // Filter nach selectedSport (falls gesetzt)
+    if (selectedSport !== "" && coursesObject[selectedSport]) {
+      allCourses = coursesObject[selectedSport];
+    }
+
+    // Filter nach selectedInstructor (falls gesetzt)
+    if (selectedInstructor !== "") {
+      allCourses = allCourses.filter(course => course.instructor === selectedInstructor);
+    }
+
+    // Gruppieren nach Wochen
     const weeks = {};
-    Object.values(coursesObject).flat().forEach((course) => {
+    allCourses.forEach((course) => {
       const startOfWeek = getStartOfWeek(course.scheduled_at);
       const weekKey = startOfWeek.toISOString().slice(0,10);
       if (!weeks[weekKey]) {
@@ -45,11 +65,16 @@ const DashboardComponent = () => {
       }
       weeks[weekKey].push(course);
     });
-    return Object.keys(weeks).sort().map((key) => ({
-      weekStart: key,
-      coursesObject: weeks[key],
-    }));
-  })();
+
+    const sortedWeeks = Object.keys(weeks)
+      .sort()
+      .map((key) => ({
+        weekStart: key,
+        coursesObject: weeks[key],
+      }));
+
+    setWeeklyGroups(sortedWeeks);
+}, [coursesObject, selectedInstructor, selectedSport]);
 
 
   const daysOfWeek = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
@@ -95,13 +120,6 @@ const DashboardComponent = () => {
   
     return `${startDay}.${startMonth}.-${endDay}.${endMonth}.${year}`;
   }
-
-  function formatDate(dateString) {
-    const [year, month, day] = dateString.split('-');
-    return `${day}.${month}.${year}`;
-  }
-
-
 
 
   const fetchCourseData = async () => {
@@ -164,16 +182,23 @@ const DashboardComponent = () => {
       ...prevData,
       [name]: value,
     }));
-
-
-
     const element = document.getElementById(value);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
+  const handleFilterChange = (e) =>{
 
+    const {name, value} = e.target
+    
+    if(name === "select_sport"){
+      setSelectedSport(value)
+    } else if(name === "select_trainer"){
+      setSelectedInstructor(value);
+    }
+
+  }
 
 
   return (
@@ -208,42 +233,25 @@ const DashboardComponent = () => {
           )}
 
 
-          <button className='mx-4 cursor-pointer'> Eintrag editieren </button>
-          <button className='mx-4 cursor-pointer' > Einträge / Wochen kopieren </button>
+          <button className={styles.button}>
+            <FontAwesomeIcon icon={faCopy} /> 
+          </button>
+          <button className={styles.button} > 
+            <FontAwesomeIcon icon={faPen} /> 
+          </button>
 
-          <select 
-            value={selectedWeek} 
-            onChange={handleChange}
-            id="select_week"
-            name="select_week"
-            required
-            className={styles.select}
-          >
-            <option value="">Wähle eine Woche</option>
-            {weeklyGroups.map((week, index) => {
-              const weekStart = week.weekStart
 
-              return(
-              <option 
-                key={index} 
-                value={weekStart} 
-              >
-                {formatDate(week.weekStart)}
-              </option>
-            )})}
-          </select>
+          <FilterCourses
+            selectedWeek={selectedWeek}
+            handleChange={handleChange}
+            handleFilterChange={handleFilterChange}
+            selectedInstructor={selectedInstructor}
+            selectedSport={selectedSport}
+            weeklyGroups={weeklyGroups}
+          />
+          
 
         </div>
-
-        
-
-        <FilterCourses 
-          courseData={courseData}
-          coursesObject={coursesObject}
-          setCourseData={setCourseData}
-          setCoursesObject={setCoursesObject}
-
-        />
       </div>
 
       <div>
@@ -359,3 +367,6 @@ const DashboardComponent = () => {
 };
 
 export default DashboardComponent;
+
+
+//463
