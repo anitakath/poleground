@@ -9,6 +9,9 @@ import useCourses from '../../custom hooks/useCourses';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
+//COMPONENTS
+import FilterCourses from './FilterCourses';
+
 // Beispiel: Funktion, um den Start der Woche (Montag) zu bestimmen
 const getStartOfWeek = (dateString) => {
   const date = new Date(dateString);
@@ -27,8 +30,7 @@ const DashboardComponent = () => {
   const [courseData, setCourseData] = useState([]);
   const [coursesObject, setCoursesObject] = useState({})
   const [isLoadingData, setIsLoadingData] = useState(true)
-
-  
+ const [selectedWeek, setSelectedWeek] = useState("")
   // Gruppiere Kurse nach Wochen
   const weeklyGroups = (() => {
     if (!coursesObject || typeof coursesObject !== 'object') {
@@ -49,24 +51,6 @@ const DashboardComponent = () => {
     }));
   })();
 
-  /*
-  const weeklyGroups = (() => {
-    const weeks = {};
-    Object.values(coursesObject).flat().forEach((course) => {
-      const startOfWeek = getStartOfWeek(course.scheduled_at);
-      const weekKey = startOfWeek.toISOString().slice(0,10); // z.B. "2025-04-28"
-      if (!weeks[weekKey]) {
-        weeks[weekKey] = [];
-      }
-      weeks[weekKey].push(course);
-    });
-    // Sortiere die Wochen chronologisch
-    return Object.keys(weeks).sort().map((key) => ({
-      weekStart: key,
-      coursesObject: weeks[key],
-    }));
-  })();
-  */
 
   const daysOfWeek = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 
@@ -100,9 +84,6 @@ const DashboardComponent = () => {
       setSelectedCourses([...selectedCourses, courseUuid ]);
     }
   };
-
-
-
  
 
   function formatDateRange(startDate, endDate) {
@@ -113,6 +94,11 @@ const DashboardComponent = () => {
     const year = endDate.getFullYear(); // Annahme: beide Daten im selben Jahr
   
     return `${startDay}.${startMonth}.-${endDay}.${endMonth}.${year}`;
+  }
+
+  function formatDate(dateString) {
+    const [year, month, day] = dateString.split('-');
+    return `${day}.${month}.${year}`;
   }
 
 
@@ -149,7 +135,6 @@ const DashboardComponent = () => {
 
 
   const deleteSelectedObjects = async () => {
-    console.log('Lösche ausgewählte Objekte...');
   
     try {
       const { data, error } = await supabase
@@ -172,29 +157,93 @@ const DashboardComponent = () => {
   };
 
 
+
+  const handleChange = (e) =>{
+    const { name, value } = e.target;
+    setSelectedWeek((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+
+
+    const element = document.getElementById(value);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
+
+
   return (
     <div className={styles.container}>
 
     {/* Action Buttons */}
       <div className={styles.actionContainer}>
+        <div className='flex w-full justiy-start'>
+          <button className={styles.greenButton} onClick={handleOpenModal}>+</button>
 
-        <button className={styles.greenButton} onClick={handleOpenModal}>+</button>
+          {!isMultiSelectMode && (
+            <button 
+            className={styles.redButton} 
+            onClick={toggleMultiSelectMode}
+          >
+            -
+          </button>)}
 
-        <button 
-          className={styles.redButton} 
-          onClick={toggleMultiSelectMode}
-        >
-          -
-        </button>
-
-        {selectedCourses && selectedCourses.length > 0 && (
-          <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> 
-           <FontAwesomeIcon icon={faTrash} />
+          {isMultiSelectMode && (
+            <button 
+            className={styles.xButton} 
+            onClick={toggleMultiSelectMode}
+          >
+            X
           </button>
-        )}
+          )}
 
-        <button className='mx-4 cursor-pointer'> Eintrag editieren </button>
-        <button className='mx-4 cursor-pointer' > Einträge / Wochen kopieren </button>
+          {selectedCourses && selectedCourses.length > 0 && (
+            <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> 
+            <FontAwesomeIcon icon={faTrash} />
+            </button>
+          )}
+
+
+          <button className='mx-4 cursor-pointer'> Eintrag editieren </button>
+          <button className='mx-4 cursor-pointer' > Einträge / Wochen kopieren </button>
+
+          <select 
+            value={selectedWeek} 
+            onChange={handleChange}
+            id="select_week"
+            name="select_week"
+            required
+            className={styles.select}
+          >
+            <option value="">Wähle eine Woche</option>
+            {weeklyGroups.map((week, index) => {
+              const weekStart = week.weekStart
+
+              return(
+              <option 
+                key={index} 
+                value={weekStart} 
+              >
+                {formatDate(week.weekStart)}
+              </option>
+            )})}
+          </select>
+
+        </div>
+
+        
+
+        <FilterCourses 
+          courseData={courseData}
+          coursesObject={coursesObject}
+          setCourseData={setCourseData}
+          setCoursesObject={setCoursesObject}
+
+        />
       </div>
 
       <div>
@@ -223,7 +272,7 @@ const DashboardComponent = () => {
             <div key={index} className={styles.dataRow}>
               {/* Erste Zelle: Wochenangabe */}
               <div className={styles.cell}>
-                <p className={styles.cell_paragraph}> 
+                <p className={styles.cell_paragraph} id={week.weekStart}> 
                 {formatDateRange(new Date(week.weekStart), new Date(weekEndDate))}
                 </p>
               </div>
@@ -286,7 +335,7 @@ const DashboardComponent = () => {
                                   {new Date(course.scheduled_at).toLocaleString('de-DE')}<br />
                                   {course.room} 
                                   <br/>
-                                  Dauer: {course.duration} Minuten<br />
+                                  Dauer: {course.duration} Minuten <br />
                                 </div>
                           )
                         })

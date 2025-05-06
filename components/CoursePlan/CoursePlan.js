@@ -64,6 +64,7 @@ const CoursePlan = () =>{
       }
     };
 
+    
     const handleFilterChange = (group) => {
         setSelectedGroup(group);
         setHoveredGroup(group)
@@ -74,7 +75,6 @@ const CoursePlan = () =>{
 
 
     const trainerFilterHandler = (who) =>{
-
       setSelectedTrainer(who)
     }
 
@@ -144,9 +144,7 @@ const CoursePlan = () =>{
       const openCheckoutModal = (course) =>{
 
         setIsCheckedOutModalOpen(true)
-
         setCheckoutData(course);
-
 
       }
 
