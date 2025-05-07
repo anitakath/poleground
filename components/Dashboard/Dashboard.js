@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCopy, faPen } from '@fortawesome/free-solid-svg-icons';
 import FilterCourses from './FilterCourses';
 
+import MobileDashboard from './MobileDashboard';
 
 // Beispiel: Funktion, um den Start der Woche (Montag) zu bestimmen
 const getStartOfWeek = (dateString) => {
@@ -206,39 +207,47 @@ const DashboardComponent = () => {
 
     {/* Action Buttons */}
       <div className={styles.actionContainer}>
-        <div className='flex w-full justiy-start'>
-          <button className={styles.greenButton} onClick={handleOpenModal}>+</button>
+        <div className={styles.subContainer}>
+          <div className='flex'>
+            <button className={styles.greenButton} onClick={handleOpenModal}>+</button>
 
-          {!isMultiSelectMode && (
-            <button 
-            className={styles.redButton} 
-            onClick={toggleMultiSelectMode}
-          >
-            -
-          </button>)}
+          
 
-          {isMultiSelectMode && (
-            <button 
-            className={styles.xButton} 
-            onClick={toggleMultiSelectMode}
-          >
-            X
-          </button>
-          )}
+            {!isMultiSelectMode && (
+              <button 
+              className={styles.redButton} 
+              onClick={toggleMultiSelectMode}
+            >
+              -
+            </button>)}
 
-          {selectedCourses && selectedCourses.length > 0 && (
-            <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> 
-            <FontAwesomeIcon icon={faTrash} />
+            {isMultiSelectMode && (
+              <button 
+              className={styles.xButton} 
+              onClick={toggleMultiSelectMode}
+            >
+              X
             </button>
-          )}
+            )}
 
 
-          <button className={styles.button}>
-            <FontAwesomeIcon icon={faCopy} /> 
-          </button>
-          <button className={styles.button} > 
-            <FontAwesomeIcon icon={faPen} /> 
-          </button>
+            {selectedCourses && selectedCourses.length > 0 && (
+              <button className={styles.deleteButton} onClick={() => deleteSelectedObjects()}> 
+              <FontAwesomeIcon icon={faTrash} />
+              </button>
+            )}
+
+
+            <button className={styles.button}>
+              <FontAwesomeIcon icon={faCopy} /> 
+            </button>
+            <button className={styles.button} > 
+              <FontAwesomeIcon icon={faPen} /> 
+            </button>
+
+
+          </div>
+         
 
 
           <FilterCourses
@@ -258,6 +267,13 @@ const DashboardComponent = () => {
         { isLoadingData && <p className='text-xl my-6'>  Kursplan lädt... </p>}
       </div>
 
+
+      <MobileDashboard 
+        weeklyGroups={weeklyGroups}
+        isMultiSelectMode={isMultiSelectMode}
+        selectedCourses={selectedCourses}
+        toggleCourseSelection={toggleCourseSelection}
+      />
 
       {/* Wochenplan-Gitter */}
       <div className={styles.gridContainer}>

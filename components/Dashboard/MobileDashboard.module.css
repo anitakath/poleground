@@ -1,0 +1,106 @@
+
+
+.container{
+    display: none;
+}
+
+
+@media screen and (max-width: 1200px){
+    .container{
+        display: grid;
+    }
+}
+
+/* CSS (MobileDashboard.module.css) */
+.container {
+    display: none;
+    padding: 10px;
+    position: relative;
+}
+  
+  @media screen and (max-width: 1200px) {
+    .container {
+      display: block; /* oder grid, je nach Wunsch */
+      overflow-y: auto;
+    }
+  }
+  
+  .weekContainer {
+    margin-bottom: 20px;
+  }
+
+  .goUp_button{
+    position: fixed;
+    transition: 0.2s ease-in-out;
+    font-size: 1.4rem;
+    top: 55px;
+    right: 13px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .goUp_button:hover{
+    color: var(--softCoral);
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .weekStart {
+    font-size: 1.5em;
+    margin: 10px 0px;
+
+    text-align: center;
+  }
+  
+  .daySection {
+    margin-top: 15px;
+  }
+  
+  .dayHeader {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .courseItem {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .courseItem p{
+    margin: 3px 0px;
+  }
+
+  @keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(0.2deg); } /* weniger Rotation */
+    50% { transform: rotate(-0.2deg); }
+    75% { transform: rotate(0.2deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .wobble {
+    animation: wobble 0.5s infinite;
+  }
+  
+  .selected {
+    border: 2px solid var(--primaryFont);
+    opacity: 0.5;
+  }
+
+
+  @media screen and (max-width: 600px){
+    .goUp_button{
+      
+      top: 50px;
+   
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .goUp_button{
+      top: 85px;
+   
+    }
+  }

@@ -15,7 +15,7 @@ const FilterCourses = ({selectedWeek, handleChange, handleFilterChange, selected
 
 
     return(
-        <div className={styles.container}>
+        <div className={styles.container} id="filterCoursesComponent">
             <select 
             value={selectedWeek} 
             onChange={handleChange}
@@ -45,7 +45,7 @@ const FilterCourses = ({selectedWeek, handleChange, handleFilterChange, selected
             required
             className={styles.select}
           >
-            <option value="">Wähle einen Instructor </option>
+            <option value=""> Alle Instruktoren ausgewählt</option>
             <option key="Malak" value="Malak">Malak</option>
             <option key="Natalia" value="Natalia">Natalia</option>
             <option key="Stella" value="Stella">Stella</option>
@@ -61,7 +61,7 @@ const FilterCourses = ({selectedWeek, handleChange, handleFilterChange, selected
             required
             className={styles.select}
           >
-            <option value="">Wähle einen Sport </option>
+            <option value="">Alle Sportarten ausgewählt</option>
             <option key="POLE" value="POLE">Pole </option>
             {/*<option key="HOOP" value="HOOP">Hoop</option>*/}
             <option key="ARIALSILK" value="ARIALSILK">Arial Silk</option>

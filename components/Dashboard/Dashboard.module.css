@@ -46,7 +46,7 @@
   
   .headerCell {
     font-weight: bold;
-    background-color: #ddd;
+    background-color: var(--softCoral);
     padding: 8px;
   }
   
@@ -114,6 +114,14 @@
     margin: 5px 0px;
   }
 
+
+  .subContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+
   .greenButton {
      color: green;
      border-radius:50%;
@@ -177,7 +185,6 @@
     padding: 2px;
     width: 50px;
 
-  
   }
 
   .deleteButton:hover{
@@ -191,8 +198,32 @@
 
 
 
-  @media screen and (max-width: 1000px){
-    .actionContainer{
+
+  @media screen and (max-width: 1100px){
+  
+    .cell{
+      position: relative;
+    }
+
+  
+    .gridContainer {
+      display: none;
+    }
+  
+  }
+
+
+  @media screen and (max-width: 850px){
+
+    .subContainer{
+      flex-direction: column;
+    }
+  }
+
+
+  @media screen and (max-width: 650px){
+  
+    .subContainer{
       flex-direction: column;
     }
   }
