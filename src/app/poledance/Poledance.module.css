@@ -20,9 +20,8 @@
 }
 .headerContainer{
     /* border: 2px solid gold; */
-
-
 }
+
 
 .title{
     color: var(--title);
@@ -92,7 +91,7 @@
 
 
 .headerImageContainer{
-    height: 600px;
+    height: 80vh;
     overflow:hidden;
 }
 
@@ -124,6 +123,10 @@
         top: 92px;
         background-color: rgba(255,255,255, 0.3);
     }
+
+    .headerImageContainer{
+        height: 85vh;
+    }
 }
 
 
@@ -153,8 +156,10 @@
         margin: 0px;
         margin-bottom: 5px;
     }
+
+
     .headerImageContainer{
-        height: 450px;
+
         overflow:hidden;
     }
 

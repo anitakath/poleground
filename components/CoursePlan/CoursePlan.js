@@ -1,216 +1,192 @@
-
 import styles from './CoursePlan.module.css'
 import useTimesAndDates from '../../custom hooks/useTimesAndDates';
 import { useState, useEffect } from 'react';
-import useCourseData from '../../custom hooks/useCourseData';
-import CoursePlanHeader from './CoursePlanHeader';
-import CheckOutModal from '../Modals/CheckOutModal';
-import MobileCoursePlan from './Mobile/MobileCoursePlan';
-import CourseRequestModal from '../Modals/CourseRequestModal';
 import useScrollToSection from '../../custom hooks/useScrollToSection';
+import CheckOutModal from '../Modals/CheckOutModal';
+import CourseRequestModal from '../Modals/CourseRequestModal';
+import { supabase } from '../../services/supabaseClient';
 
-const CoursePlan = () =>{
-    const {getHour, getMinutes, convertDate} = useTimesAndDates();
-    const {courses} = useCourseData();
-    const [hoveredGroup, setHoveredGroup] = useState(null);
-   // const [currentWeekStart, setCurrentWeekStart] = useState(getStartOfWeek(new Date()));
-    const [weeksForward, setWeeksForward] = useState(0);
-    const [selectedGroup, setSelectedGroup] = useState('ALL');
-    const [selectedLevel, setSelectedLevel] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const {scrollToSection} = useScrollToSection();
+const CoursePlan = () => {
+  const { scrollToSection } = useScrollToSection();
+  const [courses, setCourses] = useState([]);
+  const [hoveredGroup, setHoveredGroup] = useState(null);
+  const [weeksForward, setWeeksForward] = useState(0);
+  const [selectedGroup, setSelectedGroup] = useState('ALL');
+  const [selectedLevel, setSelectedLevel] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false);
+  const [selectedTrainer, setSelectedTrainer] = useState("ALL");
 
+  // 🟣 FETCH COURSES FROM SUPABASE
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const { data, error } = await supabase
+        .from('poleground_courses')
+        .select('*');
 
-    function getStartOfWeek(date) {
-      const day = date.getDay(); // Sonntag = 0, Montag = 1, ...
-      const diff = (day === 0 ? -6 : 1) - day; // Für Wochenbeginn Montag
-      const startOfWeek = new Date(date);
-      startOfWeek.setDate(date.getDate() + diff);
-      startOfWeek.setHours(0, 0, 0, 0); // Setze auf Mitternacht
-      return startOfWeek;
-    }
-
-    const [currentWeekStart, setCurrentWeekStart] = useState(() => getStartOfWeek(new Date()));
-
-
-
-
-  /* ----- FILTER START ----  */
-
-    const goBackOneWeek = () => {
-      if(weeksForward < 0){
-        return
+      if (error) {
+        console.error('Fehler beim Laden der Kurse:', error.message);
+      } else {
+        setCourses(data);
       }
-      // Nur eine Woche zurückgehen
-      setCurrentWeekStart(prev => {
-          const newDate = new Date(prev);
-          newDate.setDate(newDate.getDate() - 7);
-          newDate.setHours(0, 0, 0, 0);
-          return newDate;
+    };
+
+    fetchCourses();
+  }, []);
+
+  // 🟣 WEEK RANGE HELPER
+  const getWeekRange = (weeksForward = 0) => {
+    // Statt heutigem Datum -> fester Start (z.B. 8. September 2025)
+    const baseDate = new Date(2025, 8, 8); // ⚠️ Monat ist 0-basiert -> 8 = September
+
+    const day = baseDate.getDay(); // Sonntag=0, Montag=1, ...
+    const diffToMonday = day === 0 ? -6 : 1 - day;
+
+    const monday = new Date(baseDate);
+    monday.setDate(baseDate.getDate() + diffToMonday + weeksForward * 7);
+    monday.setHours(0, 0, 0, 0);
+
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    sunday.setHours(23, 59, 59, 999);
+
+    return { monday, sunday };
+  };
+
+  /*
+  const getWeekRange = (weeksForward = 0) => {
+    const today = new Date();
+    const day = today.getDay(); // Sonntag=0, Montag=1, ...
+    const diffToMonday = day === 0 ? -6 : 1 - day;
+
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + diffToMonday + weeksForward * 7);
+    monday.setHours(0, 0, 0, 0);
+
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    sunday.setHours(23, 59, 59, 999);
+
+    return { monday, sunday };
+  };*/
+
+  const { monday, sunday } = getWeekRange(weeksForward);
+
+  // 🟣 FILTER COURSES OF THIS WEEK
+  const coursesThisWeek = courses.filter(course => {
+    const date = new Date(course.scheduled_at);
+    return date >= monday && date <= sunday;
+  });
+
+  // 🟣 GROUP COURSES BY DAY
+  const groupedCourses = coursesThisWeek.reduce((acc, course) => {
+    const date = new Date(course.scheduled_at);
+    const dayName = date.toLocaleDateString("de-DE", { weekday: "long", day: "2-digit", month: "2-digit" });
+
+    if (!acc[dayName]) acc[dayName] = [];
+    acc[dayName].push(course);
+
+    acc[dayName].sort((a, b) => new Date(a.scheduled_at) - new Date(b.scheduled_at));
+
+    return acc;
+  }, {});
+
+
+  const weekDaysOrder = [
+    "Montag", 
+    "Dienstag", 
+    "Mittwoch", 
+    "Donnerstag", 
+    "Freitag", 
+    "Samstag", 
+    "Sonntag"
+  ];
+  
+
+  return (
+    <div className={styles.tableContainer}>
+      {isCheckedOutModalOpen && <CheckOutModal />}
+
+      {/* WEEK NAVIGATION */}
+      <div className={styles.weekNav}>
+        <button onClick={() => setWeeksForward(weeksForward - 1)}>⟵ Vorherige Woche</button>
+        <h2 className='text-lg'>
+          Woche {monday.toLocaleDateString("de-DE")} – {sunday.toLocaleDateString("de-DE")}
+        </h2>
+        <button onClick={() => setWeeksForward(weeksForward + 1)}>Nächste Woche ⟶</button>
+      </div>
+
+      {/* WEEK VIEW */}
+
+
+  <div className={styles.weekContainer}>
+    {weekDaysOrder.map((weekday, index) => {
+      // 📅 Datum berechnen
+      const currentDate = new Date(monday);
+      currentDate.setDate(monday.getDate() + index);
+
+      // Key für groupedCourses suchen (z.B. "Montag, 01.09.")
+      const dayKey = currentDate.toLocaleDateString("de-DE", {
+        weekday: "long",
+        day: "2-digit",
+        month: "2-digit",
       });
 
-      setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
-    };
+      const dayCourses = groupedCourses[dayKey] || [];
 
-    const goForwardOneWeek = () => {
-      if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
-          setCurrentWeekStart(prev => {
-              const newDate = new Date(prev);
-              newDate.setDate(newDate.getDate() + 7);
-              newDate.setHours(0, 0, 0, 0);
-              return newDate;
-          });
-        setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
-      }
-    };
+      return (
+        <div key={dayKey} className={styles.dayColumn}>
+          <h3>{dayKey}</h3>
 
-    
-    const handleFilterChange = (group) => {
-        setSelectedGroup(group);
-        setHoveredGroup(group)
-        setSelectedLevel(null);
-    }
+          {dayCourses.length > 0 ? (
+            dayCourses.map(course => (
+              <div key={course.id} className={`${styles.courseCard} ${styles[course.group]}`}>
+                <h4>{course.title}</h4>
+                <p>
+                  {new Date(course.scheduled_at).toLocaleTimeString("de-DE", {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                  })} Uhr – {course.duration} Min
+                </p>
+                <p>Trainer: {course.instructor}</p>
+                <p>Level: {course.level}</p>
+                <p>Raum: {course.room}</p>
+                <p>Plätze: {course.spots}</p>
+              </div>
+            ))
+          ) : (
+            <p className={`${styles.courseCard} ${styles.noCourseInfo}`} >Für heute wurden keine Kurse geplant</p>
+          )}
+        </div>
+      );
+    })}
+  </div>
 
-    const [selectedTrainer, setSelectedTrainer] = useState("ALL")
+     
 
+      {/* COURSE REQUEST MODAL */}
+      <div className={styles.courseRequestModalContainer}>
+        <h1 className='w-full my-2'>
+          Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?
+        </h1>
+        <p className='w-full'>
+          Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um
+          uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine
+          Wünsche zu erfüllen! 💜
+        </p>
 
-    const trainerFilterHandler = (who) =>{
-      setSelectedTrainer(who)
-    }
+        <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      </div>
+    </div>
+  );
+};
 
-    const filteredCourses = () => {
-        let coursesToFilter;
-
-        if (selectedGroup === 'ALL') {
-            coursesToFilter = Object.values(courses).flat();
-
-        } else if(selectedGroup !="ALL") {
-            coursesToFilter = Object.values(courses[selectedGroup]) || [];
-
-        }
-
-        if (selectedTrainer !== "ALL") {
-
-          coursesToFilter = coursesToFilter.filter(course => course.instructor === selectedTrainer);
-        }
-      
-
-        // Filtere nach dem ausgewählten Level
-        if (selectedLevel) {
-            coursesToFilter = coursesToFilter.filter(course => course.level === selectedLevel);
-        }
-
-        // Bestimme das Ende der aktuellen Woche
-        const endOfWeek = new Date(currentWeekStart);
+export default CoursePlan;
 
 
 
-        endOfWeek.setDate(endOfWeek.getDate() + 7); // Sonntag
-
-        // Filtere nach der aktuellen Woche
-        const filteredByWeek = coursesToFilter.filter(course => {
-            const scheduledDate = new Date(course.scheduled_at);
-            return scheduledDate >= currentWeekStart && scheduledDate <= endOfWeek;
-        });
-
-        return filteredByWeek;
-      };
-
-   
-      let hoverTimeoutId = null;
-
-      const handleLevelChange = (level) => {
-        setSelectedLevel(level);
-      
-        if (hoverTimeoutId) {
-          clearTimeout(hoverTimeoutId);
-        }
-      
-        /*
-        hoverTimeoutId = setTimeout(() => {
-          setHoveredGroup(null);
-        }, 1000);*/
-      };
-
-
-      /* ----- FILTER ENDE ----  */
-
-
-      const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false)
-      const [checkoutData, setCheckoutData] = useState(null)
-
-
-
-      const openCheckoutModal = (course) =>{
-
-        setIsCheckedOutModalOpen(true)
-        setCheckoutData(course);
-
-      }
-
-       
-    const closeModal = () => {
-      setIsCheckedOutModalOpen(false);
-    };
-
-    
-
-    return (
-        <div className={styles.tableContainer} >
-
-        {isCheckedOutModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData}/>}
-       {/*} <div className={styles.titleContainer}>
-          <h1 className='text-xl'> KURSPLAN</h1>
-          <div className='flex w-full justify-evenly'>
-            <button onClick={() => scrollToSection('descriptions')} className={styles.buttons}> KURSBESCHREIBUNGEN</button>
-            <button onClick={() => scrollToSection('priceTable')}  className={styles.buttons}> PREISE </button>
-            <button onClick={() => scrollToSection('privateParties')}  className={styles.buttons}> PRIVATE PARTIES </button>
-            <button onClick={() => scrollToSection('workshops')}  className={styles.buttons}> EVENTS </button>
-          </div>
-        </div>*/}
-         
-         <CoursePlanHeader 
-          currentWeekStart={currentWeekStart}
-          setCurrentWeekStart={setCurrentWeekStart}
-          goBackOneWeek={goBackOneWeek}
-          goForwardOneWeek={goForwardOneWeek}
-          selectedGroup={selectedGroup}
-          handleFilterChange={handleFilterChange}
-          hoveredGroup={hoveredGroup}
-          setHoveredGroup={setHoveredGroup}
-          handleLevelChange={handleLevelChange}
-          trainerFilterHandler={trainerFilterHandler}
-          selectedTrainer={selectedTrainer}
-          setSelectedTrainer={setSelectedTrainer}
-      
-        />
-
-        <MobileCoursePlan
-          courses={courses}
-          selectedGroup={selectedGroup}
-          selectedLevel={selectedLevel}
-          /*courses={courseData}*/
-          currentWeekStart={currentWeekStart}
-          filteredCourses={filteredCourses}
-          openCheckoutModal={openCheckoutModal}
-        />
-
-
-        
-          <table className={styles.courseTable}>
-            <thead>
-              <tr>
-                <th className={styles.dayHeader}>Montag</th>
-                <th className={styles.dayHeader}>Dienstag</th>
-                <th className={styles.dayHeader}>Mittwoch</th>
-                <th className={styles.dayHeader}>Donnerstag</th>
-                <th className={styles.dayHeader}>Freitag</th>
-                <th className={styles.dayHeader}>Samstag</th>
-                <th className={styles.dayHeader}>Sonntag</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Hier werden die Zeilen für jede Uhrzeit generiert */}
+    /* <tbody>
+          
               {[...Array(13)].map((_, index) => {
                 const hour = (index + 10).toString().padStart(2, '0') + ':00';
   
@@ -283,7 +259,7 @@ const CoursePlan = () =>{
                                   backgroundColor = 'var(--KIDS)';
                                 break;
                               default:
-                                backgroundColor = 'transparent'; // Fallback-Farbe
+                                backgroundColor = 'transparent'; 
                             }
 
                
@@ -300,7 +276,7 @@ const CoursePlan = () =>{
                               <div 
                                 key={course.title} 
                                 className={styles.courseItem} 
-                                style={{ backgroundColor }} // Setze die Hintergrundfarbe hier
+                                style={{ backgroundColor }} 
                                 onClick={()=> openCheckoutModal(updatedCourse)}
                               >
                                 <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
@@ -327,22 +303,38 @@ const CoursePlan = () =>{
                   </tr>
                 );
               })}
-            </tbody>
-          </table>
+            </tbody>*/
+
+            /*
 
 
+            FILTER BY SELECTED WEEEEEEEEK
 
+               const goBackOneWeek = () => {
+      if(weeksForward < 0){
+        return
+      }
+      // Nur eine Woche zurückgehen
+      setCurrentWeekStart(prev => {
+          const newDate = new Date(prev);
+          newDate.setDate(newDate.getDate() - 7);
+          newDate.setHours(0, 0, 0, 0);
+          return newDate;
+      });
 
-          <div className={styles.courseRequestModalContainer}>
-            <h1 className=' w-full my-2'>Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?</h1>
-            <p className=' w-full'>Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine Wünsche zu erfüllen! 💜</p>
-            
-          
-            <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-          </div>
-        
-        </div>
-    );
+      setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
     };
-    
-    export default CoursePlan;
+
+    const goForwardOneWeek = () => {
+      if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
+          setCurrentWeekStart(prev => {
+              const newDate = new Date(prev);
+              newDate.setDate(newDate.getDate() + 7);
+              newDate.setHours(0, 0, 0, 0);
+              return newDate;
+          });
+        setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
+      }
+    };
+
+    */

@@ -1,5 +1,157 @@
 
 
+/* CoursePlan.module.css */
+
+.tableContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   padding: 1rem;
+   max-width: 100%;
+   margin: 0 auto;
+ 
+ }
+ 
+ .weekNav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.5rem 1rem;
+   width: 100%;
+ }
+ 
+ .weekNav button {
+   background: var(--primaryFont);
+   color: #fff;
+   border: none;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   transition:  0.2s ease;
+ }
+ 
+ .weekNav button:hover {
+   background: var(--primaryFontHover);
+ }
+ 
+ .weekContainer {
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   gap: 0.5rem;
+   padding: 3px;
+ }
+ 
+ .dayColumn {
+
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+ }
+ 
+ .dayColumn h3 {
+   text-align: center;
+   font-size: 1.1rem;
+   font-weight: 600;
+   margin-bottom: 0.5rem;
+   color: var(--primaryFont);
+ }
+ 
+ .courseCard {
+
+   padding: 0.75rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   font-size: 0.9rem;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+
+ .noCourseInfo{
+   text-align: center;
+ }
+ 
+ .courseCard:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+ }
+ 
+ .courseCard h4 {
+   font-size: 1rem;
+   font-weight: 600;
+   color: #1f2937;
+ }
+ 
+ .courseRequestModalContainer {
+   margin-top: 2rem;
+   padding: 1.5rem;
+   background: #fdf4ff;
+   border: 1px solid #f5d0fe;
+   border-radius: 12px;
+   text-align: center;
+ }
+ 
+ .courseRequestButton {
+   background: #ec4899;
+   color: #fff;
+   border: none;
+   border-radius: 8px;
+   padding: 0.3rem 0.8rem;
+   margin: 0 0.3rem;
+   cursor: pointer;
+   transition: background 0.2s ease;
+ }
+ 
+ .courseRequestButton:hover {
+   background: #db2777;
+ }
+ 
+ /* Responsive */
+ @media (max-width: 1024px) {
+   .weekContainer {
+     grid-template-columns: repeat(3, 1fr);
+   }
+ }
+ 
+ @media (max-width: 640px) {
+   .weekContainer {
+     grid-template-columns: 1fr;
+   }
+ }
+
+
+
+ .POLE{
+   background-color: var(--POLE);
+ }
+
+ .FLEXIBILITY{
+   background-color: var(--FLEXIBILITY);
+ }
+
+ .DANCE{
+   background-color: var(--DANCE);
+ }
+
+
+ .PLAYGROUND{
+   background-color: var(--PLAYGROUND);
+ }
+
+ .SPECIALS{
+   background-color: var(--SPECIALS);
+ }
+
+ .ARIALSILK{
+   background-color: var(--ARIALSILK);
+ }
+
+ .KIDS{
+   background-color: var(--KIDS);
+ }
+
+
+/*
+
 .titleContainer{
    display: flex;
    height: 7vh;
@@ -19,6 +171,7 @@
 .courseTable {
    width:100%;
    border-collapse: border-collapse; 
+   border: 2px solid red;
 
 
 }
@@ -137,3 +290,4 @@
       margin-top: 8px;
    }
  }
+   */

@@ -1,7 +1,6 @@
 
 .container{
     background-color: var(--background);
-
 }
 
 
@@ -133,7 +132,7 @@
 
 }
 
-.socialButton{
+.socialButton, .menuButton{
     width: 40px;
     height: 40px;
     margin: 0px 10px;
@@ -147,7 +146,7 @@
     background-color: rgba(255,255,255, 0.3);
 }
 
-.socialButton:hover{
+.socialButton:hover, .menuButton:hover{
     background-color: rgba(255,255,255, 0.9)
 }
 
@@ -157,20 +156,6 @@
     width: 25px;
     height: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -225,7 +210,7 @@
         right: 5px;
     }
 
-    .socialButton{
+    .socialButton, .menuButton{
         width: 35px;
         height: 35px;
    
@@ -237,32 +222,34 @@
 @media screen and (max-width: 800px){
 
     .sponsoringContainer{
-        height: 4vh;
+        height: 10vh;
+        
     }
 
-      .navigation{
-        left: -10px;
-        top: -10px;
-        margin: 0;
-    }
 
     .socialContainer{
         margin: 0;
         top: 2px;
         right: 5px;
+        margin-top: 5px;
     }
     
 
-    .navigation{
-        margin: 0;
-    }
+
 
     .link{
         margin: 20px 10px 0px 0px;
 
     }
 
+   .linksContainer{
+        margin-top: 5px;
+    }
+
  
+    .title_hover{
+        margin-left: 5px;
+    }
 
     .mobileLinksContainer{
         width: 40%;
@@ -275,6 +262,7 @@
         margin: 20px 5px 0px 0px;
         
     }
+
 }
 
 
@@ -287,51 +275,68 @@
         left: -10px;
         top: -20px;
         margin: 0;
+        
+    }
+
+    .titleWrapper{
+        top: 3px;
+        left: 5px;
     }
 
 
     .container{
         padding-top: 20px;
     }
+
     .link{
        display: none;
     }
-
   
-  .menuButton{
-      cursor: pointer;
-      width: 25px;
-      height: 25px;
-      transition: 0.2s ease-in-out;
-      position: relative;
-      top: 10px;
-  }
-  
-    .menuButton:hover{
-      transform: scale(1.2);
-      background-color: transparent;
-    }
-  
-  .menuButton Image{
-      cursor: pointer;
-  }
- 
   .socialContainer{
     top: 4px;
     right: 10px;
     
   }
-  .socialButton{
-    margin: 0px 5px;
+  .menuButton{
+    width: 70px;
+    height: 70px;
+    border-radius: 0;
+    background-color: transparent;
+    margin-top: 10px;
   }
+
+  
+
+    .socialIcon{
+        width: 40px;
+        height: 50px;
+    }
+
+    .socialButton{
+        display: none;
+    }
+
+    .menuButton:hover{
+        background-color: transparent;
+    }
 }
 
 @media screen and (max-width: 500px){
+
+    .container{
+        height: 4vh;
+    }
 
     .titles_container{
         display: flex;
         width: 100%;
         margin: 0;
+        top: 10px;
+        
+    }
+
+    .socialContainer{
+        top: 10px;
     }
 
     .titleContainer{
@@ -341,14 +346,14 @@
         letter-spacing: 5px;
     }
 
-    .socialContainer{
-        top: 40px;
+
+    .title_hover{
+        margin-left: 14px;
     }
 
-    .socialButton{
 
-       
-    }
+
+ 
 }
 
 

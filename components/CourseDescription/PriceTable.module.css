@@ -126,6 +126,10 @@
     justify-content: center;
 }
 
+.itemsubTitle{
+    justify-content: center;
+   color: var(--primaryFontHover);
+}
 
 .itemPrice{
     font-size: 0.9rem;

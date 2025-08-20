@@ -32,9 +32,9 @@ const Header = () => {
                         <Link href="/" className="primaryFontFamily">{title}</Link>
                         </div>
                         <div className={styles.title_hover}>
-                        <span className="primaryFontFamily">
-                            <Link href="/poledance/ueber-uns"> you deserve it. </Link>
-                        </span>
+                            <span className="primaryFontFamily">
+                                <Link href="/poledance/ueber-uns"> you deserve it. </Link>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -87,12 +87,12 @@ const Header = () => {
                    <Image alt="button to connect with us via email" src="/iconpng/icons8-mail-50.png" width={40} height={40} className={styles.socialIcon}/>
                </button>
 
-               <button onClick={toggleMenu} className={styles.socialButton}> 
+               <button onClick={toggleMenu} className={styles.menuButton}> 
                        <Image 
                            src="/iconpng/icons8-menü-50.png" 
                            alt="menu button" 
-                           width={30} 
-                           height={30}
+                           width={100} 
+                           height={100}
                            className={styles.socialIcon}
                        />    
                    </button>

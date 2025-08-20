@@ -27,28 +27,8 @@
    display: flex;
    align-items: center;
    position: relative;
-   
 }
-/*
-.filterButton{
-    padding: 5px;
-    margin: 0px; 
-    width: 145px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    color: var(--primaryFont);
-    position: relative;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid red;
- }
- 
- .filterButton:hover{
-    background-color: var(--primaryFont);
-    color: var(--primaryFontHover);
- }
-*/
+
  .circle{
    margin: 0px 5px;
    height: 30px;
@@ -57,12 +37,6 @@
 
  }
 
-/*
- .filterTrainersSubContainer{
-   position: relative;
-   border: 2px solid orange
-
- }*/
 
  .filterButton{
    min-width: 70px;
@@ -76,7 +50,6 @@
  .filterButtonsUniqueLevelButtons{
     position: absolute;
     z-index: 1000;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -95,7 +68,7 @@
     width: 100%;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    background-color: var(--foreground);
+    background-color: var(--softCoral);
  }
  
  .levelButton:hover{
@@ -108,10 +81,10 @@
 
  
  .courseDescriptionButton{
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-    padding: 5px;
-    margin: 20px 10px 10px 5px ;
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
+   padding: 5px;
+   margin: 20px 10px 10px 5px ;
    width: 50%;
    background-color: rgba(255,255,255, 0.2);
  }
@@ -132,7 +105,7 @@
    margin: 0px 10px;
    padding: 5px;
    cursor: pointer;
-  transition: 0.2s ease-in-out;
+   transition: 0.2s ease-in-out;
 }
 
 .trainersButton:hover, .filterButton:hover{
@@ -141,83 +114,87 @@
 
 
 
- @media screen and (max-width: 1300px){
-
-
-   .weekInfo{
-      margin: 0px 10px;
-      text-align: start;
-      font-size: 1rem;
-   }
-
- 
-
-
-   .filterButtonsUniqueLevelButtons{
-      transition: 0.2s ease-in-out;
-      top: 33px;
-   
-   }
-}
-
-@media screen and (max-width: 1200px){
-   .filterButtonsContainer{
-      margin-top: 10px;
-   }
-}
-
- @media screen and (max-width: 1150px){
-
-
-
-   .filterButtonsContainer{
-      flex-direction: column;
-   }
-
-   /*
-   .filterButton{
-      width: 100%;
-   }*/
-   .filterButtonsSubContainer{
-      width: 100%;
-      margin: 2px 0px;
-
-   }
-
- 
-
-
-   
-   .levelButton{
-      margin: 0px 5px;
-      height: 35px;
-      background-color: var(--softCoral);
-   
-   }
-
- 
-
-   .filterButtonsUniqueLevelButtons{
-      left: 0;
-      position: relative;
-      top: 0;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 5px 0px;
-      width: 100%;
-      transition: 0.2s ease;
-      flex-wrap: wrap;
-  }
-
-
-  .levelButton{
-     margin: 2px 2px;
-     height: 35px;
-     width: 95%;
-  }
-
-
-  
+/* Container für Gruppen und Filter */
+.filterButtonsContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   margin: 1rem 0;
  }
-
+ 
+ .groupsWrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+   justify-content: flex-start;
+   justify-content: center;
+ }
+ 
+ /* Gruppenkarten (Sportarten) */
+ .groupCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+   min-width: 200px;
+ }
+ 
+ /* Buttons für Sportarten */
+ .groupButton {
+   background-color: rgba(255, 255, 255, 0.1);
+   border: 2px solid transparent;
+   color: var(--primaryFont);
+   width: 100%;
+   padding: 0.4rem 0.8rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+ }
+ 
+ .groupButton:hover {
+   background-color: rgba(255, 255, 255, 0.2);
+   color: var(--softCoral);
+ }
+ 
+ .groupButtonActive {
+   background-color: var(--softCoral);
+   color: white;
+ }
+ 
+ /* Level-Buttons unter der jeweiligen Sportart */
+ .levelButtonsContainer {
+   display: flex;
+   gap: 0.3rem;
+   flex-wrap: wrap;
+   margin-top: 0.4rem;
+   width: 100%;
+ }
+ 
+ .levelButton {
+   border: none;
+   padding: 0.3rem 0.7rem;
+   font-size: 0.8rem;
+   cursor: pointer;
+   transition: 0.2s ease-in-out;
+ }
+ 
+ .levelButton:hover {
+   background-color: var(--primaryFont);
+   color: var(--background);
+   transform: scale(1.05);
+ }
+ 
+ /* Für Mobile */
+ @media screen and (max-width: 768px) {
+   .groupsWrapper {
+     overflow-x: auto;
+     flex-wrap: nowrap;
+     padding-bottom: 0.5rem;
+   }
+ 
+   .groupCard {
+     min-width: 120px;
+   }
+ }
+ 

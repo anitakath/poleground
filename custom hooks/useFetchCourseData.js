@@ -21,8 +21,12 @@ const useFetchCourseData = () =>{
           .select('*');
   
         if (error) {
+
+          console.log(error)
           console.error('Fehler beim Abrufen der Daten:', error);
         } else {
+
+          console.log(fetchData)
           setCourses(fetchedData);
           // Transformiere die Kurse nach Gruppen
           setCoursesObject(transformCourses(fetchedData));

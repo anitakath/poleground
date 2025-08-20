@@ -295,29 +295,29 @@ const useCourseData = () =>{
           /* MONTAGS */
 
 
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-04-21T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-04-28T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-05-05T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-05-12T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-05-19T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-05-26T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-06-02T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-06-09T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-06-16T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
-          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-06-23T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-09-01T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-09-08T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-09-15T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-09-22T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-09-29T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-10-06T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-10-13T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-10-20T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-10-27T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
+          { group: 'FLEXIBILITY', title: 'Yoga', duration: 75, scheduled_at: '2025-11-03T18:00:00', description: 'A class focused on stretching and strengthening muscles.', instructor: 'Stella', id: '4', level: 'mixed', room: 'studio 1', spots: '7/12' },
           
        
       
           /* DIENSTAGS */
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-04-29T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-06T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-13T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-20T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-27T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-06-03T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-06-10T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-06-17T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-06-24T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-02T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-09T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-16T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-23T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-30T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-10-07T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-10-14T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-10-21T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-10-28T19:30:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
         
         
@@ -326,25 +326,19 @@ const useCourseData = () =>{
           /* SAMSTAGS */
         
         
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-04-26T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-03T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-10T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-06T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-13T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-20T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
 
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-05-17T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-05-24T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-05-31T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-09-27T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-10-04T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-10-11T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
 
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-06-07T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-06-14T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-06-21T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-10-18T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-10-25T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-11-01T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
           
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-06-28T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-07-05T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-07-12T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-
-          { group: 'FLEXIBILITY', title: 'Full Body Stretch', duration: 75, scheduled_at: '2025-07-19T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'FLEXIBILITY', title: ' Full Body Stretch', duration: 75, scheduled_at: '2025-07-26T13:00:00', description: 'Improve your flexibility for better performance.', instructor: 'Natalia', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-  
+        
         ],
         PLAYGROUND: [
       
@@ -352,162 +346,114 @@ const useCourseData = () =>{
           /* 1. WOCHE */
           
          
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-21T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-22T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-04-23T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-23T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-24T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-24T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-25T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-25T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-26T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-27T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-01T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-02T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-09-03T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-03T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-04T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-04T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-05T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-05T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-06T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-07T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
 
 
           /* 2. WOCHE */
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-28T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-29T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-04-30T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-04-30T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-01T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-01T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-02T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-02T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-03T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-04T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-08T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-09T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-09-10T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-10T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-11T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-11T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-12T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-12T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-13T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-14T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
           
 
           /* 3. WOCHE */
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-05T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-06T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-05-07T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-07T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-08T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-08T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-09T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-10T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-11T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-15T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-16T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-09-17T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-17T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-18T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-18T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-19T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-20T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-21T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
 
 
 
           /* 4. WOCHE */
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-12T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-13T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-05-14T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-14T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-15T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-15T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-16T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-16T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-17T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-18T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-22T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-23T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-09-24T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-24T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-25T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-25T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-26T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-26T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-27T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-28T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
 
 
 
           /* 5. WOCHE */
            
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-19T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-20T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-05-21T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-21T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-22T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-22T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-23T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-23T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-24T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-25T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-29T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-09-30T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-10-01T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-02T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-02T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-03T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-04T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-05T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
 
 
           /* 6. WOCHE */
 
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-26T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-27T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-05-28T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-28T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-29T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-29T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-30T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-30T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-05-31T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-01T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-06T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-07T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-10-08T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-08T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-09T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-09T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-10T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-10T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-11T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
+          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-10-12T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
          
 
           /* 7. WOCHE */
 
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-02T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-03T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-06-04T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-04T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-05T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-05T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-06T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-06T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-07T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-08T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-         
 
           /* 8. WOCHE */
 
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-09T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-10T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-06-11T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-11T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-12T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-12T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-13T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-13T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-14T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-15T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-         
 
           /* 9. WOCHE */
 
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-16T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-17T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-06-18T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-18T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-19T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-19T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-20T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-20T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-21T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-22T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-         
 
 
           /* 10. WOCHE */
 
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-23T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-24T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 120, scheduled_at: '2025-06-25T10:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 2', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-25T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-26T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-26T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-27T16:00:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-27T19:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-28T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-          { group: 'PLAYGROUND', title: 'Playground', duration: 90, scheduled_at: '2025-06-29T11:30:00', description: 'Playground', instructor: '-', id: '1', level: 'mixed', room: 'studio 1', spots: '6/12' },
-         
-        
+      
         
         ],
         SPECIALS: [
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-04-27T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-05-04T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-05-11T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-05-18T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-05-25T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-06-01T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-06-08T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-06-15T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-06-22T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-06-29T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
-        
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-09-07T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-09-14T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-09-21T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-09-28T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-10-05T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-10-12T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-10-19T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+            { group:"SPECIALS" , title:"Pole For Two" , duration :75 , scheduled_at :"2025-10-26T13:00:00" , description :"Introduction to pole dance techniques - together with your bestie." , instructor :"Anne" , id :"1" , level :"beginner" ,room:"studio 2 ",spots:"4 /10", },
+          
         ],
 
 
