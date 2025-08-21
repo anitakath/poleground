@@ -78,42 +78,34 @@ const PriceTable = () => {
       }, []); // Abhängigkeit hinzufügen
     
 
-    /*
-    useEffect(() => {
-        const initialOpenStates = {};
-        Object.entries(priceTable).forEach(([category, items]) => {
-            if (items.length > 0) {
-                const firstSubCategory = Object.keys(items[0])[0]; // Nimm die erste Subkategorie
-                initialOpenStates[category] = {
-                    [firstSubCategory]: true, // Setze die erste Subkategorie auf true
-                };
-            }
-        });
-        setOpenSubCategories(initialOpenStates); // Setze den initialen Zustand
-    }, []);*/
+ 
 
-
+    const scrollToSectionHandler = (section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      };
     return (
         <div className={styles.container} id="priceTable">
-
-            {/*} <div className={styles.titleContainer}>
-                <h1 className='text-xl'> PREISE </h1>
-                <div className={styles.buttonsContainers}>
-                    <button onClick={() => scrollToSection('table')} className={styles.buttons}> KURSPLAN</button>
-                    <button onClick={() => scrollToSection('descriptions')}  className={styles.buttons}> KURSBESCHREIBUNGEN </button>
-                    <button onClick={() => scrollToSection('privateParties')}  className={styles.buttons}> PRIVATE PARTIES </button>
-                    <button onClick={() => scrollToSection('workshops')}  className={styles.buttons}> EVENTS </button>
-                </div>
-            </div>*/}
-
             {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
+
+            <div>
+                <h1 className=' text-center text-xl mb-2'> PREISLISTE </h1>
+                <div className='flex justify-center p-2'>
+                    <button className={styles.navigationBtn} onClick={() => scrollToSection('Erwachsene')}> Erwachsene </button>
+                    <button className={styles.navigationBtn} onClick={() => scrollToSection('Kids and Teens')}> Kids & Teens </button>
+                </div>
+            </div>
 
             {Object.entries(priceTable).map(([category, items]) => (
                 <div key={category} className='flex-col'>
-                    <h3>{category}:</h3>
+                  
+
+                    {/*<h3>{category}:</h3>*/}
                     {items.map((item, index) => (
                         <ul key={index}>
-                            <h2 className='color-black mts-10' id={category}>{category}</h2>
+                            <h2 id={category}> </h2>
                             {Object.entries(item).map(([subCategory, subItems]) => (
                                 <li key={subCategory} className='flex-col'>
                                     <button

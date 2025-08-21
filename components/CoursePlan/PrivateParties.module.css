@@ -61,17 +61,15 @@
 }
 
 .privateInfo{
-    background-color: rgba(255,255,255, 0.1);
     padding: 10px;
     margin-top:20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--softCoral);
-    border-top: 2px solid var(--softCoral);
     transition: 0.2s ease-in-out;
     height: 520px;
     font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--FLEXIBILITY);
 }
 
 
@@ -94,32 +92,35 @@
 }
 
 .button{
-    border-top: 1px solid var(--secondaryBackground);
-    border-bottom: 1px solid var(--secondaryBackground);
+   font-weight: bolder;
     margin-top: 10px;
     margin-bottom: 5px;
     width: 200px;
     height: 40px;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
 
 }
 
 .button:hover{
-    transform: scale(1.01);
+    transform: scale(1.1);
+    color: var(--primaryFontHover);
 }
 
 
 .email{
     color: var(--secondaryBackground);
     font-size: 1.3rem;
-    margin: 0px 5px;
+    margin-left: 5px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
+    color: var(--primaryFont);
+    cursor: pointer;
+    transition:  0.2s ease;
 }
 
 .email:hover{
-    color: var(--buttonHover);
+    color: var(--primaryFontHover);
 }
 
 @media screen and (max-width: 1200px){

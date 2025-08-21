@@ -7,6 +7,22 @@
     padding: 10px 10px 10px 0px;
 }
 
+.navigationBtn{
+    margin: 0px 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 1.2rem;
+    background: var(--primaryFont);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+   
+   
+}
+
+.navigationBtn:hover{
+    background-color:var(--primaryFontHover)
+}
 
 .titleContainer{
     display: flex;
