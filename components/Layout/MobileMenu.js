@@ -34,7 +34,7 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
                    <Link href="/helpdesk" className={styles.mobileLink}>FAQ </Link>
                    <Link href="/poledance/ueber-uns" className={styles.mobileLink}>ÜBER UNS</Link>
                    <Link href="/jobs" className={styles.mobileLink}> JOBS </Link>
-                   <Link href="/poledance/events" className={styles.mobileLink}>EVENTS</Link>
+                   <Link href="/events" className={styles.mobileLink}>EVENTS</Link>
                    <Link href="/poledance/cooperations" className={styles.mobileLink}>KOOPERATIONEN </Link>
                </div>
     )
