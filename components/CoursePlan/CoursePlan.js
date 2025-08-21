@@ -16,6 +16,7 @@ const CoursePlan = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false);
   const [selectedTrainer, setSelectedTrainer] = useState("ALL");
+  const [chosenCourse, setChosenCourse] = useState(null)
 
   // 🟣 FETCH COURSES FROM SUPABASE
   useEffect(() => {
@@ -101,19 +102,43 @@ const CoursePlan = () => {
     "Samstag", 
     "Sonntag"
   ];
+
+  const openCheckoutModal = (course) =>{
+    setChosenCourse(course)
+    setIsCheckedOutModalOpen(true)
+
+  }
+
+  const closeCheckoutModal = () =>{
+    setIsCheckedOutModalOpen(false)
+  }
   
+
+
 
   return (
     <div className={styles.tableContainer}>
-      {isCheckedOutModalOpen && <CheckOutModal />}
+      {isCheckedOutModalOpen && <CheckOutModal chosenCourse={chosenCourse} onClose={closeCheckoutModal} />}
 
       {/* WEEK NAVIGATION */}
       <div className={styles.weekNav}>
-        <button onClick={() => setWeeksForward(weeksForward - 1)}>⟵ Vorherige Woche</button>
-        <h2 className='text-lg'>
+        <button 
+          onClick={() => setWeeksForward(prev => Math.max(prev - 1, -2))}
+          disabled={weeksForward <= -2}
+        >
+          ⟵ Vorherige Woche
+        </button>
+
+        <h2 className="text-lg">
           Woche {monday.toLocaleDateString("de-DE")} – {sunday.toLocaleDateString("de-DE")}
         </h2>
-        <button onClick={() => setWeeksForward(weeksForward + 1)}>Nächste Woche ⟶</button>
+
+        <button 
+          onClick={() => setWeeksForward(prev => Math.min(prev + 1, 8))}
+          disabled={weeksForward >= 6}
+        >
+          Nächste Woche ⟶
+        </button>
       </div>
 
       {/* WEEK VIEW */}
@@ -140,7 +165,11 @@ const CoursePlan = () => {
 
           {dayCourses.length > 0 ? (
             dayCourses.map(course => (
-              <div key={course.id} className={`${styles.courseCard} ${styles[course.group]}`}>
+              <div 
+                onClick={()=> openCheckoutModal(course)}
+                key={course.id} 
+                className={`${styles.courseCard} ${styles[course.group]}`}
+              >
                 <h4>{course.title}</h4>
                 <p>
                   {new Date(course.scheduled_at).toLocaleTimeString("de-DE", {
@@ -183,158 +212,4 @@ const CoursePlan = () => {
 
 export default CoursePlan;
 
-
-
-    /* <tbody>
-          
-              {[...Array(13)].map((_, index) => {
-                const hour = (index + 10).toString().padStart(2, '0') + ':00';
-  
-
-                //console.log(hour)
-                 // Generiere die Kurse für den aktuellen Tag und die aktuelle Stunde
-                    const dayCourses = [...Array(7)].map((_, dayIndex) => {
-                      const day = new Date(2025, 2, dayIndex + 17);
-                   
-                      return filteredCourses().filter(course => {
-                          const courseDate = new Date(course.scheduled_at);
-                          //console.log(courseDate)
-                          return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
-                      });
-                  });
-
-  
-
-                  // Überprüfe, ob es Kurse für diese Stunde gibt
-                  const hasCourses = dayCourses.some(courses => courses.length > 0);
-
-                  // Rendere die Zeile nur, wenn es Kurse gibt
-                  if (!hasCourses) {
-                      return null; // Überspringe das Rendern dieser Zeile
-                  }
-  
-                return (
-                  <tr key={hour}>
-                    
-                    {[...Array(7)].map((_, dayIndex) => {
-
-                 
-                      const day = new Date(2025, 2, dayIndex + 17);
-                       const dayCourses = filteredCourses().filter(course => { // Hier rufen wir die Funktion auf
-                            const courseDate = new Date(course.scheduled_at);
-                            return courseDate.getDay() === day.getDay() && courseDate.getHours() === index + 10;
-                        });
-
-            
-
-                      return (
-                        <td 
-                            key={dayIndex} 
-                            className={styles.dayCell}
-                        >
-                            
-                          {dayCourses.map(course => {
-                            // Bestimme die Hintergrundfarbe basierend auf der Gruppe
-                            let backgroundColor;
-                            switch (course.group) {
-                              case 'POLE':
-                                backgroundColor = 'var(--POLE)';
-                                break;
-                              case 'FLEXIBILITY':
-                                backgroundColor = 'var(--FLEXIBILITY)';
-                                break;
-                              case 'DANCE':
-                                backgroundColor = 'var(--DANCE)';
-                                break;
-                                case 'PLAYGROUND':
-                                  backgroundColor = 'var(--PLAYGROUND)';
-                                break;
-                                case 'SPECIALS':
-                                  backgroundColor = 'var(--SPECIALS)';
-                                  break;
-                                case 'ARIALSILK':
-                                  backgroundColor = 'var(--ARIALSILK)';
-                                break;
-                                case 'KIDS':
-                                  backgroundColor = 'var(--KIDS)';
-                                break;
-                              default:
-                                backgroundColor = 'transparent'; 
-                            }
-
-               
-                            const time = getHour(course.scheduled_at)
-
-                   
-                            const updatedCourse = {
-                              ...course,
-                              isCheckedOut: "course"
-                          };
-
-
-                            return (
-                              <div 
-                                key={course.title} 
-                                className={styles.courseItem} 
-                                style={{ backgroundColor }} 
-                                onClick={()=> openCheckoutModal(updatedCourse)}
-                              >
-                                <h2 className={`mt-2 flex ${styles.courseTitle}`}><strong>{course.title}</strong></h2>
-                                
-                                <div className={`flex px-1 ${styles.courseInfos}`}>
-                                   <p> {time} </p>
-                                    <p className='mx-2'> - </p>
-                                    <p> {getMinutes(course.duration)}</p>
-                                </div>
-                                <div className={` px-1 ${styles.courseInfos}`}>
-                                    <p>{course.scheduled_at}</p>
-                                    <p>{course.level}</p>
-                                    <p>{course.room}</p>
-                                    <p>{course.spots} free spots</p>
-                                    <p>{course.instructor}</p>
-                                </div>
-                               
-                              </div>
-                            );
-                          })}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>*/
-
-            /*
-
-
-            FILTER BY SELECTED WEEEEEEEEK
-
-               const goBackOneWeek = () => {
-      if(weeksForward < 0){
-        return
-      }
-      // Nur eine Woche zurückgehen
-      setCurrentWeekStart(prev => {
-          const newDate = new Date(prev);
-          newDate.setDate(newDate.getDate() - 7);
-          newDate.setHours(0, 0, 0, 0);
-          return newDate;
-      });
-
-      setWeeksForward(prev => prev - 1); // Setze die Anzahl der Wochen vorwärts zurück
-    };
-
-    const goForwardOneWeek = () => {
-      if (weeksForward < 8) { // Maximal 8 Wochen vorwärts
-          setCurrentWeekStart(prev => {
-              const newDate = new Date(prev);
-              newDate.setDate(newDate.getDate() + 7);
-              newDate.setHours(0, 0, 0, 0);
-              return newDate;
-          });
-        setWeeksForward(prev => prev + 1); // Erhöhe die Anzahl der Wochen vorwärts
-      }
-    };
-
-    */
+     

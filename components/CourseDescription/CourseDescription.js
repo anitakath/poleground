@@ -25,6 +25,7 @@ const CourseDescription = () => {
         //POLEDANCE
         {
             title: "Poledance Beginner",
+            group: "POLE",
             path: "poledance-beginner",
             subTitle: "Pole 0-1 &  Pole 1-2",
             description: "In diesem Kurs sind keinerlei Vorkenntnisse erforderlich! Du lernst die Grundlagen des Poledance, einschließlich einfacher Spins und Tricks. Unsere erfahrenen Trainer zeigen dir Schritt für Schritt, wie du sicher mit der Pole umgehst und deine Kraft sowie Flexibilität aufbaust. Der Kurs bietet eine freundliche und unterstützende Atmosphäre, in der du dich wohlfühlen und deinen eigenen Stil entwickeln kannst. Mach den ersten Schritt in die aufregende Welt des Poledance!",
@@ -36,6 +37,7 @@ const CourseDescription = () => {
         {
             title: "Poledance Early Intermediate",
             path: "poledance-early-intermediate",
+            group: "POLE",
             subTitle: "Pole 3",
             description: "In diesem Kurs vertiefen wir die Grundlagen des Poledance und kombinieren verschiedene Spins, Tricks und Figuren. Du wirst auch deine ersten Inverts erlernen! Dieser Kurs bietet die ideale Vorbereitung für den Übergang zum Intermediate-Kurs.",
             info: "Bitte bringe eine kurze Trainingshose mit, da diese das Halten an der Pole erheblich verbessert. Verzichte außerdem auf Schmuck wie Ringe und Halsketten, da diese nicht nur dich verletzen können, sondern auch die Pole beschädigen. Gripmittel sind im Studio erhältlich.",
@@ -46,6 +48,7 @@ const CourseDescription = () => {
         {
             title: "Pole Intermediate",
             path: "poledance-intermediate",
+            group: "POLE",
             subTitle: "Pole 4",
             description: "Dieser Kurs richtet sich an Teilnehmer mit grundlegenden Poledance-Kenntnissen und sicheren Inverts. Du wirst deine Technik verfeinern und komplexere Spins sowie Übergänge erlernen. Der Fokus liegt auf der Verbesserung deiner Kraft und Flexibilität, während du neue Tricks in einer motivierenden Umgebung ausprobierst.",
             isActive: true,
@@ -62,6 +65,7 @@ const CourseDescription = () => {
         },*/
         {
             title: "Pole Choreo",
+            group: "POLE",
             path: "poledance-choreo",
             subTitle: "Pole Choreo 1-2",
             description: "In diesem Kurs kombinieren wir die Grundlagen des Poledance mit kreativen Choreografien zu ausgewählter Musik. Du wirst lernen, wie du einfache Spins, Tricks und Figuren in fließende Bewegungsabläufe integrierst. Der Fokus liegt darauf, deinen persönlichen Ausdruck zu entwickeln und deine Musikalität zu verbessern. Dieser Kurs ist ideal für alle, die ihre Technik vertiefen und gleichzeitig Spaß an der Choreografie haben möchten. **Voraussetzung:** Du solltest mit den Inhalten aus dem Beginner-Kurs vertraut sein und sicher einfache Spins beherrschen.",
@@ -137,6 +141,7 @@ const CourseDescription = () => {
         {
             title: "Yoga & Flexibility",
             path: "yoga-flexibility",
+            group: "FLEXIBILITY",
             subTitle: "",
             description: "Dieser Kurs kombiniert Yoga-Elemente mit speziellen Dehnübungen zur Verbesserung deiner Flexibilität. Perfekt für Poledancer aller Niveaus, um Verspannungen zu lösen und die Beweglichkeit zu erhöhen. Finde innere Ruhe und Stärke durch gezielte Atemtechniken.",
             info: "Bitte trage Kleidung in der du dich wohlfühlst.",
@@ -146,30 +151,33 @@ const CourseDescription = () => {
         {
             title: "Playground",
             path: "playground",
+            group: "PLAYGROUND",
             subTitle: "",
             description: "Der Playground ist dein ganz eigener kreativer Raum für freies Training und Experimentieren. Hier kannst du dich ohne Druck entfalten, neue Ideen ausprobieren und deinen eigenen Stil entwickeln. Nutze die Zeit, um an deinen individuellen Fähigkeiten zu arbeiten und deine Kreativität auszuleben!",
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
             isActive: true,
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         },
-        /*
+        
         {
             title: "Arial Silk",
             path: "arial-silk",
+            group: "ARIALSILK",
             subTitle: "",
             description: "Der Playground ist dein ganz eigener kreativer Raum für freies Training und Experimentieren. Hier kannst du dich ohne Druck entfalten, neue Ideen ausprobieren und deinen eigenen Stil entwickeln. Nutze die Zeit, um an deinen individuellen Fähigkeiten zu arbeiten und deine Kreativität auszuleben!",
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
-            isActive: false,
+            isActive: true,
              imagePath: "/coursedescription/pexels-ketut-subiyanto-5000461.jpg"
             
         },
         {
             title: "Arial Hoop",
             path: "arial-hoop",
+            group: "HOOP",
             subTitle: "",
             description: "Der Playground ist dein ganz eigener kreativer Raum für freies Training und Experimentieren. Hier kannst du dich ohne Druck entfalten, neue Ideen ausprobieren und deinen eigenen Stil entwickeln. Nutze die Zeit, um an deinen individuellen Fähigkeiten zu arbeiten und deine Kreativität auszuleben!",
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
-            isActive: false,
+            isActive: true,
             imagePath: "/coursedescription/pexels-taylor-monahan-3440481-6197551.jpg",
             
 
@@ -178,11 +186,12 @@ const CourseDescription = () => {
             title: "Luftakrobatik für Kinder und Jugendliche",
             path: "luftakrobatik-kids-teens",
             subTitle: "",
+            group: "KIDS",
             description: "Der Playground ist dein ganz eigener kreativer Raum für freies Training und Experimentieren. Hier kannst du dich ohne Druck entfalten, neue Ideen ausprobieren und deinen eigenen Stil entwickeln. Nutze die Zeit, um an deinen individuellen Fähigkeiten zu arbeiten und deine Kreativität auszuleben!",
             info: "Bitte beachte, dass der Playground nicht vom Trainer geleitet wird! Du entscheidest selbst, was du trainieren möchtest und leitest dein eigenes Training. Achte darauf, die passende Kleidung für deine Übungen zu tragen.",
-            isActive: false,
+            isActive: true,
              imagePath: "/coursedescription/pexels-elly-fairytale-3823039.jpg"
-        },*/
+        },
         
     ];
 
@@ -208,6 +217,8 @@ const CourseDescription = () => {
     */
     
 
+        console.log(courses)
+
     return (
         <div className={styles.container}>
            {/*} <div className={styles.titleContainer}>
@@ -223,7 +234,7 @@ const CourseDescription = () => {
             <div className={styles.courseDescriptionDiv}>
             
                 {courses.map(course => (
-                    <div className='relative' key={course.title}>
+                    <div className={`${styles.courseItemDescription} ${styles[course.group] } `} key={course.title}>
                         <button 
                             key={course.title} 
                             className={`${styles.button} ${!course.isActive ? styles.inactive : ' '} beVietnamProFont`} 
@@ -233,9 +244,9 @@ const CourseDescription = () => {
                             {course.title} <br/>
     
                         
-                            {course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)}  
+                            {/*{course.imagePath && ( <Image src={course.imagePath} height={400} width={400} className={styles.image} alt={course.subTitle} />)} */ }
                       
-                            </button>
+                        </button>
 
                             {!course.isActive && (
                             <div className={styles.courseIsPending}>

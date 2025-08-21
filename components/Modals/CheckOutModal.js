@@ -1,10 +1,10 @@
 
 import styles from './CheckOutModal.module.css'
 
-const CheckOutModal = ({checkoutData, onClose }) =>{
+const CheckOutModal = ({chosenCourse, onClose }) =>{
 
 
-    console.log(checkoutData)
+    console.log(chosenCourse)
 
 
     //RENDERE ZWEI UNTERSCHIEDLICHE INHALTE, 
@@ -12,34 +12,34 @@ const CheckOutModal = ({checkoutData, onClose }) =>{
     // DA DER USER ENTWEDER EIN TICKET, ODER EINEN KURS DIREKT BUCHEN MÖCHTE. 
 
 
-    const buyProductHandler = (checkoutData) =>{
+    const buyProductHandler = (chosenCourse) =>{
 
-        console.log(checkoutData)
-        alert(`"${checkoutData.title}" erfolgreich gekauft`)
+
+        alert(`"${chosenCourse.title}" erfolgreich gekauft`)
     }
 
     return(
         <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.modalContent}>
             <h3 className={styles.checkoutTitle}> Übersicht deiner Produktauswahl:</h3>
-                {checkoutData ? (
+                {chosenCourse ? (
                     <div className=' flex-col items-center justify-center mt-4 mb-8'>
-                        <h3 className={styles.modalTitle}>{checkoutData.termofcontract && "Mitgliedschaft"} {checkoutData.title}</h3>
+                        <h3 className={styles.modalTitle}>{chosenCourse.termofcontract && "Mitgliedschaft"} {chosenCourse.title}</h3>
                         
-                        <p><strong>Preis:</strong> {checkoutData.price}</p>
-                        {checkoutData.termofcontract && <p> <strong>Vertragslaufzeit:</strong> {checkoutData.termofcontract}</p>}
-                        {checkoutData.info && checkoutData.info !== "" && (
-                            <p><strong>Info:</strong> {checkoutData.info}</p>
+                        <p><strong>Preis:</strong> {chosenCourse.price}</p>
+                        {chosenCourse.termofcontract && <p> <strong>Vertragslaufzeit:</strong> {chosenCourse.termofcontract}</p>}
+                        {chosenCourse.info && chosenCourse.info !== "" && (
+                            <p><strong>Info:</strong> {chosenCourse.info}</p>
                         )}
-                        <p><strong>Detaillierte Info:</strong> {checkoutData.detailedInfo}</p>
+                        <p><strong>Detaillierte Info:</strong> {chosenCourse.detailedInfo}</p>
 
-                        {checkoutData.detailedInfo && (
+                        {chosenCourse.detailedInfo && (
                             <div className='my-2 '>
                                
 
                         
                                 
-                                {checkoutData.termofcontract && (
+                                {chosenCourse.termofcontract && (
                                     <div>
                                         <h3> Wichtige Informationen </h3>
 
@@ -111,7 +111,7 @@ const CheckOutModal = ({checkoutData, onClose }) =>{
 
                 <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst **zukünftig** automatisch zur Zahlungsabwicklung weitergeleitet. </p>
                 <div className={styles.buttonsContainer}>
-                    <button className={styles.buyButton} onClick={() => buyProductHandler(checkoutData)}> Kaufen </button>
+                    <button className={styles.buyButton} onClick={() => buyProductHandler(chosenCourse)}> Kaufen </button>
                     <button className={styles.closeButton} onClick={onClose}>Schließen</button>
                 </div>
             

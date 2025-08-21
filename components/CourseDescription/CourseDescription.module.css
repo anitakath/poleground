@@ -10,9 +10,59 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-
  }
  
+
+ .courseItemDescription{
+    position: relative;
+ }
+
+
+ .POLE{
+    background-color: var(--POLE);
+    color: var(--FLEXIBILITY);
+  }
+ 
+  .POLE h4{
+    color: var(--FLEXIBILITY);
+  }
+ 
+  .FLEXIBILITY{
+    background-color: var(--FLEXIBILITY);
+  }
+ 
+  .DANCE{
+    background-color: var(--DANCE);
+  }
+ 
+ 
+  .PLAYGROUND{
+    background-color: var(--PLAYGROUND);
+  }
+
+  .SPECIALS{
+    background-color: var(--SPECIALS);
+  }
+ 
+  .ARIALSILK{
+    background-color: var(--ARIALSILK);
+  }
+
+  .HOOP{
+    background-color: var(--HOOP);
+  }
+
+  .HAMMOCK{
+    background-color: var(--HAMMOCK);
+  }
+ 
+  .KIDS{
+    background-color: var(--KIDS);
+  }
+
+
+
+
 .buttons{
     cursor: pointer;
     font-size: 0.9rem;
@@ -21,7 +71,7 @@
 
 .courseDescriptionDiv{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px; 
     margin-bottom: 10px;
 }
@@ -35,15 +85,12 @@
     border: none;
     font-size: 1.3rem; 
     cursor: pointer;
-    color: var(--primaryFont);
     font-family: 'Kumbh Sans', sans-serif;
 }
 
 .button:hover{
-    color: var(--primaryFontHover);
     box-shadow: 0px 1px 2px var(--secondaryBackground);
     transform: scale(1.02);
-    font-weight: bolder;
     font-size: 1.4rem;
 }
 

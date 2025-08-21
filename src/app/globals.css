@@ -18,10 +18,11 @@
     /*--background: #EBCFC6;*/
    /*--background: #F3E0D1;*/
     --tertiaryBackground:  hsl(148, 44%, 20%);
-   /* --secondaryBackground: hsl(148, 24%, 52%);*/
+   /*--secondaryBackground: hsl(148, 24%, 52%);*/
     --secondaryBackgroundOpaque: rgba(89, 144, 115, 0.4);
 
-    --background: #FFFAED;
+    /*--background: #FFFAED;*/
+    --background: rgba(240,234,226);
     /*--secondaryBackground:  #f9ddd3;*/
     --secondaryBackground:  rgb(249, 234, 228);
     --foreground: #E8B19D;
@@ -52,13 +53,24 @@
 
     --secondaryForGroundDark:hsl(356, 68%, 47%);
     
-    --POLE: #E09E99;
-    --FLEXIBILITY: #A3C6A8;;
-    --DANCE: #FFE5B4;
-    --PLAYGROUND: #FA9A85;
-    --SPECIALS: rgba(243, 18,  42, 0.9);
-    --ARIALSILK: #B7E4D9;
-    --KIDS: pink;
+    /*--POLE: #E09E99;*/
+    --POLE: #6E1B25;
+    /*--FLEXIBILITY: #A3C6A8;*/
+    --FLEXIBILITY: #EDC1BB;
+    /*--DANCE: #FFE5B4;*/
+    --DANCE: rgba(245,185,40);
+   /* --PLAYGROUND: #FA9A85;*/
+    --PLAYGROUND: #B56271;
+   /* --SPECIALS: rgba(243, 18,  42, 0.9);*/
+    --SPECIALS: #DFAA98;
+   /* --ARIALSILK: #B7E4D9;*/
+    --ARIALSILK: #E7DFE1;
+    /*--KIDS: pink;*/
+    --KIDS: #CD725D;
+    /*--HAMMOCK: #DFCABB;*/
+    --HAMMOCK: #E99D75;
+    /*--HOOP: #8C7466;*/
+    --HOOP: #E9D7C9;
     
     --lightMint: #A8D5BA;
     --softGreen: #A3C6A8;

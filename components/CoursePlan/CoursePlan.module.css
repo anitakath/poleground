@@ -64,6 +64,7 @@
    gap: 0.25rem;
    font-size: 0.9rem;
    transition: transform 0.2s ease, box-shadow 0.2s ease;
+   cursor: pointer;
  }
 
  .noCourseInfo{
@@ -84,25 +85,23 @@
  .courseRequestModalContainer {
    margin-top: 2rem;
    padding: 1.5rem;
-   background: #fdf4ff;
-   border: 1px solid #f5d0fe;
-   border-radius: 12px;
-   text-align: center;
+   background-color: var(--primaryFont);
+   color: var(--background);
+   font-size: 1.2rem;
  }
  
  .courseRequestButton {
-   background: #ec4899;
-   color: #fff;
+   color: var(--FLEXIBILITY);
+   font-size: 2rem;
    border: none;
-   border-radius: 8px;
-   padding: 0.3rem 0.8rem;
-   margin: 0 0.3rem;
+   margin: 0px 1px;
    cursor: pointer;
    transition: background 0.2s ease;
  }
  
  .courseRequestButton:hover {
-   background: #db2777;
+   cursor: pointer;
+   color: black;
  }
  
  /* Responsive */
@@ -122,6 +121,11 @@
 
  .POLE{
    background-color: var(--POLE);
+   color: var(--FLEXIBILITY);
+ }
+
+ .POLE h4{
+   color: var(--FLEXIBILITY);
  }
 
  .FLEXIBILITY{
@@ -144,6 +148,15 @@
  .ARIALSILK{
    background-color: var(--ARIALSILK);
  }
+ 
+ .HOOP{
+  background-color: var(--HOOP);
+}
+
+.HAMMOCK{
+  background-color: var(--HAMMOCK);
+}
+
 
  .KIDS{
    background-color: var(--KIDS);
