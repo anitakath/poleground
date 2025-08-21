@@ -1,8 +1,8 @@
 "use client"
 import Image from 'next/image'
 import styles from './AboutUs.module.css'
-import PolegroundInfo from '../../../../components/PolegroundInfo'
-import useScrollToSection from '../../../../custom hooks/useScrollToSection'
+import PolegroundInfo from '../../../components/PolegroundInfo'
+import useScrollToSection from '../../../custom hooks/useScrollToSection'
 import { useRef, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'

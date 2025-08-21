@@ -37,9 +37,6 @@
 
 }
 
-.fixed{
-    /*position: fixed;*/
-}
 
 .buttonDiv{
     width: 100%;
@@ -81,7 +78,8 @@
 }
 
 .socialButton:hover{
-    box-shadow: 0px 0px 5px grey;
+    background-color: var(--ARIALSILK) ;
+    box-shadow: 0px 0px 5px lightgrey;
 }
 
 .socialIcon{

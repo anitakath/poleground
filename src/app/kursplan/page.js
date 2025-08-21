@@ -1,6 +1,7 @@
 "use client"
-import styles from '../../CoursePlanPage.module.css'
-import CoursePlan from '../../../../components/CoursePlan/CoursePlan'
+import styles from '../CoursePlanPage.module.css'
+
+import CoursePlan from '../../../components/CoursePlan/CoursePlan'
 const CoursePlanPage = () =>{
 
 

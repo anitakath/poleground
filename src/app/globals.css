@@ -56,7 +56,7 @@
     /*--POLE: #E09E99;*/
     --POLE: #6E1B25;
     /*--FLEXIBILITY: #A3C6A8;*/
-    --FLEXIBILITY: #EDC1BB;
+    --FLEXIBILITY: rgb(237, 193, 187);
     /*--DANCE: #FFE5B4;*/
     --DANCE: rgba(245,185,40);
    /* --PLAYGROUND: #FA9A85;*/
@@ -71,6 +71,7 @@
     --HAMMOCK: #E99D75;
     /*--HOOP: #8C7466;*/
     --HOOP: #E9D7C9;
+    --HEELS: #786A5D;
     
     --lightMint: #A8D5BA;
     --softGreen: #A3C6A8;

@@ -33,7 +33,7 @@ const Header = () => {
                         </div>
                         <div className={styles.title_hover}>
                             <span className="primaryFontFamily">
-                                <Link href="/poledance/ueber-uns"> you deserve it. </Link>
+                                <Link href="/ueber-uns"> you deserve it. </Link>
                             </span>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const Header = () => {
 
 
                   <div className={styles.linkAboutUs}>
-                        <Link  href="/poledance/ueber-uns" className={styles.link}> ÜBER POLEGROUND </Link>
+                        <Link  href="/ueber-uns" className={styles.link}> ÜBER POLEGROUND </Link>
                         {/*<div className={styles.dropdownContent}>
                         <Link href="/poledance/ueber-uns" className={styles.dropdownLink}> Poleground </Link>
                         <Link href="/figureskating/ueber-uns" className={styles.dropdownLink}> Figure Skating Club **in Bearbeitung** </Link>
@@ -53,8 +53,9 @@ const Header = () => {
                     </div>
                
                    <Link href="/jobs" className={styles.link}> JOBS </Link>
-                   <Link href="/poledance/events" className={styles.link}> EVENTS </Link>
-                   <Link href="/poledance/cooperations" className={styles.link}> KOOPERATIONEN </Link>
+                   <Link href="/events" className={styles.link}> EVENTS </Link>
+                   <Link href="/cooperations" className={styles.link}> KOOPERATIONEN </Link>
+                   <Link href="/247-gym" className={styles.link}> 24/7 GYM </Link>
                </div>
                {/*}
                <div className={styles.mobileMenu}>

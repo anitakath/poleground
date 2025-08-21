@@ -24,7 +24,7 @@ const CourseDescription = () => {
 
         //POLEDANCE
         {
-            title: "Poledance Beginner",
+            title: "Poledance Beginner - Advanced",
             group: "POLE",
             path: "poledance-beginner",
             subTitle: "Pole 0-1 &  Pole 1-2",
@@ -33,7 +33,7 @@ const CourseDescription = () => {
             isActive: true,
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         }, 
-        
+        /*
         {
             title: "Poledance Early Intermediate",
             path: "poledance-early-intermediate",
@@ -53,7 +53,7 @@ const CourseDescription = () => {
             description: "Dieser Kurs richtet sich an Teilnehmer mit grundlegenden Poledance-Kenntnissen und sicheren Inverts. Du wirst deine Technik verfeinern und komplexere Spins sowie Übergänge erlernen. Der Fokus liegt auf der Verbesserung deiner Kraft und Flexibilität, während du neue Tricks in einer motivierenden Umgebung ausprobierst.",
             isActive: true,
             imagePath: "/coursedescription/pexels-pixabay-270777 (1).jpg"
-        },
+        },*/
         /*
         {
             title: "Pole Advanced",
@@ -62,7 +62,7 @@ const CourseDescription = () => {
             description: "Im Advanced-Kurs wirst du herausfordernde Tricks und Kombinationen erlernen, die sowohl Kraft als auch Geschicklichkeit erfordern. Dieser Kurs ist ideal für erfahrene Tänzerinnen, die ihre Fähigkeiten weiterentwickeln und Technik verbessern möchten.",
             isActive: false,
             imagePath: "/coursedescription/pexels-frendsmans-6100299 (1).jpg"
-        },*/
+        },*//*s
         {
             title: "Pole Choreo",
             group: "POLE",
@@ -73,7 +73,7 @@ const CourseDescription = () => {
             isActive: true,
             imagePath: "/coursedescription/adrian-maximiliano-arellano-k68XX_2DO4o-unsplash.jpg"
             
-        },
+        },*/
         /*
         {
             title: "Pole Choreo Intermediate-Advanced",
@@ -107,28 +107,30 @@ const CourseDescription = () => {
             info: "Bringe gern ein paar High Heels mit und trage Kleidung, in denen du dich wohlfühlst. Sexy Outfits sind 💜-lich willkommen",
             isActive: false,
             imagePath: "/coursedescription/pexels-poleplace-online-poledance-studio-610999695-17286900.jpg"
-        },
+        },*/
         
         {
             title: "Heels Flow",
             path: "heels-flow",
+            group: "HEELS",
             subTitle: "mixed level",
             description: "In diesem Kurs kombinieren wir dynamische sowie sinnlich-verführerische Bewegungen und Übergänge mit unseren high Heels an der Pole. Am Ende studieren wir eine kleine feine Choreo. Für diesen Kurs werden Vorerfahrungen empfohlen, da wir anspruchsvollere Bewegungen und schnellere Übergänge ausführen. ",
             info: "Bringe gern ein paar High Heels mit und trage Kleidung, in denen du dich wohlfühlst. Sexy Outfits sind 💜-lich willkommen.",
-            isActive: false,
+            isActive: true,
             imagePath: "/coursedescription/pexels-poleplace-online-poledance-studio-610999695-17286900.jpg"
         },
         
         {
             title: "Floorwork",
             path: "floorwork",
+            group: "DANCE",
             subTitle: "",
             description: "Der Floorwork-Kurs kombiniert Elemente aus Tanz und Poledance am Boden. Du lernst fließende Bewegungen und Übergänge, die deinem Tanzstil mehr Ausdruck verleihen. Dieser Kurs fördert nicht nur deine Kreativität, sondern auch deine Körperbeherrschung.",
             info: "Bitte trage Kleidung in der du dich wohlfühlst undbring  Knee Pads mit. High Heels sind vollkommen in Ordnung, aber kein Muss.",
-            isActive: false,
+            isActive: true,
             imagePath: "/coursedescription/pexels-lazarus-ziridis-351891426-30496741.jpg"
       
-        },
+        },/*
         {
             title: "Chair & Lapdance",
             path: "chair-lapdance",

@@ -1,8 +1,7 @@
 "use client" 
 import Image from "next/image"; 
 /*import styles from './Start.module.css';*/
-import Link from "next/link";
-import { useTitle } from "../../context/TitleContext";
+
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -20,8 +19,6 @@ import PriceTable from "../../components/CourseDescription/PriceTable";
 //CUSTOM COMPONENTS
 import useScrollToSection from "../../custom hooks/useScrollToSection";
 import React, { useContext } from 'react';
-import { AuthContext } from "../../context/authContext";
-import useFetchCourseData from "../../custom-hooks/useFetchCourseData";
 
 
 export default function Home() {
@@ -71,10 +68,6 @@ export default function Home() {
   };
   
   const coursesObject = transformCourses(courses);
-
-  console.log(coursesObject)
-
-  
   const {scrollToSection} = useScrollToSection();
 
 

@@ -1,7 +1,7 @@
 const useRetreatData = () => {
     const EVENTS_DUMMY = [
         {
-            id: 1,
+            id: "retreat-portugal",
             group: "RETREAT",
             title: "RETREAT IN PORTUGAL",
             descriptionsTitle: "Komm mit uns nach Portugal!",
@@ -16,10 +16,11 @@ const useRetreatData = () => {
             level: "mixed",
             price: "ab 1500 Euro",
             imagePath: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg",
-            websitespath: "/poledance/events/retreat"
+            websitespath: "/poledance/events/retreat",
+            scheduled_at: ""
         },
         {
-            id: 2,
+            id: "photoshoot",
             group: "PHOTOSHOOT",
             title: "PHOTOSHOOT",
             descriptionsTitle: " Lasse dich, deinen Körper und Fortschritt auf wunderschönste Art fotografisch festhalten",
@@ -34,10 +35,11 @@ const useRetreatData = () => {
             level: "mixed",
             price: "ab 100 Euro",
             imagePath: "/Events/pexels-pixabay-163497.jpg",
-            websitespath: "/poledance/events/photoshoot"
+            websitespath: "/poledance/events/photoshoot",
+            scheduled_at: ""
         },
         {
-            id: 1,
+            id: "shownight",
             group: "SHOWNIGHT",
             title: "SHOWNIGHT @ POLEGROUND",
             descriptionsTitle: "das Poleground feiert! - einfach so",
@@ -49,25 +51,27 @@ const useRetreatData = () => {
             level: "mixed",
             price: "ab 150 Euro",
             imagePath: "/Events/shangyou-shi-U6mlid4nor8-unsplash.jpg",
-            websitespath: "/poledance/events/shownight"
+            websitespath: "/poledance/events/shownight",
+            scheduled_at: ""
         },
-        /*
+        
         {
             id: 1,
             group: "PICKNICK X POLE IM PARK ",
             title: "PICKNICK X POLE  IM PARK",
-            descriptionsTitle: "Gemeinsames Picknick im Park / Alternativ: Brunch im Poleground",
-            subDescription: "Das Poleground lädt Kund:innen und Freunde zu einem Picknick im Park ein -  es wird neben ein paar Snacks eine freistehende Pole und ein Arial Tuch mitgebracht. Es wird zwar ein paar Snacks geben, aber bitte bring gern dein eigenes Essen und Trinken mit.",
+            descriptionsTitle: "Gemeinsames Picknick im Park / Alternativ, bei schlechtem Wetter: Brunch im Poleground",
+            subDescription: "Das Poleground lädt Kund:innen und Freunde zu einem Picknick im Park ein -  es wird neben einer bunten und vielfältigen Tapas-Platte eine freistehende Pole und ein Arial Tuch bereitgestellt.  Gern könnt ihr natürlich auch noch was zum Picknick beitragen. Bitte schreibe uns unbedingt, falls du wichtig zu beachtende Lebensmittelallergien hast.",
             descriptionsTable: [
-                { title: "Bei schlechtem Wetter (Regen, oder <17°C) verlegen wir das Picknick in unser Studio" },
+                { title: "Bei schlechtem Wetter (Regen, starkem Wind, oder Temperaturen < 17°C) verlegen wir das Picknick in unser Studio" },
                 { title: "Ggf WhatsAppGruppe für Organisation" },
                 
             ],
             level: "mixed",
-            price: "0 Euro",
+            price: "30 Euro",
             imagePath: "/Events/pexels-anna-guerrero-788383-1957011.jpg",
-            websitespath: "/poledance/events/shownight"
-        },*/
+            websitespath: "/poledance/events/shownight",
+            scheduled_at: ""
+        },
     ];
 
     return { EVENTS_DUMMY };

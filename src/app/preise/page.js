@@ -1,7 +1,7 @@
 "use client"
 
-import styles from '../../CoursePlanPage.module.css'
-import PriceTable from '../../../../components/CourseDescription/PriceTable'
+import styles from '../CoursePlanPage.module.css'
+import PriceTable from '../../../components/CourseDescription/PriceTable'
 const Prices = () =>{
 
 

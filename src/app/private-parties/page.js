@@ -1,7 +1,7 @@
 "use client"
 
-import styles from '../../CoursePlanPage.module.css'
-import PrivateParties from '../../../../components/CoursePlan/PrivateParties'
+import styles from '../CoursePlanPage.module.css'
+import PrivateParties from '../../../components/CoursePlan/PrivateParties'
 
 const PrivatePartiesPage = () =>{
 

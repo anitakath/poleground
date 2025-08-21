@@ -2,7 +2,6 @@
 import Link from "next/link"
 import styles from './MobileMenu.module.css'
 import useScrollToSection from "../../custom hooks/useScrollToSection"
-import { useRouter } from "next/navigation"
 import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -20,22 +19,22 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
                            {/*<Image src="/iconpng/icons8-löschen-50.png" alt="close button image" width={50} height={50} />*/}
                        </button> 
                    </div>
-                   <Link href="/" className={styles.mobileLink}> ✨ POLEGROUND </Link>
+                   <Link href="/" className={styles.mobileLink} onClick={toggleMenu}> ✨ POLEGROUND </Link>
                  
                    <br/>
             
-                   <Link href="/poledance/kursplan" className={styles.mobileLink}>KURSPLAN </Link>
-                   <Link href="/poledance/kursbeschreibungen" className={styles.mobileLink}>KURSBESCHREIBUNGEN </Link>
-                   <Link href="/poledance/preise" className={styles.mobileLink}>PREISE </Link>
-                   <Link href="/poledance/private-parties" className={styles.mobileLink}>PRIVATE PARTIES </Link>
+                   <Link href="/kursplan" onClick={toggleMenu}  className={styles.mobileLink}>KURSPLAN </Link>
+                   <Link href="/kursbeschreibungen"  onClick={toggleMenu} className={styles.mobileLink}>KURSBESCHREIBUNGEN </Link>
+                   <Link href="/preise" className={styles.mobileLink} onClick={toggleMenu} >PREISE </Link>
+                   <Link href="/private-parties" className={styles.mobileLink} onClick={toggleMenu} >PRIVATE PARTIES </Link>
                    
                    <br/>
 
-                   <Link href="/helpdesk" className={styles.mobileLink}>FAQ </Link>
-                   <Link href="/poledance/ueber-uns" className={styles.mobileLink}>ÜBER UNS</Link>
-                   <Link href="/jobs" className={styles.mobileLink}> JOBS </Link>
-                   <Link href="/events" className={styles.mobileLink}>EVENTS</Link>
-                   <Link href="/poledance/cooperations" className={styles.mobileLink}>KOOPERATIONEN </Link>
+                   <Link href="/helpdesk" className={styles.mobileLink} onClick={toggleMenu} >FAQ </Link>
+                   <Link href="/ueber-uns" className={styles.mobileLink} onClick={toggleMenu} >ÜBER UNS</Link>
+                   <Link href="/jobs" className={styles.mobileLink} onClick={toggleMenu} > JOBS </Link>
+                   <Link href="/events" className={styles.mobileLink} onClick={toggleMenu} >EVENTS</Link>
+                   <Link href="/cooperations" className={styles.mobileLink} onClick={toggleMenu} >KOOPERATIONEN </Link>
                </div>
     )
 }
