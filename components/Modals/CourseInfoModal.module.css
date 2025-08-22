@@ -25,14 +25,11 @@
     position: relative;
     overflow: scroll;
     z-index: 100000;
-    
 }
 
 
 .headerContainer{
     display: flex;
-    align-items: center;
-
 }
 
 .headerTitleContainer{
@@ -53,11 +50,14 @@
 
 .subTitle{
     width: 100%;
+    padding: 0.5rem 0rem;
 }
 
 .buttonContainer{
     position: relative;
     width: 50%;
+    position: relative;
+    top: 10px;
 
 }
 
@@ -67,26 +67,41 @@
     border-radius: 5px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    
     height: 40px;
-    background-color: var(--softGreen);
+    background-color: var(--foreground);
     margin:0px 2px;
 
 }
  
 
+.headerDescription{
+    margin: 1rem 0rem;
+    text-align: justify;
+    width: 100%;
+    font-size: 1.1rem;
+}
  
 .coursePlanButton:hover, .coursePrices:hover{
     color: var(--foreground);
-    background: var(--tertiaryBackground);
+    background: var(--primaryFontHover);
 }
  
 
  
 .subContainer{
-    height: 400px;
     overflow: scroll;
+}
 
+
+.levelBlock{
+    margin: 1rem 0px;
+    padding: 3px 0px;
+}
+
+.levelTitle{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: var(--primaryFontHover)
 }
 
 
@@ -107,12 +122,10 @@
 
 .button{
     cursor: pointer;
+    margin: 40px 20px;
     transition: 0.2s ease-in-out;
-    padding: 10px;
-    position: absolute;
-    bottom: 15px;
-    right: 30px;
-    padding: 0px 5px;
+    padding: 10px 0px;
+    background-color: var(--foreground);
     width: 20%;
     border-radius: 5px;
     transition: 0.2s ease-in-out;
@@ -124,8 +137,8 @@
 }
 
 .button:hover{
-    color:var(--title);
-    background-color: var(--softGreen);
+    color:var(--FLEXIBILITY);
+    background-color: var(--primaryFontHover)
 }
 
 

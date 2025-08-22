@@ -210,6 +210,14 @@
   background-color: var(--HAMMOCK);
 }
 
+.EVENTS{
+  background-color: var(--EVENTS);
+  color: var(--ARIALSILK)
+}
+
+.EVENTS h4{
+  color: var(--ARIALSILK)
+}
 
  .KIDS{
    background-color: var(--KIDS);
