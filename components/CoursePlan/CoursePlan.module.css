@@ -2,6 +2,7 @@
 
 /* CoursePlan.module.css */
 
+ /* --------------- WEEK NAVIGATION --------------- */
 .tableContainer {
    display: flex;
    flex-direction: column;
@@ -10,7 +11,7 @@
    max-width: 100%;
    margin: 0 auto;
  
- }
+}
  
  .weekNav {
    display: flex;
@@ -18,6 +19,10 @@
    align-items: center;
    padding: 0.5rem 1rem;
    width: 100%;
+ }
+
+ .weekNav h2{
+  color: var(--POLE)
  }
  
  .weekNav button {
@@ -32,12 +37,57 @@
  .weekNav button:hover {
    background: var(--primaryFontHover);
  }
+
+
+
+
+
+ /* --------------- FILTER --------------- */
+
+ .filterContainer {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.filterContainer label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.filterContainer select {
+  text-align: center;
+  transition: 0.4s ease-in-out;
+  padding:0rem 0.3rem;
+  margin: 0rem 0.5rem;
+  border: none;
+  color: var(--primaryFont);
+  cursor: pointer;
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  width: 100px;
+}
+
+.filterContainer select:focus{
+  outline: none;
+}
+
+.filterContainer select:hover{
+  color: var(--primaryFontHover);
+}
+
+
+
  
  .weekContainer {
    display: grid;
    grid-template-columns: repeat(7, 1fr);
    gap: 0.5rem;
    padding: 3px;
+   
  }
  
  .dayColumn {
@@ -67,14 +117,18 @@
    cursor: pointer;
  }
 
- .noCourseInfo{
-   text-align: center;
- }
+
  
  .courseCard:hover {
-   transform: translateY(-2px);
+   transform: scale(1.1);
    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
  }
+
+ .noCourseInfo:hover{
+  transform: scale(1.0);
+  box-shadow:  none;
+  cursor:default;
+}
  
  .courseCard h4 {
    font-size: 1rem;
@@ -85,23 +139,22 @@
  .courseRequestModalContainer {
    margin-top: 2rem;
    padding: 1.5rem;
-   background-color: var(--primaryFont);
-   color: var(--background);
-   font-size: 1.2rem;
+   color: var(--POLE);
+   font-size: 1.3rem;
  }
  
  .courseRequestButton {
    color: var(--FLEXIBILITY);
-   font-size: 2rem;
+   font-size: 1.8rem;
    border: none;
    margin: 0px 1px;
    cursor: pointer;
-   transition: background 0.2s ease;
+   transition: 0.4s ease-in-out;
  }
  
  .courseRequestButton:hover {
    cursor: pointer;
-   color: black;
+   color: var(--SPECIALS)
  }
  
  /* Responsive */
@@ -160,6 +213,15 @@
 
  .KIDS{
    background-color: var(--KIDS);
+ }
+
+ .HEELS{
+  background-color: var(--HEELS);
+  color: var(--ARIALSILK);
+ }
+
+ .HEELS h4{
+  color: var(--ARIALSILK)
  }
 
 

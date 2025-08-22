@@ -54,30 +54,22 @@ const CoursePlan = () => {
     return { monday, sunday };
   };
 
-  /*
-  const getWeekRange = (weeksForward = 0) => {
-    const today = new Date();
-    const day = today.getDay(); // Sonntag=0, Montag=1, ...
-    const diffToMonday = day === 0 ? -6 : 1 - day;
-
-    const monday = new Date(today);
-    monday.setDate(today.getDate() + diffToMonday + weeksForward * 7);
-    monday.setHours(0, 0, 0, 0);
-
-    const sunday = new Date(monday);
-    sunday.setDate(monday.getDate() + 6);
-    sunday.setHours(23, 59, 59, 999);
-
-    return { monday, sunday };
-  };*/
 
   const { monday, sunday } = getWeekRange(weeksForward);
+ 
 
-  // 🟣 FILTER COURSES OF THIS WEEK
+
+  // 🟣 FILTER COURSES OF THIS WEEK + GROUP + TRAINER
   const coursesThisWeek = courses.filter(course => {
     const date = new Date(course.scheduled_at);
-    return date >= monday && date <= sunday;
+    const isInWeek = date >= monday && date <= sunday;
+
+    const matchesGroup = selectedGroup === "ALL" || course.group === selectedGroup;
+    const matchesTrainer = selectedTrainer === "ALL" || course.instructor === selectedTrainer;
+
+    return isInWeek && matchesGroup && matchesTrainer;
   });
+
 
   // 🟣 GROUP COURSES BY DAY
   const groupedCourses = coursesThisWeek.reduce((acc, course) => {
@@ -116,6 +108,7 @@ const CoursePlan = () => {
 
 
 
+
   return (
     <div className={styles.tableContainer}>
       {isCheckedOutModalOpen && <CheckOutModal chosenCourse={chosenCourse} onClose={closeCheckoutModal} />}
@@ -143,6 +136,39 @@ const CoursePlan = () => {
 
       {/* WEEK VIEW */}
 
+      {/* FILTER */}
+<div className={styles.filterContainer}>
+  {/* Gruppe */}
+  <label>
+    Filter nach Kursen:
+    <select 
+      value={selectedGroup} 
+      onChange={(e) => setSelectedGroup(e.target.value)}
+    >
+      <option value="ALL">Alle</option>
+      {[...new Set(courses.map(c => c.group))].map(group => (
+        <option key={group} value={group}>{group}</option>
+      ))}
+    </select>
+  </label>
+
+  {/* Trainer */}
+  <label>
+    Filter nach Trainer:in:
+    <select 
+      value={selectedTrainer} 
+      onChange={(e) => setSelectedTrainer(e.target.value)}
+    >
+      <option value="ALL">Alle</option>
+      {[...new Set(courses.map(c => c.instructor))].map(instructor => (
+        <option key={instructor} value={instructor} >{instructor}</option>
+      ))}
+    </select>
+  </label>
+</div>
+
+
+
 
   <div className={styles.weekContainer}>
     {weekDaysOrder.map((weekday, index) => {
@@ -161,7 +187,7 @@ const CoursePlan = () => {
 
       return (
         <div key={dayKey} className={styles.dayColumn}>
-          <h3>{dayKey}</h3>
+          <h3>{dayKey}</h3> 
 
           {dayCourses.length > 0 ? (
             dayCourses.map(course => (

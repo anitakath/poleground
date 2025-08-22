@@ -1,0 +1,143 @@
+.container{
+    width: 100vw;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  .backButton {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primaryFont);
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  
+  .backButton:hover {
+    background-color: var(--primaryFontHover);
+  }
+  
+  .backLink {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--primaryFont);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .backLink:hover {
+    color: var(--primaryFontHover)
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111;
+  }
+  
+  .descriptionTitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #555;
+  }
+  
+  .subDescription {
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    color: #777;
+    width: 100%;
+  }
+  
+  .image {
+    width: 80%;
+    margin: 2rem auto;
+    display: block;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .priceBox {
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .price {
+    color: var(--primaryFont);
+    font-weight: bold;
+  }
+  
+  .listTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listItem {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: var(--primaryFont);
+    transition: 0.4s ease-in-out;
+    padding: 1rem 1.5rem;
+  }
+  
+  .listItem:hover {
+    font-size: 1.55rem;
+    cursor: default;
+
+  }
+  
+
+  .listItemImageContainer{
+    background-color: var(--DANCE);
+    height: 50vh;
+  }
+
+
+  @media screen and (max-width: 1200px){
+
+    .container{
+        padding: 0;
+    }
+
+    .backLink, .header{
+        margin: 1rem;
+    }
+
+    .image{
+        width: 100vw;
+    }
+
+    .listItem{
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    .listItemImageContainer{
+        margin-top: 0.5rem;
+    }
+  }

@@ -1,45 +1,66 @@
-
 import useRetreatData from "../../../../custom hooks/useRetreatData";
 import Link from "next/link";
-
+import styles from "./EventsDetailsPage.module.css";
 
 const EventDetailPage = ({ params }) => {
   const { EVENTS_DUMMY } = useRetreatData();
   const event = EVENTS_DUMMY.find((e) => e.id.toString() === params.id);
 
   if (!event) {
-    return <p>Event not found</p>;
+    return (
+      <div className={styles.notFound}>
+        <p>❌ Event wurde nicht gefunden </p>
+        <Link href="/events" className={styles.backButton}>
+          Zurück zur Übersicht
+        </Link>
+      </div>
+    );
   }
 
   return (
-    <div className="p-4">
+    <div className={styles.container}>
+      {/* Zurück-Link */}
+      <Link href="/events" className={styles.backLink}>
+        ← Zurück zu den anderen Events
+      </Link>
 
-    <Link 
-        key="link"
-        href={`/events/`} 
-        className='m-2'
-    > zurück
-    </Link>
+      {/* Titel & Untertitel */}
+      <div className={styles.header}>
+        <h1 className={styles.title}>{event.title}</h1>
+        <p className={styles.descriptionTitle}>{event.descriptionsTitle}</p>
+        <p className={styles.subDescription}>{event.subDescription}</p>
+      </div>
 
-
-      <h1 className="text-2xl mt-6 font-bold">{event.title}</h1>
-      <p>{event.descriptionsTitle}</p>
-      <p>{event.subDescription}</p>
-      <p><strong>Preis:</strong> {event.price}</p>
-
-      <img 
-        src={event.imagePath} 
-        alt={event.title} 
-        className="mt-4 w-full max-w-xl rounded-lg shadow-md"
+      {/* Bild */}
+      <img
+        src={event.imagePath}
+        alt={event.title}
+        className={styles.image}
       />
 
-      <ul className="mt-4 list-disc list-inside">
-        {event.descriptionsTable.map((item, index) => (
-          <li key={index}>{item.title}</li>
-        ))}
-      </ul>
+      {/* Preis */}
+      <div className={styles.priceBox}>
+        <p>
+          💰 Preis: <span className={styles.price}>{event.price}</span>
+        </p>
+      </div>
+
+      {/* Liste */}
+      <div>
+        <h2 className={styles.listTitle}>Was dich erwartet:</h2>
+        <ul className={styles.list}>
+          {event.descriptionsTable.map((item, index) => (
+            <li key={index} className={styles.listItem}>
+              {item.title}
+              <div className={styles.listItemImageContainer}>
+                
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default EventDetailPage;
