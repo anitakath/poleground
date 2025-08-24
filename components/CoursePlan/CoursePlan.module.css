@@ -242,6 +242,31 @@
 }
 
 
+.canceled {
+  position: relative;
+}
+
+.canceled * {
+  text-decoration: line-through;
+  color: lightgrey;
+  opacity: 0.5;
+}
+
+.canceled::after {
+  content: "ABGESAGT";
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  text-decoration: none; 
+}
+
+
+
+
+
 /*
 
 .titleContainer{

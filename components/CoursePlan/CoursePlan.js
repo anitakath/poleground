@@ -194,9 +194,13 @@ const CoursePlan = () => {
               
               return(
               <div 
-                onClick={()=> openCheckoutModal(course)}
+                onClick={() => openCheckoutModal(course)}
                 key={course.id} 
-                className={`${styles.courseCard} ${styles[course.group]}`}
+                className={`${styles.courseCard} ${styles[course.group]} ${
+                  (openSlots === course.available_slots || openSlots === course.available_slots - 1) 
+                    ? styles.canceled 
+                    : ""
+                }`}
               >
                 <h4>{course.title}</h4>
                 <p>
