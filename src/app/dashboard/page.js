@@ -1,6 +1,6 @@
 "use client"
-import DashboardComponent from "../../../../components/Dashboard/Dashboard"
-import { AuthContext } from "../../../../context/authContext";
+import DashboardComponent from "../../../components/Dashboard/Dashboard";
+import { AuthContext } from "../../../context/authContext";
 import styles from './Dashboard.module.css'
 import React, { useContext } from 'react';
 import Link from "next/link";
@@ -23,9 +23,8 @@ const Dashboard= () =>{
           <button onClick={handleLogout}>Ausloggen</button>
         </div>
       ) : (
-        <div className='w-full'>
-            <Link href="/poledance/login"> zum Login </Link>
-  
+        <div className='w-full flex justify-center mt-20'>
+          <Link href="/login"  className="text-xl hover:text-red-900 transition-colors duration-200"> zum Login </Link>
         </div>
       )}
    

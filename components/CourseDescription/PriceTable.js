@@ -14,8 +14,6 @@ const PriceTable = () => {
 
 
 
-    console.log(priceTable)
-
     const handlePurchase = (item) => {
         // Hier kannst du die Logik zum Kauf des Artikels implementieren
         alert(`Du hast ${item} gekauft!`);

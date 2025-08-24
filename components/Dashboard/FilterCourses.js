@@ -46,10 +46,13 @@ const FilterCourses = ({selectedWeek, handleChange, handleFilterChange, selected
             className={styles.select}
           >
             <option value=""> Alle Instruktoren ausgewählt</option>
-            <option key="Malak" value="Malak">Malak</option>
+            <option key="Anne" value="Anne">Anne</option>
+            <option key="Diana" value="Diana">Diana</option>
+            <option key="Isabel" value="Isabel">Isabel</option>
+            <option key="Max" value="Max">Max</option>
             <option key="Natalia" value="Natalia">Natalia</option>
             <option key="Stella" value="Stella">Stella</option>
-            <option key="Anne" value="Anne">Anne</option>
+           
        
           </select>
 

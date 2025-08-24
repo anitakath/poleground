@@ -100,8 +100,6 @@ const DashboardComponent = () => {
 
   const toggleCourseSelection = (course) => {
 
-    console.log(course)
-
     const courseUuid = course.uuid
     
     if (selectedCourses.includes(course.uuid)) {
@@ -313,7 +311,6 @@ const DashboardComponent = () => {
 
                 // Sortiere Kurse nach Uhrzeit
                 const sortedCourses = coursesForDay.slice().sort((a,b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
-
               
                 return (
                   <div key={day} className={styles.cell}>
@@ -321,6 +318,7 @@ const DashboardComponent = () => {
                       sortedCourses.map((course) => {
 
                         let backgroundColor;
+                        let color;
 
                          switch (course.group) {
                               case 'POLE':
@@ -341,6 +339,19 @@ const DashboardComponent = () => {
                                 case 'ARIALSILK':
                                   backgroundColor = 'var(--ARIALSILK)';
                                 break;
+                                case 'HAMMOCK':
+                                  backgroundColor = 'var(--HAMMOCK)';
+                                break;
+                                case 'HOOP':
+                                  backgroundColor = 'var(--HOOP)';
+                                break;
+                                case 'HEELS':
+                                  backgroundColor = 'var(--HEELS)';
+                                break;
+                                case 'EVENTS':
+                                   backgroundColor = 'var(--EVENTS)';
+                                   color = "var(--ARIALSILK)";
+                                break;
                                 case 'KIDS':
                                   backgroundColor = 'var(--KIDS)';
                                 break;
@@ -351,13 +362,13 @@ const DashboardComponent = () => {
                                 return( 
                                 <div
                                   key={course.id}
-                                  style={{ backgroundColor }} 
+                                  style={{ backgroundColor, color }} 
                                   className={`${styles.courseItem} ${isMultiSelectMode && selectedCourses.includes(course.uuid) ? styles.selected : ''} ${isMultiSelectMode && !selectedCourses.includes(course.uuid) ? styles.wobble : ''}`}
                                   onClick={() => isMultiSelectMode && toggleCourseSelection(course)}
                                 >
                                   <strong>{course.title}</strong><br />
                                   {new Date(course.scheduled_at).toLocaleString('de-DE')}<br />
-                                  {course.room} 
+                                  {course.room}  - {course.instructor}
                                   <br/>
                                   Dauer: {course.duration} Minuten <br />
                                 </div>

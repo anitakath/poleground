@@ -14,7 +14,11 @@ const useCourses = () => {
       PLAYGROUND: [],
       SPECIALS: [],
       ARIALSILK: [],
-      KIDS: []
+      KIDS: [],
+      EVENTS: [],
+      HOOP: [],
+      HEELS: [],
+      HAMMOCK: [],
     };
     courses.forEach((course) => {
       if (coursesObj[course.group]) {

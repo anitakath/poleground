@@ -267,8 +267,6 @@ const CourseDescription = () => {
     */
     
 
-        console.log(courses)
-
     return (
         <div className={styles.container}>
            {/*} <div className={styles.titleContainer}>

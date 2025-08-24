@@ -6,22 +6,18 @@ import useScrollToSection from '../../../custom hooks/useScrollToSection'
 import { useRef, useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+
 const AboutUs= () =>{
 
     const [scrollY, setScrollY] = useState(0);
     const {scrollToSection} = useScrollToSection();
-    const [activeButton,setActiveButton] = useState(null)
-
+    const [showTrainerInfo, setShowTrainerInfo] = useState(null)
     const elementRef = useRef(null);
+    const [hovered, setHovered] = useState(false);
 
 
-      useEffect(()=>{
-
-        if (elementRef.current) {
-            const rect = elementRef.current.getBoundingClientRect();
-            console.log('Element Top:', rect.top); // Abstand vom Viewport oben
-            console.log('Element Bottom:', rect.bottom);
-        }
+    useEffect(()=>{
 
         const handleScroll = () => {
             setScrollY(window.scrollY);
@@ -34,9 +30,8 @@ const AboutUs= () =>{
             window.removeEventListener('scroll', handleScroll);
         };
 
-      }, [])
+    }, [])
 
-      console.log(scrollY)
 
     const handleButtonClick = () => {
       if (elementRef.current) {
@@ -46,6 +41,21 @@ const AboutUs= () =>{
       }
     };
 
+    const trainers = [
+        { name: "ANNE", roles: "STUDIOLEITUNG | POLE | ARIAL SILK | HEELS | KIDS & TEENS", img: "/Start/damian-barczak-nISmT9XXL98-unsplash.jpg", info: "Genauere Information über Anne...." },
+        { name: "NATALIA", roles: "POLE | FLOORWORK | FLEXIBILITY | BALLETT", img: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg", info: "Details über Natalia..." },
+        { name: "STELLA", roles: "HOOP | HAMMOCK | YOGA", img: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg", info: "Details über Stella..." },
+        { name: "DIANA", roles: "HEELS | FLOORWORK | FLEXIBILITY", img: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg", info: "Details über Diana..." },
+        { name: "MAX", roles: "POLE | YOGA", img: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg", info: "Details über Max..." },
+        { name: "ISABEL", roles: "POLE | ARIAL SILK | HAMMOCK", img: "/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg", info: "Details über Isabel..." },
+        { name: "MARLIN", roles: "STUDIOFELLNASE | SCHMUSEN | SNACKEN | SCHLAFEN", img: "/Start/pexels-steshkawillems-1390361.jpg", info: "" },
+      ];
+
+
+    const showTrainerInfoHandler = (trainer)=>{
+        setShowTrainerInfo(trainer)
+    }
+
     return(
         <div className='flex flex-col items-center justify-center' id="ueberuns">
 
@@ -54,7 +64,6 @@ const AboutUs= () =>{
                     <button 
                         className={` ${scrollY >= 20 ? styles.chevronUpButton : styles.noChevronUpButton}`}
                         onClick={()=> scrollToSection("ueberuns")}
-                    
                     >
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
@@ -71,50 +80,33 @@ const AboutUs= () =>{
                         onClick={() => scrollToSection("leitbild")}
                     > UNSER LEITBILD 
                     </button>
-
                 </div>
-               
             </div>
 
-            <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="studio">
-                <div className={styles.gridItem}> Eingangstür </div>
-                <div className={styles.gridItem}> Empfang / Rezeption </div>
-                <div className={styles.gridItem}> Studio 1 </div>
-                <div className={styles.gridItem}> Studio 2 </div>
-                <div className={styles.gridItem}> Studio 1 - andere Perspektive </div>
-                <div className={styles.gridItem}> Studio 2 - andere Perspektive </div>
-                <div className={styles.gridItem}> Equipment </div>
-                <div className={styles.gridItem}> Shop - Pole-Kleidung </div>
-                <div className={styles.gridItem}> Umkleidekabine </div>
-                <div className={styles.gridItem}> Wartebereich </div>
-                <div className={styles.gridItem}> Yogi Tea </div>
-                <div className={styles.gridItem}> Snacks (Obstschale) </div>
-                <div className={styles.gridItem}> sanitäre Anlagen </div>
-                <div className={styles.gridItem}> Flur </div>
 
+        {/* Studio Grid */}
+        <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="studio">
+            {["Eingangstür","Empfang / Rezeption","Studio 1","Studio 2","Studio 1 - andere Perspektive","Studio 2 - andere Perspektive","Equipment","Shop - Pole-Kleidung","Umkleidekabine","Wartebereich","Yogi Tea","Snacks (Obstschale)","sanitäre Anlagen","Flur"].map((item, idx) => (
+            <div key={idx} className={styles.gridItem}>{item}</div>
+            ))}
+        </div>
+
+        {/* Team Grid */}
+        <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="team">
+            {trainers.map((trainer, idx) => (
+            <div key={idx} className={styles.gridItem}>
+                
+                <p className={styles.trainerName} onClick={() => showTrainerInfoHandler(trainer.name)}><strong>{trainer.name}</strong> {trainer.roles}</p>
+                {showTrainerInfo === trainer.name && (
+                    <p className={styles.trainerInfo}>{trainer.info}</p>
+                )}
+                
+                <Image src={trainer.img} width={600} height={600} alt={trainer.name} className={styles.image}/>
+            
             </div>
+            ))}
+        </div>
            
-
-         
-            <div className={`${styles.gridContainer} ${scrollY >= 20 ? styles.morePadding : ''}`} id="team">
-                <div className={styles.gridItem}> 
-                    <p className='absolute top-2 text-xl'> Anne </p>
-                    <Image src="/Start/damian-barczak-nISmT9XXL98-unsplash.jpg" width={600} height={600} alt="Anne"  className={styles.image}/>
-                </div>
-                <div className={styles.gridItem}>     
-                <p className='absolute top-2  text-xl '> Natalia </p>
-                    <Image src="/Start/damian-barczak-SCoZX8yrLig-unsplash.jpg" width={600} height={600} alt="Natalia"  className={styles.image}/>
-                </div>
-                <div className={styles.gridItem}> 
-                <p className='absolute top-2  text-xl '> Marlin </p>
-                    <Image src="/Start/pexels-steshkawillems-1390361.jpg" width={600} height={600}  className={styles.image} alt="Marlin, das liebe Hündchen des Studios!"/>
-                </div>
-                <div className={styles.gridItem}> 
-
-                    <p className='absolute top-2  text-xl'> vielleicht ja bald du? 💜</p>
-                    <Image src="/Start/pexels-mart-production-7319717.jpg"width={600} height={600}  className={styles.image} alt="call to action feld! bewirb dich bei uns!"/>
-                </div>
-            </div>
             <PolegroundInfo/>
         </div>
     )

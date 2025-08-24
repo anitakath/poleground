@@ -8,7 +8,7 @@
     height: 30px;
     overflow: hidden;
     position: relative;
-  }
+}
   
   .titleWrapper {
     height: 100%;
@@ -129,7 +129,6 @@
     display: flex;
     position: absolute;
     right: 20px;
-
 }
 
 .socialButton, .menuButton{
@@ -143,11 +142,10 @@
     align-items: center;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    background-color: rgba(255,255,255, 0.3);
 }
 
 .socialButton:hover, .menuButton:hover{
-    background-color: rgba(255,255,255, 0.9)
+    background-color: rgba(255,255,255, 0.5);
 }
 
 

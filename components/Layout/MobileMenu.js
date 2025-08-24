@@ -12,7 +12,7 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
 
 
     return(
-        <div className={`${styles.mobileLinksContainer} ${isOpen ? styles.open : ''}`}>
+        <div className={`${styles.mobileLinksContainer} ${isOpen ? styles.open : ''}`} >
                    <div className={styles.closeMobileMenuButton}> 
                        <button onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faX} />

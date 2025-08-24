@@ -4,7 +4,6 @@ import styles from './Layout.module.css';
 import Image from "next/image";
 import { useTitle } from "../../context/TitleContext";
 import { useState } from "react";
-import Sponsorings from "./Sponsoring";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
@@ -55,7 +54,7 @@ const Header = () => {
                    <Link href="/jobs" className={styles.link}> JOBS </Link>
                    <Link href="/events" className={styles.link}> EVENTS </Link>
                    <Link href="/cooperations" className={styles.link}> KOOPERATIONEN </Link>
-                   <Link href="/247-gym" className={styles.link}> 24/7 GYM </Link>
+                   {/*<Link href="/247-gym" className={styles.link}> 24/7 GYM </Link>*/}
                </div>
                {/*}
                <div className={styles.mobileMenu}>
@@ -70,8 +69,9 @@ const Header = () => {
                   
                </div>
                */} 
-              <MobileMenu isOpen={isOpen}  toggleMenu={toggleMenu}/>
-
+               
+            <MobileMenu isOpen={isOpen}  toggleMenu={toggleMenu}/>
+               
            </nav>
 
            <div className={styles.socialContainer}>

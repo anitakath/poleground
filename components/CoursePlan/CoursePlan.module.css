@@ -233,6 +233,15 @@
  }
 
 
+ .fullyBooked{
+  color: red;
+ }
+
+ .available{
+  color: green;
+ }
+
+
 /*
 
 .titleContainer{

@@ -13,7 +13,6 @@
      transition: left 1s ease; 
      z-index: 100000;
      overflow: scroll;
-
  }
  
 .mobileLinksContainer.open{

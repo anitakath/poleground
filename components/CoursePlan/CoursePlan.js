@@ -9,7 +9,6 @@ import { supabase } from '../../services/supabaseClient';
 const CoursePlan = () => {
   const { scrollToSection } = useScrollToSection();
   const [courses, setCourses] = useState([]);
-  const [hoveredGroup, setHoveredGroup] = useState(null);
   const [weeksForward, setWeeksForward] = useState(0);
   const [selectedGroup, setSelectedGroup] = useState('ALL');
   const [selectedLevel, setSelectedLevel] = useState(null);
@@ -104,8 +103,6 @@ const CoursePlan = () => {
   const closeCheckoutModal = () =>{
     setIsCheckedOutModalOpen(false)
   }
-  
-
 
 
 
@@ -185,12 +182,17 @@ const CoursePlan = () => {
 
       const dayCourses = groupedCourses[dayKey] || [];
 
+
       return (
         <div key={dayKey} className={styles.dayColumn}>
           <h3>{dayKey}</h3> 
 
           {dayCourses.length > 0 ? (
-            dayCourses.map(course => (
+            dayCourses.map(course => {
+              
+              const openSlots = course.available_slots - course.booked_slots;
+              
+              return(
               <div 
                 onClick={()=> openCheckoutModal(course)}
                 key={course.id} 
@@ -206,9 +208,17 @@ const CoursePlan = () => {
                 <p>Trainer: {course.instructor}</p>
                 <p>Level: {course.level}</p>
                 <p>Raum: {course.room}</p>
-                <p>Plätze: {course.spots}</p>
+                <p 
+                  className={openSlots <= 1 ? styles.fullyBooked : styles.available}
+                >
+                  {openSlots <= 0 
+                    ? "ausgebucht. Setz dich auf die Warteliste" 
+                    : openSlots === 1 
+                      ? "noch 1 freier Platz" 
+                      : `noch ${openSlots} freie Plätze`}
+                </p>
               </div>
-            ))
+            )})
           ) : (
             <p className={`${styles.courseCard} ${styles.noCourseInfo}`} >Für heute wurden keine Kurse geplant</p>
           )}

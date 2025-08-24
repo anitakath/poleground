@@ -15,7 +15,7 @@ const Footer = () =>{
                 <li className={` ${styles.link} mx-4`}> FAQ </li>
                 <li className={` ${styles.link} mx-4`}> DATENSCHUTZERKLÄRUNG</li>
                 <li className={` ${styles.link} mx-4`}>
-                    <Link href="/poledance/login"> LOGIN</Link>
+                    <Link href="/login"> LOGIN</Link>
                 </li>
             </ul>
 

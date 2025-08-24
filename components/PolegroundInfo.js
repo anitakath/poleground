@@ -1,6 +1,5 @@
 "use client"
 import styles from './PolegroundInfo.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
 import useScrollToSection from '../custom hooks/useScrollToSection';
 

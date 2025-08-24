@@ -44,8 +44,6 @@ export default function Home() {
   }, []);
 
 
-  console.log(courses)
-
   const transformCourses = (courses) => {
     // Initialisiere das Ergebnisobjekt mit leeren Arrays für jede Gruppe
     const coursesObject = {
