@@ -1,5 +1,6 @@
 
 import styles from './CheckOutModal.module.css'
+import Link from 'next/link'
 
 const CheckOutModal = ({chosenCourse, onClose }) =>{
 
@@ -18,6 +19,7 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
         alert(`"${chosenCourse.title}" erfolgreich gekauft`)
     }
 
+    console.log(chosenCourse)
     return(
         <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.modalContent}>
@@ -26,18 +28,26 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
                     <div className=' flex-col items-center justify-center mt-4 mb-8'>
                         <h3 className={styles.modalTitle}>{chosenCourse.termofcontract && "Mitgliedschaft"} {chosenCourse.title}</h3>
                         
-                        <p><strong>Preis:</strong> {chosenCourse.price}</p>
                         {chosenCourse.termofcontract && <p> <strong>Vertragslaufzeit:</strong> {chosenCourse.termofcontract}</p>}
                         {chosenCourse.info && chosenCourse.info !== "" && (
                             <p><strong>Info:</strong> {chosenCourse.info}</p>
                         )}
-                        <p><strong>Detaillierte Info:</strong> {chosenCourse.detailedInfo}</p>
+                        {/*<p><strong>Detaillierte Info:</strong> {chosenCourse.description}</p> */}
+                        <p> Du bist dir nicht sicher, was dich in diesem Kurs erwarten wird, oder ob du dem Level entsprichst? 
+                            Lies dir gern für mehr Informationen unsere 
+                            <Link 
+                                href="/kursbeschreibungen" 
+                                className={styles.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                            Kursbeschreibungen
+                            </Link>
+                            durch. Falls noch Fragen offen sind, kontaktiere uns gern via Mail oder WhatsApp.</p>
 
                         {chosenCourse.detailedInfo && (
                             <div className='my-2 '>
                                
-
-                        
                                 
                                 {chosenCourse.termofcontract && (
                                     <div>

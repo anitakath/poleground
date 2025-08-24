@@ -35,7 +35,10 @@
 }
 .modalTitle{
     margin: 3px 0px;
-    font-weight:lighter;
+    /*font-weight:lighter;*/
+    color: var(--primaryFont);
+    font-size: 1.7rem;
+    margin-bottom: 20px;
 }
 
 .buttonsContainer{
@@ -52,8 +55,19 @@
     padding: 5px;
 }
 
+.link{
+    color: var(--primaryFont);
+    transition: 0.4s ease-in-out;
+    margin: 0px 0.5rem;
+    font-size: 1.1rem;
+}
+
+.link:hover{
+    color: var(--primaryFontHover);
+}
+
 .buyButton{
-    background-color: var(  --secondaryForeground);
+    background-color: var(--secondaryForeground);
     
 }
 

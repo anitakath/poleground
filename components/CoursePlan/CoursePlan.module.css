@@ -233,13 +233,13 @@
  }
 
 
- .fullyBooked{
+.fullyBooked{
   color: red;
- }
+}
 
- .available{
+.available{
   color: green;
- }
+}
 
 
 /*
