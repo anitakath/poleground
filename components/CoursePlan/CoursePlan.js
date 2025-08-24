@@ -197,7 +197,7 @@ const CoursePlan = () => {
                 onClick={() => openCheckoutModal(course)}
                 key={course.id} 
                 className={`${styles.courseCard} ${styles[course.group]} ${
-                  (openSlots === course.available_slots || openSlots === course.available_slots - 1) 
+                  (openSlots === course.available_slots || openSlots === course.available_slots - 1 || course.isCancelled) 
                     ? styles.canceled 
                     : ""
                 }`}
