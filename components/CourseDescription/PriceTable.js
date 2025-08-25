@@ -3,6 +3,7 @@ import usePricetableData from '../../custom hooks/usePriceTableData';
 import { useState, useEffect } from 'react';
 import styles from './PriceTable.module.css'
 import CheckOutModal from '../Modals/CheckOutModal';
+import Guidelines from './prices_guidelines/Guidelines';
 
 const PriceTable = () => {
 
@@ -11,6 +12,7 @@ const PriceTable = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [checkoutData, setCheckoutData] = useState(null)
     const [openSubCategories, setOpenSubCategories] = useState({});
+    const [activeSection, setActiveSection] = useState("prices")
 
 
 
@@ -83,59 +85,88 @@ const PriceTable = () => {
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
-      };
+    };
+
     return (
         <div className={styles.container} id="priceTable">
             {isModalOpen && <CheckOutModal onClose={closeModal} checkoutData={checkoutData} />}
 
             <div>
-                <h1 className=' text-center text-xl mb-2'> PREISLISTE </h1>
-                <div className='flex justify-center p-2'>
-                    <button className={styles.navigationBtn} onClick={() => scrollToSection('Erwachsene')}> Erwachsene </button>
-                    <button className={styles.navigationBtn} onClick={() => scrollToSection('Kids and Teens')}> Kids & Teens </button>
+                <div className='flex justify-center'>
+                    <h1 className=' text-center text-xl mb-2 mx-2'> 
+                        <button className={`${styles.section_button} ${activeSection === "prices" ? styles.section_button_active : ""}`} onClick={()=> setActiveSection("prices")}>
+                         PREISLISTE
+                        </button>
+                    </h1> 
+                    <h1 className=' text-center text-xl mb-2 mx-2'> 
+                        <button className={`${styles.section_button} ${activeSection === "guidelines" ? styles.section_button_active : ""}`} onClick={() => setActiveSection("guidelines")}>
+                         RICHTLINIEN 
+                        </button>
+                    </h1>
                 </div>
+                {activeSection === "prices" &&(
+                    <div className='flex justify-center p-2'>
+                        <button className={styles.navigationBtn} onClick={() => scrollToSection('Erwachsene')}> Erwachsene </button>
+                        <button className={styles.navigationBtn} onClick={() => scrollToSection('Kids and Teens')}> Kids & Teens </button>
+                    </div>
+                )}
             </div>
 
-            {Object.entries(priceTable).map(([category, items]) => (
-                <div key={category} className='flex-col'>
-                  
+            {activeSection === "guidelines" && (
+                <div>
+                    <Guidelines />
+                    
+                </div>
+            )}
 
-                    {/*<h3>{category}:</h3>*/}
+            {activeSection === "prices" && (
+            <>
+                {Object.entries(priceTable).map(([category, items]) => (
+                <div key={category} className='flex-col'>
                     {items.map((item, index) => (
-                        <ul key={index}>
-                            <h2 id={category}> </h2>
-                            {Object.entries(item).map(([subCategory, subItems]) => (
-                                <li key={subCategory} className='flex-col'>
+                    <ul key={index}>
+                        <h2 id={category}></h2>
+                        {Object.entries(item).map(([subCategory, subItems]) => (
+                        <li key={subCategory} className='flex-col'>
+                            <button
+                            className={styles.subCategoryButton}
+                            onClick={() => toggleSubCategory(category, subCategory)}
+                            >
+                            {subCategory}
+                            </button>
+                            {openSubCategories[category]?.[subCategory] && (
+                            subItems.length > 0 ? (
+                                <ul className={styles.itemContainer}>
+                                {subItems.map((subItem, idx) => (
+                                    <li key={idx} className={styles.item}>
+                                    <div className='mb-2'>
+                                        <h4 className={styles.itemTitle}>{subItem.title}</h4>
+                                        <h4 className={styles.itemsubTitle}>{subItem.termofcontract}</h4>
+                                        <p className={styles.itemPrice}>{subItem.price}</p>
+                                        {subItem.info && <p className={styles.itemInfo}>{subItem.info}</p>}
+                                    </div>
                                     <button
-                                        className={styles.subCategoryButton}
-                                        onClick={() => toggleSubCategory(category, subCategory)} 
-                                    >{subCategory}</button>
-                                    {openSubCategories[category]?.[subCategory] && ( // Überprüfe den Zustand nur für diese Kategorie und Subkategorie
-                                        subItems.length > 0 ? (
-                                            <ul className={styles.itemContainer}>
-                                                {subItems.map((subItem, idx) => (
-                                                    <li key={idx} className={styles.item}>
-                                                        <div className='mb-2'>
-                                                            
-                                                            <h4 className={styles.itemTitle}>{subItem.title}</h4>
-                                                            <h4 className={styles.itemsubTitle}> {subItem.termofcontract} </h4>
-                                                            <p className={styles.itemPrice}>{subItem.price}</p>
-                                                            {subItem.info && <p className={styles.itemInfo}>{subItem.info}</p>}
-                                                        </div>
-                                                        <button className={styles.button} onClick={() => handleButtonClick(subItem)}>Kaufen</button>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        ) : (
-                                            <p>Keine Angebote verfügbar.</p>
-                                        )
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
+                                        className={styles.button}
+                                        onClick={() => handleButtonClick(subItem)}
+                                    >
+                                        Kaufen
+                                    </button>
+                                    </li>
+                                ))}
+                                </ul>
+                            ) : (
+                                <p>Keine Angebote verfügbar.</p>
+                            )
+                            )}
+                        </li>
+                        ))}
+                    </ul>
                     ))}
                 </div>
-            ))}
+                ))}
+            </>
+            )}
+            
         </div>
     );
 };

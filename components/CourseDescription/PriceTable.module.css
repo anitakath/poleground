@@ -16,12 +16,22 @@
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
-   
-   
+}
+.section_button{
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.section_button:hover{
+    color: var(--primaryFontHover);
+}
+
+.section_button_active{
+    border-bottom: 2px solid var(--primaryFont);
+    color: var(--primaryFont)
 }
 
 .navigationBtn:hover{
-    background-color:var(--primaryFontHover)
+    background-color:var(--primaryFontHover);
 }
 
 .titleContainer{

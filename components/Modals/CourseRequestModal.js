@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 
 import styles from './CourseRequest.module.css'
+import useValidateCourseRequests from '../../custom hooks/validations/useValidateCourseRequests';
+
+import { supabase } from '../../services/supabaseClient';
 
 
 const CourseRequestModal = ({ isOpen, onClose }) => {
@@ -9,7 +12,6 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
     const [requests, setRequests] = useState([{ courseType: '', date: '', time: '', email: '' }])
     const [success,setSuccess] = useState({});
     const [isAgreed, setIsAgreed] = useState(false);
-    const [errors, setErrors] = useState({});
     const [inputError, setInputError] = useState(null)
 
     // Dummy-Daten für bereits gesendete Anfragen (hier solltest du deine Logik zur Überprüfung implementieren)
@@ -18,16 +20,47 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
         // Weitere Anfragen...
     ];
 
+    const { errors, validateForm } = useValidateCourseRequests(requests);
+
 
     //VALIDATE AND SEND COURSE REQUEST TO MEEEEE
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        /*
-        if (validateEmailInLast14Days()) {
-            setErrors({ email: 'Sie haben in den letzten 14 Tagen bereits Wünsche abgeschickt.' });
+        const validationErrors = validateForm();
+        if (Object.keys(validationErrors).length > 0) {
             return;
-        } */
+        }
+
+        try {
+            // Daten an Supabase senden
+            const { data, error } = await supabase
+                .from('poleground_wishes')
+                .insert(requests.map(request => ({
+                    wish_group: request.courseType,
+                    wish_scheduled_at: request.date,
+                    wish_time: request.time,
+                    email: request.email
+                })));
+
+            if (error) {
+                console.error('Fehler beim Speichern:', error.message);
+                alert('Beim Absenden der Anfrage ist ein Fehler aufgetreten. Bitte versuche es später erneut.');
+                return;
+            }
+
+            alert('Deine Kurswünsche wurden erfolgreich übermittelt!');
+            setRequests([{ courseType: '', date: '', time: '', email: '' }]);
+            onClose();
+        } catch (err) {
+            console.error('Fehler beim Absenden:', err);
+            alert('Beim Absenden der Anfrage ist ein Fehler aufgetreten.');
+        }
+    };
+    /*
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
         const validationErrors = validateForm();
         if (Object.keys(validationErrors).length > 0) {
@@ -42,7 +75,7 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
         setRequests([{ courseType: '', date: '', time: '', email: '' }]);
         
         onClose(); // Schließe das Modal nach dem Absenden
-    };
+    };*/
 
   
     const addRequestField = () => {
@@ -104,39 +137,43 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
     
         return selectedDate >= oneMonthFromNow && selectedDate <= fiveMonthsFromNow;
     };
-
-    const validateForm = () => {
-        const errors = {};
-
-        requests.forEach((request, index) => {
-            if (!request.courseType) {
-                errors[`courseType${index}`] = "Bitte wähle einen Kurs aus.";
-            }
-            if (!request.date) {
-                errors[`date${index}`] = "Bitte wähle ein Datum aus.";
-            }else if (!isDateWithinRange(request.date)) {
-                errors[`date${index}`] = "Bitte überprüfe deine Eingaben nochmal. Das Datum eines Kurswunsches muss mindestens einen Monat und höchstens fünf Monate in der Zukunft liegen.";
-            }
-            if (!request.time) {
-                errors[`time${index}`] = "Bitte gib eine Uhrzeit ein.";
-            } else if (!isWithinOpeningHours(request.time)) {
-                errors[`time${index}`] = "Die Uhrzeit muss innerhalb unserer Öffnungszeiten liegen, also zwischen 10:00 und 21:00 Uhr.";
-            }
-            if (!request.email) {
-                errors[`email${index}`] = "Bitte gib eine E-Mail-Adresse ein.";
-            } else if (!/\S+@\S+\.\S+/.test(request.email)) {
-                errors[`email${index}`] = "Bitte gib eine gültige E-Mail-Adresse ein.";
-            }
-        });
-
-        return errors;
-    };
+ 
 
 
-    if (!isOpen) return null; // Wenn das Modal nicht geöffnet ist, nichts rendern
+    if (!isOpen) return null; 
+
+    const courseOptions = [
+        "Arial Silk",
+
+
+        "Flexi Backbends",
+        "Full Body Stretch",
+        "Flexi Splits",
+
+        "Hammock",
+        "Hoop",
+
+        "Heels Essentials",
+        "Heels Exotic",
+        "Heels Sensual",
+
+        "Pole 0-1",
+        "Pole 1-2",
+        "Pole 3",
+        "Pole Choreo 1-2",
+        "Pole Choreo 2-3",
+        "Pole Conditioning",
+       
+        "Sexy Floorwork",
+        "Sensual Floorwork",
+       
+        
+        
+      ];
+      
+      
 
     console.log(errors)
-
     console.log(requests)
 
     return (
@@ -184,19 +221,9 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                                         required
                                     >
                                         <option value="" disabled>Bitte wählen...</option>
-                                        <option value="Pole 0-1">Pole 0-1</option>
-                                        <option value="Pole 1-2">Pole 1-2</option>
-                                        <option value="Pole 3">Pole 3</option>
-                                        <option value="Pole Choreo 2">Pole Choreo 2</option>
-                                        <option value="Pole Choreo 3">Pole Choreo 3</option>
-                                        <option value="Pole Conditioning">Pole Conditioning</option>
-                                        <option value="Heels Essentials">Heels Essentials</option>
-                                        <option value="Heels Flow">Heels Flow</option>
-                                        <option value="Sexy Floorwork">Sexy Floorwork</option>
-                                        <option value="Sensual Floorwork">Sensual Floorwork</option>
-                                        <option value="Floorwork Plastique">Floorwork Plastique</option>
-                                        <option value="Floor Yoga X Flexi">Floor Yoga X Flexi</option>
-                                        <option value="Flexi Frontsplits">Flexi Frontsplits</option>
+                                        {courseOptions.map((course) => (
+                                            <option key={course} value={course}>{course}</option>
+                                        ))}
                                     </select>
                                 </div>
 
@@ -209,11 +236,6 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
                                         onChange={(e) => handleInputChange(index, 'date', e.target.value)} 
                                         required 
                                     />
-
-                            
-
-                            
-
                                
                                 </div>
                                 <div className={styles.inputDiv}>
@@ -279,35 +301,3 @@ const CourseRequestModal = ({ isOpen, onClose }) => {
 
 export default CourseRequestModal;
 
-
-
-  /*
-    const validateEmailInLast14Days = () => {
-        // Dummy-Daten für bereits gesendete Anfragen
-        const sentRequests = [
-            { email: 'user@example.com', date: new Date('2023-10-01') },
-            // Weitere Anfragen...
-        ];
-
-        const userEmail = 'user@example.com'; // Hier solltest du die tatsächliche Benutzer-E-Mail verwenden
-        const fourteenDaysAgo = new Date();
-        fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
-
-        return sentRequests.some(request => 
-            request.email === userEmail && request.date >= fourteenDaysAgo
-        );
-    };*/
-
-
-
- {/*} <div className={styles.inputDiv}>
-                            <label>Uhrzeit:</label>
-                            <input 
-                                className={styles.formInput} 
-                                type="time" 
-                                value={request.time} 
-                                onChange={(e) => handleInputChange(index, 'date', e.target.value)} 
-                                required 
-                            />
-                    
-                        </div>*/}

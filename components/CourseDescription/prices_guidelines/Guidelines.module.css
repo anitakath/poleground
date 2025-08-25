@@ -1,0 +1,49 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.subContainer{
+
+    width: 60%;
+}
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: justify;
+    
+  }
+  
+  .heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: start;
+    color: var(--primaryFont);
+  }
+
+  .heading:hover{
+    color: var(--primaryFont)
+  }
+  
+  .list {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .paragraph {
+    margin-top: 0.5rem;
+  }
+  

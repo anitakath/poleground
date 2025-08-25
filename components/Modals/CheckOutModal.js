@@ -5,9 +5,6 @@ import Link from 'next/link'
 const CheckOutModal = ({chosenCourse, onClose }) =>{
 
 
-    console.log(chosenCourse)
-
-
     //RENDERE ZWEI UNTERSCHIEDLICHE INHALTE, 
     // JE NACHDEM, OB CHECKOUTDATA.ISCHECKEDOUT == TICKETS  || COURSE
     // DA DER USER ENTWEDER EIN TICKET, ODER EINEN KURS DIREKT BUCHEN MÖCHTE. 
@@ -19,19 +16,21 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
         alert(`"${chosenCourse.title}" erfolgreich gekauft`)
     }
 
-    console.log(chosenCourse)
     return(
-        <div className={styles.modalOverlay} onClick={onClose}>
-            <div className={styles.modalContent}>
+    <div className={styles.modalOverlay} onClick={onClose}>
+        <div className={styles.modalContent}>
             <h3 className={styles.checkoutTitle}> Übersicht deiner Produktauswahl:</h3>
                 {chosenCourse ? (
                     <div className=' flex-col items-center justify-center mt-4 mb-8'>
-                        <h3 className={styles.modalTitle}>{chosenCourse.termofcontract && "Mitgliedschaft"} {chosenCourse.title}</h3>
+                        <h3 className={styles.modalTitle}>{chosenCourse.termofcontract && "Mitgliedschaft"} {chosenCourse.title}</h3> 
+                        <p className='mb-4'> {chosenCourse.level} level</p>
                         
                         {chosenCourse.termofcontract && <p> <strong>Vertragslaufzeit:</strong> {chosenCourse.termofcontract}</p>}
                         {chosenCourse.info && chosenCourse.info !== "" && (
                             <p><strong>Info:</strong> {chosenCourse.info}</p>
                         )}
+
+                        <p className='mb-4'>{chosenCourse.specialInfo}</p>
                         {/*<p><strong>Detaillierte Info:</strong> {chosenCourse.description}</p> */}
                         <p> Du bist dir nicht sicher, was dich in diesem Kurs erwarten wird, oder ob du dem Level entsprichst? 
                             Lies dir gern für mehr Informationen unsere 
@@ -43,7 +42,12 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
                             >
                             Kursbeschreibungen
                             </Link>
-                            durch. Falls noch Fragen offen sind, kontaktiere uns gern via Mail oder WhatsApp.</p>
+                            durch. Falls noch Fragen offen sind, kontaktiere uns gern via Mail oder WhatsApp.
+                        </p>
+                        <p>
+                            Bitte beachte auch die Gültigkeit deines Tickets nach dem Kauf sowie unsere Stornierungsrichtlinien.
+                            Alle Details findest du unter <Link href="/preise">Preise & Richtlinien</Link>.
+                        </p>
 
                         {chosenCourse.detailedInfo && (
                             <div className='my-2 '>
@@ -106,11 +110,6 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
                                     </div>
                                 )}
 
-
-
-
-
-
                                
                             </div>
                         )}
@@ -119,17 +118,17 @@ const CheckOutModal = ({chosenCourse, onClose }) =>{
                     <p>Keine Checkout-Daten verfügbar.</p>
                 )}
 
-                <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst **zukünftig** automatisch zur Zahlungsabwicklung weitergeleitet. </p>
-                <div className={styles.buttonsContainer}>
-                    <button className={styles.buyButton} onClick={() => buyProductHandler(chosenCourse)}> Kaufen </button>
-                    <button className={styles.closeButton} onClick={onClose}>Schließen</button>
-                </div>
-            
-            
-
-
+            <p> Klicke auf "Kaufen", sobald du dir sicher bist, dass du dieses Produkt erwerben möchtest. Du wirst **zukünftig** automatisch zur Zahlungsabwicklung weitergeleitet. </p>
+            <div className={styles.buttonsContainer}>
+                <button className={styles.buyButton} onClick={() => buyProductHandler(chosenCourse)}> Kaufen </button>
+                <button className={styles.closeButton} onClick={onClose}>Schließen</button>
             </div>
+            
+            
+
+
         </div>
+    </div>
     )
 }
 
