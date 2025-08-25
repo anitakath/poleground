@@ -1,27 +1,24 @@
 .container {
-   width: 90%;
+   width: 100%;
     margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-
 }
   
 
 .title{
-    font-size: 2rem; 
-    color: var(--primaryFontHover);
-    margin-bottom: 10px; 
-
+    font-size: 1.6rem; 
+    color: var(--primaryFont);
+    margin: 10px 0px;
 }
   
 .subContainer{
-    width: 70%;
+    width: 100%;
 }
 
 .questionItem{
     width: 100%;
     margin: 10px 0; 
-    padding: 10px 15px; 
+
 }
 
 .link, .telephone{
@@ -29,7 +26,11 @@
     margin: 0px 2px;
     color: var(--primaryFont);
     transition: 0.2s ease-in-out;
-    font-weight: bolder;
+    font-size: 1.4rem;
+    color: var(--primaryFont);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin: 10px 0px;
 
 }
 
@@ -38,17 +39,23 @@
 }
 
 .questionButton{
-    border-bottom: 1px solid var(--softGreen);
     color: var(--primaryFont);
     transition: 0.2s ease-in-out;
-    font-size: 1.1rem;
-    margin: 4px 0px;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    margin: 10px 0px;
+    margin-left: 20px;
     cursor: pointer;
     text-align: start;
+    font-weight: lighter;
 }
 
 .questionButton:hover{
     color: var(--primaryFontHover);
+}
+
+.questionParagraph{
+    margin-left: 20px;
 }
   
 

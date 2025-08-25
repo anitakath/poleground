@@ -53,7 +53,7 @@ const Header = () => {
                
                    <Link href="/jobs" className={styles.link}> JOBS </Link>
                    <Link href="/events" className={styles.link}> EVENTS </Link>
-                   <Link href="/cooperations" className={styles.link}> KOOPERATIONEN </Link>
+                   <Link href="/kooperationen" className={styles.link}> KOOPERATIONEN </Link>
                    {/*<Link href="/247-gym" className={styles.link}> 24/7 GYM </Link>*/}
                </div>
                {/*}

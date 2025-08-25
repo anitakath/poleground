@@ -48,6 +48,7 @@ export default function Guidelines() {
             </ul>
         </section>
 
+
         {/* Gültigkeitsdauer & Weitergabe */}
         <section className={styles.section}>
             <h2 className={styles.heading}>📅 Gültigkeitsdauer & Weitergabe</h2>
@@ -109,6 +110,26 @@ export default function Guidelines() {
             <li>entfernten Etiketten</li>
             <li>geöffneten Gripmitteln</li>
             <li>getragenem Schmuck (z. B. Ohrringe)</li>
+            </ul>
+        </section>
+
+
+        {/* Mitgliedschaften */}
+        <section className={styles.section}>
+            <h2 className={styles.heading}>📅 Mitgliedschaften</h2>
+            <ul className={styles.list}>
+                <li>Mitgliedschaften laufen über <strong>6 oder 12 Monate</strong>.</li>
+                <li>Kündigung grundlos bis spätestens <strong>4 Wochen vor Vertragsende</strong> möglich.</li>
+                <li>Kündigung per <strong>Mail, WhatsApp oder postalisch</strong> möglich.</li>
+                <li>Wichtig: Kündigung muss spätestens 4 Wochen vor Ablauf bei uns eingegangen sein.</li>
+                <li>Erfolgt keine Kündigung, <strong>verlängert sich der Vertrag automatisch</strong>.</li>
+                <li>Bei Verlängerung können Preise angepasst werden – dies berechtigt zu einer sofortigen Kündigung zum Folgemonat.</li>
+                <li>Kund:innen werden über Preisänderungen rechtzeitig informiert.</li>
+                <li><strong>Zahlungsweise:</strong> Mitgliedschaften werden monatlich abgerechnet (z. B. per Lastschrift, PayPal, Kreditkarte). Die Zahlungspflicht besteht auch während einer Pause, außer es wird ausdrücklich anders vereinbart.</li>
+                <li><strong>Pausenregelung:</strong> Eine Mitgliedschaft kann bis zu <strong>2x für 1–3 Monate</strong> pausiert werden. Die pausierte Zeit wird automatisch hinten angehängt. Pausen müssen vorher beantragt und von der Studioleitung bestätigt werden.</li>
+                <li><strong>Upgrades, Downgrades oder Übertragung</strong> der Mitgliedschaft sind nur nach Absprache mit der Studioleitung oder einer autorisierten Vertretung möglich.</li>
+                <li><strong>Sonderkündigung:</strong> Bei schwerwiegenden gesundheitlichen Gründen oder Umzug in eine andere Stadt kann eine vorzeitige Kündigung nach Einreichung eines Nachweises möglich sein.</li>
+                <li>Wir möchten faire und flexible Lösungen für alle Mitglieder finden – sprich uns jederzeit an, wenn du individuelle Anliegen hast.</li>
             </ul>
         </section>
 

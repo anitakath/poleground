@@ -232,6 +232,10 @@
   color: var(--ARIALSILK)
  }
 
+ .ADAPTIVE{
+  background-color: var(--ADAPTIVE)
+ }
+
 
 .fullyBooked{
   color: red;

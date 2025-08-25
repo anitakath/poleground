@@ -53,26 +53,19 @@
 
     --secondaryForGroundDark:hsl(356, 68%, 47%);
     
-    /*--POLE: #E09E99;*/
+
     --POLE: #6E1B25;
-    /*--FLEXIBILITY: #A3C6A8;*/
     --FLEXIBILITY: rgb(237, 193, 187);
-    /*--DANCE: #FFE5B4;*/
     --SPECIALS: rgba(245,185,40);
-   /* --PLAYGROUND: #FA9A85;*/
     --PLAYGROUND: #B56271;
-   /* --SPECIALS: rgba(243, 18,  42, 0.9);*/
     --DANCE: #DFAA98;
-   /* --ARIALSILK: #B7E4D9;*/
     --ARIALSILK: #E7DFE1;
-    /*--KIDS: pink;*/
     --KIDS: #CD725D;
-    /*--HAMMOCK: #DFCABB;*/
     --HAMMOCK: #E99D75;
-    /*--HOOP: #8C7466;*/
     --HOOP: #E9D7C9;
     --HEELS: #786A5D;
     --EVENTS: rgb(37, 37, 37);
+    --ADAPTIVE: #A3C9A8;
     
     --lightMint: #A8D5BA;
     --softGreen: #A3C6A8;
@@ -127,3 +120,6 @@ body {
 .primaryFontFamily{ 
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gruppo&family=Poiret+One&display=swap');

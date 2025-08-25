@@ -61,6 +61,26 @@ const CourseDescription = () => {
             imagePath: "/coursedescription/pexels-dihandrea-5843498.jpg"
         }, /** weitere Idee: Pole Conditioning & Vertical Barre */
 
+        {
+            title: "Adaptive Pole Dance & Hammock",
+            path: "adaptive-pole-dance",
+            group: "ADAPTIVE",
+            subTitle: "für Menschen mit unterschiedlichen Fähigkeiten",
+            descriptionTable: {
+                "Adaptive Einführung": {
+                    description: "In diesem Kurs passen wir Übungen individuell an die körperlichen Voraussetzungen der Teilnehmer:innen an. Du lernst sichere Spins, Haltepositionen und grundlegende Tricks an der Pole und mit dem Hammock – einzeln oder kombiniert. Fokus liegt auf Kraftaufbau, Flexibilität, Stabilität und Freude an Bewegung. Übungen werden so angepasst, dass sie für jede:n zugänglich sind.",
+                    info: "Bitte bringe bequeme Kleidung mit. Adaptive Hilfsmittel wie Schaumstoffrollen, Gurte oder zusätzliche Unterstützungen stehen vor Ort zur Verfügung. Trainer:innen stehen unterstützend zur Seite.Bring gern 1–2 Begleitpersonen mit oder kontaktiere uns vorab für individuelle Anliegen. Lieblingslieder und kreative Ideen sind willkommen!"
+                },
+                "Adaptive Fortgeschrittene": {
+                    description: "Für Teilnehmer:innen mit etwas Erfahrung: Wir kombinieren Pole- und Hammock-Übungen zu fließenden Bewegungsabläufen, angepasst an die individuellen Fähigkeiten. Fokus auf Koordination, Kraft, Beweglichkeit, Gleichgewicht und Selbstvertrauen. Übergänge zwischen Pole und Hammock können je nach Bedürfnis individuell gestaltet werden.",
+                    info: "Individuelle Anpassungen jederzeit möglich, Trainer:innen beraten zu sicheren Varianten und unterstützenden Hilfsmitteln. Auch die Kombination von Hammock mit der Pole kann optional genutzt werden. Bring gern 1–2 Begleitpersonen mit oder kontaktiere uns vorab für individuelle Anliegen. Lieblingslieder sind willkommen!"
+                }
+            },
+            info: "Dieser Kurs ist inklusiv, die Übungen werden an die körperlichen Voraussetzungen der Teilnehmer:innen angepasst. Adaptive Hilfsmittel vorhanden.",
+            isActive: true,
+            imagePath: "/coursedescription/adaptive-pole-dance.jpg"
+        },
+
         //DANCE
 
 

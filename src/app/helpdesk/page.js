@@ -62,18 +62,18 @@ const HelpDesk = () => {
                         </button>
 
                         {activeQuestionIndex === index && (
-                            <div>
+                            <div >
                                 <p className={styles.questionParagraph}>  {faq.answer} </p>
                                 {faq.question === "Sind die Kurse für Frauen und Männer geeignet?" && (
                                     <div>
-                                        <p> Lies    <Link href="/poledance/ueber-uns" className={styles.link}> hier </Link> gern weiter, um mehr über unser Leitbild zu erfahren.</p>
+                                        <p className={styles.questionParagraph}> Lies    <Link href="/poledance/ueber-uns" className={styles.link}> hier </Link> gern weiter, um mehr über unser Leitbild zu erfahren.</p>
                                       
                                      
                                     </div>
                                 )}
                                  {faq.question === "Wie kann ich mich für einen Kurs anmelden?" && (
                                     <div>
-                                        <p> Du findest den Stundenplan sowie die Möglichkeit der Kursbuchung    <Link href="/poledance" className={styles.link}> hier </Link> unter "Kursplan". </p>
+                                        <p className={styles.questionParagraph}> Du findest den Stundenplan sowie die Möglichkeit der Kursbuchung    <Link href="/poledance" className={styles.link}> hier </Link> unter "Kursplan". </p>
                                       
                                      
                                     </div>

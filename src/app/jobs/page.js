@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Jobs.module.css'
 import { motion } from 'framer-motion';
-
+import Link from 'next/link';
 
 const Jobs = () => {
 
@@ -52,12 +52,10 @@ const Jobs = () => {
     };
 
     return (
-        <div className='flex justify-center'> 
+        <div > 
             <div className={styles.container}> 
-                <h1 className={styles.title}> Poleground sucht ...</h1>
-                <h3 className="my-4">Schicke uns deine Bewerbung gern per
-                    <a href="mailto:wagner.annekathirn@gmx.de" className={styles.email}>E-Mail </a>
-                </h3>
+                <h1 className={styles.title}> Das Poleground sucht ...</h1>
+               
 
                 {jobOffers.map((jobOffer, index) => (
                     <div className={`${styles.subContainerPole} ${activeJobIndex === index ? styles.subContainerPoleInactive : ''}`} key={jobOffer.title}>
@@ -83,15 +81,16 @@ const Jobs = () => {
                             </div>
                         )}
                     </motion.div>
-
-                       
-
-                    
-                       
                     </div>
                 ))}
 
+                
+
             </div>
+
+            <h3 className="mx-10">Schicke uns deine Bewerbung gern per
+                    <Link href="mailto:wagner.annekathirn@gmx.de" className={styles.email}>E-Mail </Link>
+            </h3>
         </div>
     );
 };
