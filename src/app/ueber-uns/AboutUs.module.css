@@ -12,12 +12,11 @@
     transition:0.2s ease;
 }
 .navButton{
-    width: 200px;
+    width: 100%;
     margin: 10px;
     color: var(--softCoral);
     cursor: pointer;
     transition: 0.2s ease-in-out;
-
 }
 
 .navButton:hover{
@@ -28,6 +27,9 @@
     display: inline-block;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    position: relative;
+    left: 20px;
+    font-size: 1.2rem;
 }
 
 .chevronUpButton:hover{
@@ -57,9 +59,10 @@
 .gridContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    width: 90%;
+    width: 100%;
     padding-top: 20px;
     position: relative;
+    gap: 2px;
 }
 
 
@@ -70,15 +73,18 @@
 
 .gridItem{
     border: 1px solid var(--foreground);
-    background-color: var(--foreground);
     height: 50vh;
-    margin: 2px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
+.active_button {
+    color:var(--primaryFontHover);
+    font-weight: bolder;
+  }
 
 
 .trainerName{
@@ -135,7 +141,7 @@
 }
 
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 12s00px){
     .gridContainer{
         grid-template-columns: repeat(1, 1fr); 
     }

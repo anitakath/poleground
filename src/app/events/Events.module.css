@@ -1,28 +1,36 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 16px; 
-  padding: 16px;
+  gap: 2px; 
+  padding-top: 20px;
 }
 
 .gridItem {
   height: 50vh; /* da die Texte unterschiedlich lang sind */
-  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
   font-weight: bold;
-  background-color: rgba(237, 193, 187, 0.4);
+  color: var(--primaryFont);
   position: relative;
   transition: 0.4s ease-in-out;
- 
+  overflow: hidden;
 }
 
 .gridItem:hover{
-  background-color: var(--FLEXIBILITY);
+  color: var(--primaryFontHover);
+  font-size: 1.1rem;
   cursor: pointer;
+}
+
+.eventImage{
+  transition: 0.4s ease-in-out;
+}
+
+.gridItem:hover .eventImage{
+  transform: scale(1.05);
 }
 
 .header_container{
@@ -37,8 +45,63 @@
   width: 100%;
   height: 70%;
   object-fit: cover;
-
 }
+
+
+.navButtonsContainer{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition:0.2s ease;
+}
+
+
+.moveNavBar{
+  transition:0.2s ease;
+  top: 0px;
+  background-color: rgba(255,255,255, 0.4);
+}
+
+.moveNavBar Button{
+  color: var(--secondaryFontHover);
+}
+
+.navButton{
+  width: 100%;
+  margin: 10px;
+  color: var(--softCoral);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.navButton:hover{
+  color: var(--secondaryFont)
+}
+
+.active_button {
+  color:var(--primaryFontHover);
+  font-weight: bolder;
+}
+
+.chevronUpButton{
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  left: 20px;
+  font-size: 1.2rem;
+}
+
+.chevronUpButton:hover{
+  color: var(--secondaryFont)
+}
+
+.noChevronUpButton{
+  display: none;
+}
+
 
 
 @media screen and (max-width: 1200px){
