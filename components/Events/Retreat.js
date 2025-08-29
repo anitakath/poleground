@@ -13,7 +13,7 @@ const Retreat = () => {
      const startAutoSlide = () => {
         const id = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % EVENTS_DUMMY.length);
-        }, 5000);
+        }, 10000);
         setIntervalId(id);
     };
 

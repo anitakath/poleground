@@ -22,7 +22,7 @@ const PrivateParties = () =>{
 
     return(
         <div>
-            <div className="w-full"> 
+            <div className={styles.container}> 
                 <div className={styles.headerContainer}>
                     <div className={styles.titleContainer}> 
                         <h1 className={styles.title}> PRIVATE PARTIES & PERSONAL TRAINING </h1>

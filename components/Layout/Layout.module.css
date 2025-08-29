@@ -84,7 +84,6 @@
     transition: 0.2s ease;
     cursor: pointer;
     position: relative;
-   
 }
 
 .linkAboutUs {
@@ -158,25 +157,19 @@
 
 
 
-
-
-
-  .mobileMenu{
+.mobileMenu{
     display: flex;
     justify-content: end;
     position: absolute;
     top: 2px;
+}
 
-    
-  
-  }
-
-  .sponsoringContainer{
+.sponsoringContainer{
     background-color: rgba(255,255,255, 0.3);
     padding: 0px 5px;
     height: 5vh;
 
-  }
+}
 
 @media screen and (max-width: 1200px){
 

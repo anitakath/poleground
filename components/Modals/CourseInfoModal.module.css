@@ -25,6 +25,7 @@
     position: relative;
     overflow: scroll;
     z-index: 100000;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 

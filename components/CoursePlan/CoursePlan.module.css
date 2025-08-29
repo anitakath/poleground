@@ -10,7 +10,7 @@
    padding: 1rem;
    max-width: 100%;
    margin: 0 auto;
- 
+   font-family: 'Kumbh Sans', sans-serif;
 }
  
  .weekNav {
@@ -32,6 +32,7 @@
    padding: 0.5rem 1rem;
    cursor: pointer;
    transition:  0.2s ease;
+   font-family: 'Kumbh Sans', sans-serif;
  }
  
  .weekNav button:hover {
@@ -55,6 +56,7 @@
   display: flex;
   align-items: center;
   font-weight: bold;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 .filterContainer select {
@@ -106,41 +108,40 @@
    color: var(--primaryFont);
  }
  
- .courseCard {
-
-   padding: 0.75rem;
-   display: flex;
-   flex-direction: column;
-   gap: 0.25rem;
-   font-size: 0.9rem;
-   transition: transform 0.2s ease, box-shadow 0.2s ease;
-   cursor: pointer;
- }
-
-
+.courseCard {
+  font-family: 'Kumbh Sans', sans-serif;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
  
- .courseCard:hover {
-   transform: scale(1.1);
-   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
- }
+.courseCard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
- .noCourseInfo:hover{
+.noCourseInfo:hover{
   transform: scale(1.0);
   box-shadow:  none;
   cursor:default;
 }
  
- .courseCard h4 {
-   font-size: 1rem;
-   font-weight: 600;
-   color: #1f2937;
- }
+.courseCard h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
  
- .courseRequestModalContainer {
+ .courseRequestModalContainer{
    margin-top: 2rem;
    padding: 1.5rem;
    color: var(--POLE);
    font-size: 1.3rem;
+   font-family: 'Kumbh Sans', sans-serif;
  }
  
  .courseRequestButton {
@@ -154,7 +155,7 @@
  
  .courseRequestButton:hover {
    cursor: pointer;
-   color: var(--SPECIALS)
+   color: var(--SPECIALS);
  }
  
  /* Responsive */
@@ -229,7 +230,7 @@
  }
 
  .HEELS h4{
-  color: var(--ARIALSILK)
+  color: var(--ARIALSILK);
  }
 
  .ADAPTIVE{
@@ -244,7 +245,6 @@
 .available{
   color: green;
 }
-
 
 .canceled {
   position: relative;

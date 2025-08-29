@@ -27,7 +27,7 @@
 
 .section_button_active{
     border-bottom: 2px solid var(--primaryFont);
-    color: var(--primaryFont)
+    color: var(--primaryFontHover);
 }
 
 .navigationBtn:hover{
@@ -41,13 +41,13 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
+}
 
- }
- .buttonsContainer{
+.buttonsContainer{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
- }
+}
 .buttons{
     cursor: pointer;
     font-size: 0.9rem;
@@ -119,6 +119,7 @@
     padding: 0; 
     margin: 10px 0px;
     margin-bottom: 20px;
+
 }
 
 .item{
@@ -160,7 +161,6 @@
 .itemPrice{
     font-size: 0.9rem;
     margin: 6px 0px;
-   
 }
 
 .itemInfo{
@@ -168,7 +168,7 @@
     margin-top:5px;
 }
 .button{
-    background-color: var(--primaryFont);
+    background-color: var(--primaryFontHover);
     color: white; 
     border: none; 
     padding: 10px;
