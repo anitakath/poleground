@@ -10,6 +10,8 @@
     display: flex;
     justify-content: center;
     transition:0.2s ease;
+
+    
 }
 .navButton{
     width: 100%;
@@ -63,6 +65,7 @@
     padding-top: 20px;
     position: relative;
     gap: 2px;
+    
 }
 
 
