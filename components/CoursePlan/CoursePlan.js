@@ -1,10 +1,14 @@
 import styles from './CoursePlan.module.css'
-import useTimesAndDates from '../../custom hooks/useTimesAndDates';
+import { supabase } from '../../services/supabaseClient';
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import useScrollToSection from '../../custom hooks/useScrollToSection';
 import CheckOutModal from '../Modals/CheckOutModal';
+
+//COMPONENTS
 import CourseRequestModal from '../Modals/CourseRequestModal';
-import { supabase } from '../../services/supabaseClient';
+import LoginModal from '../Modals/LoginModal';
+
 
 const CoursePlan = () => {
   const { scrollToSection } = useScrollToSection();
@@ -16,6 +20,8 @@ const CoursePlan = () => {
   const [isCheckedOutModalOpen, setIsCheckedOutModalOpen] = useState(false);
   const [selectedTrainer, setSelectedTrainer] = useState("ALL");
   const [chosenCourse, setChosenCourse] = useState(null)
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  
 
   // 🟣 FETCH COURSES FROM SUPABASE
   useEffect(() => {
@@ -240,11 +246,13 @@ const CoursePlan = () => {
         </h1>
         <p className='w-full'>
           Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um
-          uns mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine
+          dich anzumelden und uns dann mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine
           Wünsche zu erfüllen! 💜
         </p>
 
-        <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        {!isLoggedIn && <LoginModal isOpen={isModalOpen}/>}    
+
+        {isLoggedIn && <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
       </div>
     </div>
   );

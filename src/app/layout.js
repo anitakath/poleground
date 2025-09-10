@@ -6,7 +6,7 @@ import Footer from "../../components/Layout/Footer";
 import { TitleProvider } from "../../context/TitleContext";
 import { AuthProvider } from "../../context/authContext";
 import { Provider } from "react-redux";
-import { store, persistor } from "../../store/store";
+import { store, persistor } from "../../store";
 import { PersistGate } from "redux-persist/integration/react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +30,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-       {/*} <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>*/}
+  <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
             <TitleProvider> 
             <AuthProvider>
               <Header />
@@ -42,8 +42,8 @@ export default function RootLayout({ children }) {
          
             </TitleProvider>  
 
-         {/*} </PersistGate>
-        </Provider>*/}
+         </PersistGate>
+        </Provider>
         
      
       </body>
