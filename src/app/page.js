@@ -25,6 +25,26 @@ export default function Home() {
 
   const [courses, setCourses] = useState([]);
   const [loadingCourses, setLoadingCourses] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  /*
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup bei Unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);*/
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,9 +92,15 @@ export default function Home() {
   return (
     <div className={styles.container}>
     
-      <button className={styles.chevronUp} onClick={()=> scrollToSection("top")}> 
-        <FontAwesomeIcon icon={faChevronUp} />
-      </button>
+    {isVisible && (
+        <button
+          className={styles.chevronUp}
+          onClick={() => scrollToSection("top")}
+        >
+          <FontAwesomeIcon icon={faChevronUp} />
+        </button>
+      )}
+      
       <div className={styles.headerContainer}>
        
 

@@ -70,7 +70,7 @@ const Header = () => {
                </div>
                */} 
                
-            <MobileMenu isOpen={isOpen}  toggleMenu={toggleMenu}/>
+                <MobileMenu isOpen={isOpen}  toggleMenu={toggleMenu}/>
                
            </nav>
 
@@ -89,14 +89,14 @@ const Header = () => {
                </button>
 
                <button onClick={toggleMenu} className={styles.menuButton}> 
-                       <Image 
-                           src="/iconpng/icons8-menü-50.png" 
-                           alt="menu button" 
-                           width={100} 
-                           height={100}
-                           className={styles.socialIcon}
-                       />    
-                   </button>
+                    <Image 
+                       src="/iconpng/icons8-menü-50.png" 
+                       alt="menu button" 
+                       width={100} 
+                       height={100}
+                       className={styles.socialIcon}
+                   />    
+                </button>
            </div>
        
         </div>

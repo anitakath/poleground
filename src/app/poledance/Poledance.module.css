@@ -17,6 +17,7 @@
     z-index: 10000;
     left: 4.5px;
     top: 95px;
+    border: 2px solid red;
 }
 .headerContainer{
     /* border: 2px solid gold; */
