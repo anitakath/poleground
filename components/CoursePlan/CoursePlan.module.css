@@ -157,7 +157,14 @@
    cursor: pointer;
    color: var(--SPECIALS);
  }
+
+ .title{
+  font-size: 1.2rem;
+ }
  
+ .subtitle{
+  font-size: 1rem;
+ }
  /* Responsive */
  @media (max-width: 1024px) {
    .weekContainer {

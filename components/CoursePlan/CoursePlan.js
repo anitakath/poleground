@@ -241,16 +241,16 @@ const CoursePlan = () => {
 
       {/* COURSE REQUEST MODAL */}
       <div className={styles.courseRequestModalContainer}>
-        <h1 className='w-full my-2'>
+        <h1 className={styles.title}>
           Hast du Interesse an einem Kurs zu einer anderen Tages- oder Uhrzeit als hier angeboten?
         </h1>
-        <p className='w-full'>
+        <p className={styles.subtitle}>
           Klicke <button className={styles.courseRequestButton} onClick={() => setIsModalOpen(true)}>hier</button>, um
           dich anzumelden und uns dann mitzuteilen, welchen Kurs du in den kommenden Monaten gerne besuchen würdest. Wir setzen alles daran, deine
           Wünsche zu erfüllen! 💜
         </p>
 
-        {!isLoggedIn && <LoginModal isOpen={isModalOpen}/>}    
+        {!isLoggedIn && <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>}    
 
         {isLoggedIn && <CourseRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
       </div>

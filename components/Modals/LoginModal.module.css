@@ -1,12 +1,12 @@
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(232, 177, 157, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.3s ease;
-    z-index: 50;
+    z-index: 10000;
   }
   
   .modal {
@@ -17,6 +17,7 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     position: relative;
     animation: slideUp 0.3s ease;
+    z-index: 10000;
   }
   
   .title {

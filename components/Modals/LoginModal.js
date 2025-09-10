@@ -23,7 +23,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   };
 
   return (
-    <div className={styles.overlay}>
+    <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
           ✕
