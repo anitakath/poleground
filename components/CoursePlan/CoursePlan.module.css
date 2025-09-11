@@ -249,14 +249,23 @@
   }
 
   .weekNav button{
-
     width: 100%;
     margin: 2px;
+  }
+
+  .tableContainer{
+    padding: 0;
   }
 
   
  }
 
+ @media screen and (max-width: 500px){
+  .weekNav button{
+    font-size: 0.8rem;
+    margin: 1px;
+  }
+ }
 
 
  .POLE{
