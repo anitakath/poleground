@@ -21,14 +21,13 @@ const MobileMenu = ({isOpen,  toggleMenu}) =>{
                    </div>
                    <Link href="/" className={styles.mobileLink} onClick={toggleMenu}> ✨ POLEGROUND </Link>
                  
-                   <br/>
             
                    <Link href="/kursplan" onClick={toggleMenu}  className={styles.mobileLink}>KURSPLAN </Link>
                    <Link href="/kursbeschreibungen"  onClick={toggleMenu} className={styles.mobileLink}>KURSBESCHREIBUNGEN </Link>
                    <Link href="/preise" className={styles.mobileLink} onClick={toggleMenu} >PREISE </Link>
                    <Link href="/private-parties" className={styles.mobileLink} onClick={toggleMenu} >PRIVATE PARTIES </Link>
                    
-                   <br/>
+              
 
                    <Link href="/helpdesk" className={styles.mobileLink} onClick={toggleMenu} >FAQ </Link>
                    <Link href="/ueber-uns" className={styles.mobileLink} onClick={toggleMenu} >ÜBER UNS</Link>
