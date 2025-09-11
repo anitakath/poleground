@@ -256,6 +256,9 @@
   .tableContainer{
     padding: 0;
   }
+  
+
+ 
 
   
  }
@@ -265,6 +268,16 @@
     font-size: 0.8rem;
     margin: 1px;
   }
+
+  .filterContainer{
+    font-size: 0.8rem;
+  }
+
+  .courseRequestModalContainer{
+    padding: 5px;
+  }
+
+  
  }
 
 
