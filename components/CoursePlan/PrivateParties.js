@@ -29,7 +29,7 @@ const PrivateParties = () =>{
                     </div>
                     
                     <div className={styles.descriptionContainer}>
-                        <p className='my-2 w-4/5'>
+                        <p className='my-2'>
                             Ob <strong>Einzel-, oder Gruppentraining</strong>, um an ganz individuellen Themen zu arbeiten,  
                              <strong> private Feiern</strong>, wie <strong>Geburtstage</strong>, oder <strong> Junggesell*innenabschiede </strong> abzuhalten
                             - wir sind für euch da!
@@ -39,7 +39,7 @@ const PrivateParties = () =>{
                 </div>
                 
                 <div className={styles.privateInfoContainer}>
-                    <div className={`w-full flex-col overflow-scroll  m-2 ${styles.privateInfo}`}> 
+                    <div className={`w-full flex-col overflow-scroll m-2 ${styles.privateInfo} ${showInfo.parties ? styles.privateInfo_active : ""}`}> 
                         <h1 className={styles.itemTitle}> PARTIES </h1>
                         <p className={styles.infoParagraph}> AB 150 Euro für 2 Stunden </p>
                         <button className={styles.button} onClick={() => showInfoHandler('parties')}>  {showInfo.parties ? 'WENIGER' : 'MEHR ...'} </button>
@@ -56,7 +56,7 @@ const PrivateParties = () =>{
                                 Individuelle Wünsche können gerne besprochen werden! Schreibt uns am Besten eine <a href="mailto:wagner.annekathirn@gmx.de" className={styles.email}>E-Mail </a> , WhatsApp <strong> +01234567890 </strong>. Wir melden uns dann bei dir/euch zurück, um ein geeignetes Programm für euch zu entwickeln. </p> 
                         )}
                     </div>
-                    <div className={`w-full flex-col h-96 overflow-scroll m-2 ${styles.privateInfo}`}> 
+                    <div className={`w-full flex-col h-96 overflow-scroll m-2 ${styles.privateInfo} ${showInfo.training ? styles.privateInfo_active : ""}`}> 
                         <h1 className={styles.itemTitle}>PERSONAL / GROUP TRAINING </h1>
                         <p className={styles.infoParagraph}> ab 60 Euro/Stunde </p>
                         <button className={styles.button} onClick={() => showInfoHandler('training')}> {showInfo.training ? 'WENIGER' : 'MEHR ...'} </button>

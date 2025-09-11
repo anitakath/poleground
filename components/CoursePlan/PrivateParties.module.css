@@ -25,6 +25,8 @@
     justify-content: space-between;
 }
 
+
+
 .contactLinksContainer{
     width: 30%;
 }
@@ -121,7 +123,6 @@
 @media screen and (max-width: 1200px){
     .privateInfo{
         height: 600px;
-       
     }
 }
 
@@ -129,19 +130,13 @@
 @media screen and (max-width: 1000px){
     .descriptionContainer{
         flex-direction: column;
-        margin-top: 10px;
+        margin: 1rem 0rem;
     }
 
     .paragraph{
         width: 100%;
         margin: 5px 0px;
-    }
-
-    .contactLinksContainer{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        margin: 10px 0px;
+        text-align: justify;
     }
 
     .contactLink{
@@ -152,8 +147,31 @@
 
     .privateInfoContainer{
         flex-direction: column;
+
     }
 
+    .privateInfo{
+        margin: 0;
+        height: 110px;
+        justify-content: start;
+    }
+
+    .privateInfo_active{
+        height: 50vh;
+    }
+
+    .itemTitle{
+        margin: 0;
+        padding: 0;
+    }
+
+    .infoParagraph{
+        margin: 2px 0px;
+    }
+
+    .button{
+        margin: 0;
+    }
 
 
  
@@ -184,8 +202,23 @@
         width: 100%;
         padding: 0px 10px;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    .descriptionContainer p{
+        font-size: 1rem;
+        text-align: justify;
+        padding: 0;
+        margin: 0;
+    }
+
+    .infoParagraph{
+        margin: 0.5rem 0rem;
+        padding: 0;
+        text-align: justify;;
+    }
 
 }
 
@@ -193,5 +226,9 @@
 @media screen and (max-width: 500px){
     .privateInfo{
        height: 490px;
+    }
+
+    .descriptionContainer p{
+        font-size: 0.8rem;
     }
 }
